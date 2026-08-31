@@ -1378,7 +1378,7 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
                             if cand.is_file():
                                 filepath = cand
                                 break
-                upload_script = BASE_DIR / "tiktok_uploader.py"
+                upload_script = paths.CORE_DIR / "tiktok_uploader.py"
                 
                 payload_file = BASE_DIR / "upload_payload.json"
                 with open(payload_file, "w", encoding="utf-8") as f:

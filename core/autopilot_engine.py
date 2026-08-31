@@ -995,7 +995,7 @@ def execute_publish_step(item):
 
     cmd = [
         sys.executable, "-u",
-        str(BASE_DIR / "tiktok_uploader.py"),
+        str(paths.CORE_DIR / "tiktok_uploader.py"),
         "--payload", str(payload_path)
     ]
 

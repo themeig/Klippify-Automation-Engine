@@ -23,6 +23,8 @@ class SmartPath(type(Path())):
         if isinstance(key, str):
             if key.endswith('.json'):
                 return DATA_DIR / key
+            elif key.endswith('.py') and (CORE_DIR / key).exists() and not (_RAW_PROJECT_ROOT / key).exists():
+                return CORE_DIR / key
             elif key == 'clipping_sources':
                 return SOURCES_DIR
             elif key == 'generated_videos':
