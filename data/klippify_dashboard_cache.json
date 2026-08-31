@@ -1,0 +1,95 @@
+{
+  "user_name": "riccardo",
+  "greeting": "Bentornato, riccardo! 👋",
+  "subtitle": "Ecco cosa sta succedendo oggi nel tuo percorso da creator.",
+  "stats": {
+    "Guadagni prelevabili": {
+      "val": "0,00 USD",
+      "sub": "Pronti per il prelievo"
+    },
+    "Guadagni totali": {
+      "val": "0,00 USD",
+      "sub": "Guadagni complessivi"
+    },
+    "Campagne attive": {
+      "val": "4",
+      "sub": "Campagne in corso"
+    },
+    "La tua valutazione": {
+      "val": "0.0",
+      "sub": "Nessuna valutazione"
+    }
+  },
+  "participating_campaigns": [
+    {
+      "name": "Collecto",
+      "brand": "di Salvatore Zola",
+      "payouts": [
+        "1,00 USD/1k",
+        "1,00 USD/1k"
+      ],
+      "views": "244.485",
+      "creators": "648",
+      "budget_remaining": "796,00 USD",
+      "budget_spent": "204,00 USD",
+      "budget_total": "1000,00 USD",
+      "progress_percent": "20%",
+      "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Collecto__16x9_2K.webp",
+      "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/03b82d2e-f63f-4f8e-9df5-c2649179a469-Collecto_def_2.png"
+    },
+    {
+      "name": "Ale Della Giusta - ENG",
+      "brand": "di aledellagiusta",
+      "payouts": [
+        "1,00 USD/1k",
+        "1,00 USD/1k"
+      ],
+      "views": "48.565",
+      "creators": "2125",
+      "budget_remaining": "595,00 USD",
+      "budget_spent": "39,00 USD",
+      "budget_total": "750,00 USD",
+      "progress_percent": "5%",
+      "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Ale_Della_Giusta__16x9_2K.webp",
+      "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/90dcb7cc-d6e8-4b52-9ec1-92c87a16e29b-BLACK-LOGO.png"
+    },
+    {
+      "name": "WoodCrafts DIY",
+      "brand": "di WoodCrafts DIY",
+      "payouts": [
+        "6,00 USD/1k",
+        "6,00 USD/1k"
+      ],
+      "views": "12.572",
+      "creators": "1309",
+      "budget_remaining": "314,00 USD",
+      "budget_spent": "42,00 USD",
+      "budget_total": "500,00 USD",
+      "progress_percent": "8%",
+      "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/WoodCrafts_DIY__16x9_2K.webp",
+      "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/9b975f55-d384-4f47-9974-61cedee70f9c-logo.png"
+    },
+    {
+      "name": "SFS1",
+      "brand": "di Smoke Free Skin",
+      "payouts": [
+        "2,00 USD/1k",
+        "2,00 USD/1k"
+      ],
+      "views": "208.419",
+      "creators": "184",
+      "budget_remaining": "28,00 USD",
+      "budget_spent": "472,00 USD",
+      "budget_total": "500,00 USD",
+      "progress_percent": "94%",
+      "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/SFS1__16x9_2K.webp",
+      "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/ac4c586d-7560-4a3d-a16e-fe824b4f0606-SFS-Logo2-2.png"
+    }
+  ],
+  "earnings_summary": {
+    "month": "0,00 USD",
+    "week": "0,00 USD",
+    "today": "0,00 USD"
+  },
+  "recent_withdrawals": []
+}

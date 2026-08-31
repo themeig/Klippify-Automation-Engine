@@ -1,0 +1,1603 @@
+[
+  {
+    "id": "6a71c6f7245627c68999eae2",
+    "campaign_token": "6a71c6f7245627c68999eae2",
+    "campaign_url": "https://app.klippify.com/campaigns/6a71c6f7245627c68999eae2",
+    "name": "Sara Dizdari Academy – Scopri i negozi digitali",
+    "brand": "Sara Dizdari Academy",
+    "section": "Iscritte",
+    "payout_per_1k_views": 0.5,
+    "total_views": 122080,
+    "creators_count": 11,
+    "budget_remaining": 392.5,
+    "budget_spent": 57.5,
+    "budget_total": 450.0,
+    "budget_progress_percent": "12.8%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/d5a91bf4-880b-44ec-b30a-508566f50194-copertina-sda-16x9.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3883c984-4830-4a78-b2a5-b84e62c5b748-PHOTO-2026-08-05-17-15-49.jpg",
+    "description": "Clip verticali 9:16 (20-60 secondi) che incuriosiscono le spettatrici verso la video‑lezione gratuita di Sara Dizdari, senza svelare il metodo, con hook forte, sottotitoli e CTA di seguire il profilo di Sara",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#saradizdariacademyscopriinegozidigitali",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@saradizdariacademy"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 91115.0
+  },
+  {
+    "id": "6a7628ca922613d297f2e2c5",
+    "campaign_token": "6a7628ca922613d297f2e2c5",
+    "campaign_url": "https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5",
+    "name": "Aldo Masolo viral contest test",
+    "brand": "Aldo Masolo",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.75,
+    "total_views": 162456,
+    "creators_count": 39,
+    "budget_remaining": 379.25,
+    "budget_spent": 120.75,
+    "budget_total": 500.0,
+    "budget_progress_percent": "24.1%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Aldo_Masolo_viral_contest_test__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3dfcd9a3-aac0-4c6e-ab49-f1624db8f604-IMG_4097.JPG",
+    "description": "Sono Aldo Masolo, bodybuilder professionista, coach e divulgatore nel settore fitness e bodybuilding. Da oltre 30 anni vivo e studio il mondo dell’allenamento e della trasformazione fisica, vincendo più di 20 gare e aiutando centinaia di persone a raggiungere i propri obiettivi attraverso programmi personalizzati di allenamento e alimentazione. Il mio approccio si basa su esperienza, disciplina e risultati concreti, valori che condivido quotidianamente attraverso il coaching e la creazione di contenuti dedicati al fitness e al bodybuilding.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#aldomasoloviralcontesttest",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@aldomasolo"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 34024.2
+  },
+  {
+    "id": "6a719c80a2d57190f5d7a38b",
+    "campaign_token": "6a719c80a2d57190f5d7a38b",
+    "campaign_url": "https://app.klippify.com/campaigns/6a719c80a2d57190f5d7a38b",
+    "name": "Le 9 Bugie di FitActive",
+    "brand": "Theory Spa",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.75,
+    "total_views": 779936,
+    "creators_count": 207,
+    "budget_remaining": 271.5,
+    "budget_spent": 178.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "39.6%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/40f05066-1e80-4fe3-be26-9afde93ea5eb-Il-Mondo-delle-Bugie.jpg",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3aefd338-2e3b-4d4b-baae-6d4070f65a38-theory-holding-logo-real.png",
+    "description": "Theory Holding è una azienda made in Italy dove i talenti rendono le visioni, rivoluzioni di interi mercati",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#le9bugiedifitactive",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@theoryspa"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 30318.9
+  },
+  {
+    "id": "6a7a13715ade3cb2f77b30df",
+    "campaign_token": "6a7a13715ade3cb2f77b30df",
+    "campaign_url": "https://app.klippify.com/campaigns/6a7a13715ade3cb2f77b30df",
+    "name": "What's Next - Nello Cristianini",
+    "brand": "Raffaele Gaito",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.25,
+    "total_views": 212263,
+    "creators_count": 65,
+    "budget_remaining": 165.0,
+    "budget_spent": 236.25,
+    "budget_total": 450.0,
+    "budget_progress_percent": "52.5%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/85fd6df9-584c-44ea-98f2-45db441bde5d-Cover-what's-next.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/f45c4c64-1e6e-4bb9-bbb7-d32935b5c918-logo-con-fondo-bianco.png",
+    "description": "Questa campagna è su una puntata del podcast What's Next, dove si discute di intelligenza artificiale. L'ospite in questione è il prof. Nello Cristianini, docente di Intelligenza Artificiale all'università di Bath e uno dei massimi esperti italiani sul tema.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#whatsnextnellocristianini",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@raffaelegaito"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 26566.7
+  },
+  {
+    "id": "6a64cf756cdfd98478f11f28",
+    "campaign_token": "6a64cf756cdfd98478f11f28",
+    "campaign_url": "https://app.klippify.com/campaigns/6a64cf756cdfd98478f11f28",
+    "name": "Million Hospitality",
+    "brand": "Million Hospitality",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 1094080,
+    "creators_count": 343,
+    "budget_remaining": 920.0,
+    "budget_spent": 1060.0,
+    "budget_total": 1980.0,
+    "budget_progress_percent": "53.5%",
+    "banner": "https://klippify-assets.s3.us-east-1.amazonaws.com/WhatsApp+Image+2026-07-28+at+21.35.57.jpeg",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/ccd8538d-4605-4c20-8bdb-07bc3cd19310-Million-Hosptality---Senza-sfondo-.png",
+    "description": "Lavori da strapagati nell'hospitality all'estero.\nBartender, chef de rang, sommelier, chef de cuisine, restaurant manager, host & hostess. Da 4K a 9K al mese, minimo 48K l'anno.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#millionhospitality",
+      "#lavorareallestero",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@lavorare_all_estero"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Durata minima clip: 10 sec.",
+      "Il volto di Manfredi visibile per almeno 3 secondo (In allegato).",
+      "Logo sempre visibile per tutta la durata delle clip."
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 25668.4
+  },
+  {
+    "id": "6a7a14bf5ade3cb2f77b3539",
+    "campaign_token": "6a7a14bf5ade3cb2f77b3539",
+    "campaign_url": "https://app.klippify.com/campaigns/6a7a14bf5ade3cb2f77b3539",
+    "name": "What's Next - Marco Cappato",
+    "brand": "Raffaele Gaito",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.25,
+    "total_views": 335630,
+    "creators_count": 109,
+    "budget_remaining": 126.25,
+    "budget_spent": 368.75,
+    "budget_total": 495.0,
+    "budget_progress_percent": "74.5%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/30440d4a-a772-4881-a767-c7ff0cb82c44-Cover-what's-next.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/f45c4c64-1e6e-4bb9-bbb7-d32935b5c918-logo-con-fondo-bianco.png",
+    "description": "Questa campagna è su una puntata del podcast What's Next, dove si discute di intelligenza artificiale. L'ospite in questione è Marco Cappato, politico e attivista, che propone alcune soluzioni per risolvere i problemi dell'AI e per farne un uso positivo per il cittadino.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#whatsnextmarcocappato",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@raffaelegaito"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 24919.0
+  },
+  {
+    "id": "6a1ae4d11231f047260883eb",
+    "campaign_token": "6a1ae4d11231f047260883eb",
+    "campaign_url": "https://app.klippify.com/campaigns/6a1ae4d11231f047260883eb",
+    "name": "Liveral Shot",
+    "brand": "LIVERAL",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.25,
+    "total_views": 304154,
+    "creators_count": 109,
+    "budget_remaining": 73.5,
+    "budget_spent": 426.5,
+    "budget_total": 500.0,
+    "budget_progress_percent": "85.3%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Liveral_Shot__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/00a3c961-7764-4b44-beda-0d61e4307e4d-Liveral_Logo-principale.png",
+    "description": "Descrizione campagna Liveral Shot è lo shot 100% naturale, vegan e zero caffeina che prendi prima di dormire dopo le tue serate. La formula lavora di notte mentre dormi, così il giorno dopo ti svegli al meglio e pronto a ripartire. Made in Italy, 3.000+ prodotti venduti. Obiettivo: far conoscere Liveral Shot e mostrarlo in modo autentico nei momenti di vita reale, con contenuti ad alta energia che facciano venire voglia di provarlo.A chi parliamo Pubblico trasversale, cuore fatto di universitari, giovani lavoratori e professionisti. Gente work hard, play hard, che non vuole scegliere tra godersi la serata e dare il massimo il giorno dopo. Tono autentico e ad alta energia, parla con parole tue.Il rituale (storyboard pronto)Bevi lo shot prima di dormire, agitalo bene.Vai a dormire, la formula lavora mentre riposi.Svegliati al meglio e goditi il giorno dopo al 100%.Requisiti per la monetizzazione Ogni reel deve durare almeno 15 secondi, mostrare o nominare chiaramente Liveral Shot, essere coerente con queste linee guida e includere hashtag, menzione e CTA obbligatori.Contenuti ammessi Contenuti originali ambientati nella serata reale (aperitivi, locali, amici, mood notturno), b-roll e clip fornite dal brand, UGC, storytelling, voiceover, recensioni sincere, intrattenimento, purché legati a Liveral Shot mostrato come rituale di fine serata.Contenuti NON ammessi Dichiarare di essersi ubriacati o di stare male (\"mi sono distrutto\", \"ero ubriaco\", \"sbornia\", \"postumi\"). Promettere che Liveral cura o toglie sintomi (\"toglie il mal di testa\", \"antinausea\", \"depura\", \"detox\", \"protegge il fegato\"): nessun claim medico. Contenuti fuorvianti, offensivi, di bassa qualità o non coerenti col brand. Materiali protetti da copyright. Outcome sempre in positivo: \"ti svegli al meglio\", \"al 100%\", \"pronto a ripartire\". In una riga: atmosfera della serata sì, dichiarare la sbronza e promettere il rimedio no. Claim ok: 100% naturale, vegan, zero caffeina, Made in Italy, 3.000+ venduti.Elementi obbligatori Hashtag: #liveral #liveralshot Menzione: @liveralnow CTA: invito a visitare liveral.it",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#liveralshot",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@liveral"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 22607.3
+  },
+  {
+    "id": "6a3fbb32e6a21896f767e4e7",
+    "campaign_token": "6a3fbb32e6a21896f767e4e7",
+    "campaign_url": "https://app.klippify.com/campaigns/6a3fbb32e6a21896f767e4e7",
+    "name": "Dormire sotto le stelle con SkyRoom",
+    "brand": "Skyroom",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 230310,
+    "creators_count": 85,
+    "budget_remaining": 473.0,
+    "budget_spent": 27.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "5.4%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Dormire_sotto_le_stelle_con_SkyRoom__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/99c73620-5d47-431f-b704-cfe3518d6654-logo-png@300x.png",
+    "description": "SkyRoom è un’esperienza di soggiorno immersa nella natura, pensata per chi vuole staccare dalla routine e vivere una notte diversa dal solito.\nL’obiettivo della campagna è creare contenuti spontanei ed emozionali che facciano desiderare l’esperienza e portino utenti interessati a visitare il sito ufficiale per prenotare.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#dormiresottolestelleconskyroom",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@skyroom"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 22034.5
+  },
+  {
+    "id": "6a83248ba0608223f5b326bb",
+    "campaign_token": "6a83248ba0608223f5b326bb",
+    "campaign_url": "https://app.klippify.com/campaigns/6a83248ba0608223f5b326bb",
+    "name": "Campagna Pontoni Udito & Tecnologia x Nuance",
+    "brand": "Pontoni Udito & Tecnologia",
+    "section": "Nuove",
+    "payout_per_1k_views": 2.0,
+    "total_views": 1000,
+    "creators_count": 2,
+    "budget_remaining": 450.0,
+    "budget_spent": 0.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/1168623c-677d-4f28-a27e-dc66ff8eb1e3-logo_klip.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/54fd101a-2357-42cc-bd39-235d33f66cb2-Logo_Pontoni_New-(1).png",
+    "description": "Pontoni Udito & Tecnologia è un’azienda specializzata in soluzioni innovative per il benessere uditivo, che unisce competenza, tecnologia e attenzione alla persona per offrire un servizio professionale e personalizzato.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#campagnapontoniuditotecnologiaxnuance",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@pontoniuditotecnologia"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 16573.5
+  },
+  {
+    "id": "6a1dabe2e3244ca026512560",
+    "campaign_token": "6a1dabe2e3244ca026512560",
+    "campaign_url": "https://app.klippify.com/campaigns/6a1dabe2e3244ca026512560",
+    "name": "Personal_G",
+    "brand": "PersonalG",
+    "section": "Nuove",
+    "payout_per_1k_views": 2.0,
+    "total_views": 248089,
+    "creators_count": 152,
+    "budget_remaining": 38.0,
+    "budget_spent": 462.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "92.4%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Personal_G__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/452eaf99-a6f1-495d-b4a5-03ffcfee8d01-WhatsApp-Image-2026-05-30-at-12.16.01-(1).jpeg",
+    "description": "Personal_G non è una palestra né il programma di una fitness influencer. È il metodo di allenamento al femminile basato su un’idea semplice: ogni corpo è diverso, quindi ogni allenamento deve esserlo. Non esiste la scheda che funziona per tutte esiste quella giusta per il corpo e il tuo biotipo. Non importa da che corpo parti né le quali siano state le tue delusioni passate: dacci 3 ore a settimana e ti cambio il corpo e la vita per sempre.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#personalg",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@personalg"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 13282.9
+  },
+  {
+    "id": "6a0dd557394d916370d7fb3d",
+    "campaign_token": "6a0dd557394d916370d7fb3d",
+    "campaign_url": "https://app.klippify.com/campaigns/6a0dd557394d916370d7fb3d",
+    "name": "Marco Billiani | Chiave immobiliare",
+    "brand": "Chiave Immobiliare",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.5,
+    "total_views": 181803,
+    "creators_count": 137,
+    "budget_remaining": 426.5,
+    "budget_spent": 73.5,
+    "budget_total": 500.0,
+    "budget_progress_percent": "14.7%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/c2b3f662-92ed-4fce-b2d3-ac2d15538b19-marco-billiani-klippify.jpg",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/fdaad54a-586e-4d0a-be10-b43d78b00012-LOGHI-CHIAVE-IMMOBILIARE.png",
+    "description": "Marco Billiani è un brand verticale sugli affitti brevi e sulla formazione immobiliare pratica, pensato per chi vuole trasformare Airbnb e il turismo in un vero business.La sua comunicazione unisce autorevolezza, risultati concreti e storytelling imprenditoriale, parlando a persone ambiziose che cercano un metodo chiaro per partire, gestire e scalare nel settore.Il posizionamento migliore: non “il solito formatore”, ma il punto di riferimento italiano per chi vuole costruire un business reale negli affitti brevi, partendo da zero o migliorando ciò che ha già.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#marcobillianichiaveimmobiliare",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@chiaveimmobiliare"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 10856.5
+  },
+  {
+    "id": "69e21a5ef7e6b4d2d58002b9",
+    "campaign_token": "69e21a5ef7e6b4d2d58002b9",
+    "campaign_url": "https://app.klippify.com/campaigns/69e21a5ef7e6b4d2d58002b9",
+    "name": "Ascensore - EP.2",
+    "brand": "Ascensore_media",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 496362,
+    "creators_count": 379,
+    "budget_remaining": 96.59999999999997,
+    "budget_spent": 403.40000000000003,
+    "budget_total": 500.0,
+    "budget_progress_percent": "80.7%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Ascensore_-_EP.2__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/7bb46175-e042-4dbd-8648-54c806cb3525-Senza-titolo.png",
+    "description": "ASCENSORE è un evento live di pitch per startup. Ogni episodio presenta imprenditori che presentano le loro idee a una giuria di esperti.Note operative per le clip:Titolo introduttivo all'inizio (2-4 secondi): accattivante, che crea curiosità e contestualizza la clipSottotitoli sincronizzati con l'audio - Font Stratos (normal o medium)Colore sottotitoli: Bianco (#FFFFFF) per i giudici | Giallo (#FDE700) o Viola (#581BBA) per i concorrentiFormato verticale (9:16) - Risoluzione minima 1080×1920pxDescrizione: sempre includere i tag @ascensore_media (Instagram e TikTok)",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#ascensoreep2",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@ascensoremedia"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 10596.2
+  },
+  {
+    "id": "69b6fb2b7add71b606b303d2",
+    "campaign_token": "69b6fb2b7add71b606b303d2",
+    "campaign_url": "https://app.klippify.com/campaigns/69b6fb2b7add71b606b303d2",
+    "name": "SFS1",
+    "brand": "Smoke Free Skin",
+    "section": "Iscritte",
+    "payout_per_1k_views": 2.0,
+    "total_views": 208954,
+    "creators_count": 185,
+    "budget_remaining": 24.0,
+    "budget_spent": 476.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "95.2%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/SFS1__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/ac4c586d-7560-4a3d-a16e-fe824b4f0606-SFS-Logo2-2.png",
+    "description": "Smoke-Free Skin è un brand cosmetico italiano sviluppato per proteggere e rigenerare la pelle esposta quotidianamente a fumo, smog e stress urbano.Le formulazioni, realizzate in Italia con ingredienti di alta qualità, sono studiate per contrastare i principali effetti dello stile di vita urbano sulla pelle: opacità, disidratazione, perdita di elasticità e invecchiamento precoce.La linea combina ricerca cosmetologica, attivi mirati e un approccio skincare essenziale, offrendo prodotti pensati per detergere, nutrire, illuminare e rigenerare la pelle di chi vive in ambienti urbani o è esposto al fumo di sigaretta.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#sfs1",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@smokefreeskin"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 9231.7
+  },
+  {
+    "id": "69b4326b7add71b606b18d8b",
+    "campaign_token": "69b4326b7add71b606b18d8b",
+    "campaign_url": "https://app.klippify.com/campaigns/69b4326b7add71b606b18d8b",
+    "name": "Investhero",
+    "brand": "Invest Hero",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.5,
+    "total_views": 397837,
+    "creators_count": 365,
+    "budget_remaining": 318.5,
+    "budget_spent": 181.5,
+    "budget_total": 500.0,
+    "budget_progress_percent": "36.3%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Investhero__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/33b5e1e6-b4a5-4acc-ac57-488328c8b41b-logo_InvestHero-1-1.png",
+    "description": "Siamo una società di formazione in ambito educazione finanziaria. La nostra missione: \"Investhero nasce con l’obiettivo di portare una sana cultura finanziaria in Italia, per accompagnarti nel tuo percorso verso la libertà finanziaria, fornendoti tutti gli strumenti necessari per creare, far crescere, investire e proteggere il tuo denaro\".",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#investhero",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@investhero"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 8842.8
+  },
+  {
+    "id": "6a7672465ade3cb2f773f6c9",
+    "campaign_token": "6a7672465ade3cb2f773f6c9",
+    "campaign_url": "https://app.klippify.com/campaigns/6a7672465ade3cb2f773f6c9",
+    "name": "Gabriele Vagnato",
+    "brand": "Gabriele Vagnato",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.25,
+    "total_views": 236893,
+    "creators_count": 221,
+    "budget_remaining": 642.25,
+    "budget_spent": 57.5,
+    "budget_total": 700.0,
+    "budget_progress_percent": "8.2%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/e736669e-112f-4767-8225-1c7adf293ba4-_CBN5611.jpeg",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/279e6078-2791-40fc-8fd1-e338bd1f03ec-GDP-LOGO3.png",
+    "description": "Youtube e content creator: https://www.youtube.com/@gabrielevagnato",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#gabrielevagnato",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@gabrielevagnato"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 8750.2
+  },
+  {
+    "id": "6a186236e38a567930b34191",
+    "campaign_token": "6a186236e38a567930b34191",
+    "campaign_url": "https://app.klippify.com/campaigns/6a186236e38a567930b34191",
+    "name": "Klippify - Ascensore",
+    "brand": "Klippify",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 776991,
+    "creators_count": 866,
+    "budget_remaining": 350.0,
+    "budget_spent": 650.0,
+    "budget_total": 1000.0,
+    "budget_progress_percent": "65.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Klippify_-_Ascensore__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/19e04c73-e2ca-484e-9621-1e9936424e05-Klippify-Logo.png",
+    "description": "La puntata di Ascensore in cui Klippify viene presentato agli investitori, mostrando la visione della piattaforma, il modello di business e il potenziale nel rivoluzionare il rapporto tra creator e brand.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#klippifyascensore",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@klippify"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 7267.1
+  },
+  {
+    "id": "69d9fd5061ce1b8904c42316",
+    "campaign_token": "69d9fd5061ce1b8904c42316",
+    "campaign_url": "https://app.klippify.com/campaigns/69d9fd5061ce1b8904c42316",
+    "name": "Boardingame #1",
+    "brand": "aledellagiusta",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.5,
+    "total_views": 598620,
+    "creators_count": 926,
+    "budget_remaining": 554.0,
+    "budget_spent": 184.5,
+    "budget_total": 750.0,
+    "budget_progress_percent": "24.6%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Boardingame_1__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/90dcb7cc-d6e8-4b52-9ec1-92c87a16e29b-BLACK-LOGO.png",
+    "description": "Vogliamo clippare la serie \"Boardingame\" - a partire dal primo episodio appena uscito sul canale YouTube @aledellagiusta",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#boardingame1",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@aledellagiusta"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 5260.3
+  },
+  {
+    "id": "6a7239b2245627c6899bedf7",
+    "campaign_token": "6a7239b2245627c6899bedf7",
+    "campaign_url": "https://app.klippify.com/campaigns/6a7239b2245627c6899bedf7",
+    "name": "Il gusto francese sul Lago Maggiore",
+    "brand": "La Pasticceria",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 1000,
+    "creators_count": 9,
+    "budget_remaining": 450.0,
+    "budget_spent": 0.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/516fff58-73a3-493a-9ed4-b5fdc28efe27-1000292770.jpg",
+    "logo": "https://lh3.googleusercontent.com/a/ACg8ocIb2GYFuAbRu_AlN1uZ-G7Gd7x5BiChbrx_SgbAUzekK7KPrLM=s96-c",
+    "description": "La Pasticceria Pallanza ha un concept di pasticceria moderna francese con contaminazioni del nord europa.Il servizio è take away con la possibilità di consumare sul posto, senza servizio al tavolo.L'offerta di prodotti non è ampia ma è molto focalizzata sull'esclusività.Il caffè espresso è prodotto con il sistema Nespresso professional, che garantisce coerenza e qualità costante, il latte proviene dai pascoli dell'Ossola, il burro è belga di altissima qualità prodotto dalla panna, il caffè filtro viene estratto ogni giorno con miscele finlandesi premium, il thè è francese con tantissimi gusti disponibili. La pasticceria produce anche macaron fantasiosi, sempre nuovi e sfiziosi. Anche la biscotteria è esclusiva, con gusti e abbinamenti inimitabili. Anche il cioccolato ed i lievitati per le ricorrenze sono delle chicche che questa pasticceria produce ogni anno per i propri clienti. Il protagonista assoluto è sempre il croissant francese, inimitabile e imitato, mai eguagliato. Il cliente che prova La Pasticceria troverà dei gusti e un'esperienza impossibile da trovare altrove.Crea contenuti che mostrino la bontà dei nostri croissant francesi e macaron, trasmettendo l'atmosfera unica della pasticceria sul Lago Maggiore.Hastag obbligatori #lapasticceria #verbania #crois #lagomaggiore #lapasticceriapallanza #breakfast",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#ilgustofrancesesullagomaggiore",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@lapasticceria"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 3730.2
+  },
+  {
+    "id": "69db9e0c61ce1b8904c4c3b7",
+    "campaign_token": "69db9e0c61ce1b8904c4c3b7",
+    "campaign_url": "https://app.klippify.com/campaigns/69db9e0c61ce1b8904c4c3b7",
+    "name": "Collecto",
+    "brand": "Salvatore Zola",
+    "section": "Iscritte",
+    "payout_per_1k_views": 1.0,
+    "total_views": 258109,
+    "creators_count": 698,
+    "budget_remaining": 785.0,
+    "budget_spent": 215.0,
+    "budget_total": 1000.0,
+    "budget_progress_percent": "21.5%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Collecto__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/03b82d2e-f63f-4f8e-9df5-c2649179a469-Collecto_def_2.png",
+    "description": "Collecto  è la piattaforma che permette di possedere frazioni di asset da collezione esclusivi — orologi iconici, arte contemporanea, vini rari, memorabilia leggendari. Pezzi che normalmente non si possono permettere in uno, ora accessibili a partire da piccole quote. Con oltre 270.000 utenti e €60M+ in transazioni, siamo il punto di riferimento in Europa per chi vuole entrare nel mondo del collezionismo di alto profilo — senza barriere.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#collecto",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@salvatorezola"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 3067.6
+  },
+  {
+    "id": "6a2d2ec66c09e42f05891f56",
+    "campaign_token": "6a2d2ec66c09e42f05891f56",
+    "campaign_url": "https://app.klippify.com/campaigns/6a2d2ec66c09e42f05891f56",
+    "name": "MedX",
+    "brand": "MedX Clinic",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 1000,
+    "creators_count": 11,
+    "budget_remaining": 500.0,
+    "budget_spent": 0.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/MedX__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/b8ab105b-6e2b-4807-b4e1-08a3d8ac455b-LOGO_04.png",
+    "description": "Brand: MedX Clinic – Clinica di Medicina Estetica a Roma.Descrizione del brand:MedX Clinic è una clinica di medicina estetica avanzata specializzata in trattamenti per il viso, il corpo e i capelli. Il nostro approccio si basa su risultati naturali, eleganti e personalizzati, supportati da protocolli medici e tecnologie all'avanguardia. Il posizionamento del brand è premium e orientato a un pubblico che ricerca qualità, sicurezza e professionalità.Obiettivo della campagna:Aumentare la notorietà del brand MedX Clinic.Incrementare i follower della pagina Instagram ufficiale.Raggiungere utenti realmente interessati alla medicina estetica.Generare una community locale qualificata, con particolare focus su Roma e Lazio.Contenuto da promuovere:https://www.instagram.com/reel/DZaARKCN2Ce/?igsh=amUxYXVxb3JtazM5Area geografica:ItaliaPriorità assoluta: Roma e provinciaSecondariamente: LazioPiattaforme:Instagram (priorità principale)TikTok (secondario)Target:Uomini e donne 25-60 anniInteressati a medicina estetica, skincare, beauty, benessere, anti-aging, trattamenti viso e cura della personaRichieste per i creator/clipper:Inserire sempre il tag della pagina Instagram ufficiale MedX Clinic.Invitare gli utenti a seguire la pagina per ulteriori contenuti e informazioni.Mantenere uno stile professionale, elegante e coerente con un brand medicale premium.Non alterare il significato del contenuto originale.IMPORTANTE:Per noi è fondamentale preservare il valore percepito e il posizionamento premium del brand.Non desideriamo che il contenuto venga pubblicato all'interno di pagine generaliste o network che promuovono contemporaneamente contenuti relativi a influencer, gossip, trading, crypto, betting, business guru, motivazione generica, intrattenimento virale o altre categorie non coerenti con il settore medicale e beauty premium.Se la piattaforma non consente di selezionare con precisione le tipologie di pagine o profili che pubblicheranno il contenuto, preferiamo che vengano create pagine nuove dedicate esclusivamente alla promozione di MedX Clinic.L'obiettivo principale non è ottenere il maggior numero possibile di visualizzazioni, ma acquisire follower qualificati e in target, mantenendo un contesto coerente con l'immagine e il posizionamento della clinica.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#medx",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@medxclinic"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 3065.0
+  },
+  {
+    "id": "6a426231e6a21896f769dc80",
+    "campaign_token": "6a426231e6a21896f769dc80",
+    "campaign_url": "https://app.klippify.com/campaigns/6a426231e6a21896f769dc80",
+    "name": "Riccardo Dose - YouTube Clipping",
+    "brand": "Marco Cappelli Agency",
+    "section": "Iscritte",
+    "payout_per_1k_views": 0.5,
+    "total_views": 965587,
+    "creators_count": 3002,
+    "budget_remaining": 1512.5,
+    "budget_spent": 287.5,
+    "budget_total": 1800.0,
+    "budget_progress_percent": "16.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/4ee8af7e-92b3-4feb-aa6f-4bfd912f5653-ChatGPT-Image-29-giu-2026,-14_00_31.png",
+    "logo": "https://lh3.googleusercontent.com/a/ACg8ocKtof6jsOkYphrb-ZTdiiS-zEylShB3tljHy5-J3n7niLXNx2A=s96-c",
+    "description": "Riccardo Dose è uno dei creator storici di YouTube Italia. Il suo stile è spontaneo, ironico e molto riconoscibile: alterna challenge, vlog, esperimenti sociali, format di intrattenimento e contenuti di vita quotidiana. Negli anni ha costruito una community molto fedele grazie a un tono autentico, autoironico e mai troppo costruito. Oggi conta oltre 3 milioni di iscritti su YouTube, con una presenza importante anche su Instagram e TikTok.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#riccardodoseyoutubeclipping",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@marcocappelliagency"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 2671.9
+  },
+  {
+    "id": "6a6dc4b494bf29a44b05d822",
+    "campaign_token": "6a6dc4b494bf29a44b05d822",
+    "campaign_url": "https://app.klippify.com/campaigns/6a6dc4b494bf29a44b05d822",
+    "name": "Scontly - UGC Campaign",
+    "brand": "Scontly",
+    "section": "Nuove",
+    "payout_per_1k_views": 4.0,
+    "total_views": 1000,
+    "creators_count": 15,
+    "budget_remaining": 450.0,
+    "budget_spent": 0.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/070c619f-71dd-4931-821f-d0cbee14ee7d-ChatGPT-Image-30-lug-2026,-18_11_06.png",
+    "description": "Scontly è un servizio che monitora il prezzo della tua prenotazione dopo l'acquisto. Se il prezzo scende e la differenza è recuperabile, Scontly restituisce all'utente l'85% del risparmio ottenuto, trattenendo il 15%. I creator devono realizzare video spontanei, in prima persona, che mostrino il problema dei prezzi che calano dopo la prenotazione e presentino Scontly come la soluzione.sito web: scontly.live",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#scontlyugccampaign",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@scontly"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 2293.5
+  },
+  {
+    "id": "6a76d24b5ade3cb2f77429aa",
+    "campaign_token": "6a76d24b5ade3cb2f77429aa",
+    "campaign_url": "https://app.klippify.com/campaigns/6a76d24b5ade3cb2f77429aa",
+    "name": "Brunch e Cocktail a Peschiera del Garda",
+    "brand": "9Days cafè - Brunch Cocktails & More",
+    "section": "Nuove",
+    "payout_per_1k_views": 2.0,
+    "total_views": 1000,
+    "creators_count": 15,
+    "budget_remaining": 450.0,
+    "budget_spent": 0.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/dbfdf999-c1c4-497b-a786-e8f39c66f58f-_DSC4542-(2).jpg",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/7e5ba711-5588-495a-94db-8d10faec239d-Gemini_Generated_Image_dlg8hcdlg8hcdlg8.png",
+    "description": "Ricondivisione di un reel Instagram dal profilo @9Dayscafè a Peschiera del Garda, con focus su brunch e cocktail.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#brunchecocktailapeschieradelgarda",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@9dayscafbrunchcocktailsmore"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 2273.5
+  },
+  {
+    "id": "6a55360dd323618f4f79e13e",
+    "campaign_token": "6a55360dd323618f4f79e13e",
+    "campaign_url": "https://app.klippify.com/campaigns/6a55360dd323618f4f79e13e",
+    "name": "SIMONEMOROFX",
+    "brand": "simonemooro",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.5,
+    "total_views": 4480,
+    "creators_count": 36,
+    "budget_remaining": 448.5,
+    "budget_spent": 1.5,
+    "budget_total": 450.0,
+    "budget_progress_percent": "0.3%",
+    "banner": "",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/c27b2d74-c806-4ff4-94af-f3a1a5ed32f6-A9735134-BCC7-429F-AE16-66FB211C25AF.JPG",
+    "description": "Cerco creator in grado di trasformare i miei video lunghi in clip brevi, coinvolgenti e ad alto potenziale virale per TikTok, Instagram Reels e YouTube Shorts.Cosa voglio:Hook forte nei primi 3 secondi.Sottotitoli dinamici e ben leggibili.Zoom, tagli ed effetti che mantengano alta l'attenzione.Durata tra 20 e 60 secondi.Qualità video elevata (1080x1920).Contenuti da valorizzare:Psicologia del trading.Errori che fanno perdere soldi ai trader.Strategie e analisi di mercato.Esperienze personali e risultati verificabili.Consigli pratici per chi vuole imparare il trading.Stile richiesto:Video moderni, veloci e coinvolgenti, simili ai contenuti che performano meglio su TikTok e Instagram. L'obiettivo è massimizzare visualizzazioni, tempo di visione e condivisioni.Importante:❌ Non utilizzare titoli o affermazioni ingannevoli.❌ Non promettere guadagni garantiti.✅ Mantieni sempre un tono professionale e realistico.Se realizzi clip di qualità, ci saranno ottime possibilità di collaborare anche nelle campagne future.per i contenuti avete il drive che vi ho caricato per tutte le clip lifestyle su drive",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#simonemorofx",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@simonemooro"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 1748.5
+  },
+  {
+    "id": "6a5e3bd2710dc3521cedfb83",
+    "campaign_token": "6a5e3bd2710dc3521cedfb83",
+    "campaign_url": "https://app.klippify.com/campaigns/6a5e3bd2710dc3521cedfb83",
+    "name": "Campagna Investire.biz - Trading & Investimenti",
+    "brand": "Forecaster.biz",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 26393,
+    "creators_count": 151,
+    "budget_remaining": 447.0,
+    "budget_spent": 3.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "0.7%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/1c58c904-0ba8-4a1b-aa14-36913da416ac-COPERTINA-klippify-investire.biz.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/760b2aab-ed81-456a-8868-3703bc6c7f11-ICONA-scheda-investire.biz.png",
+    "description": "COS’È INVESTIRE.BIZInvestire.biz è un progetto italiano di informazione e formazione finanziaria.Pubblica analisi di aziende, mercati e temi d’investimento con l’obiettivo di rendere più comprensibili concetti finanziari complessi e aiutare il pubblico a ragionare in modo informato e consapevole.COSA STAI CLIPPANDOQuesta campagna contiene video long-form in italiano, principalmente presentati da Luca Discacciati.I contenuti includono analisi aziendali, approfondimenti sui mercati e spiegazioni di temi economici e finanziari.L’obiettivo è trasformare questi video in contenuti short-form per Instagram Reels e TikTok, aumentando la reach e la brand awareness di Investire.biz.Il numero e la tipologia dei video inclusi nella campagna possono cambiare nel tempo.COME È ORGANIZZATA LA CARTELLALa cartella principale contiene:• Questo documento INIZIA DA QUI.• La cartella Materiali Brand, con brand book, loghi e istruzioni.• Una cartella dedicata a ogni video.Ogni cartella video contiene:• Il video completo scaricato da YouTube.• Un documento di accompagnamento con panoramica, momenti chiave, trascrizione e parti da non utilizzare.Leggi sempre il documento di accompagnamento prima di lavorare sul video corrispondente.TONO DI VOCE — NON NEGOZIABILEInvestire.biz è educativo, analitico e data-driven.Non presentare mai il contenuto come:• Rendimenti garantiti.• Soldi facili o veloci.• «Guadagna X€ in Y giorni».• Previsioni certe.• Contenuti “diventa ricco in fretta”.• Consulenza finanziaria diretta.Non trasformare opinioni, ipotesi o valutazioni personali presenti nel video in certezze o raccomandazioni d’investimento.Promesse ingannevoli, hype eccessivo e risultati garantiti non sono in linea con il brand e possono portare al rifiuto della clip.CTA E ATTRIBUZIONE• Menziona @investire.biz nella caption.• Mostra almeno una volta il logo o l’handle, in modo leggibile e dentro le safe zone.• Non sono obbligatori watermark permanente, intro, outro o CTA fissa.• Le clip sono destinate a Instagram Reels e TikTok.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#campagnainvestirebiztradinginvestimenti",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@forecasterbiz"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 1627.3
+  },
+  {
+    "id": "6a553268d323618f4f794fab",
+    "campaign_token": "6a553268d323618f4f794fab",
+    "campaign_url": "https://app.klippify.com/campaigns/6a553268d323618f4f794fab",
+    "name": "SIMONEMOROFX",
+    "brand": "simonemooro",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.5,
+    "total_views": 1000,
+    "creators_count": 25,
+    "budget_remaining": 450.0,
+    "budget_spent": 0.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/8bd1d8ef-ad88-4083-9d76-ea22780060de-IMG_5385.jpg",
+    "description": "Content creator specializing in finance, trading, and educational social media content.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#simonemorofx",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@simonemooro"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 1378.5
+  },
+  {
+    "id": "6a79f2c55ade3cb2f77ad749",
+    "campaign_token": "6a79f2c55ade3cb2f77ad749",
+    "campaign_url": "https://app.klippify.com/campaigns/6a79f2c55ade3cb2f77ad749",
+    "name": "Why podcast",
+    "brand": "Why podcast",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.5,
+    "total_views": 7309,
+    "creators_count": 75,
+    "budget_remaining": 513.3,
+    "budget_spent": 0.5,
+    "budget_total": 519.3,
+    "budget_progress_percent": "0.1%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/0e4d3747-0215-4bf4-b707-0b907f3b624c-ChatGPT-Image-10-ago-2026,-17_33_56.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/12851ea4-7532-4883-8bde-30f95f1b1d45-why-podcast-logo-.png",
+    "description": "Why Podcast è il salotto di chi non si accontenta del \"si è sempre fatto così\". Intervistiamo imprenditori, sognatori, visionari e ribelli che hanno raggiunto risultati inimmaginabili. Ma a noi non interessa solo il cosa hanno fatto; vogliamo sviscerare il loro PERCHÉ. Qual è la motivazione profonda, spesso irrazionale, che li ha spinti a sacrificare tutto, sfidare le logiche comuni e infrangere le regole? Niente fuffa, solo storie vere di sangue, sudore, fallimenti e vittorie straordinarie.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#whypodcast",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@whypodcast"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 1173.4
+  },
+  {
+    "id": "6a6885be281dcda3390a8147",
+    "campaign_token": "6a6885be281dcda3390a8147",
+    "campaign_url": "https://app.klippify.com/campaigns/6a6885be281dcda3390a8147",
+    "name": "Risparmio su Bollette Luce e Gas",
+    "brand": "BellaScelta.it",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 1000,
+    "creators_count": 31,
+    "budget_remaining": 450.0,
+    "budget_spent": 0.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/60848347-fee6-44d6-91cd-7ad10b7e4aae-images.jpg",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/7034a4a4-b641-4bbe-aa28-c7bbdff9d57f-agentepiu_logo.jpg",
+    "description": "Aiuta i potenziali clienti a capire come risparmiare su luce e gas con un supporto reale: un professionista analizza la bolletta insieme a loro e garantisce un risparmio, senza forzare offerte se quella attuale è già la migliore.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#risparmiosubolletteluceegas",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@bellasceltait"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 1128.0
+  },
+  {
+    "id": "6a847642fa1d3ebf11275a72",
+    "campaign_token": "6a847642fa1d3ebf11275a72",
+    "campaign_url": "https://app.klippify.com/campaigns/6a847642fa1d3ebf11275a72",
+    "name": "I SEGRETI DI THEORY HOLDING: la Bending Spoons delle palestre",
+    "brand": "Theory Spa",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.25,
+    "total_views": 1000,
+    "creators_count": 42,
+    "budget_remaining": 445.25,
+    "budget_spent": 4.75,
+    "budget_total": 450.0,
+    "budget_progress_percent": "1.1%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/ac4ce31b-1db4-4aee-8117-ed23bada4b4a-copertina-discacciati.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3aefd338-2e3b-4d4b-baae-6d4070f65a38-theory-holding-logo-real.png",
+    "description": "Theory Holding è l'azienda 100% italiana, dove i talenti rendono le visioni, rivoluzioni. Non serve andare oltreoceano per incontrare la Silicon Valley.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#isegretiditheoryholdinglabendingspoonsdellepalestre",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@theoryspa"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 841.6
+  },
+  {
+    "id": "6a6c592394bf29a44b009722",
+    "campaign_token": "6a6c592394bf29a44b009722",
+    "campaign_url": "https://app.klippify.com/campaigns/6a6c592394bf29a44b009722",
+    "name": "UNO BIANCA — I DUE POLIZIOTTI CHE FERMARONO LA BANDA",
+    "brand": "Anatomia Criminis",
+    "section": "Nuove",
+    "payout_per_1k_views": 5.0,
+    "total_views": 1767,
+    "creators_count": 54,
+    "budget_remaining": 315.0,
+    "budget_spent": 135.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "30.0%",
+    "banner": "",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/60afeaf2-5371-425a-935f-4946189e4dce-logo.png",
+    "description": "Campagna di distribuzione per Anatomia Criminis dedicata alla storia della Uno Bianca. Pubblica il video fornito mantenendo integri il significato, il contesto storico e l’identità editoriale. L’obiettivo è far conoscere il contenuto e invitare il pubblico a seguire Anatomia Criminis su YouTube.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#unobiancaiduepoliziottichefermaronolabanda",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@anatomiacriminis"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 824.2
+  },
+  {
+    "id": "6968e536d4ea0a9652cf40c0",
+    "campaign_token": "6968e536d4ea0a9652cf40c0",
+    "campaign_url": "https://app.klippify.com/campaigns/6968e536d4ea0a9652cf40c0",
+    "name": "Massaggi & Lavoro - Video Gratis Marketing",
+    "brand": "Francesco G.Saccà",
+    "section": "In pausa",
+    "payout_per_1k_views": 1.0,
+    "total_views": 59463,
+    "creators_count": 918,
+    "budget_remaining": 82.0,
+    "budget_spent": 18.0,
+    "budget_total": 100.0,
+    "budget_progress_percent": "18.0%",
+    "banner": "",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/a757b807-025d-48f8-b7f9-1697d7da588b-Progetto-senza-titolo(19).png",
+    "description": "Iscrizione Landing per Video Gratuito: \"5 Clienti in 20 giorni Con Facebook Ads\". Vorrei ottenere visualizzazioni e iscritti alla landing di riferimento, di operatori olistici, massaggiatori, terapisti manuali, imprenditori del settore wellness, estetiste, che vogliono aumentare clienti nella propria zona, con un metodo innovativo e che sta funzionando",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#massaggilavorovideogratismarketing",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@francescogsacc"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 597.9
+  },
+  {
+    "id": "6a22ff48e3244ca026570f72",
+    "campaign_token": "6a22ff48e3244ca026570f72",
+    "campaign_url": "https://app.klippify.com/campaigns/6a22ff48e3244ca026570f72",
+    "name": "FundedPoly - $5/1k: Film anything, just show the site",
+    "brand": "FundedPoly",
+    "section": "Nuove",
+    "payout_per_1k_views": 5.0,
+    "total_views": 83,
+    "creators_count": 61,
+    "budget_remaining": 500.0,
+    "budget_spent": 0.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/2f0a4d3b-3803-4a59-aa8b-c8bda55133c6-pfp-2-mark-ring.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/68baedaa-99fc-42ae-8c1c-d452a345b6f3-08-gta6.png",
+    "description": "Film anything you want — full creative freedom. $5 per 1,000 views. — GET YOUR FREE ACCOUNT FIRST: sign up at https://fundedpoly.com/?utm_source=klippify&utm_campaign=clipperFundedPoly then email support@fundedpoly.com with your FundedPoly account email and ask for a clipper account. We switch on a free FundedPoly account for you (for filming only — not eligible for payout). — THE ONLY 2 RULES: (1) Show FundedPoly on screen — the real website/app (a market, a trade, your account) (2) Say or show \"FundedPoly\" at least once (out loud or as on-screen text fully visible, or if you want to be safe you can make both). — That's it: any style, niche, meme, or edit. The funnier/weirder, the better. Go!",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#fundedpoly51kfilmanythingjustshowthesite",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@fundedpoly"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 525.7
+  },
+  {
+    "id": "6a2021ede3244ca02653db64",
+    "campaign_token": "6a2021ede3244ca02653db64",
+    "campaign_url": "https://app.klippify.com/campaigns/6a2021ede3244ca02653db64",
+    "name": "PMI e startup: scopri se il tuo progetto può essere finanziato",
+    "brand": "Lumivy",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 160,
+    "creators_count": 65,
+    "budget_remaining": 500.0,
+    "budget_spent": 0.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/PMI_e_startup_scopri_se_il_tuo_progetto_puo%CC%80_essere_finanziat__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/f2d922bb-926d-469d-8c23-f465cff1b49e-Logo-con-il-Brand-su-Sfondo-Bianco-(2).png",
+    "description": "Lumivy è una società che supporta PMI, startup e imprenditori nell’individuazione e nella gestione di opportunità di finanza agevolata, bandi, contributi, agevolazioni e strumenti a supporto di progetti di crescita, digitalizzazione, AI, export, formazione, innovazione e investimenti.L’obiettivo della campagna è creare contenuti efficaci e coerenti con Lumivy, capaci di far capire a imprenditori, founder, professionisti e PMI che molti progetti aziendali possono essere analizzati preventivamente per verificare la presenza di bandi, contributi o agevolazioni compatibili.La campagna deve generare:awareness sul brand Lumivy;interesse verso il tema “pre-check di finanziabilità”;traffico verso il sito/profilo Lumivy;richieste di contatto da parte di aziende con progetti reali.Messaggio principale:Prima di investire in software, AI, export, formazione, digitalizzazione, macchinari, consulenze o innovazione, una PMI dovrebbe verificare se il progetto può essere finanziato o agevolato.Angolo narrativo consigliato:Non raccontare Lumivy come “società che fa bandi”, ma come partner che aiuta l’imprenditore a non perdere opportunità e a capire se il proprio progetto è finanziabile.1 Script consigliati per i creatorScript 1 — Errore da evitare“Errore che fanno tante PMI: prima spendono, poi cercano il bando. In molti casi, invece, bisogna verificare prima se il progetto è compatibile con agevolazioni, contributi o crediti d’imposta. Lumivy aiuta le aziende proprio in questa fase: analisi del progetto, ricerca delle opportunità e supporto alla candidatura. Cerca Lumivy bandi e fai il pre-check.Script 2 — AI e digitalizzazione“Se la tua azienda vuole investire in AI, software, automazioni o digitalizzazione, non partire solo dal preventivo. Parti da una domanda: questo investimento può essere agevolato? Lumivy aiuta PMI e startup a verificare se ci sono bandi o contributi compatibili con il progetto.”Script 3 — Founder/startup“Molti founder cercano investitori, ma ignorano bandi e agevolazioni. Se devi sviluppare software, validare un prodotto, fare innovazione o internazionalizzarti, forse esistono strumenti compatibili. Lumivy ti aiuta a partire dal progetto e capire se ci sono opportunità concrete.”Script 4 — Commercialista angle, ma diplomatico“Il commercialista guarda spesso la parte fiscale e contabile. Ma quando devi fare un investimento futuro, serve anche qualcuno che analizzi bandi, agevolazioni e opportunità disponibili. Lumivy lavora su questo: trasforma un progetto aziendale in una possibile pratica di finanza agevolata.”Script 5 — Hook forte“Se stai per spendere 30, 50 o 100 mila euro nella tua azienda, fermati un attimo. Prima verifica se quel progetto può essere finanziato o agevolato. Lumivy nasce per aiutare PMI e startup a fare proprio questo.”Format “errore da evitare”Esempio:“3 errori che fanno perdere contributi alle PMI.”G. Format “POV”Esempio:“POV: vuoi investire in AI, ma non hai verificato se esiste un bando.”Non sono ammessi contenuti che dicano o lascino intendere:“Lumivy ti garantisce il contributo”; “soldi gratis per tutti”; “bando sicuro”; “finanziamenti senza requisiti”; “qualsiasi azienda può ottenere soldi”; “ti pagano solo perché hai una partita IVA”; “basta compilare un modulo”; “Lumivy fa ottenere fondi automaticamente”;“ contributi garantiti al 100%”;“non serve rispettare requisiti o scadenze”.Non sono ammessi anche: - reel troppo generici sulla ricchezza, il business o la crescita personale senza collegamento a Lumivy; - contenuti in stile fuffa guru; -contenuti aggressivi;- contenuti che screditano commercialisti, consulenti o istituzioni;- contenuti che usano loghi di enti pubblici senza autorizzazione;-contenuti che citano bandi  inventati o non verificati;-contenuti che promettono importi, percentuali o risultati non autorizzati.Esempi di Formula corretta da usare:“Lumivy verifica se il tuo progetto può essere compatibile con bandi o agevolazioni.”Formula da evitare:“Lumivy ti fa ottenere contributi.”",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#pmiestartupscopriseiltuoprogettopuesserefinanziato",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@lumivy"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 469.3
+  },
+  {
+    "id": "6a4cef2338c714b87a3b4d4b",
+    "campaign_token": "6a4cef2338c714b87a3b4d4b",
+    "campaign_url": "https://app.klippify.com/campaigns/6a4cef2338c714b87a3b4d4b",
+    "name": "Forecaster Terminal — Finance & Investing Clips",
+    "brand": "Forecaster.biz",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 10085,
+    "creators_count": 264,
+    "budget_remaining": 443.5,
+    "budget_spent": 5.0,
+    "budget_total": 450.0,
+    "budget_progress_percent": "1.1%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/0249ce3f-2826-4fc9-885f-66968ea211ae-COPERTINA-forecaster-ita.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/13e8f059-982c-4ac0-8abe-0f7c38094f30-icon-forecaster-logo.png",
+    "description": "COS'È FORECASTERForecaster è un terminale di analisi finanziaria sviluppato in Svizzera che unisce diversi strumenti analitici in un'unica visione chiara e basata sulle probabilità di oltre 150.000 strumenti finanziari.Il suo scopo è rendere i dati di mercato complessi più facili da capire e da usare.COSA STAI CLIPPANDOQuesta campagna è composta da webinar long-form in italiano presentati da Luca Discacciati, founder e CEO di Forecaster.L'obiettivo è trasformare questi webinar in video short-form per Instagram Reels e TikTok, aumentando la reach e la brand awareness di Forecaster.Il numero di webinar inclusi nella campagna può aumentare o cambiare nel tempo.COME È ORGANIZZATA LA CARTELLALa cartella principale contiene:• Questo documento INIZIA DA QUI• Una cartella Materiali Brand• Una cartella dedicata per ogni webinarOgni cartella webinar contiene:• Il video completo del webinar, scaricato da YouTube.• Un documento di accompagnamento che spiega in modo chiaro e conciso di cosa parla il video.Il documento di accompagnamento è scritto in un linguaggio semplice, così che il contenuto sia comprensibile anche senza conoscenze pregresse dei mercati finanziari.Leggi sempre il documento di accompagnamento prima di lavorare sul webinar corrispondente.TONO DI VOCE — NON NEGOZIABILEForecaster è data-driven, educativo e probabilistico.Non presentare mai il contenuto come:• Rendimenti garantiti• Soldi facili o veloci• «Guadagna X€ in Y giorni»• Previsioni certe• Contenuti \"diventa ricco in fretta\"• Consulenza finanziaria direttaPromesse ingannevoli, hype eccessivo o risultati garantiti non sono in linea con il brand Forecaster e possono portare al rifiuto della clip.CTA E ATTRIBUZIONE• Menziona @forecasterbiz nella caption.• Ogni volta che nella clip compare una pagina del Forecaster Terminal o dei dati di Forecaster, includi: \"Fonte dei dati: Forecaster Terminal\"• Mantieni la promozione leggera. L'obiettivo principale è la reach e la brand awareness.• Pubblica le clip su Instagram Reels e TikTok.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#forecasterterminalfinanceinvestingclips",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@forecasterbiz"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 463.6
+  },
+  {
+    "id": "69cbae122e954fa83d68934d",
+    "campaign_token": "69cbae122e954fa83d68934d",
+    "campaign_url": "https://app.klippify.com/campaigns/69cbae122e954fa83d68934d",
+    "name": "Fanex 2",
+    "brand": "Fanex",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 1000,
+    "creators_count": 113,
+    "budget_remaining": 500.0,
+    "budget_spent": 0.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Fanex_2__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/266361d5-fd70-40ed-85c6-9292604df4a0-fanex_icon_1024x1024.png",
+    "description": "Fanex è la prima piattaforma dove i fan possono comprare una quota dei ricavi pubblicitari di video YouTube già pubblicati. Funziona così: i creator mettono in vendita una parte dei ricavi AdSense dei loro video. I fan comprano la loro quota e da quel momento ricevono la loro parte dei soldi che quei video continuano a generare con la pubblicità. È il primo modo concreto per i fan di partecipare al successo dei creator che seguono. Ci sono già diversi creator italiani attivi sulla piattaforma. I ricavi sono reali e verificabili, generati dalla pubblicità YouTube (AdSense). Sito:  fanex.market",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#fanex2",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@fanex"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 357.0
+  },
+  {
+    "id": "6a275f64e3244ca0265b49d0",
+    "campaign_token": "6a275f64e3244ca0265b49d0",
+    "campaign_url": "https://app.klippify.com/campaigns/6a275f64e3244ca0265b49d0",
+    "name": "Tech 'n' Cheese:",
+    "brand": "Tech 'n' Cheese",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.75,
+    "total_views": 177,
+    "creators_count": 98,
+    "budget_remaining": 500.0,
+    "budget_spent": 0.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Tech_n_Cheese__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/ebdb9b3a-8964-409f-8477-469a304f6584-Logo_TeN_Giallo_1.png",
+    "description": "Primo podcast di Big Tech Engineers in America.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#techncheese",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@techncheese"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 342.1
+  },
+  {
+    "id": "6a258cb7e3244ca02659c535",
+    "campaign_token": "6a258cb7e3244ca02659c535",
+    "campaign_url": "https://app.klippify.com/campaigns/6a258cb7e3244ca02659c535",
+    "name": "Valentina Ferri",
+    "brand": "Valentina Ferri",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 7218,
+    "creators_count": 316,
+    "budget_remaining": 499.0,
+    "budget_spent": 1.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "0.2%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/8b3bb7a5-b430-42fe-92d7-56f0ebba2e9a-IDENTITA'-1.jpg",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/f5158e7a-bad0-457a-b72b-11f248b13ae5-IDENTITA'-1.jpg",
+    "description": "CAMPAGNA PER ONLYFANS INDIRETTA. scrivimi su telegram per avere contenuti inediti da postare @gorulezRagazza influencer, di lavoro fa il corriere amazon.Potete tranquillamente usare l'intelligenza artificiale per creare qualsiasi reel vogliate, copiando anche dall'america senza problemi.Io vi carico nel drive piu video possibili, ma se sapete usare nanobanana, o seedance 2.0 (nel drive trovate la foto avatar da poter utilizzare di lei) usate pure senza problemi. l'importante è avere il link in bio che vi ho inserito.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#valentinaferri",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@valentinaferri"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 326.8
+  },
+  {
+    "id": "69cbabc02e954fa83d68921c",
+    "campaign_token": "69cbabc02e954fa83d68921c",
+    "campaign_url": "https://app.klippify.com/campaigns/69cbabc02e954fa83d68921c",
+    "name": "Fanex",
+    "brand": "Fanex",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 1000,
+    "creators_count": 137,
+    "budget_remaining": 500.0,
+    "budget_spent": 0.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "0.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Fanex__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/8af2ad64-57a0-475a-bd98-935fc5bdde60-fanex_icon_1024x1024.png",
+    "description": "Fanex è la prima piattaforma dove i fan possono comprare una quota dei ricavi pubblicitari di video YouTube già pubblicati. Un creator mette in vendita una parte dei ricavi AdSense di un suo video. Il fan compra la sua quota e da quel momento riceve la sua parte dei soldi che quel video continua a generare con la pubblicità. Su Fanex sono già disponibili i video di Cicciogamer89, uno dei creator italiani più seguiti con milioni di iscritti e di Camilla De Pandis, creator e influencer con una community enorme. È il primo modo concreto per i fan di partecipare al successo dei creator che seguono. I ricavi sono reali e verificabili, generati dalla pubblicità YouTube (AdSense). Sito:  fanex.market",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#fanex",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@fanex"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 305.9
+  },
+  {
+    "id": "694e91113d6a349f51473682",
+    "campaign_token": "694e91113d6a349f51473682",
+    "campaign_url": "https://app.klippify.com/campaigns/694e91113d6a349f51473682",
+    "name": "Marco Cappelli Personal Brand",
+    "brand": "Marco Cappelli Agency",
+    "section": "Nuove",
+    "payout_per_1k_views": 1.0,
+    "total_views": 55693,
+    "creators_count": 2487,
+    "budget_remaining": 935.0,
+    "budget_spent": 55.0,
+    "budget_total": 1000.0,
+    "budget_progress_percent": "5.5%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Marco_Cappelli_Personal_Brand__16x9_2K.webp",
+    "logo": "https://lh3.googleusercontent.com/a/ACg8ocKtof6jsOkYphrb-ZTdiiS-zEylShB3tljHy5-J3n7niLXNx2A=s96-c",
+    "description": "Pubblicazione di contenuti riguardo la figura di Marco Cappelli (Vendita Prodotti Digitali & Accademia) - TROVATE I CONTENUTI NEL LINK DRIVE IN ALLEGATO.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#marcocappellipersonalbrand",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@marcocappelliagency"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 267.3
+  },
+  {
+    "id": "6980d346cea4c29db61a307e",
+    "campaign_token": "6980d346cea4c29db61a307e",
+    "campaign_url": "https://app.klippify.com/campaigns/6980d346cea4c29db61a307e",
+    "name": "Ale Della Giusta - ENG",
+    "brand": "aledellagiusta",
+    "section": "Iscritte",
+    "payout_per_1k_views": 1.0,
+    "total_views": 49063,
+    "creators_count": 2207,
+    "budget_remaining": 595.0,
+    "budget_spent": 39.0,
+    "budget_total": 750.0,
+    "budget_progress_percent": "5.2%",
+    "banner": "",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/90dcb7cc-d6e8-4b52-9ec1-92c87a16e29b-BLACK-LOGO.png",
+    "description": "This campaign is for Ale Della Giusta, an acclaimed documentary storyteller who explores the frontiers of human potential. Think of him as a modern-day explorer, blending high-end cinematography with deep, personal journeys of growth. This specific campaign focuses on his groundbreaking 5-episode series filmed in Mexico. It's a journalistic and immersive exploration into the world of psychedelic substances, their therapeutic potential, and their cultural significance. This is not just a travel vlog; it's a thought-provoking documentary series in the vein of shows you'd find on Netflix or HBO, touching on themes highly relevant to a US audience interested in bio-hacking, mental health, and personal transformation.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#aledellagiustaeng",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@aledellagiusta"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 257.0
+  },
+  {
+    "id": "699ededd3f5febcf2f3acae9",
+    "campaign_token": "699ededd3f5febcf2f3acae9",
+    "campaign_url": "https://app.klippify.com/campaigns/699ededd3f5febcf2f3acae9",
+    "name": "WoodCrafts DIY",
+    "brand": "WoodCrafts DIY",
+    "section": "Iscritte",
+    "payout_per_1k_views": 6.0,
+    "total_views": 19052,
+    "creators_count": 1323,
+    "budget_remaining": 242.0,
+    "budget_spent": 72.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "14.4%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/WoodCrafts_DIY__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/9b975f55-d384-4f47-9974-61cedee70f9c-logo.png",
+    "description": "WoodCraftsDIY is a digital woodworking brand that helps beginners and hobbyists build furniture and home projects the right way without wasting time, money, or materials on guesswork. The idea behind the brand is simple: you don't need years of experience or a professional workshop to create something beautiful with your own hands. You just need the right plans.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#woodcraftsdiy",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@woodcraftsdiy"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 241.4
+  },
+  {
+    "id": "69b0ffca471017e7bfe49765",
+    "campaign_token": "69b0ffca471017e7bfe49765",
+    "campaign_url": "https://app.klippify.com/campaigns/69b0ffca471017e7bfe49765",
+    "name": "Physioterapeasy",
+    "brand": "PhysioterapEasy",
+    "section": "In pausa",
+    "payout_per_1k_views": 3.0,
+    "total_views": 2689,
+    "creators_count": 351,
+    "budget_remaining": 226.0,
+    "budget_spent": 24.0,
+    "budget_total": 250.0,
+    "budget_progress_percent": "9.6%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Physioterapeasy__16x9_2K.webp",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/b8341ba7-41d4-4d96-82da-a95c791c8998-LOGO-IG.jpg",
+    "description": "Rivolto a studenti di Fisioterapia o Scienze Motorie e a fisioterapisti alle prime armi. L'idea è quella di mostrare il nostro \"Physio Bundle & WebApp\" con focusc su contrasto tra \"Studiare su mille libri pesanti\" vs \"Avere tutto su iPad/PC con il nostro Bundle e testarsi con la WebApp\". Il messaggio principale deve essere: risparmio di tempo, schemi visivi bellissimi e simulazione dei vari tipi di esame. Vogliamo vedere lo schermo con i nostri PDF e la Dashboard della WebApp.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#physioterapeasy",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@physioterapeasy"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 209.3
+  },
+  {
+    "id": "6a346c9ba53170de02cc90b4",
+    "campaign_token": "6a346c9ba53170de02cc90b4",
+    "campaign_url": "https://app.klippify.com/campaigns/6a346c9ba53170de02cc90b4",
+    "name": "YC Startup podcast (Lobster Talks)",
+    "brand": "Lobster Capital",
+    "section": "Nuove",
+    "payout_per_1k_views": 2.5,
+    "total_views": 2012,
+    "creators_count": 504,
+    "budget_remaining": 467.5,
+    "budget_spent": 32.5,
+    "budget_total": 500.0,
+    "budget_progress_percent": "6.5%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/46ae39d5-d53e-4f10-a88f-7ace24c54c7e-Website-Background.jpg",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/8871187b-b747-4d7b-9256-bb87ccf7452c-Modern-Logo-Featuring-Red-Lobster-With-Silver-Microphone.png",
+    "description": "Welcome to Lobster Talks — where real founders, investors, and operators get honest about building and betting on the future.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#ycstartuppodcastlobstertalks",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@lobstercapital"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": 160.6
+  },
+  {
+    "id": "6a759fd05ade3cb2f771b439",
+    "campaign_token": "6a759fd05ade3cb2f771b439",
+    "campaign_url": "https://app.klippify.com/campaigns/6a759fd05ade3cb2f771b439",
+    "name": "Mondocash Podcast",
+    "brand": "Ale Stark",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.5,
+    "total_views": 1735880,
+    "creators_count": 192,
+    "budget_remaining": 0.0,
+    "budget_spent": 768.75,
+    "budget_total": 900.0,
+    "budget_progress_percent": "85.4%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/c4d336a6-8ae5-4849-974d-1a80866184ec-Screenshot-2026-08-07-at-10.23.23.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/fecb4e6a-ffa2-4f1f-bbf4-3626682a8b25-logo-stark-klippify.png",
+    "description": "Campagna per promuovere l'host Ale Stark utilizzando le clip del podcast MondoCash. Il clipper deve creare clip virali SOLO dai link inseriti nella campagna in cui per almeno il 50% deve essere presente l'immagine di Ale Stark (il ragazzo biondo).",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#mondocashpodcast",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@alestark"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": -10000.0
+  },
+  {
+    "id": "6a707b47a2d57190f5d39e5e",
+    "campaign_token": "6a707b47a2d57190f5d39e5e",
+    "campaign_url": "https://app.klippify.com/campaigns/6a707b47a2d57190f5d39e5e",
+    "name": "Theory Best Moments",
+    "brand": "Theory Spa",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.5,
+    "total_views": 4101397,
+    "creators_count": 344,
+    "budget_remaining": 0.0,
+    "budget_spent": 899.75,
+    "budget_total": 900.0,
+    "budget_progress_percent": "100.0%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/00d21fd3-7578-4489-b6b5-f41d5e4bee7c-badge-franchising.png",
+    "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3aefd338-2e3b-4d4b-baae-6d4070f65a38-theory-holding-logo-real.png",
+    "description": "Theory Holding è una azienda made in Italy dove i talenti rendono le visioni, rivoluzioni di interi mercati",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#theorybestmoments",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@theoryspa"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": -10000.0
+  },
+  {
+    "id": "6a6b425c94bf29a44bfdafe0",
+    "campaign_token": "6a6b425c94bf29a44bfdafe0",
+    "campaign_url": "https://app.klippify.com/campaigns/6a6b425c94bf29a44bfdafe0",
+    "name": "Gurulandia - Green Theory vs FitActive",
+    "brand": "Marco Cappelli Agency",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.25,
+    "total_views": 6226618,
+    "creators_count": 689,
+    "budget_remaining": 0.0,
+    "budget_spent": 1499.0,
+    "budget_total": 1500.0,
+    "budget_progress_percent": "99.9%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/2de0e0b2-a96d-41e9-9fc3-c9fe5fb793bd-WhatsApp-Image-2026-07-30-at-13.32.19.jpeg",
+    "logo": "https://lh3.googleusercontent.com/a/ACg8ocKtof6jsOkYphrb-ZTdiiS-zEylShB3tljHy5-J3n7niLXNx2A=s96-c",
+    "description": "Gurulandia è uno dei podcast business più seguiti in Italia. Ogni settimana mette a confronto imprenditori, CEO e personaggi di primo piano con interviste senza filtri, domande scomode e dibattiti accesi. L'obiettivo è creare contenuti che facciano discutere, intrattengano e portino valore a chi vuole capire davvero come funzionano business e imprenditoria.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#gurulandiagreentheoryvsfitactive",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@marcocappelliagency"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": -10000.0
+  },
+  {
+    "id": "6a1996491231f0472607816f",
+    "campaign_token": "6a1996491231f0472607816f",
+    "campaign_url": "https://app.klippify.com/campaigns/6a1996491231f0472607816f",
+    "name": "Lorenzo Capone",
+    "brand": "Lorenzo Capone",
+    "section": "Nuove",
+    "payout_per_1k_views": 5.0,
+    "total_views": 169959,
+    "creators_count": 213,
+    "budget_remaining": 0.0,
+    "budget_spent": 469.0,
+    "budget_total": 500.0,
+    "budget_progress_percent": "93.8%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/580efbaa-e6ba-4e1a-9f50-f5a4b608acc5-2021-11-21-17.04.10.JPG",
+    "logo": "https://lh3.googleusercontent.com/a/ACg8ocIh2cIZ4axwirrTgzxgqS2XM1rZRy85G1avHJSrWgkd7d0AOPUv=s96-c",
+    "description": "Canale youtube: https://www.youtube.com/@lorenzo.caponeLorenzo Capone. 5 anni in Binance, ora Head of Growth Sud Europa @Kraken.Sogno di diventare uno startupparo seriale.Parlo di AI, Marketing & Growth, Crypto e Mindset.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#lorenzocapone",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@lorenzocapone"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": -10000.0
+  }
+]
