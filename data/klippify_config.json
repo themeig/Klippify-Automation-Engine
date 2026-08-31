@@ -1,8 +1,0 @@
-{
-  "email": "tua_email_klippify@example.com",
-  "password": "tua_password_klippify",
-  "login_url": "https://app.klippify.com/signin",
-  "use_live_browser": true,
-  "headless": false,
-  "notes": "Imposta headless a false per vedere la finestra di Chromium aprirsi sullo schermo durante l'accesso."
-}
