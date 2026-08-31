@@ -1,0 +1,427 @@
+{
+  "captured_api_calls": [
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Archivo';\n  font-style: italic;\n  font-weight: 100 900;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+01"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Bricolage Grotesque';\n  font-style: normal;\n  font-weight: 200 800;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGHInHEVA.woff2) format('woff2')"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Archivo';\n  font-style: italic;\n  font-weight: 100 900;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+01"
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/user/me",
+      "status": 401,
+      "data": {
+        "success": false,
+        "message": "Access denied. No token provided.",
+        "data": null,
+        "errors": []
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-Q8B2PKGYML&gtm=45je68i1v9222173937za200zd9222173937&_p=1787194086066&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1271246411.1787194087&frm=0&ngs=1&pscdl=noapi&rcb=12&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uam=&uamb=0&uap=Windows&uapv=10.0.0&uaw=0&ul=it&_s=1&tag_exp=115938465~115938468~118897920~118897930~119367802~119367810~120385423&sid=1787194086&sct=1&seg=0&dl=https%3A%2F%2Fapp.klippify.com%2Fsignin&dt=Klippify&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1071",
+      "status": 204,
+      "data": ""
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Bricolage Grotesque';\n  font-style: normal;\n  font-weight: 200 800;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGHInHEVA.woff2) format('woff2')"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Archivo';\n  font-style: italic;\n  font-weight: 100 900;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+01"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Archivo';\n  font-style: italic;\n  font-weight: 100 900;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+01"
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/user/me",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "User profile retrieved successfully!",
+        "data": {
+          "phone": null,
+          "_id": "6a1986cfa0db3a0d60784748",
+          "__v": 0,
+          "acceptedTerms": true,
+          "accountType": "individual",
+          "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIX3hDIqZ3GJDeSgXijTkskaDieg8aDX0YzaISxBDwg_EooDA=s96-c",
+          "ayrshareProfileId": "5FB5CB65-67C344EC-A4E0E971-FFDFB98F",
+          "ayrshareRefId": "2ed6ea6ae03188b9dd9df2a8bcf7f1e3974c071f",
+          "bio": "bau",
+          "connectedPlatforms": [
+            {
+              "platform": "tiktok",
+              "providerType": "ayrshare",
+              "status": "link",
+              "displayName": "bau",
+              "audiance": 10,
+              "socialProfileId": "6a865ef8763fa81a0f4e3302",
+              "socialProfileLabel": "automazione-GIGI"
+            }
+          ],
+          "createdAt": "2026-05-29T12:30:07.913Z",
+          "email": "jiem.li1718@gmail.com",
+          "firebaseUid": "5E3PVNrGcyZm6Spn7CbBMyqeKNo1",
+          "isAyrshareProfileCreated": true,
+          "isStripeVerified": false,
+          "isVerified": true,
+          "isWebhookRegistered": true,
+          "kycVerificationStatus": "approved",
+          "landingPage": "",
+          "lastLoginIp": "104.52.225.170",
+          "location": "milano",
+          "loginAttempts": 198,
+          "name": "riccardo",
+          "offer": "",
+          "organizationId": null,
+          "organizationRole": null,
+          "provider": "google",
+          "receiveNewCampaignNotifications": true,
+          "referralCode": "7ATKF9PW",
+          "referredBy": null,
+          "role": "creator",
+          "socialMedia": "",
+          "status": "active",
+          "stripeAccountId": null,
+          "stripeCountry": "",
+          "stripeCustomerId": "cus_UbcnPbCrWOHKvK",
+          "subscription": {
+            "plan": "free",
+            "status": "inactive",
+            "provider": null,
+            "currentPeriodStart": null,
+            "currentPeriodEnd": null,
+            "lastPaymentAt": null,
+            "sourceSubscriptionId": null,
+            "capcutRegion": null
+          },
+          "updatedAt": "2026-08-20T02:48:11.177Z",
+          "vendorRejectionMessage": null,
+          "website": "",
+          "wiseRecipientId": null,
+          "youtubeChannelId": null,
+          "lastLoginAttempt": "2026-08-20T02:48:11.176Z",
+          "isPhoneVerified": false,
+          "inactiveWarningSentAt": "2026-08-20T01:59:31.842Z",
+          "id": "6a1986cfa0db3a0d60784748",
+          "hasPassword": true,
+          "isOnBoard": true,
+          "socialProfiles": [
+            {
+              "_id": "6a865ef8763fa81a0f4e3302",
+              "userId": "6a1986cfa0db3a0d60784748",
+              "label": "automazione-GIGI",
+              "title": "jiem.li1718@gmail.com:6a865ef8763fa81a0f4e3302",
+              "ayrshareProfileId": "AD72AD5A-988A446A-ADCF0962-3C12D675",
+              "ayrshareRefId": "7c8db8056ae2d6603254e1928488365c1f614b5b",
+              "isAyrshareProfileCreated": true,
+              "isWebhookRegistered": true,
+              "platforms": [
+                {
+                  "platform": "tiktok",
+                  "providerType": "ayrshare",
+                  "status": "link",
+                  "displayName": "bau",
+                  "audience": 10,
+                  "_id": "6a865f19763fa81a0f4e332c"
+                }
+              ],
+              "createdAt": "2026-08-20T01:57:12.862Z",
+              "updatedAt": "2026-08-20T01:57:46.653Z",
+              "__v": 1
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/notifications/unread-count",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Unread count fetched successfully",
+        "data": {
+          "count": 79
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/campaign/6a71c6f7245627c68999eae2",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Campaign retrieved successfully",
+        "data": {
+          "_id": "6a71c6f7245627c68999eae2",
+          "userId": "6a70a290bdab3e5e5c0bcc55",
+          "campaignName": "Sara Dizdari Academy – Scopri i negozi digitali",
+          "contentType": [
+            "video"
+          ],
+          "contentDetails": "Clip verticali 9:16 (20-60 secondi) che incuriosiscono le spettatrici verso la video‑lezione gratuita di Sara Dizdari, senza svelare il metodo, con hook forte, sottotitoli e CTA di seguire il profilo di Sara",
+          "language": [
+            "italian"
+          ],
+          "isAutoAccept": true,
+          "platforms": [
+            "tiktok",
+            "instagram"
+          ],
+          "platformTags": {
+            "instagram": "@saradizdari_ecom",
+            "tiktok": "@saradizdari_ecom"
+          },
+          "logo": "",
+          "displayLogo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/26a82091-bfcf-4170-8990-a8d4b731e6e2-PHOTO-2026-08-05-17-15-49.jpg",
+          "audioTrack": "",
+          "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/d5a91bf4-880b-44ec-b30a-508566f50194-copertina-sda-16x9.png",
+          "mediaContent": [
+            "https://www.saradizdariacademy.com/sda",
+            "https://youtube.com/@saradizdariecommerce?si=VhxHEhn6UH78qAnS",
+            "https://www.instagram.com/reel/DWmbApLjBN3/?igsh=MTBleGgxeTFmNzdiZg==",
+            "https://www.instagram.com/reel/DWHU3xbDWlH/?igsh=NTIzenowemU0NWV1",
+            "https://www.instagram.com/reel/DUL7cgCjcdh/?igsh=NDR0ZHlkZHRkbXUy",
+            "https://www.instagram.com/saradizdari_ecom?igsh=MXR0cmt6ZDVibDdxbQ%3D%3D&utm_source=qr",
+            "https://www.tiktok.com/@saradizdari_ecom?_r=1&_d=f0ejaj9a50h19c&sec_uid=MS4wLjABAAAAZTJDXKoe8w8UwE6-isujlKAN715Umkldh-s-VeuGvxW7SY0oVJW_pp-UpKVxPMwx&share_author_id=7274177432277795873&sharer_language=it&source=h5_m&u_code=e268li65k442fk&item_author_type=2&utm_source=copy&share_enter_from=others_homepage&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=D7115C67-E489-4BD0-BDE9-ABD5EF9776BB&user_id=7106425841714430981&sec_user_id=MS4wLjABAAAAmDCbTwTV3C-n_NnyyHfqcGrfjRTjGD7hdJiQl0JRo5nEfYvl0Q4vpwf3SGoTqluB&utm_campaign=client_share&panel_source_v2=share_panel&ug_btm=b6880,b5836&social_share_type=5&share_app_id=1233"
+          ],
+          "allowExternalClips": true,
+          "budget": 450,
+          "startDate": "2026-08-04T11:15:00.000Z",
+          "endDate": null,
+          "timeZone": "Europe/Rome",
+          "platformOnClickRevenue": {
+            "instagram": 0.5,
+            "tiktok": 0.5
+          },
+          "clicks": 1000,
+          "totalClicks": 122080,
+          "spentAmount": 57.5,
+          "estimatedTotalClicks": 124873,
+          "estimatedSpentAmount": 57.5,
+          "isPaymentDone": true,
+          "status": "active",
+          "willBeStop": null,
+          "pausedAt": null,
+          "region": [
+            "it"
+          ],
+          "isDeleted": false,
+          "videoPrompt": "Hook nei primi 3 secondi: iniziare con il momento più forte o coinvolgente del video, senza introduzione. Sottotitoli dinamici in italiano sempre visibili. Ogni clip deve terminare con la call-to-action 'La lezione gratuita sul profilo di Sara. Durata: 20-60 secondi. Incuriosire lo spettatore senza spiegare il metodo dropshipping o come funziona il business: è consentito accennare concetti come 'vende prodotti che non possiede e non ha mai toccato con mano', ma mai fornire dettagli operativi. Claim sui guadagni solo in prima persona relativi a Sara o come testimonianze reali di studentesse (es. 'Sara ha guadagnato...', 'Valentina ha fatto 10.000€ nel primo mese'); è vietato fare promesse dirette allo spettatore del tipo 'guadagnerai anche tu X€'. Tono autentico, da donna a donna, evitando qualunque sensazione di 'guru truffa'. Utilizzare esclusivamente contenuti provenienti dai profili ufficiali di Sara Dizdari Academy (Instagram, TikTok, YouTube). Scaricare i video in qualità originale, senza watermark di TikTok o loghi di altri account. Vietato usare contenuti di altri profili o non riconducibili al brand.",
+          "imagePrompt": null,
+          "carouselPrompt": null,
+          "uploadedAssetRequirements": {
+            "image": {
+              "face": false,
+              "logo": false,
+              "music": false
+            },
+            "video": {
+              "face": false,
+              "logo": false,
+              "music": false
+            },
+            "carousel": {
+              "face": false,
+              "logo": false,
+              "music": false
+            }
+          },
+          "faceImage": "",
+          "budgetPlan": "views",
+          "visibility": "public",
+          "createdBy": "6a70a290bdab3e5e5c0bcc55",
+          "lastModifiedBy": "6a70a290bdab3e5e5c0bcc55",
+          "createdAt": "2026-08-04T11:03:19.558Z",
+          "updatedAt": "2026-08-19T16:02:54.444Z",
+          "__v": 3,
+          "guidelinePromptMigration": {
+            "version": 1,
+            "originalVideoPrompt": "Hook nei primi 3 secondi: iniziare con il momento più forte o coinvolgente del video, senza introduzione. Sottotitoli dinamici in italiano sempre visibili. Ogni clip deve terminare con la call-to-action 'La lezione gratuita sul profilo di Sara. Durata: 20-60 secondi. Incuriosire lo spettatore senza spiegare il metodo dropshipping o come funziona il business: è consentito accennare concetti come 'vende prodotti che non possiede e non ha mai toccato con mano', ma mai fornire dettagli operativi. Claim sui guadagni solo in prima persona relativi a Sara o come testimonianze reali di studentesse (es. 'Sara ha guadagnato...', 'Valentina ha fatto 10.000€ nel primo mese'); è vietato fare promesse dirette allo spettatore del tipo 'guadagnerai anche tu X€'. Tono autentico, da donna a donna, evitando qualunque sensazione di 'guru truffa'. Utilizzare esclusivamente contenuti provenienti dai profili ufficiali di Sara Dizdari Academy (Instagram, TikTok, YouTube). Scaricare i video in qualità originale, senza watermark di TikTok o loghi di altri account. Vietato usare contenuti di altri profili o non riconducibili al brand.",
+            "method": "deterministic",
+            "confidence": 1,
+            "migratedAt": "2026-08-11T16:05:05.937Z"
+          },
+          "videoDescriptionPrompt": null,
+          "joinedRequestsCount": 11,
+          "isJoined": true,
+          "isRequested": false,
+          "brandInfo": {
+            "_id": "6a70a290bdab3e5e5c0bcc55",
+            "avatar": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3883c984-4830-4a78-b2a5-b84e62c5b748-PHOTO-2026-08-05-17-15-49.jpg",
+            "isVerified": true,
+            "name": "Mattia D Consulting",
+            "brandName": "Sara Dizdari Academy",
+            "description": "Azienda di formazione sul mondo ecommerce e dropshipping in Italia, rivolta principalmente al target femminile"
+          }
+        },
+        "errors": []
+      }
+    }
+  ],
+  "buttons": [
+    {
+      "tag": "A",
+      "text": "Dashboard",
+      "href": "/dashboard",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "Campagne",
+      "href": "/campaigns",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "Pagamenti",
+      "href": "/payouts",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "Classifica",
+      "href": "/leaderboard",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "Referral",
+      "href": "/referral",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Passa a Pro\n→",
+      "href": null,
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "Accademia",
+      "href": "/academy",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "🇮🇹\nIT",
+      "href": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "79",
+      "href": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Clipper\nRiccardo",
+      "href": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Indietro",
+      "href": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Indietro",
+      "href": null,
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "https://www.saradizdariacademy.com/sda",
+      "href": "https://www.saradizdariacademy.com/sda",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "https://youtube.com/@saradizdariecommerce?si=VhxHEhn6UH78qAnS",
+      "href": "https://youtube.com/@saradizdariecommerce?si=VhxHEhn6UH78qAnS",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "https://www.instagram.com/reel/DWmbApLjBN3/?igsh=MTBleGgxeTFmNzdiZg==",
+      "href": "https://www.instagram.com/reel/DWmbApLjBN3/?igsh=MTBleGgxeTFmNzdiZg==",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "https://www.instagram.com/reel/DWHU3xbDWlH/?igsh=NTIzenowemU0NWV1",
+      "href": "https://www.instagram.com/reel/DWHU3xbDWlH/?igsh=NTIzenowemU0NWV1",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "https://www.instagram.com/reel/DUL7cgCjcdh/?igsh=NDR0ZHlkZHRkbXUy",
+      "href": "https://www.instagram.com/reel/DUL7cgCjcdh/?igsh=NDR0ZHlkZHRkbXUy",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "https://www.instagram.com/saradizdari_ecom?igsh=MXR0cmt6ZDVibDdxbQ%3D%3D&utm_source=qr",
+      "href": "https://www.instagram.com/saradizdari_ecom?igsh=MXR0cmt6ZDVibDdxbQ%3D%3D&utm_source=qr",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "https://www.tiktok.com/@saradizdari_ecom?_r=1&_d=f0ejaj9a50h19c&sec_uid=MS4wLjABAAAAZTJDXKoe8w8UwE6-isujlKAN715Umkldh-s-VeuGvxW7SY0oVJW_pp-UpKVxPMwx&share_author_id=7274177432277795873&sharer_language=it&source=h5_m&u_code=e268li65k442fk&item_author_type=2&utm_source=copy&share_enter_from=others_homepage&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=D7115C67-E489-4BD0-BDE9-ABD5EF9776BB&user_id=7106425841714430981&sec_user_id=MS4wLjABAAAAmDCbTwTV3C-n_NnyyHfqcGrfjRTjGD7hdJiQl0JRo5nEfYvl0Q4vpwf3SGoTqluB&utm_campaign=client_share&panel_source_v2=share_panel&ug_btm=b6880,b5836&social_share_type=5&share_app_id=1233",
+      "href": "https://www.tiktok.com/@saradizdari_ecom?_r=1&_d=f0ejaj9a50h19c&sec_uid=MS4wLjABAAAAZTJDXKoe8w8UwE6-isujlKAN715Umkldh-s-VeuGvxW7SY0oVJW_pp-UpKVxPMwx&share_author_id=7274177432277795873&sharer_language=it&source=h5_m&u_code=e268li65k442fk&item_author_type=2&utm_source=copy&share_enter_from=others_homepage&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=D7115C67-E489-4BD0-BDE9-ABD5EF9776BB&user_id=7106425841714430981&sec_user_id=MS4wLjABAAAAmDCbTwTV3C-n_NnyyHfqcGrfjRTjGD7hdJiQl0JRo5nEfYvl0Q4vpwf3SGoTqluB&utm_campaign=client_share&panel_source_v2=share_panel&ug_btm=b6880,b5836&social_share_type=5&share_app_id=1233",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Carica contenuto",
+      "href": null,
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "FAQ",
+      "href": "/faq",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "Termini",
+      "href": "/terms-of-service",
+      "placeholder": null
+    },
+    {
+      "tag": "A",
+      "text": "Privacy",
+      "href": "/privacy-policy",
+      "placeholder": null
+    }
+  ]
+}

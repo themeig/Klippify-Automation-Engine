@@ -1,0 +1,478 @@
+{
+  "nav_links": [
+    {
+      "text": "Dashboard",
+      "href": "/dashboard"
+    },
+    {
+      "text": "Campagne",
+      "href": "/campaigns"
+    },
+    {
+      "text": "Pagamenti",
+      "href": "/payouts"
+    },
+    {
+      "text": "Classifica",
+      "href": "/leaderboard"
+    },
+    {
+      "text": "Referral",
+      "href": "/referral"
+    },
+    {
+      "text": "Accademia",
+      "href": "/academy"
+    },
+    {
+      "text": "FAQ",
+      "href": "/faq"
+    },
+    {
+      "text": "Termini",
+      "href": "/terms-of-service"
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy-policy"
+    }
+  ],
+  "captured_requests": [
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://app.klippify.com/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://app.klippify.com/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://app.klippify.com/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/user/me",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://app.klippify.com/signin",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-Q8B2PKGYML&gtm=45je68i1v9222173937za200zd9222173937&_p=1787193885233&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=818823622.1787193887&frm=0&ngs=1&pscdl=noapi&rcb=10&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uam=&uamb=0&uap=Windows&uapv=10.0.0&uaw=0&ul=it&_s=1&tag_exp=115938466~115938468~118897920~118897930~119367802~119367810~120385422~120420416&sid=1787193886&sct=1&seg=0&dl=https%3A%2F%2Fapp.klippify.com%2Fsignin&dt=Klippify&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=3833",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://app.klippify.com/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://app.klippify.com/api/login",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://app.klippify.com/signin",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": "{\"email\":\"jiem.li1718@gmail.com\",\"password\":\"Maggiolino1@\"}"
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/notifications/unread-count",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/dashboard?period=monthly&chartPeriod=monthly",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/campaign/list?filter=active&limit=5",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/wise/payout-history?page=1&limit=2",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/user/me",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/submission/list",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/submissions",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/video/list",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/videos",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/clip/list",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/analytics",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/dashboard",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/wallet",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/profile",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/campaign/my-campaigns",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/campaign/submissions",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/submission/history",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/payout/list",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/withdrawal/list",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/social/list",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/social-account/list",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTM4OTEsImV4cCI6MTgxODc1MTQ5MX0.MbxNSBJY5VXDEX1uX27G9OlP3QeWJW8s-PGsK-zSY7Y",
+        "referer": "https://app.klippify.com/dashboard",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "post_data": null
+    }
+  ],
+  "api_test_results": {
+    "https://app.klippify.com/api/creator/submission/list": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/submissions": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/video/list": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/videos": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/clip/list": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/analytics": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/dashboard": {
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Creator Dashboard retrieved successfully",
+        "data": {
+          "rating": [],
+          "totalActiveCampaigns": 6,
+          "totalBalance": {
+            "totalCredit": 0,
+            "totalFrozenCredit": 0,
+            "totalDebit": 0,
+            "totalEarnings": 0
+          },
+          "paymentHistory": [],
+          "chart_data": []
+        },
+        "errors": []
+      }
+    },
+    "https://app.klippify.com/api/creator/wallet": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/profile": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/campaign/my-campaigns": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/campaign/submissions": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/submission/history": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/payout/list": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/withdrawal/list": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/social/list": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    },
+    "https://app.klippify.com/api/creator/social-account/list": {
+      "error": "TypeError: Failed to execute 'text' on 'Response': body stream already read"
+    }
+  }
+}

@@ -31,7 +31,43 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 160744.6
+    "convenience_score": 160744.6,
+    "feasibility_score": 160744.6
+  },
+  {
+    "id": "6a6b425c94bf29a44bfdafe0",
+    "campaign_token": "6a6b425c94bf29a44bfdafe0",
+    "campaign_url": "https://app.klippify.com/campaigns/6a6b425c94bf29a44bfdafe0",
+    "name": "Gurulandia - Green Theory vs FitActive",
+    "brand": "Marco Cappelli Agency",
+    "section": "Nuove",
+    "payout_per_1k_views": 0.25,
+    "total_views": 6252563,
+    "creators_count": 700,
+    "budget_remaining": 0.0,
+    "budget_spent": 1499.0,
+    "budget_total": 1500.0,
+    "budget_progress_percent": "99.9%",
+    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/2de0e0b2-a96d-41e9-9fc3-c9fe5fb793bd-WhatsApp-Image-2026-07-30-at-13.32.19.jpeg",
+    "logo": "https://lh3.googleusercontent.com/a/ACg8ocKtof6jsOkYphrb-ZTdiiS-zEylShB3tljHy5-J3n7niLXNx2A=s96-c",
+    "description": "Gurulandia è uno dei podcast business più seguiti in Italia. Ogni settimana mette a confronto imprenditori, CEO e personaggi di primo piano con interviste senza filtri, domande scomode e dibattiti accesi. L'obiettivo è creare contenuti che facciano discutere, intrattengano e portino valore a chi vuole capire davvero come funzionano business e imprenditoria.",
+    "status": "Active",
+    "mandatory_hashtags": [
+      "#gurulandiagreentheoryvsfitactive",
+      "#klippify"
+    ],
+    "mandatory_mentions": [
+      "@marcocappelliagency"
+    ],
+    "call_to_action": "Guarda il video completo su Klippify!",
+    "target_niche": "Creator / Entertainment",
+    "rules": [
+      "Rispetta le linee guida Klippify"
+    ],
+    "local_folder_match": "",
+    "has_local_media": false,
+    "convenience_score": -10000.0,
+    "feasibility_score": 71536.1
   },
   {
     "id": "6a719c80a2d57190f5d7a38b",
@@ -65,7 +101,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 35732.0
+    "convenience_score": 35732.0,
+    "feasibility_score": 35732.0
   },
   {
     "id": "6a7628ca922613d297f2e2c5",
@@ -99,7 +136,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 33520.3
+    "convenience_score": 33520.3,
+    "feasibility_score": 33520.3
   },
   {
     "id": "6a7a13715ade3cb2f77b30df",
@@ -133,7 +171,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 31206.8
+    "convenience_score": 31206.8,
+    "feasibility_score": 31206.8
   },
   {
     "id": "6a64cf756cdfd98478f11f28",
@@ -170,7 +209,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 21330.4
+    "convenience_score": 21330.4,
+    "feasibility_score": 21330.4
   },
   {
     "id": "6a91676284a29ab01b754c33",
@@ -204,7 +244,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 20208.9
+    "convenience_score": 20208.9,
+    "feasibility_score": 20208.9
   },
   {
     "id": "6a7a14bf5ade3cb2f77b3539",
@@ -238,7 +279,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 20016.8
+    "convenience_score": 20016.8,
+    "feasibility_score": 20016.8
   },
   {
     "id": "6a3fbb32e6a21896f767e4e7",
@@ -272,7 +314,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 17654.7
+    "convenience_score": 17654.7,
+    "feasibility_score": 17654.7
   },
   {
     "id": "6a0dd557394d916370d7fb3d",
@@ -306,7 +349,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 12306.2
+    "convenience_score": 12306.2,
+    "feasibility_score": 12306.2
   },
   {
     "id": "69e21a5ef7e6b4d2d58002b9",
@@ -340,7 +384,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 10765.3
+    "convenience_score": 10765.3,
+    "feasibility_score": 10765.3
   },
   {
     "id": "6a1dabe2e3244ca026512560",
@@ -374,7 +419,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 9766.1
+    "convenience_score": 9766.1,
+    "feasibility_score": 9766.1
   },
   {
     "id": "69b4326b7add71b606b18d8b",
@@ -408,7 +454,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 8675.5
+    "convenience_score": 8675.5,
+    "feasibility_score": 8675.5
   },
   {
     "id": "6a8ea973275caea5661ad2e6",
@@ -445,7 +492,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 8308.5
+    "convenience_score": 8308.5,
+    "feasibility_score": 8308.5
   },
   {
     "id": "6a427480e6a21896f76a5e05",
@@ -479,7 +527,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 8243.5
+    "convenience_score": 8243.5,
+    "feasibility_score": 8243.5
   },
   {
     "id": "6a79f2c55ade3cb2f77ad749",
@@ -513,7 +562,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 7637.0
+    "convenience_score": 7637.0,
+    "feasibility_score": 7637.0
   },
   {
     "id": "69a95a1682344c4ae8278002",
@@ -547,7 +597,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 7626.0
+    "convenience_score": 7626.0,
+    "feasibility_score": 7626.0
   },
   {
     "id": "6a1996491231f0472607816f",
@@ -581,7 +632,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 6505.5
+    "convenience_score": 6505.5,
+    "feasibility_score": 6505.5
   },
   {
     "id": "6a186236e38a567930b34191",
@@ -615,7 +667,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 5444.0
+    "convenience_score": 5444.0,
+    "feasibility_score": 5444.0
   },
   {
     "id": "69d9fd5061ce1b8904c42316",
@@ -649,7 +702,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 5367.7
+    "convenience_score": 5367.7,
+    "feasibility_score": 5367.7
   },
   {
     "id": "6a2d2ec66c09e42f05891f56",
@@ -683,7 +737,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 3065.0
+    "convenience_score": 3065.0,
+    "feasibility_score": 3065.0
   },
   {
     "id": "69db9e0c61ce1b8904c4c3b7",
@@ -717,7 +772,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 2817.0
+    "convenience_score": 2817.0,
+    "feasibility_score": 2817.0
   },
   {
     "id": "6a426231e6a21896f769dc80",
@@ -751,7 +807,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 2809.9
+    "convenience_score": 2809.9,
+    "feasibility_score": 2809.9
   },
   {
     "id": "6a7239b2245627c6899bedf7",
@@ -785,7 +842,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 2263.5
+    "convenience_score": 2263.5,
+    "feasibility_score": 2263.5
   },
   {
     "id": "6a5e3bd2710dc3521cedfb83",
@@ -819,7 +877,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 1719.6
+    "convenience_score": 1719.6,
+    "feasibility_score": 1719.6
   },
   {
     "id": "6a6dc4b494bf29a44b05d822",
@@ -853,7 +912,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 1593.5
+    "convenience_score": 1593.5,
+    "feasibility_score": 1593.5
   },
   {
     "id": "6a76d24b5ade3cb2f77429aa",
@@ -887,7 +947,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 1211.4
+    "convenience_score": 1211.4,
+    "feasibility_score": 1211.4
   },
   {
     "id": "6968e536d4ea0a9652cf40c0",
@@ -921,7 +982,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 597.9
+    "convenience_score": 597.9,
+    "feasibility_score": 597.9
   },
   {
     "id": "6a8e82f8275caea5661ab1f3",
@@ -955,7 +1017,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 556.5
+    "convenience_score": 556.5,
+    "feasibility_score": 556.5
   },
   {
     "id": "6a22ff48e3244ca026570f72",
@@ -989,7 +1052,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 525.7
+    "convenience_score": 525.7,
+    "feasibility_score": 525.7
   },
   {
     "id": "6a4cef2338c714b87a3b4d4b",
@@ -1023,7 +1087,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 517.4
+    "convenience_score": 517.4,
+    "feasibility_score": 517.4
   },
   {
     "id": "6a258cb7e3244ca02659c535",
@@ -1057,7 +1122,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 438.6
+    "convenience_score": 438.6,
+    "feasibility_score": 438.6
   },
   {
     "id": "6a2021ede3244ca02653db64",
@@ -1091,7 +1157,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 435.1
+    "convenience_score": 435.1,
+    "feasibility_score": 435.1
   },
   {
     "id": "69cbae122e954fa83d68934d",
@@ -1125,7 +1192,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 337.7
+    "convenience_score": 337.7,
+    "feasibility_score": 337.7
   },
   {
     "id": "69cbabc02e954fa83d68921c",
@@ -1159,7 +1227,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 286.5
+    "convenience_score": 286.5,
+    "feasibility_score": 286.5
   },
   {
     "id": "6a275f64e3244ca0265b49d0",
@@ -1193,7 +1262,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 282.2
+    "convenience_score": 282.2,
+    "feasibility_score": 282.2
   },
   {
     "id": "6980d346cea4c29db61a307e",
@@ -1227,7 +1297,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 259.0
+    "convenience_score": 259.0,
+    "feasibility_score": 259.0
   },
   {
     "id": "694e91113d6a349f51473682",
@@ -1261,7 +1332,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 258.7
+    "convenience_score": 258.7,
+    "feasibility_score": 258.7
   },
   {
     "id": "6982d80d35540698aa7e27f3",
@@ -1295,7 +1367,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 236.0
+    "convenience_score": 236.0,
+    "feasibility_score": 236.0
   },
   {
     "id": "69b0ffca471017e7bfe49765",
@@ -1329,7 +1402,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 209.3
+    "convenience_score": 209.3,
+    "feasibility_score": 209.3
   },
   {
     "id": "699ededd3f5febcf2f3acae9",
@@ -1363,7 +1437,8 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 200.7
+    "convenience_score": 200.7,
+    "feasibility_score": 200.7
   },
   {
     "id": "6a346c9ba53170de02cc90b4",
@@ -1397,40 +1472,7 @@
     ],
     "local_folder_match": "",
     "has_local_media": false,
-    "convenience_score": 179.0
-  },
-  {
-    "id": "6a6b425c94bf29a44bfdafe0",
-    "campaign_token": "6a6b425c94bf29a44bfdafe0",
-    "campaign_url": "https://app.klippify.com/campaigns/6a6b425c94bf29a44bfdafe0",
-    "name": "Gurulandia - Green Theory vs FitActive",
-    "brand": "Marco Cappelli Agency",
-    "section": "Nuove",
-    "payout_per_1k_views": 0.25,
-    "total_views": 6252563,
-    "creators_count": 700,
-    "budget_remaining": 0.0,
-    "budget_spent": 1499.0,
-    "budget_total": 1500.0,
-    "budget_progress_percent": "99.9%",
-    "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/2de0e0b2-a96d-41e9-9fc3-c9fe5fb793bd-WhatsApp-Image-2026-07-30-at-13.32.19.jpeg",
-    "logo": "https://lh3.googleusercontent.com/a/ACg8ocKtof6jsOkYphrb-ZTdiiS-zEylShB3tljHy5-J3n7niLXNx2A=s96-c",
-    "description": "Gurulandia è uno dei podcast business più seguiti in Italia. Ogni settimana mette a confronto imprenditori, CEO e personaggi di primo piano con interviste senza filtri, domande scomode e dibattiti accesi. L'obiettivo è creare contenuti che facciano discutere, intrattengano e portino valore a chi vuole capire davvero come funzionano business e imprenditoria.",
-    "status": "Active",
-    "mandatory_hashtags": [
-      "#gurulandiagreentheoryvsfitactive",
-      "#klippify"
-    ],
-    "mandatory_mentions": [
-      "@marcocappelliagency"
-    ],
-    "call_to_action": "Guarda il video completo su Klippify!",
-    "target_niche": "Creator / Entertainment",
-    "rules": [
-      "Rispetta le linee guida Klippify"
-    ],
-    "local_folder_match": "",
-    "has_local_media": false,
-    "convenience_score": -10000.0
+    "convenience_score": 179.0,
+    "feasibility_score": 179.0
   }
 ]

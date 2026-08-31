@@ -1,0 +1,910 @@
+{
+  "modal_inputs": {
+    "inputs": [
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": null,
+        "placeholder": null,
+        "text": "",
+        "className": "lg:hidden fixed top-4 left-4 z-50 p-2"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": null,
+        "placeholder": null,
+        "text": "Passa a Pro\n→",
+        "className": "app-primary-button mt-4 flex w-full items-center justify-center gap-2 rounded-full py-2.5 text-xs font-semibold"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "button",
+        "placeholder": null,
+        "text": "",
+        "className": "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[#33333380] transition-colors hover:bg-gray-100 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-blue-variant-1"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": null,
+        "placeholder": null,
+        "text": "🇮🇹\nIT",
+        "className": "flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:bg-gray-100 rounded-lg transition-colors"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "button",
+        "placeholder": null,
+        "text": "",
+        "className": "flex h-8 w-[50px] items-center rounded-full border border-[#D6D6D6] bg-white p-1 text-foreground transition-colors hover:bg-gray-100"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": null,
+        "placeholder": null,
+        "text": "79",
+        "className": "relative p-2 rounded-lg hover:bg-gray-100 transition-colors"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "button",
+        "placeholder": null,
+        "text": "Clipper\nRiccardo",
+        "className": "flex items-center gap-2 rounded-xl py-1.5 pl-1 pr-2 hover:bg-gray-100 transition-colors outline-none"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "button",
+        "placeholder": null,
+        "text": "",
+        "className": "w-full px-4 py-3 text-left text-sm font-medium text-foreground hover:bg-gray-100 transition-colors flex items-center gap-3"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "button",
+        "placeholder": null,
+        "text": "",
+        "className": "w-full px-4 py-3 text-left text-sm font-medium text-foreground hover:bg-gray-100 transition-colors flex items-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "button",
+        "placeholder": null,
+        "text": "",
+        "className": "w-full px-4 py-3 text-left text-sm font-medium text-foreground hover:bg-gray-100 transition-colors flex items-center gap-3"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": null,
+        "placeholder": null,
+        "text": "Indietro",
+        "className": "flex items-center gap-2 px-5.5 py-2 text-[#33333380] hover:text-foreground transition-colors"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": null,
+        "placeholder": null,
+        "text": "Indietro",
+        "className": "flex w-fit items-center gap-2 text-sm font-medium text-[#697386] transition-colors hover:text-[#337eff]"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "button",
+        "placeholder": null,
+        "text": "Carica contenuto",
+        "className": "flex justify-center items-center gap-2.5 px-2 md:px-4 lg:px-8 rounded-[12px] font-normal text-sm font-secondary cursor-pointer bg-gradient-custom-2 text-white py-2 md:py-3 hover:bg-gradient-custom-2/80 transition-all duration-200 font-semibold undefined"
+      },
+      {
+        "tag": "FORM",
+        "name": null,
+        "type": null,
+        "placeholder": null,
+        "text": "Carica contenuto\nSeleziona piattaforma:\nURL del post:\n\nLe tue visualizzazioni sono protette\n\nLe visualizzazioni iniziano a essere conteggiate dal momento in cui il video viene caricato, non da quando viene approvato. Non perderai visualizzazioni durante la revisione.\n\nAnnulla\nAggiungi",
+        "className": "mx-4 flex w-full max-w-lg flex-col items-start gap-5.5 rounded-[20px] bg-white p-5 shadow-lg sm:p-6"
+      },
+      {
+        "tag": "INPUT",
+        "name": null,
+        "type": "text",
+        "placeholder": "Scegli la piattaforma",
+        "text": "",
+        "className": "app-select-trigger font-secondary block w-full appearance-none bg-[#F4F4F4] p-2.5 text-sm text-[#3f3e3f] border focus:border-blue-variant-1 focus:outline-none focus:ring-0 capitalize  cursor-pointer border-gray-300 rounded-lg border border-[#33333333] bg-white"
+      },
+      {
+        "tag": "INPUT",
+        "name": "postUrl",
+        "type": "text",
+        "placeholder": "Inserisci URL del post",
+        "text": "",
+        "className": "font-secondary block p-2.5 w-full text-sm text-[#3f3e3f] bg-[#F4F4F4] rounded-[12px] appearance-none  focus:outline-none focus:ring-0 focus:border-blue-variant-1 mt-1 relative cursor-pointer rounded-lg border border-[#33333333] bg-white "
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "button",
+        "placeholder": null,
+        "text": "Annulla",
+        "className": "flex justify-center items-center gap-2.5 px-2 md:px-4 lg:px-8 rounded-[12px] font-normal text-sm font-secondary cursor-pointer bg-white text-foreground border border-[#0D192F] border border-gray-300 transition-all duration-300 py-2 md:py-3 hover:bg-foreground/10 transition-all duration-200 font-semibold undefined"
+      },
+      {
+        "tag": "BUTTON",
+        "name": null,
+        "type": "submit",
+        "placeholder": null,
+        "text": "Aggiungi",
+        "className": "flex justify-center items-center gap-2.5 px-2 md:px-4 lg:px-8 rounded-[12px] font-normal text-sm font-secondary cursor-pointer bg-gradient-custom-2 text-white py-2 md:py-3 hover:bg-gradient-custom-2/80 transition-all duration-200 font-semibold undefined"
+      }
+    ],
+    "textSnippet": "AM OBBLIGATORIO\n@saradizdari_ecom\nTAG TIKTOK OBBLIGATORIO\n@saradizdari_ecom\nREGOLE VIDEO\nHook nei primi 3 secondi: iniziare con il momento più forte o coinvolgente del video, senza introduzione. Sottotitoli dinamici in italiano sempre visibili. Ogni clip deve terminare con la call-to-action 'La lezione gratuita sul profilo di Sara. Durata: 20-60 secondi. Incuriosire lo spettatore senza spiegare il metodo dropshipping o come funziona il business: è consentito accennare concetti come 'vende prodotti che non possiede e non ha mai toccato con mano', ma mai fornire dettagli operativi. Claim sui guadagni solo in prima persona relativi a Sara o come testimonianze reali di studentesse (es. 'Sara ha guadagnato...', 'Valentina ha fatto 10.000€ nel primo mese'); è vietato fare promesse dirette allo spettatore del tipo 'guadagnerai anche tu X€'. Tono autentico, da donna a donna, evitando qualunque sensazione di 'guru truffa'. Utilizzare esclusivamente contenuti provenienti dai profili ufficiali di Sara Dizdari Academy (Instagram, TikTok, YouTube). Scaricare i video in qualità originale, senza watermark di TikTok o loghi di altri account. Vietato usare contenuti di altri profili o non riconducibili al brand.\nREGOLE DELLA DESCRIZIONE VIDEO\n—\nContenuti forniti dal brand\nhttps://www.saradizdariacademy.com/sda\nhttps://youtube.com/@saradizdariecommerce?si=VhxHEhn6UH78qAnS\nhttps://www.instagram.com/reel/DWmbApLjBN3/?igsh=MTBleGgxeTFmNzdiZg==\nhttps://www.instagram.com/reel/DWHU3xbDWlH/?igsh=NTIzenowemU0NWV1\nhttps://www.instagram.com/reel/DUL7cgCjcdh/?igsh=NDR0ZHlkZHRkbXUy\nhttps://www.instagram.com/saradizdari_ecom?igsh=MXR0cmt6ZDVibDdxbQ%3D%3D&utm_source=qr\nhttps://www.tiktok.com/@saradizdari_ecom?_r=1&_d=f0ejaj9a50h19c&sec_uid=MS4wLjABAAAAZTJDXKoe8w8UwE6-isujlKAN715Umkldh-s-VeuGvxW7SY0oVJW_pp-UpKVxPMwx&share_author_id=7274177432277795873&sharer_language=it&source=h5_m&u_code=e268li65k442fk&item_author_type=2&utm_source=copy&share_enter_from=others_homepage&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=D7115C67-E489-4BD0-BDE9-ABD5EF9776BB&user_id=7106425841714430981&sec_user_id=MS4wLjABAAAAmDCbTwTV3C-n_NnyyHfqcGrfjRTjGD7hdJiQl0JRo5nEfYvl0Q4vpwf3SGoTqluB&utm_campaign=client_share&panel_source_v2=share_panel&ug_btm=b6880,b5836&social_share_type=5&share_app_id=1233\nClip esterne alle risorse della campagna:\nConsentite\nLogo per la validazione AI:\nNessun logo per la validazione AI disponibile\nVolto della campagna:\nNessuna immagine del volto\nCampaign Audio\nNo audio track\nGestisci contenuti\nCarica contenuto\nAnteprima\t\nPiattaforma\n\t\nVisualizzazioni\n\t\nLikes\n\t\nComments\n\t\nShares\n\t\nVerifica AI\n\t\nGuadagni\n\tAzioni\nNessun contenuto caricato\nCarica contenuto\nSeleziona piattaforma:\nURL del post:\n\nLe tue visualizzazioni sono protette\n\nLe visualizzazioni iniziano a essere conteggiate dal momento in cui il video viene caricato, non da quando viene approvato. Non perderai visualizzazioni durante la revisione.\n\nAnnulla\nAggiungi\n© 2026 Klippify, Inc.\n|\nFAQ\n|\nTermini\n|\nPrivacy"
+  },
+  "captured_api_calls": [
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Archivo';\n  font-style: italic;\n  font-weight: 100 900;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+01"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Archivo';\n  font-style: italic;\n  font-weight: 100 900;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+01"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Bricolage Grotesque';\n  font-style: normal;\n  font-weight: 200 800;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGHInHEVA.woff2) format('woff2')"
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/user/me",
+      "status": 401,
+      "data": {
+        "success": false,
+        "message": "Access denied. No token provided.",
+        "data": null,
+        "errors": []
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://app.klippify.com/api/login",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Login successful",
+        "data": {
+          "user": {
+            "phone": null,
+            "_id": "6a1986cfa0db3a0d60784748",
+            "__v": 0,
+            "acceptedTerms": true,
+            "accountType": "individual",
+            "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIX3hDIqZ3GJDeSgXijTkskaDieg8aDX0YzaISxBDwg_EooDA=s96-c",
+            "ayrshareProfileId": "5FB5CB65-67C344EC-A4E0E971-FFDFB98F",
+            "ayrshareRefId": "2ed6ea6ae03188b9dd9df2a8bcf7f1e3974c071f",
+            "bio": "bau",
+            "connectedPlatforms": [
+              {
+                "platform": "tiktok",
+                "status": "link",
+                "displayName": "bau",
+                "audiance": 8,
+                "_id": "6a199fc01231f04726078f85"
+              }
+            ],
+            "createdAt": "2026-05-29T12:30:07.913Z",
+            "email": "jiem.li1718@gmail.com",
+            "firebaseUid": "5E3PVNrGcyZm6Spn7CbBMyqeKNo1",
+            "isAyrshareProfileCreated": true,
+            "isStripeVerified": false,
+            "isVerified": true,
+            "isWebhookRegistered": true,
+            "kycVerificationStatus": "approved",
+            "landingPage": "",
+            "lastLoginIp": "104.52.225.170",
+            "location": "milano",
+            "loginAttempts": 199,
+            "name": "riccardo",
+            "offer": "",
+            "organizationId": null,
+            "organizationRole": null,
+            "provider": "google",
+            "receiveNewCampaignNotifications": true,
+            "referralCode": "7ATKF9PW",
+            "referredBy": null,
+            "role": "creator",
+            "socialMedia": "",
+            "status": "active",
+            "stripeAccountId": null,
+            "stripeCountry": "",
+            "stripeCustomerId": "cus_UbcnPbCrWOHKvK",
+            "subscription": {
+              "plan": "free",
+              "status": "inactive",
+              "provider": null,
+              "currentPeriodStart": null,
+              "currentPeriodEnd": null,
+              "lastPaymentAt": null,
+              "sourceSubscriptionId": null,
+              "capcutRegion": null
+            },
+            "updatedAt": "2026-08-20T02:49:05.185Z",
+            "vendorRejectionMessage": null,
+            "website": "",
+            "wiseRecipientId": null,
+            "youtubeChannelId": null,
+            "lastLoginAttempt": "2026-08-20T02:49:05.184Z",
+            "isPhoneVerified": false,
+            "inactiveWarningSentAt": "2026-08-20T01:59:31.842Z",
+            "id": "6a1986cfa0db3a0d60784748",
+            "isOnBoard": true,
+            "showInactiveWarning": false,
+            "hasSetupBrandRole": false,
+            "hasSetupCreatorRole": true
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE5ODZjZmEwZGIzYTBkNjA3ODQ3NDgiLCJpYXQiOjE3ODcxOTQxNDUsImV4cCI6MTgxODc1MTc0NX0.halQQ1t5FGCwg2BAdiS3UYF4Y7zU4YaglMlgSQmoFds"
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/wise/payout-history?page=1&limit=2",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Payout history fetched successfully",
+        "data": {
+          "payouts": [],
+          "page": 1,
+          "limit": 2,
+          "total": 0,
+          "totalPages": 1,
+          "summary": {
+            "pendingPayout": 0,
+            "totalPaid": 0
+          }
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/notifications/unread-count",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Unread count fetched successfully",
+        "data": {
+          "count": 79
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/campaign/list?filter=active&limit=5",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Campaigns retrieved successfully",
+        "data": {
+          "campaigns": [
+            {
+              "_id": "6a426231e6a21896f769dc80",
+              "userId": {
+                "_id": "69255e39b9fc27de49b0048a",
+                "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKtof6jsOkYphrb-ZTdiiS-zEylShB3tljHy5-J3n7niLXNx2A=s96-c",
+                "name": "Marco Cappelli Agency",
+                "brandName": "Marco Cappelli Agency"
+              },
+              "campaignName": "Riccardo Dose - YouTube Clipping",
+              "contentType": [
+                "video"
+              ],
+              "contentDetails": "Riccardo Dose è uno dei creator storici di YouTube Italia. Il suo stile è spontaneo, ironico e molto riconoscibile: alterna challenge, vlog, esperimenti sociali, format di intrattenimento e contenuti di vita quotidiana. Negli anni ha costruito una community molto fedele grazie a un tono autentico, autoironico e mai troppo costruito. Oggi conta oltre 3 milioni di iscritti su YouTube, con una presenza importante anche su Instagram e TikTok.",
+              "language": [
+                "italian"
+              ],
+              "platforms": [
+                "tiktok",
+                "instagram"
+              ],
+              "logo": null,
+              "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/4ee8af7e-92b3-4feb-aa6f-4bfd912f5653-ChatGPT-Image-29-giu-2026,-14_00_31.png",
+              "budget": 1800,
+              "startDate": "2026-06-29T23:59:59.000Z",
+              "endDate": null,
+              "platformOnClickRevenue": {
+                "tiktok": 0.5,
+                "instagram": 0.5
+              },
+              "clicks": 1000,
+              "totalClicks": 965587,
+              "spentAmount": 287.5,
+              "isPaymentDone": true,
+              "visibility": "public",
+              "createdAt": "2026-06-29T12:16:49.366Z",
+              "estimatedSpentAmount": 226,
+              "estimatedTotalClicks": 873410,
+              "remainingBudget": 1512.5,
+              "totalJoinedCreators": 3002,
+              "filterStatus": "accepted"
+            },
+            {
+              "_id": "69db9e0c61ce1b8904c4c3b7",
+              "userId": {
+                "_id": "69db92eb949f3353dc8f1825",
+                "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJrOM0ykqW7JzwuaKCDnuuQOKqLy2alG-9ZYcsqfhx3Qbk9yg=s96-c",
+                "name": "Salvatore Zola"
+              },
+              "campaignName": "Collecto",
+              "contentType": [
+                "video",
+                "carousel"
+              ],
+              "contentDetails": "<p><strong>Collecto</strong> è la piattaforma che permette di possedere frazioni di asset da collezione esclusivi — orologi iconici, arte contemporanea, vini rari, memorabilia leggendari.</p><p>Pezzi che normalmente non si possono permettere in uno, ora accessibili a partire da piccole quote. Con oltre 270.000 utenti e €60M+ in transazioni, siamo il punto di riferimento in Europa per chi vuole entrare nel mondo del collezionismo di alto profilo — senza barriere.</p>",
+              "language": [
+                "italian"
+              ],
+              "platforms": [
+                "tiktok",
+                "instagram"
+              ],
+              "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/03b82d2e-f63f-4f8e-9df5-c2649179a469-Collecto_def_2.png",
+              "budget": 1000,
+              "startDate": "2026-04-14T23:59:59.000Z",
+              "endDate": null,
+              "platformOnClickRevenue": {
+                "tiktok": 1,
+                "instagram": 1
+              },
+              "clicks": 1000,
+              "totalClicks": 258109,
+              "spentAmount": 215,
+              "isPaymentDone": true,
+              "visibility": "public",
+              "createdAt": "2026-04-12T13:28:44.267Z",
+              "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/Collecto__16x9_2K.webp",
+              "estimatedSpentAmount": 215,
+              "estimatedTotalClicks": 265604,
+              "remainingBudget": 785,
+              "totalJoinedCreators": 698,
+              "filterStatus": "accepted"
+            },
+            {
+              "_id": "6980d346cea4c29db61a307e",
+              "userId": {
+                "_id": "6980cd16cea4c29db61a2b2f",
+                "name": "Alessandro Della Giusta",
+                "avatar": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/90dcb7cc-d6e8-4b52-9ec1-92c87a16e29b-BLACK-LOGO.png",
+                "brandName": "aledellagiusta"
+              },
+              "campaignName": "Ale Della Giusta - ENG",
+              "contentType": [
+                "video"
+              ],
+              "contentDetails": "This campaign is for Ale Della Giusta, an acclaimed documentary storyteller who explores the frontiers of human potential. Think of him as a modern-day explorer, blending high-end cinematography with deep, personal journeys of growth. This specific campaign focuses on his groundbreaking 5-episode series filmed in Mexico. It's a journalistic and immersive exploration into the world of psychedelic substances, their therapeutic potential, and their cultural significance. This is not just a travel vlog; it's a thought-provoking documentary series in the vein of shows you'd find on Netflix or HBO, touching on themes highly relevant to a US audience interested in bio-hacking, mental health, and personal transformation.",
+              "language": [
+                "english"
+              ],
+              "platforms": [
+                "tiktok",
+                "instagram"
+              ],
+              "logo": null,
+              "budget": 750,
+              "startDate": "2026-02-02T23:59:59.000Z",
+              "endDate": null,
+              "onClickRevenue": 1,
+              "clicks": 1000,
+              "totalClicks": 49063,
+              "spentAmount": 39,
+              "isPaymentDone": true,
+              "createdAt": "2026-02-02T16:39:34.551Z",
+              "platformOnClickRevenue": {
+                "tiktok": 1,
+                "instagram": 1
+              },
+              "visibility": "public",
+              "banner": "",
+              "estimatedSpentAmount": 155,
+              "estimatedTotalClicks": 186619,
+              "remainingBudget": 595,
+              "totalJoinedCreators": 2207,
+              "filterStatus": "accepted"
+            },
+            {
+              "_id": "6a71c6f7245627c68999eae2",
+              "userId": {
+                "_id": "6a70a290bdab3e5e5c0bcc55",
+                "avatar": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3883c984-4830-4a78-b2a5-b84e62c5b748-PHOTO-2026-08-05-17-15-49.jpg",
+                "name": "Mattia D Consulting",
+                "brandName": "Sara Dizdari Academy"
+              },
+              "campaignName": "Sara Dizdari Academy – Scopri i negozi digitali",
+              "contentType": [
+                "video"
+              ],
+              "contentDetails": "Clip verticali 9:16 (20-60 secondi) che incuriosiscono le spettatrici verso la video‑lezione gratuita di Sara Dizdari, senza svelare il metodo, con hook forte, sottotitoli e CTA di seguire il profilo di Sara",
+              "language": [
+                "italian"
+              ],
+              "platforms": [
+                "tiktok",
+                "instagram"
+              ],
+              "logo": "",
+              "displayLogo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/26a82091-bfcf-4170-8990-a8d4b731e6e2-PHOTO-2026-08-05-17-15-49.jpg",
+              "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/d5a91bf4-880b-44ec-b30a-508566f50194-copertina-sda-16x9.png",
+              "budget": 450,
+              "startDate": "2026-08-04T11:15:00.000Z",
+              "endDate": null,
+              "platformOnClickRevenue": {
+                "instagram": 0.5,
+                "tiktok": 0.5
+              },
+              "clicks": 1000,
+              "totalClicks": 122080,
+              "spentAmount": 57.5,
+              "estimatedTotalClicks": 124873,
+              "estimatedSpentAmount": 57.5,
+              "isPaymentDone": true,
+              "visibility": "public",
+              "createdAt": "2026-08-04T11:03:19.558Z",
+              "remainingBudget": 392.5,
+              "totalJoinedCreators": 11,
+              "filterStatus": "accepted"
+            },
+            {
+              "_id": "699ededd3f5febcf2f3acae9",
+              "userId": {
+                "_id": "698a4e420c92c673c8ac6a16",
+                "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJWJ8tN-3SxN7JJZuObXwsjCN7E2ScehrKVsRW8gbzkLv3C8MKSTQ=s96-c",
+                "name": "Edoardo Zambelli",
+                "brandName": "WoodCrafts DIY"
+              },
+              "campaignName": "WoodCrafts DIY",
+              "contentType": [
+                "video"
+              ],
+              "contentDetails": "<p>WoodCraftsDIY is a digital woodworking brand that helps beginners and hobbyists build furniture and home projects the right way without wasting time, money, or materials on guesswork. The idea behind the brand is simple: you don't need years of experience or a professional workshop to create something beautiful with your own hands. You just need the right plans.</p>",
+              "language": [
+                "english"
+              ],
+              "platforms": [
+                "tiktok",
+                "instagram"
+              ],
+              "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/9b975f55-d384-4f47-9974-61cedee70f9c-logo.png",
+              "budget": 500,
+              "startDate": "2026-02-25T23:59:59.000Z",
+              "endDate": null,
+              "onClickRevenue": 6,
+              "clicks": 1000,
+              "totalClicks": 19052,
+              "spentAmount": 72,
+              "isPaymentDone": true,
+              "createdAt": "2026-02-25T11:37:01.695Z",
+              "platformOnClickRevenue": {
+                "instagram": 6
+              },
+              "visibility": "public",
+              "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/banners-ai/WoodCrafts_DIY__16x9_2K.webp",
+              "estimatedSpentAmount": 258,
+              "estimatedTotalClicks": 31211,
+              "remainingBudget": 242,
+              "totalJoinedCreators": 1323,
+              "filterStatus": "accepted"
+            }
+          ],
+          "nextCursor": "eyJpZCI6IjY5OWVkZWRkM2Y1ZmViY2YyZjNhY2FlOSIsInZhbHVlIjoyNDJ9",
+          "hasMore": true
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/dashboard?period=monthly&chartPeriod=monthly",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Creator Dashboard retrieved successfully",
+        "data": {
+          "rating": [],
+          "totalActiveCampaigns": 6,
+          "totalBalance": {
+            "totalCredit": 0,
+            "totalFrozenCredit": 0,
+            "totalDebit": 0,
+            "totalEarnings": 0
+          },
+          "paymentHistory": [],
+          "chart_data": []
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/user/me",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "User profile retrieved successfully!",
+        "data": {
+          "phone": null,
+          "_id": "6a1986cfa0db3a0d60784748",
+          "__v": 0,
+          "acceptedTerms": true,
+          "accountType": "individual",
+          "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIX3hDIqZ3GJDeSgXijTkskaDieg8aDX0YzaISxBDwg_EooDA=s96-c",
+          "ayrshareProfileId": "5FB5CB65-67C344EC-A4E0E971-FFDFB98F",
+          "ayrshareRefId": "2ed6ea6ae03188b9dd9df2a8bcf7f1e3974c071f",
+          "bio": "bau",
+          "connectedPlatforms": [
+            {
+              "platform": "tiktok",
+              "providerType": "ayrshare",
+              "status": "link",
+              "displayName": "bau",
+              "audiance": 10,
+              "socialProfileId": "6a865ef8763fa81a0f4e3302",
+              "socialProfileLabel": "automazione-GIGI"
+            }
+          ],
+          "createdAt": "2026-05-29T12:30:07.913Z",
+          "email": "jiem.li1718@gmail.com",
+          "firebaseUid": "5E3PVNrGcyZm6Spn7CbBMyqeKNo1",
+          "isAyrshareProfileCreated": true,
+          "isStripeVerified": false,
+          "isVerified": true,
+          "isWebhookRegistered": true,
+          "kycVerificationStatus": "approved",
+          "landingPage": "",
+          "lastLoginIp": "104.52.225.170",
+          "location": "milano",
+          "loginAttempts": 199,
+          "name": "riccardo",
+          "offer": "",
+          "organizationId": null,
+          "organizationRole": null,
+          "provider": "google",
+          "receiveNewCampaignNotifications": true,
+          "referralCode": "7ATKF9PW",
+          "referredBy": null,
+          "role": "creator",
+          "socialMedia": "",
+          "status": "active",
+          "stripeAccountId": null,
+          "stripeCountry": "",
+          "stripeCustomerId": "cus_UbcnPbCrWOHKvK",
+          "subscription": {
+            "plan": "free",
+            "status": "inactive",
+            "provider": null,
+            "currentPeriodStart": null,
+            "currentPeriodEnd": null,
+            "lastPaymentAt": null,
+            "sourceSubscriptionId": null,
+            "capcutRegion": null
+          },
+          "updatedAt": "2026-08-20T02:49:05.185Z",
+          "vendorRejectionMessage": null,
+          "website": "",
+          "wiseRecipientId": null,
+          "youtubeChannelId": null,
+          "lastLoginAttempt": "2026-08-20T02:49:05.184Z",
+          "isPhoneVerified": false,
+          "inactiveWarningSentAt": "2026-08-20T01:59:31.842Z",
+          "id": "6a1986cfa0db3a0d60784748",
+          "hasPassword": true,
+          "isOnBoard": true,
+          "socialProfiles": [
+            {
+              "_id": "6a865ef8763fa81a0f4e3302",
+              "userId": "6a1986cfa0db3a0d60784748",
+              "label": "automazione-GIGI",
+              "title": "jiem.li1718@gmail.com:6a865ef8763fa81a0f4e3302",
+              "ayrshareProfileId": "AD72AD5A-988A446A-ADCF0962-3C12D675",
+              "ayrshareRefId": "7c8db8056ae2d6603254e1928488365c1f614b5b",
+              "isAyrshareProfileCreated": true,
+              "isWebhookRegistered": true,
+              "platforms": [
+                {
+                  "platform": "tiktok",
+                  "providerType": "ayrshare",
+                  "status": "link",
+                  "displayName": "bau",
+                  "audience": 10,
+                  "_id": "6a865f19763fa81a0f4e332c"
+                }
+              ],
+              "createdAt": "2026-08-20T01:57:12.862Z",
+              "updatedAt": "2026-08-20T01:57:46.653Z",
+              "__v": 1
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Bricolage Grotesque';\n  font-style: normal;\n  font-weight: 200 800;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGHInHEVA.woff2) format('woff2')"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Archivo';\n  font-style: italic;\n  font-weight: 100 900;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+01"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+      "status": 200,
+      "data": "/* vietnamese */\n@font-face {\n  font-family: 'Archivo';\n  font-style: italic;\n  font-weight: 100 900;\n  font-stretch: 100%;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+01"
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/user/me",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "User profile retrieved successfully!",
+        "data": {
+          "phone": null,
+          "_id": "6a1986cfa0db3a0d60784748",
+          "__v": 0,
+          "acceptedTerms": true,
+          "accountType": "individual",
+          "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIX3hDIqZ3GJDeSgXijTkskaDieg8aDX0YzaISxBDwg_EooDA=s96-c",
+          "ayrshareProfileId": "5FB5CB65-67C344EC-A4E0E971-FFDFB98F",
+          "ayrshareRefId": "2ed6ea6ae03188b9dd9df2a8bcf7f1e3974c071f",
+          "bio": "bau",
+          "connectedPlatforms": [
+            {
+              "platform": "tiktok",
+              "providerType": "ayrshare",
+              "status": "link",
+              "displayName": "bau",
+              "audiance": 10,
+              "socialProfileId": "6a865ef8763fa81a0f4e3302",
+              "socialProfileLabel": "automazione-GIGI"
+            }
+          ],
+          "createdAt": "2026-05-29T12:30:07.913Z",
+          "email": "jiem.li1718@gmail.com",
+          "firebaseUid": "5E3PVNrGcyZm6Spn7CbBMyqeKNo1",
+          "isAyrshareProfileCreated": true,
+          "isStripeVerified": false,
+          "isVerified": true,
+          "isWebhookRegistered": true,
+          "kycVerificationStatus": "approved",
+          "landingPage": "",
+          "lastLoginIp": "104.52.225.170",
+          "location": "milano",
+          "loginAttempts": 199,
+          "name": "riccardo",
+          "offer": "",
+          "organizationId": null,
+          "organizationRole": null,
+          "provider": "google",
+          "receiveNewCampaignNotifications": true,
+          "referralCode": "7ATKF9PW",
+          "referredBy": null,
+          "role": "creator",
+          "socialMedia": "",
+          "status": "active",
+          "stripeAccountId": null,
+          "stripeCountry": "",
+          "stripeCustomerId": "cus_UbcnPbCrWOHKvK",
+          "subscription": {
+            "plan": "free",
+            "status": "inactive",
+            "provider": null,
+            "currentPeriodStart": null,
+            "currentPeriodEnd": null,
+            "lastPaymentAt": null,
+            "sourceSubscriptionId": null,
+            "capcutRegion": null
+          },
+          "updatedAt": "2026-08-20T02:49:05.185Z",
+          "vendorRejectionMessage": null,
+          "website": "",
+          "wiseRecipientId": null,
+          "youtubeChannelId": null,
+          "lastLoginAttempt": "2026-08-20T02:49:05.184Z",
+          "isPhoneVerified": false,
+          "inactiveWarningSentAt": "2026-08-20T01:59:31.842Z",
+          "id": "6a1986cfa0db3a0d60784748",
+          "hasPassword": true,
+          "isOnBoard": true,
+          "socialProfiles": [
+            {
+              "_id": "6a865ef8763fa81a0f4e3302",
+              "userId": "6a1986cfa0db3a0d60784748",
+              "label": "automazione-GIGI",
+              "title": "jiem.li1718@gmail.com:6a865ef8763fa81a0f4e3302",
+              "ayrshareProfileId": "AD72AD5A-988A446A-ADCF0962-3C12D675",
+              "ayrshareRefId": "7c8db8056ae2d6603254e1928488365c1f614b5b",
+              "isAyrshareProfileCreated": true,
+              "isWebhookRegistered": true,
+              "platforms": [
+                {
+                  "platform": "tiktok",
+                  "providerType": "ayrshare",
+                  "status": "link",
+                  "displayName": "bau",
+                  "audience": 10,
+                  "_id": "6a865f19763fa81a0f4e332c"
+                }
+              ],
+              "createdAt": "2026-08-20T01:57:12.862Z",
+              "updatedAt": "2026-08-20T01:57:46.653Z",
+              "__v": 1
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/campaign/6a71c6f7245627c68999eae2",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Campaign retrieved successfully",
+        "data": {
+          "_id": "6a71c6f7245627c68999eae2",
+          "userId": "6a70a290bdab3e5e5c0bcc55",
+          "campaignName": "Sara Dizdari Academy – Scopri i negozi digitali",
+          "contentType": [
+            "video"
+          ],
+          "contentDetails": "Clip verticali 9:16 (20-60 secondi) che incuriosiscono le spettatrici verso la video‑lezione gratuita di Sara Dizdari, senza svelare il metodo, con hook forte, sottotitoli e CTA di seguire il profilo di Sara",
+          "language": [
+            "italian"
+          ],
+          "isAutoAccept": true,
+          "platforms": [
+            "tiktok",
+            "instagram"
+          ],
+          "platformTags": {
+            "instagram": "@saradizdari_ecom",
+            "tiktok": "@saradizdari_ecom"
+          },
+          "logo": "",
+          "displayLogo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/26a82091-bfcf-4170-8990-a8d4b731e6e2-PHOTO-2026-08-05-17-15-49.jpg",
+          "audioTrack": "",
+          "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/d5a91bf4-880b-44ec-b30a-508566f50194-copertina-sda-16x9.png",
+          "mediaContent": [
+            "https://www.saradizdariacademy.com/sda",
+            "https://youtube.com/@saradizdariecommerce?si=VhxHEhn6UH78qAnS",
+            "https://www.instagram.com/reel/DWmbApLjBN3/?igsh=MTBleGgxeTFmNzdiZg==",
+            "https://www.instagram.com/reel/DWHU3xbDWlH/?igsh=NTIzenowemU0NWV1",
+            "https://www.instagram.com/reel/DUL7cgCjcdh/?igsh=NDR0ZHlkZHRkbXUy",
+            "https://www.instagram.com/saradizdari_ecom?igsh=MXR0cmt6ZDVibDdxbQ%3D%3D&utm_source=qr",
+            "https://www.tiktok.com/@saradizdari_ecom?_r=1&_d=f0ejaj9a50h19c&sec_uid=MS4wLjABAAAAZTJDXKoe8w8UwE6-isujlKAN715Umkldh-s-VeuGvxW7SY0oVJW_pp-UpKVxPMwx&share_author_id=7274177432277795873&sharer_language=it&source=h5_m&u_code=e268li65k442fk&item_author_type=2&utm_source=copy&share_enter_from=others_homepage&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=D7115C67-E489-4BD0-BDE9-ABD5EF9776BB&user_id=7106425841714430981&sec_user_id=MS4wLjABAAAAmDCbTwTV3C-n_NnyyHfqcGrfjRTjGD7hdJiQl0JRo5nEfYvl0Q4vpwf3SGoTqluB&utm_campaign=client_share&panel_source_v2=share_panel&ug_btm=b6880,b5836&social_share_type=5&share_app_id=1233"
+          ],
+          "allowExternalClips": true,
+          "budget": 450,
+          "startDate": "2026-08-04T11:15:00.000Z",
+          "endDate": null,
+          "timeZone": "Europe/Rome",
+          "platformOnClickRevenue": {
+            "instagram": 0.5,
+            "tiktok": 0.5
+          },
+          "clicks": 1000,
+          "totalClicks": 122080,
+          "spentAmount": 57.5,
+          "estimatedTotalClicks": 124873,
+          "estimatedSpentAmount": 57.5,
+          "isPaymentDone": true,
+          "status": "active",
+          "willBeStop": null,
+          "pausedAt": null,
+          "region": [
+            "it"
+          ],
+          "isDeleted": false,
+          "videoPrompt": "Hook nei primi 3 secondi: iniziare con il momento più forte o coinvolgente del video, senza introduzione. Sottotitoli dinamici in italiano sempre visibili. Ogni clip deve terminare con la call-to-action 'La lezione gratuita sul profilo di Sara. Durata: 20-60 secondi. Incuriosire lo spettatore senza spiegare il metodo dropshipping o come funziona il business: è consentito accennare concetti come 'vende prodotti che non possiede e non ha mai toccato con mano', ma mai fornire dettagli operativi. Claim sui guadagni solo in prima persona relativi a Sara o come testimonianze reali di studentesse (es. 'Sara ha guadagnato...', 'Valentina ha fatto 10.000€ nel primo mese'); è vietato fare promesse dirette allo spettatore del tipo 'guadagnerai anche tu X€'. Tono autentico, da donna a donna, evitando qualunque sensazione di 'guru truffa'. Utilizzare esclusivamente contenuti provenienti dai profili ufficiali di Sara Dizdari Academy (Instagram, TikTok, YouTube). Scaricare i video in qualità originale, senza watermark di TikTok o loghi di altri account. Vietato usare contenuti di altri profili o non riconducibili al brand.",
+          "imagePrompt": null,
+          "carouselPrompt": null,
+          "uploadedAssetRequirements": {
+            "image": {
+              "face": false,
+              "logo": false,
+              "music": false
+            },
+            "video": {
+              "face": false,
+              "logo": false,
+              "music": false
+            },
+            "carousel": {
+              "face": false,
+              "logo": false,
+              "music": false
+            }
+          },
+          "faceImage": "",
+          "budgetPlan": "views",
+          "visibility": "public",
+          "createdBy": "6a70a290bdab3e5e5c0bcc55",
+          "lastModifiedBy": "6a70a290bdab3e5e5c0bcc55",
+          "createdAt": "2026-08-04T11:03:19.558Z",
+          "updatedAt": "2026-08-19T16:02:54.444Z",
+          "__v": 3,
+          "guidelinePromptMigration": {
+            "version": 1,
+            "originalVideoPrompt": "Hook nei primi 3 secondi: iniziare con il momento più forte o coinvolgente del video, senza introduzione. Sottotitoli dinamici in italiano sempre visibili. Ogni clip deve terminare con la call-to-action 'La lezione gratuita sul profilo di Sara. Durata: 20-60 secondi. Incuriosire lo spettatore senza spiegare il metodo dropshipping o come funziona il business: è consentito accennare concetti come 'vende prodotti che non possiede e non ha mai toccato con mano', ma mai fornire dettagli operativi. Claim sui guadagni solo in prima persona relativi a Sara o come testimonianze reali di studentesse (es. 'Sara ha guadagnato...', 'Valentina ha fatto 10.000€ nel primo mese'); è vietato fare promesse dirette allo spettatore del tipo 'guadagnerai anche tu X€'. Tono autentico, da donna a donna, evitando qualunque sensazione di 'guru truffa'. Utilizzare esclusivamente contenuti provenienti dai profili ufficiali di Sara Dizdari Academy (Instagram, TikTok, YouTube). Scaricare i video in qualità originale, senza watermark di TikTok o loghi di altri account. Vietato usare contenuti di altri profili o non riconducibili al brand.",
+            "method": "deterministic",
+            "confidence": 1,
+            "migratedAt": "2026-08-11T16:05:05.937Z"
+          },
+          "videoDescriptionPrompt": null,
+          "joinedRequestsCount": 11,
+          "isJoined": true,
+          "isRequested": false,
+          "brandInfo": {
+            "_id": "6a70a290bdab3e5e5c0bcc55",
+            "avatar": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3883c984-4830-4a78-b2a5-b84e62c5b748-PHOTO-2026-08-05-17-15-49.jpg",
+            "isVerified": true,
+            "name": "Mattia D Consulting",
+            "brandName": "Sara Dizdari Academy",
+            "description": "Azienda di formazione sul mondo ecommerce e dropshipping in Italia, rivolta principalmente al target femminile"
+          }
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/notifications/unread-count",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Unread count fetched successfully",
+        "data": {
+          "count": 79
+        },
+        "errors": []
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://app.klippify.com/api/creator/content/6a71c6f7245627c68999eae2?limit=10",
+      "status": 200,
+      "data": {
+        "success": true,
+        "message": "Contents retrieved successfully",
+        "data": {
+          "contents": [],
+          "nextCursor": null,
+          "hasMore": false
+        },
+        "errors": []
+      }
+    }
+  ]
+}
