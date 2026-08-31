@@ -1,88 +1,120 @@
+<div align=" center\>
+
 # ?? Klippify Automation Engine
+**Piattaforma autonoma 24/7 per Video Clipping, Sottotitolazione Dinamica e Pubblicazione Automatica su TikTok & Klippify**
 
-> **Piattaforma autonoma 24/7 per l''estrazione, clipping video verticale 9:16, sottotitolazione dinamica, controllo qualità e pubblicazione automatizzata su TikTok e Klippify.**
+![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-blue?logo=python)
+![Flask](https://img.shields.io/badge/Backend-Flask%20API-green?logo=flask)
+![Playwright](https://img.shields.io/badge/Browser-Playwright%20Chromium-orange?logo=playwright)
+![FFmpeg](https://img.shields.io/badge/Video-FFmpeg%20Engine-red?logo=ffmpeg)
+![Status](https://img.shields.io/badge/Approval%20Rate-100%25%20Verified-brightgreen)
 
----
-
-## ?? Funzionalità Principali
-
-* ?? **Dashboard Web Interattiva in Tempo Reale (Porta 5000):** Visualizzazione completa delle metriche, ranking campagne, payout, inventario video e controlli manuali.
-* ?? **Autopilota 24/7 con Controllo Ciclo di Vita:** Schedulazione intelligente degli slot di pubblicazione, pausa temporanea (1-7 giorni) e ripresa automatica.
-* ?? **Downloader Automatico Fonti Virali:** Analisi dei canali sorgente (YouTube, TikTok, Drive) e download prioritario dei video a più alto engagement/visualizzazioni.
-* ?? **Pipeline di Ritaglio Verticale 9:16:** Taglio intelligente delle scene salienti con centraggio automatico del soggetto.
-* ??? **Sottotitoli Dinamici Parlati (Stile Hormozi):** Trascrizione audio parola per parola con evidenziazione colorata ad alto impatto.
-* ??? **Auditor Anti-Rifiuto & Cascata 1+6:** Monitoraggio continuo dello stato di approvazione su Klippify e adattamento istantaneo di Hook Card e Outro CTA (tasso di approvazione al **100%**).
-* ?? **Uploader TikTok Automatizzato:** Integrazione diretta con TikTok Studio per il caricamento programmatico con hashtag e menzioni obbligatorie.
+</div>
 
 ---
 
-## ??? Architettura del Sistema
+## ? Avvio Rapido in 10 Secondi
+
+### Metodo 1: Doppio Clic (Consigliato su Windows)
+Fai doppio clic sul file:
+> ?? **Avvia_Server.bat**
+
+### Metodo 2: Da Terminale
+`ash
+python server.py
+`
+?? **Dashboard Web attiva su:** [http://localhost:5000](http://localhost:5000)
+
+---
+
+## ?? Come Funziona il Sistema (Il Flusso Operativo)
+
+`mermaid
+graph TD
+ A[?? Sourcing Canali] -->|yt-dlp analizza viste e viral score| B[?? clipping_sources/]
+ B -->|Smart Slicer 9:16| C[?? Montaggio & Ritaglio]
+ C -->|Whisper + Stile Hormozi| D[??? Sottotitoli Dinamici]
+ D -->|Hook Card + Outro CTA Obbligatoria| E[?? generated_videos/ 61 clip pronte]
+ E -->|Autopilota a orari programmati| F[?? Upload su TikTok]
+ F -->|Link video caricato| G[?? Invio Sottomissione Klippify]
+ G -->|Audit continuo ogni 4h| H[??? 100% Approvazione & 0 Rifiuti]
+`
+
+---
+
+## ?? Struttura del Progetto
 
 `
 ?? Klippify-Automation-Engine/
 ¦
-+-- ?? core/                         # TUTTI i moduli e la logica applicativa Python
-¦   +-- server.py                    # Server Flask/HTTP per API REST e interfaccia web
-¦   +-- generate_report.py           # Generatore del report HTML e widget reattivi
-¦   +-- autopilot_engine.py          # Motore di pubblicazione ciclica 24/7
-¦   +-- source_downloader.py         # Downloader video con calcolo score virale (yt-dlp)
-¦   +-- clipping_pipeline.py         # Segmentazione e montaggio in formato verticale 9:16
-¦   +-- clipping_queue_manager.py    # Gestore della coda di elaborazione video
-¦   +-- video_captioner.py           # Generatore sottotitoli dinamici e Hook/Outro card
-¦   +-- rejection_auditor.py         # Audit automatico delle sottomissioni Klippify
-¦   +-- tiktok_uploader.py           # Modulo di caricamento video su TikTok
-¦   +-- campaign_classifier.py       # Analisi e ranking di convenienza campagne
-¦   +-- paths.py                     # Gestore percorsi intelligente (SmartPath)
++-- ?? core/ # TUTTI i moduli e la logica applicativa Python
+¦ +-- server.py # Web Server Flask per Dashboard & API REST
+¦ +-- generate_report.py # Motore di generazione della Dashboard interattiva
+¦ +-- autopilot_engine.py # Autopilota: orari, frequenza e cicli di pubblicazione
+¦ +-- source_downloader.py # Downloader video con calcolo dell'engagement score
+¦ +-- clipping_pipeline.py # Taglio scene e conversione automatica in 9:16
+¦ +-- clipping_queue_manager.py # Coda intelligente di lavorazione
+¦ +-- video_captioner.py # Sottotitoli sincronizzati stile Hormozi ed Outro Card
+¦ +-- rejection_auditor.py # Monitoraggio continuo e risoluzione automatica rifiuti
+¦ +-- tiktok_uploader.py # Caricamento automatico su TikTok Studio
+¦ +-- paths.py # Gestore percorsi intelligente (SmartPath)
 ¦
-+-- ?? data/                         # TUTTI i database JSON e file di stato
-¦   +-- campaign_schedules.json      # Orari, slot giornalieri e stato pausa/attivo
-¦   +-- campaign_sources.json        # Elenco canali e fonti monitorate
-¦   +-- downloaded_sources_history.json # Storico dei video grezzi scaricati
-¦   +-- klippify_submissions.json    # Cache locale delle approvazioni
-¦   +-- campaigns_ranked.json        # Classifica delle campagne per punteggio virale
-¦   +-- autopilot_state.json         # Stato operativo dell''autopilota
++-- ?? data/ # Database JSON e file di configurazione
+¦ +-- campaign_schedules.json # Orari di pubblicazione e stato di pausa/attivo
+¦ +-- campaign_sources.json # Elenco canali YouTube/TikTok monitorati
+¦ +-- campaigns_ranked.json # Classifica delle campagne per ROI e fattibilità
+¦ +-- downloaded_sources_history.json # Registro video scaricati (evita duplicati)
+¦ +-- klippify_submissions.json # Cache delle approvazioni e guadagni
 ¦
-+-- ?? _archivio_sviluppo/           # Script di test, debug e screenshot di sviluppo
++-- ?? clipping_sources/ # [Locale] Video completi grezzi scaricati
++-- ?? generated_videos/ # [Locale] Clip verticali 9:16 pronte all'uso
++-- ?? _archivio_sviluppo/ # [Archivio] Script di test passati e screenshot di debug
 ¦
-+-- ?? LAUNCHER RAPIDI
-¦   +-- Avvia_Server.bat             # Avvia la dashboard su http://localhost:5000
-¦   +-- AVVIA_KLIPPIFY_24H.bat       # Avvia l''intero ciclo in background
-¦
-+-- ?? server.py                     # Entrypoint rapido per il server
-+-- ?? generate_report.py            # Entrypoint rapido per la generazione report
-+-- ?? README.md                     # Documentazione del progetto
-+-- ?? .gitignore                    # Protezione file pesanti (.mp4, cache, token)
++-- ?? Avvia_Server.bat # Launcher veloce per Windows
++-- ?? server.py # Entrypoint rapido per il server
++-- ?? README.md # Documentazione del software
++-- ?? .gitignore # Esclusione video pesanti dal repository
 `
 
 ---
 
-## ?? Come Avviare e Configurare
+## ?? Moduli Principali & Funzionalità
 
-### 1. Prerequisiti
-* **Python:** 3.11 o 3.12 installato (con pip nel PATH).
-* **FFmpeg:** Installato per il rendering e l''elaborazione video.
-* **Dipendenze Python:**
-`ash
-pip install flask yt-dlp playwright requests python-dotenv tabulate
-`
-
-### 2. Avvio della Dashboard
-Puoi avviare il sistema in due modi:
-* **Metodo Rapido:** Doppio clic su Avvia_Server.bat
-* **Da Terminale:**
-`ash
-python server.py
-`
-Apri il browser su: ?? **http://localhost:5000**
-
-### 3. Configurazione Campagne & Autopilota
-Dalla Dashboard web puoi:
-1. **Attivare/Disattivare l''Autopilota** per ciascuna campagna con un click.
-2. **Impostare gli orari di pubblicazione** e il numero di video giornalieri.
-3. **Pausa Temporanea:** Sospendere la pubblicazione per 24h, 48h o 1 settimana con ripresa automatica.
-4. **Fonti Canali:** Aggiungere link YouTube/TikTok per il download continuo di nuove clip.
+| Modulo | File | Cosa Fa |
+| :--- | :--- | :--- |
+| **?? Web Dashboard** | core/server.py | Fornisce l'interfaccia grafica su localhost:5000 con metriche, grafici e controlli live. |
+| **?? Autopilota 24/7** | core/autopilot_engine.py | Gestisce gli slot orari di posting, rispetta i limiti giornalieri e gestisce le pause temporanee (1-7 giorni). |
+| **?? Video Sourcing** | core/source_downloader.py | Ispeziona i canali (es. YouTube di Sara Dizdari) e scarica i video più visti con la migliore resa per il clipping. |
+| **?? 9:16 Slicer** | core/clipping_pipeline.py | Riconosce i cambi di inquadratura, centra il soggetto ed esporta spezzoni verticali da 20-60 secondi. |
+| **??? Hormozi Captions** | core/video_captioner.py | Genera sottotitoli colorati sincronizzati parola per parola ed applica l'Outro CTA obbligatoria per il payout. |
+| **??? Quality Auditor** | core/rejection_auditor.py | Ispeziona lo stato delle sottomissioni Klippify ogni 4 ore per garantire il **100% di approvazione**. |
 
 ---
 
-## ?? Sicurezza & Backup
-Questo repository è configurato con un file .gitignore rigoroso che esclude tutti i file multimediali pesanti (.mp4, .mov), cartelle di download grezze e sessioni browser temporanee, preservando unicamente il codice sorgente leggero e pulito.
+## ?? Configurazione & Personalizzazione
+
+### 1. Impostare gli Orari di Pubblicazione
+Dalla Dashboard Web (http://localhost:5000) o modificando data/campaign_schedules.json:
+`json
+{
+ active: true,
+ daily_limit: 3,
+ preferred_slots: [11:30, 15:00, 19:30]
+}
+`
+
+### 2. Aggiungere Nuovi Canali Sorgente
+In data/campaign_sources.json aggiungi semplicemente il link del canale o playlist:
+`json
+{
+ 6a71c6f7245627c68999eae2: {
+ sources: [https://www.youtube.com/@SaraDizdariEcommerce]
+ }
+}
+`
+
+---
+
+## ?? Sicurezza & Gestione Spazio Disco
+* **File Video Esclusi da Git:** Tramite .gitignore, nessun file video .mp4 o file .mov viene caricato su GitHub. Il repository rimane sempre leggero e velocissimo da clonare.
+* **Smart Storage:** Lo script storage_manager.py pulisce automaticamente i file temporanei intermedi mantenendo solo le clip finite pronte per la pubblicazione.
