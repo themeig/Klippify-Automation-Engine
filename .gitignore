@@ -1,0 +1,41 @@
+# === ESCLUSIONE FILE VIDEO E MEDIA (PESANTI) ===
+*.mp4
+*.m4a
+*.webm
+*.mkv
+*.avi
+*.mov
+*.mp3
+*.wav
+*.png
+*.jpg
+*.jpeg
+*.f137.mp4
+*.f140.m4a
+clipping_sources/
+generated_videos/
+videos/
+
+# === PYTHON CACHE E AMBIENTI ===
+__pycache__/
+*.py[cod]
+*.class
+*.tmp
+*.log
+.venv/
+venv/
+env/
+
+# === BROWSER E CACHE PLAYWRIGHT ===
+.playwright/
+playwright-report/
+test-results/
+
+# === FILE TEMPORANEI / SISTEMA ===
+.DS_Store
+Thumbs.db
+gemini_profile/
+tiktok_profile/
+*.part
+*.PART
+alestark campain/

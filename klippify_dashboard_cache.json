@@ -1,0 +1,31 @@
+{
+  "user_name": "meig_balistico",
+  "greeting": "Bentornato, meig_balistico! 👋",
+  "subtitle": "Ecco cosa sta succedendo oggi nel tuo percorso da creator.",
+  "stats": {
+    "Guadagni prelevabili": {
+      "val": "0.00 USD",
+      "sub": "Pronti per il prelievo"
+    },
+    "Guadagni totali": {
+      "val": "0.00 USD",
+      "sub": "Guadagni complessivi Klippify"
+    },
+    "Campagne attive": {
+      "val": "5",
+      "sub": "Campagne in corso"
+    },
+    "Video Inviati": {
+      "val": "10",
+      "sub": "9 approvati"
+    }
+  },
+  "submissions_summary": {
+    "total_submitted": 10,
+    "total_accepted": 9,
+    "total_rejected": 1,
+    "total_views": 913,
+    "total_likes": 6,
+    "total_earnings": 0.0
+  }
+}

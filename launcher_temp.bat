@@ -1,0 +1,4 @@
+@echo off
+cd /d "C:\Users\HP\Desktop\contenuti klippify"
+call Avvia_Bot.bat --auto --prompt "Cinematic vertical 9:16 video, 15-30 seconds. Start with an ultra-high-quality, dynamic B-roll of an exhausted bartender in a dark, cheap Italian bar, overlaid with text 'Stanco di prendere 1200€ al mese?'. Fast transition to luxury high-end restaurants in Dubai or London. Text overlay: 'All'estero ne prenderesti 5000€'. IMPORTANT RULES TO FOLLOW EXACTLY: At least 3 seconds of the clip MUST feature the face of Manfredi talking directly to the camera. The 'Million Hospitality' logo must remain clearly visible on screen for the ENTIRE duration of the video. End with a strong visual and the CTA 'Guarda il video completo su Klippify!'. Visuals should look highly polished, like a professional commercial."
+pause

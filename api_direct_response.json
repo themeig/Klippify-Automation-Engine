@@ -1,0 +1,32 @@
+{
+  "https://app.klippify.com/api/creator/campaign/list?filter=new&limit=100": {
+    "success": false,
+    "message": "Access denied. No token provided.",
+    "data": null,
+    "errors": []
+  },
+  "https://app.klippify.com/api/creator/campaign/list?filter=all&limit=100": {
+    "success": false,
+    "message": "Access denied. No token provided.",
+    "data": null,
+    "errors": []
+  },
+  "https://app.klippify.com/api/creator/campaign/list?filter=active&limit=100": {
+    "success": false,
+    "message": "Access denied. No token provided.",
+    "data": null,
+    "errors": []
+  },
+  "https://app.klippify.com/api/creator/campaign/featured?limit=100": {
+    "success": false,
+    "message": "Access denied. No token provided.",
+    "data": null,
+    "errors": []
+  },
+  "https://app.klippify.com/api/creator/campaign/list": {
+    "success": false,
+    "message": "Access denied. No token provided.",
+    "data": null,
+    "errors": []
+  }
+}

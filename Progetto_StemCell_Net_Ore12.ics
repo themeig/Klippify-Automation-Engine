@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//StemCell Net//AI Architecture Project//IT
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:🧬 Avvio Progetto StemCell-Net (Dynamic Weights AI)
+DESCRIPTION:Sessione di sviluppo pratico in PyTorch: Prototipo architetturale di rete neurale a pesi dinamici (Stem Cell Network).
+DTSTART:20260829T100000Z
+DTEND:20260829T113000Z
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT10M
+DESCRIPTION:Promemoria: Inizio Progetto StemCell-Net tra 10 minuti
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR
