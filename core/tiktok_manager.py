@@ -4,7 +4,7 @@ import json
 import time
 import requests
 
-TOKEN_FILE = r"C:\Users\HP\Desktop\contenuti klippify\tiktok_tokens_final.json"
+TOKEN_FILE = paths.get_data_path("tiktok_tokens_final.json")
 CLIENT_KEY = "sbawkrz4lc399y38a3"
 CLIENT_SECRET = "yKztnG4ixhpTebKt65rTg6BwTnE3Ds7F"
 

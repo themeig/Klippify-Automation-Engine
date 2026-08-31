@@ -451,7 +451,6 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
                 tiktok_videos = []
                 try:
                     if sync_live:
-                        from tiktok_manager import get_all_user_videos
                         tiktok_videos = get_all_user_videos(limit=50)
                 except Exception as tk_err:
                     print(f"[SERVER] Errore sync live TikTok: {tk_err}")
