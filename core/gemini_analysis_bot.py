@@ -96,7 +96,7 @@ def run_analysis(video_file_path, prompt_text=None, is_auto=False, task_logger=N
     time.sleep(1)
     
     with sync_playwright() as p:
-        user_data_dir = r"c:\Users\HP\Desktop\contenuti klippify\gemini_profile"
+        user_data_dir = str(paths.PROJECT_ROOT / "gemini_profile")
         try:
             browser = p.chromium.launch_persistent_context(
                 user_data_dir,
@@ -264,7 +264,7 @@ def run_analysis(video_file_path, prompt_text=None, is_auto=False, task_logger=N
                 pass
                 
         # 7. Salva il risultato dell'analisi in un file JSON
-        analysis_out = Path(r"c:\Users\HP\Desktop\contenuti klippify\clipping_analysis.json")
+        analysis_out = paths.PROJECT_ROOT / "clipping_analysis.json"
         with open(analysis_out, "w", encoding="utf-8") as f:
             json.dump({
                 "video_file": str(video_p),

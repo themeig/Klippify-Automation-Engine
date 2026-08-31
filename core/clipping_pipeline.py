@@ -20,7 +20,7 @@ import clip_processor
 import gemini_analysis_bot
 
 def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, task_logger=None):
-    root = Path(r"c:\Users\HP\Desktop\contenuti klippify")
+    root = paths.PROJECT_ROOT
     
     # 1. Carica i dati della campagna attiva
     classified_file = root / "active_campaigns_classified.json"

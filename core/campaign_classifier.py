@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 def classify_active_campaigns():
-    root = Path(r"c:\Users\HP\Desktop\contenuti klippify")
+    root = paths.PROJECT_ROOT
     
     # 1. Carica le campagne classificate/salvate
     campaigns_file = root / "campaigns_ranked.json"
