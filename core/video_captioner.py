@@ -227,7 +227,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         o_start_str = format_ass_time(outro_start)
         o_end_str = format_ass_time(outro_end)
         
-        dialogue_lines.append(f"Dialogue: 4,{o_start_str},{o_end_str},OutroBadge,,0,0,0,,{{\\an5\\pos(540,820)\\fad(250,0)}}🎓 CALL TO ACTION")
+        dialogue_lines.append(f"Dialogue: 4,{o_start_str},{o_end_str},OutroBadge,,0,0,0,,{{\\an5\\pos(540,820)\\fad(250,0)}}🎓 VIDEO-LEZIONE")
         dialogue_lines.append(f"Dialogue: 5,{o_start_str},{o_end_str},OutroCardBox,,0,0,0,,{{\\an5\\pos(540,940)\\fad(250,0)}}{cta_text.upper()}")
         dialogue_lines.append(f"Dialogue: 4,{o_start_str},{o_end_str},OutroSub,,0,0,0,,{{\\an5\\pos(540,1070)\\fad(250,0)}}👉 Trovi il link su @saradizdari_ecom")
 
