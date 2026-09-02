@@ -21,10 +21,12 @@ from playwright.sync_api import sync_playwright
 
 ANALYSIS_PROMPT_TEMPLATE = """Analizza con la massima cura questo video ed estrai TUTTI i momenti salienti ad altissimo potenziale virale ideali per TikTok, Instagram Reels e YouTube Shorts (durata 30-60 secondi ciascuno).
 
-REGOLE DI SELEZIONE:
+REGOLE TASSATIVE DI SELEZIONE (RIGIDAMENTE VERIFICATE DALL'AI DI KLIPPIFY):
 1. Estrai un MINIMO ASSOLUTO DI 3 CLIP (anche se il video è breve).
 2. Se il video è lungo o ricco di argomenti, estrai liberamente tutte le clip di valore che ritieni opportune (fino a 6-8 clip).
-3. Ciascun segmento deve avere un forte gancio nei primi 2 secondi, ritmo incalzante e un senso logico compiuto.
+3. NO SALUTI / NO PREAMBOLI: NON iniziare MAI la clip con saluti, convenevoli o presentazioni personali (es. 'Ciao a tutti', 'Buongiorno', 'Sono X e oggi...', 'Mi chiamo...'). Taglia via ogni convenevole e inizia ESATTAMENTE dal secondo in cui viene espressa la frase o il dato più potente ed emozionante!
+4. FRASE COMPLETA & NO TRONCAMENTI: La clip DEVE terminare tassativamente con una frase completa e di senso compiuto. MAI tagliare a metà parola o lasciare frasi sospese a metà!
+5. Ciascun segmento deve durare tra 25 e 55 secondi, con ritmo incalzante e hook istantaneo nei primi 2 secondi.
 
 Per CIASCUNA clip estratta fornisci:
 1. Timestamp esatto di inizio e fine (formato MM:SS)
