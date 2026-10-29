@@ -21,27 +21,99 @@ def parse_time_to_seconds(t_str):
         return 0.0
 
 
+def slice_and_shift_words_for_segments(source_words: list[dict], segments: list[dict]) -> list[dict]:
+    """
+    Ricalcola i timestamp parola-per-parola estratti da .json3/.vtt/_inspection.json
+    in base ai segmenti multipli tagliati e cuciti dall'Agente AI (0 MB RAM Whisper).
+    """
+    if not source_words or not segments:
+        return []
+    shifted = []
+    cum_offset = 0.0
+    for seg in segments:
+        s_sec = parse_time_to_seconds(seg.get("start", 0))
+        e_sec = parse_time_to_seconds(seg.get("end", 0))
+        seg_dur = max(0.0, e_sec - s_sec)
+        if seg_dur <= 0:
+            continue
+        for w in source_words:
+            ws = float(w.get("start", 0))
+            we = float(w.get("end", 0))
+            if ws >= s_sec - 0.15 and we <= e_sec + 0.25:
+                rel_s = max(0.0, ws - s_sec)
+                rel_e = min(seg_dur, max(rel_s + 0.08, we - s_sec))
+                shifted.append({
+                    "word": w.get("word", ""),
+                    "start": round(cum_offset + rel_s, 2),
+                    "end": round(cum_offset + rel_e, 2),
+                    "prob": w.get("prob", 1.0)
+                })
+        cum_offset += seg_dur
+    return shifted
+
+
+def load_source_words_for_video(input_video_path: Path) -> list[dict]:
+    """
+    Recupera le parole già estratte in <video_stem>_inspection.json o nei file .json3/.vtt
+    accanto al video sorgente o in clipping_sources.
+    """
+    input_p = Path(input_video_path)
+    search_dirs = [input_p.parent]
+    for base_cand in [paths.PROJECT_ROOT / "clipping_sources", paths.PROJECT_ROOT.parent / "clipping_sources"]:
+        if base_cand.exists():
+            search_dirs.extend([d for d in base_cand.iterdir() if d.is_dir()])
+
+    for d in search_dirs:
+        insp_f = d / f"{input_p.stem}_inspection.json"
+        if insp_f.exists():
+            try:
+                data = json.loads(insp_f.read_text(encoding="utf-8"))
+                if data.get("words"):
+                    return data["words"]
+            except Exception:
+                pass
+        try:
+            import video_inspector
+            for ext in ("*.json3", "*.vtt", "*.srt"):
+                subs = list(d.glob(f"{input_p.stem}*{ext[1:]}"))
+                if subs:
+                    w = video_inspector.parse_subtitle_file(subs[0])
+                    if w:
+                        return w
+        except Exception:
+            pass
+    return []
+
+
 def build_crop_filter(
     mode: str = "face_crop",
     center_x_ratio: float = 0.5,
     left_x: float = 0.28,
     right_x: float = 0.72,
+    y_start_ratio: float = 0.0,
+    height_ratio: float = 1.0,
     target_width: int = 1080,
     target_height: int = 1920,
     input_tag: str = "[0:v]"
 ) -> tuple[str, str]:
     """
     Costruisce il filtro FFmpeg 9:16 (1080x1920) pilotato dall'Agente AI:
-    - 'face_crop' / 'center_crop': ritaglio verticale a tutto schermo centrato su center_x_ratio (0.0..1.0)
+    - 'face_crop' / 'center_crop': ritaglio verticale a tutto schermo centrato su center_x_ratio (0.0..1.0).
+      Supporta anche y_start_ratio e height_ratio per ritagliare fuori cornici/sottotitoli pre-esistenti nel video 16:9.
     - 'split_screen': schermo diviso (metà superiore parlante sinistro, metà inferiore parlante destro)
     - 'zoomed_blur' / 'blur_background': sfondo sfocato + video centrale zoomato al 135% (1458px) per evitare l'effetto francobollo
     """
     cx = max(0.0, min(1.0, float(center_x_ratio)))
+    ys = max(0.0, min(0.8, float(y_start_ratio)))
+    hr = max(0.2, min(1.0 - ys, float(height_ratio)))
     out_tag = "[v_out]"
 
     if mode in ("face_crop", "center_crop"):
+        pre_crop = ""
+        if ys > 0.001 or hr < 0.999:
+            pre_crop = f"crop=iw:ih*{hr:.3f}:0:ih*{ys:.3f},"
         filter_str = (
-            f"{input_tag}scale=-2:{target_height}:force_original_aspect_ratio=increase,"
+            f"{input_tag}{pre_crop}scale=-2:{target_height}:force_original_aspect_ratio=increase,"
             f"crop={target_width}:{target_height}:(iw-{target_width})*{cx:.3f}:(ih-{target_height})/2{out_tag}"
         )
         return filter_str, out_tag
@@ -78,6 +150,8 @@ def build_multisegment_ffmpeg_cmd(
     output_video_path: Path,
     mode: str = "face_crop",
     center_x_ratio: float = 0.5,
+    y_start_ratio: float = 0.0,
+    height_ratio: float = 1.0,
     logo_path: str = None,
     target_width: int = 1080,
     target_height: int = 1920
@@ -114,6 +188,8 @@ def build_multisegment_ffmpeg_cmd(
     crop_filter, last_v_tag = build_crop_filter(
         mode=mode,
         center_x_ratio=center_x_ratio,
+        y_start_ratio=y_start_ratio,
+        height_ratio=height_ratio,
         target_width=target_width,
         target_height=target_height,
         input_tag="[v_cat]"
@@ -152,6 +228,8 @@ def process_clip_ffmpeg(
     output_video_path=None,
     mode="face_crop",
     center_x_ratio=0.5,
+    y_start_ratio=0.0,
+    height_ratio=1.0,
     segments=None,
     logo_path=None,
     hook_text=None,
@@ -194,6 +272,8 @@ def process_clip_ffmpeg(
         crop_filter, last_v_tag = build_crop_filter(
             mode=mode,
             center_x_ratio=center_x_ratio,
+            y_start_ratio=y_start_ratio,
+            height_ratio=height_ratio,
             target_width=target_width,
             target_height=target_height,
             input_tag="[0:v]"
@@ -228,6 +308,8 @@ def process_clip_ffmpeg(
             output_video_path=output_p,
             mode=mode,
             center_x_ratio=center_x_ratio,
+            y_start_ratio=y_start_ratio,
+            height_ratio=height_ratio,
             logo_path=logo_path,
             target_width=target_width,
             target_height=target_height
@@ -245,6 +327,8 @@ def process_clip_ffmpeg(
                 if logger:
                     logger("💬 [CAPTIONER] Applicazione sottotitoli animati, Hook (3.2s) e CTA dinamica...")
                 if output_p.exists():
+                    source_words = load_source_words_for_video(input_p)
+                    shifted_words = slice_and_shift_words_for_segments(source_words, seg_list) if source_words else None
                     shutil.move(str(output_p), str(temp_raw))
                     video_captioner.burn_captions_to_video(
                         temp_raw,
@@ -252,7 +336,8 @@ def process_clip_ffmpeg(
                         style_key="hormozi_gold",
                         custom_hook=hook_text,
                         brand_cta=cta_text,
-                        brand_mention=brand_mention
+                        brand_mention=brand_mention,
+                        precomputed_words=shifted_words
                     )
             except Exception as cap_err:
                 print(f"[CAPTIONER WARNING] Impossibile applicare sottotitoli: {cap_err}")

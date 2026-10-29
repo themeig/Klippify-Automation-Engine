@@ -238,6 +238,8 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
         concept_t = clip.get("concept") or f"Clip {idx+1} - {camp_name}"
         crop_mode = clip.get("crop_mode") or "face_crop"
         center_x = float(clip.get("center_x_ratio", 0.5))
+        y_start_r = float(clip.get("y_start_ratio", 0.0))
+        height_r = float(clip.get("height_ratio", 1.0))
 
         raw_caption = clip.get("tiktok_caption") or hook_t or concept_t
         final_caption_parts = [raw_caption]
@@ -250,7 +252,7 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
 
         full_clip_caption = " ".join(final_caption_parts).strip()
 
-        print(f"\n[+] Montaggio AI clip {idx+1}/{len(analysis_results)} ({crop_mode}, X={center_x})...")
+        print(f"\n[+] Montaggio AI clip {idx+1}/{len(analysis_results)} ({crop_mode}, X={center_x}, Y={y_start_r}, H={height_r})...")
         print(f"    🎣 Hook (3.2s): {hook_t}")
         print(f"    📢 CTA finale: {camp_cta}")
         print(f"    📝 Caption: {full_clip_caption}")
@@ -265,6 +267,8 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
             output_video_path=out_path,
             mode=crop_mode,
             center_x_ratio=center_x,
+            y_start_ratio=y_start_r,
+            height_ratio=height_r,
             segments=segments,
             hook_text=hook_t,
             cta_text=camp_cta,

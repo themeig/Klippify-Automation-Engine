@@ -190,14 +190,35 @@ def download_source_video(url, campaign_id="general", custom_title=None, progres
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_template = str(target_dir / f"%(title).60s_%(id)s_{timestamp}.%(ext)s")
 
+    # Fase 1: Scarica i sottotitoli nativi (.json3 / .vtt) in modo non bloccante
+    # (una lingua alla volta per evitare HTTP 429 da YouTube sulle traduzioni automatiche)
+    for sub_lang in ['it', 'en']:
+        if list(target_dir.glob(f"*{timestamp}*.json3")) or list(target_dir.glob(f"*{timestamp}*.vtt")):
+            break
+        sub_opts = {
+            'outtmpl': out_template,
+            'skip_download': True,
+            'writesubtitles': True,
+            'writeautomaticsub': True,
+            'subtitleslangs': [sub_lang],
+            'subtitlesformat': 'json3/vtt',
+            'windowsfilenames': True,
+            'restrictfilenames': True,
+            'quiet': True,
+            'no_warnings': True,
+            'ignoreerrors': True,
+        }
+        try:
+            with yt_dlp.YoutubeDL(sub_opts) as ydl_sub:
+                ydl_sub.extract_info(url, download=True)
+        except Exception:
+            pass
+
+    # Fase 2: Scarica il flusso video .mp4
     ydl_opts = {
         'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
         'outtmpl': out_template,
         'merge_output_format': 'mp4',
-        'writesubtitles': True,
-        'writeautomaticsub': True,
-        'subtitleslangs': ['it', 'en'],
-        'subtitlesformat': 'json3/vtt',
         'windowsfilenames': True,
         'restrictfilenames': True,
         'quiet': False,
@@ -237,6 +258,8 @@ def download_source_video(url, campaign_id="general", custom_title=None, progres
             raw_target_dir.mkdir(parents=True, exist_ok=True)
             try:
                 shutil.copy2(downloaded_file, raw_target_dir / fname)
+                for sub_f in list(target_dir.glob(f"{downloaded_file.stem}*.json3")) + list(target_dir.glob(f"{downloaded_file.stem}*.vtt")):
+                    shutil.copy2(sub_f, raw_target_dir / sub_f.name)
             except Exception:
                 pass
 

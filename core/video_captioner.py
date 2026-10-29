@@ -182,11 +182,32 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         hook_events = format_hook_card(hook_title, style_active_color=style["active_color"], persistent=False, duration_sec=3.2)
         dialogue_lines.extend(hook_events)
 
-    # 2. Sottotitoli parlati parola-per-parola
+    # 2. Sottotitoli parlati parola-per-parola (senza alcuna sovrapposizione temporale tra parole consecutive)
     if words:
+        clean_words = []
+        for w in words:
+            ws = float(w.get("start", 0.0))
+            we = float(w.get("end", ws + 0.18))
+            if we <= ws:
+                we = ws + 0.18
+            clean_words.append({"word": str(w.get("word", "")), "start": ws, "end": we})
+
+        for i in range(len(clean_words) - 1):
+            next_s = clean_words[i + 1]["start"]
+            if next_s <= clean_words[i]["start"]:
+                next_s = round(clean_words[i]["start"] + 0.08, 2)
+                clean_words[i + 1]["start"] = next_s
+                if clean_words[i + 1]["end"] <= next_s:
+                    clean_words[i + 1]["end"] = round(next_s + 0.15, 2)
+            # Evita rigorosamente che una parola finisca dopo l'inizio della successiva
+            if clean_words[i]["end"] > next_s:
+                clean_words[i]["end"] = next_s
+            elif next_s - clean_words[i]["start"] >= 0.18 and clean_words[i]["end"] - clean_words[i]["start"] < 0.18:
+                clean_words[i]["end"] = min(next_s, round(clean_words[i]["start"] + 0.18, 2))
+
         groups = []
         current_group = []
-        for w in words:
+        for w in clean_words:
             current_group.append(w)
             if len(current_group) >= 3 or (len(current_group) >= 2 and len(w["word"]) > 7):
                 groups.append(current_group)
@@ -198,9 +219,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             for active_idx, active_word in enumerate(group):
                 w_start = float(active_word["start"])
                 w_end = float(active_word["end"])
-                
-                if w_end - w_start < 0.18:
-                    w_end = w_start + 0.18
+                if w_end <= w_start:
+                    w_end = round(w_start + 0.05, 2)
 
                 t_start_str = format_ass_time(w_start)
                 t_end_str = format_ass_time(w_end)
@@ -256,7 +276,7 @@ def extract_smart_hook(video_filename_or_words):
         return " ".join(tokens[:6])
     return "GUARDA FINO ALLA FINE"
 
-def burn_captions_to_video(input_video, output_video=None, style_key="hormozi_gold", use_emojis=True, custom_hook=None, brand_cta=None, brand_mention=None, model_size="base"):
+def burn_captions_to_video(input_video, output_video=None, style_key="hormozi_gold", use_emojis=True, custom_hook=None, brand_cta=None, brand_mention=None, model_size="base", precomputed_words=None):
     inp = Path(input_video)
     if not inp.exists():
         return {"status": "error", "message": f"File video '{input_video}' non trovato."}
@@ -269,7 +289,15 @@ def burn_captions_to_video(input_video, output_video=None, style_key="hormozi_go
 
     try:
         duration_sec = get_video_duration(inp)
-        words = transcribe_audio_words(inp, model_size=model_size)
+        if precomputed_words is not None and len(precomputed_words) > 0:
+            words = precomputed_words
+            print(f"[CAPTIONER] Uso {len(words)} parole già sincronizzate dall'ispezione AI (0 MB RAM Whisper).")
+        else:
+            try:
+                words = transcribe_audio_words(inp, model_size=model_size)
+            except Exception as w_err:
+                print(f"[CAPTIONER WARNING] Trascrizione Whisper non disponibile ({w_err}), procedo con Hook e CTA.")
+                words = []
         hook = custom_hook if custom_hook else extract_smart_hook(words or inp.name)
         
         generate_ass_file(
