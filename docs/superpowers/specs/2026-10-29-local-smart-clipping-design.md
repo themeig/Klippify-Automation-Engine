@@ -1,144 +1,124 @@
-# Design: Motore di Montaggio Video Intelligente 100% Locale (Ottimizzato per Portatile Vecchio)
+# Design: Regia Video Pilotata dall'AI di Antigravity ("AI Director" Multi-Segmento)
 
 **Data:** 2026-10-29  
 **Progetto:** `Klippify-Automation-Engine` (`C:\Users\Leo\Desktop\automazione-klippify`)  
-**Dimensione:** Progetto (Riprogettazione della pipeline di analisi, selezione, ritaglio 9:16 e sottotitolazione)
+**Dimensione:** Progetto (Sostituzione del taglio automatico cieco con montaggio "Taglia & Cuci" pilotato interamente dall'Agente AI di Antigravity)
 
 ---
 
 ## 1. Intento e Motivazione (Il "Perché")
 
-Il sistema attuale ha generato circa 200 video su TikTok per le campagne Klippify, ma nessuno ha superato la soglia delle **1.000 visualizzazioni** necessaria per sbloccare i pagamenti.
+Il sistema precedente ha generato ~200 video senza mai superare le 1.000 visualizzazioni perché:
+1. `core/gemini_analysis_bot.py` falliva nel caricare file `.mp4` via browser (`"clips": []`) e `core/clipping_pipeline.py` ripiegava su un fallback cieco (`00:10-00:45`, `01:00-01:35`, `02:00-02:35`).
+2. Anche quando tagliava un segmento, prendeva un blocco unico contiguo di 35 secondi senza poter tagliare via le frasi noiose in mezzo, rimpiccioliva il 16:9 al centro su sfondo sfocato e teneva fisso per tutto il video il banner promozionale `🎓 LEZIONE GRATUITA / SUL PROFILO DI SARA`.
 
-L'analisi del codice e dei log storici in `data/` ha rivelato tre cause tecniche:
-1. **100% di tagli ciechi (`data/clip_metadata.json` e `_archivio_sviluppo/clipping_analysis.json`):** `core/gemini_analysis_bot.py` provava a caricare interi file `.mp4` pesanti nella chat web di Gemini tramite Playwright, andando in timeout (`"clips": []`). Di conseguenza, `core/clipping_pipeline.py` cadeva sempre sul fallback cablato (`00:10-00:45`, `01:00-01:35`, `02:00-02:35`) usando per tutte le 68 clip le stesse 3 frasi hook e caption identiche, tagliando discorsi a metà frase.
-2. **Estetica da "spot pubblicitario" e formato francobollo:** `core/clip_processor.py` rimpiccioliva il video 16:9 al centro su sfondo sfocato (`boxblur`), mentre `core/video_captioner.py` mostrava il banner fisso `🎓 LEZIONE GRATUITA / SUL PROFILO DI SARA` per tutta la durata del video (`persistent=True`) e ignorava il parametro `cta_text` delle altre campagne.
-3. **Vincolo Hardware:** il sistema deve girare **100% in locale** su un **portatile vecchiotto** (CPU datata, RAM limitata, nessuna GPU dedicata moderna e nessuna dipendenza da API cloud a pagamento o chiavi esterne).
-
-L'obiettivo di questa riprogettazione è sostituire il fragile upload browser di file `.mp4` e il taglio cieco con un **motore 100% locale, leggero per la CPU**, capace di selezionare momenti davvero virali su frasi compiute, anticipare un *Cold-Open Teaser* nei primi 2-3 secondi, inquadrare il parlante a tutto schermo in 9:16, tagliare i tempi morti e applicare sottotitoli dinamici puliti conformi alle regole Klippify.
+**Cosa vuole l'utente:**
+- **Zero scelte "a caso" o euristiche in Python:** gli script Python locali **non** devono decidere da soli cosa tagliare.
+- **È l'Agente AI di Antigravity (svegliato da un Cronjob o su comando) a pilotare il video e decidere cosa tenere e cosa buttare**, leggendo la trascrizione parola-per-parola e guardando i fotogrammi del video tramite i suoi strumenti nativi.
+- **Portabilità Totale Multi-PC:** scaricando la stessa repository da GitHub su un altro computer con Antigravity (il portatile dedicato), l'agente su quel PC deve capire immediatamente e in automatico cosa fare grazie a `GEMINI.md` e `.agents/skills/`.
 
 ---
 
 ## 2. Obiettivi, Non-Obiettivi e Anti-Obiettivi
 
 ### Obiettivi (Goals)
-- **Zero tagli alla cieca:** ogni clip deve iniziare esattamente sull'attacco di una frase ad alto impatto (senza saluti/preamboli) e terminare alla fine naturale di una frase compiuta (durata totale 25–55s).
-- **100% Locale e Leggero per CPU vecchie:** nessuna chiave API esterna richiesta e nessuna apertura di Chrome/Playwright per caricare gigabyte di video; l'elaborazione di un video sorgente da 15–30 minuti deve richiedere pochi minuti anche su una CPU datata.
-- **Cold-Open Teaser automatico (Primi 2–3s):** estrarre la frase breve (1.8s–3.5s) più forte/scioccante contenuta all'interno della clip e anteporla a `00:00` come gancio iniziale prima che parta il discorso principale.
-- **Jump-Cut automatico dei silenzi:** rimuovere pause morte e respiri lunghi (> `0.45s`) all'interno della clip per mantenere un ritmo serrato in stile TikTok.
-- **Smart Crop 9:16 centrato sul volto:** convertire i video 16:9 in 9:16 (`1080x1920`) a tutto schermo centrando automaticamente il volto del parlante tramite campionamento leggero dei frame (fallback automatico a split-screen se ci sono 2 volti distanti o a `blur_background` migliorato se non ci sono volti/schermo condiviso).
-- **Grafica Nativa (Anti-Spot) e Multi-Campagna:**
-  - Hook testuale mostrato **solo nei primi 3 secondi** (durante il Teaser), mai fisso per tutto il video.
-  - Sottotitoli dinamici parola-per-parola (`Faster-Whisper`) puliti e sincronizzati con il montaggio finale (incluso Teaser + Jump-Cut).
-  - Slide Outro CTA mostrata **solo negli ultimi 3 secondi**, popolata dinamicamente con la CTA e la menzione obbligatoria della campagna attiva (rimuovendo l'hardcoding su `@saradizdari_ecom`).
+- **Regia 100% guidata dall'AI di Antigravity:** nessuna clip viene generata senza una decisione esplicita dell'Agente AI salvata nel piano di montaggio (`data/ai_director_cuts.json`).
+- **Ispezione Audio + Visiva per l'Agente (`core/video_inspector.py`):** fornire all'Agente AI il trascritto completo coi timestamp al centesimo di secondo e le **Storyboard JPG (griglie di fotogrammi col timestamp sovraimpresso)** così l'Agente AI vede chi parla, dove si trova nello schermo e cosa succede in ogni secondo del video.
+- **Montaggio Multi-Segmento ("Taglia & Cuci" chirurgico):** permettere all'Agente AI di comporre una singola clip cucendo insieme più segmenti non contigui del video (`segments: [{"start": ..., "end": ...}, ...]`), così da:
+  - mettere in testa (`00:00`) i 2–3 secondi più forti come *Teaser*,
+  - tenere solo le frasi ad altissima ritenzione e **buttare via le frasi deboli, le digressioni o le pause** anche se si trovano a metà discorso!
+- **Inquadratura 9:16 pilotata dall'AI + Grafica Pulita:**
+  - L'AI, guardando la Storyboard JPG (coadiuvata dalle coordinate rilevate da OpenCV), indica per ciascun segmento il crop 9:16 (`face_crop` con coordinata X del parlante, `split_screen` per 2 persone, o `zoomed_blur` ingrandito al 135%).
+  - Hook testuale mostrato **solo nei primi 3.2 secondi** (mai fisso per tutto il video).
+  - Slide Outro CTA mostrata **solo negli ultimi 3 secondi** con i dati reali della campagna attiva (rimosso l'hardcoding su `@saradizdari_ecom`).
+- **Auto-Riconoscimento su qualsiasi Antigravity (`GEMINI.md` + `.agents/skills/` + `setup_antigravity_cron.py`):** clonando la repo su un altro PC, l'agente Antigravity locale carica automaticamente le regole e la skill del Regista AI e configura il proprio cronjob con i percorsi del nuovo PC.
 
-### Non-Obiettivi (Non-Goals in questa fase)
-- Riprogettazione della strategia multi-account TikTok o della rotazione campagne (verrà affrontata in una fase successiva dedicata).
-- Generazione di video AI da zero tramite testo (focus esclusivo sulla pipeline di *Video Clipping*).
-
-### Anti-Obiettivi (Cosa renderebbe il progetto un fallimento)
-- Qualsiasi soluzione che saturi la CPU/RAM del portatile vecchio per 30+ minuti a video (es. far girare LLM pesanti da 8B su CPU o trascrivere 60 minuti di audio con modelli Whisper `large` su CPU).
-- Qualsiasi fallback silenzioso che torni a tagliare `00:10-00:45` con hook generici scollegati dal parlato.
-- Qualsiasi dipendenza obbligatoria da browser Chrome/Playwright durante la fase di analisi e montaggio video.
+### Anti-Obiettivi
+- **Vietato qualsiasi taglio automatico "di ripiego" o a caso:** se l'AI di Antigravity non ha ancora scritto il piano di taglio per un video, lo script Python **non** deve inventare timestamp con regole fisse né usare fallback `00:10-00:45`; deve preparare il pacchetto di ispezione e attendere la regia dell'AI.
 
 ---
 
-## 3. Vincoli Tecnici
+## 3. Architettura Dettagliata della Soluzione
 
-- **OS & Ambiente:** Windows, Python 3.x, FFmpeg + FFprobe installati nel `PATH`.
-- **Hardware Target:** Portatile datato (solo CPU, 4–8 GB RAM disponibili, disco SSD/HDD con spazio limitato gestito da `core/storage_manager.py`).
-- **Retrocompatibilità:** `core/clipping_pipeline.py` deve mantenere la firma pubblica `run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, task_logger=None)` e il formato di ritorno JSON così da non rompere `core/autopilot_engine.py`, `core/clipping_queue_manager.py` e `core/server.py`.
-- **Portabilità Percorsi:** i file `.bat` di avvio (`AVVIA_KLIPPIFY_24H.bat`, `Avvia_Server.bat`, ecc.) devono usare `cd /d "%~dp0"` invece di percorsi cablati come `c:\Users\HP\Desktop\contenuti klippify`.
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 1. VIDEO INSPECTOR (core/video_inspector.py)                                │
+│    - Estrae trascrizione parola-per-parola coi timestamp (.json3/vtt/whisper)│
+│    - Genera Storyboard JPG (griglie di frame col timestamp + coord. volti)   │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+┌──────────────────────────────────────▼──────────────────────────────────────┐
+│ 2. AGENTE AI ANTIGRAVITY (Cronjob + .agents/skills/klippify-ai-director)    │
+│    - Legge il copione timestampato e GUARDA le Storyboard JPG (read_file)    │
+│    - Decide esattamente COSA TENERE e COSA BUTTARE (lista di `segments`)     │
+│    - Sceglie Teaser, Crop 9:16, Hook e Caption -> salva `ai_director_cuts`  │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+┌──────────────────────────────────────▼──────────────────────────────────────┐
+│ 3. ESECUTORE FFMPEG MULTI-SEGMENTO (core/clip_processor.py + captioner)     │
+│    - Taglia e cuce insieme i `segments` scelti dall'AI in 9:16              │
+│    - Applica Hook (solo primi 3.2s), Sottotitoli e CTA dinamica (ultimi 3s) │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
----
+### 3.1 Modulo 1: `core/video_inspector.py` (Occhi e Orecchie per l'AI)
+Quando viene scaricato un nuovo video sorgente (o tramite `python core/video_inspector.py <video_path>`):
+1. **Estrazione Trascrizione Precisa:**
+   - Se `source_downloader.py` ha scaricato i sottotitoli nativi YouTube (`.json3` / `.vtt`), li converte istantaneamente (0s CPU) in segmenti e parole timestampate.
+   - Se il video non ha sottotitoli nativi, esegue `Faster-Whisper (int8, vad_filter=True)` salvando la trascrizione in `<video_stem>_inspection.json`.
+2. **Generazione Storyboard Visiva per l'AI (`<video_stem>_storyboard_1.jpg`, ...):**
+   - Estrae 1 fotogramma ogni 10–15 secondi con FFmpeg stampando su ciascun fotogramma il timestamp esatto (`MM:SS`) e una griglia graduata X (`0.0 ... 0.5 ... 1.0`), componendoli in 1–2 immagini Storyboard compatte (`4x4` tile).
+   - Se OpenCV è presente, annota nel file `<video_stem>_inspection.json` anche le coordinate medie dei volti rilevati (`suggested_center_x_ratio`), così l'Agente AI vede sia a occhio nudo nelle Storyboard sia numericamente dove si trova chi parla.
 
-## 4. Approcci Considerati e Scelta Effettuata
+### 3.2 Modulo 2: Schema di Regia Multi-Segmento (`data/ai_director_cuts.json`)
+L'Agente AI di Antigravity pilota il montaggio scrivendo `data/ai_director_cuts.json` con questo formato:
+```json
+{
+  "campaign_id": "6a71c6f7245627c68999eae2",
+  "video_file": "nome_video_sorgente.mp4",
+  "directed_by": "antigravity_ai_director",
+  "clips": [
+    {
+      "clip_number": 1,
+      "concept": "Come ha generato i primi 3.200€ partendo da zero",
+      "hook_text": "3.200€ NEL PRIMO MESE PARTENDO DA ZERO",
+      "crop_mode": "face_crop",
+      "center_x_ratio": 0.52,
+      "segments": [
+        {"start": "02:14.20", "end": "02:17.10", "role": "teaser"},
+        {"start": "00:42.50", "end": "00:58.30", "role": "body"},
+        {"start": "01:15.00", "end": "01:31.40", "role": "payoff"}
+      ],
+      "tiktok_caption": "Ha iniziato con 0 esperienza e 2 ore la sera... Ecco cosa è successo in 30 giorni! 🚀 Scopri la lezione gratuita sul profilo di @saradizdari_ecom #saradizdari #ecommerce #klippify"
+    }
+  ]
+}
+```
+Grazie all'array `segments`, l'AI può:
+- mettere come primo elemento il **Teaser** (2–3s presi dal momento clou);
+- saltare qualsiasi parte debole, saluto o digressione a metà discorso, **tenendo solo le frasi che contano** e cucendole insieme senza tempi morti.
 
-1. **Approccio 1 — Trascrizione GPU + API Cloud/Web:** scartato perché la macchina di produzione finale è un portatile vecchio senza GPU RTX e l'utente richiede funzionamento interamente locale.
-2. **Approccio 2 — Cloud-Light tramite API Gratuita (Groq/Gemini API):** scartato perché l'utente vuole un sistema **100% locale** senza dipendere da chiavi API esterne.
-3. **Approccio 3 (SCELTO) — "AI Director Cronjob su Antigravity" + Motore FFmpeg Locale "CPU-Smart":**
-   - **Cervello Primario (Cronjob Antigravity):** un'automazione pianificata nativa di Antigravity (`sidecar.json` con `"builtin": "schedule"`) sveglia periodicamente l'agente AI di Antigravity. L'agente legge la trascrizione coi timestamp del video sorgente, ispeziona i frame estratti dal video tramite il suo strumento multimodale `read_file`, analizza le performance storiche (`views` in `klippify_submissions.json`), sceglie i tagli migliori, il *Cold-Open Teaser*, gli Hook e le Caption TikTok e li salva in `data/ai_director_cuts.json` avviano il rendering FFmpeg. Zero carico AI sulla CPU del portatile vecchio e zero browser Chrome per Gemini Web!
-   - **Motore Locale & Salvagente Offline (`core/local_viral_analyzer.py`):** se `clipping_pipeline.py` viene lanciato manualmente dalla dashboard quando il cronjob non ha ancora pre-analizzato il video, usa l'analizzatore locale deterministico sui sottotitoli/audio (mai più tagli ciechi a `00:10-00:45`).
-   - **Smart Crop 9:16 + Teaser + Jump-Cut:** ritaglio verticale centrato sul volto del parlante, rimozione silenzi `> 0.45s` e sottotitoli puliti senza banner fisso.
+### 3.3 Modulo 3: Esecutore FFmpeg Multi-Segmento & Sottotitoli Puliti (`core/clip_processor.py` + `core/video_captioner.py`)
+1. **Taglia & Cuci Multi-Segmento (`process_clip_ffmpeg`):**
+   - Accetta sia `segments=[{"start": ..., "end": ...}, ...]` (modalità multi-segmento AI) sia `start_time`/`end_time` singoli.
+   - Per ogni segmento in `segments`, estrae e ritaglia in 9:16 (`1080x1920`) secondo `crop_mode` (`face_crop` centrato su `center_x_ratio`, `split_screen` o `zoomed_blur` ingrandito al 135%) e li concatena in un unico flusso fluido con FFmpeg (`concat=n=K:v=1:a=1`, `-preset veryfast`).
+2. **Sottotitoli e Grafica Anti-Spot (`video_captioner.py`):**
+   - L'Hook Card superiore (`hook_text`) compare a `0:00:00.00` e **scompare a `0:00:03.20`** (`persistent=False`).
+   - I sottotitoli dinamici parola-per-parola vengono generati sull'audio già montato della clip finale (così i timestamp delle parole combaciano al millisecondo anche dopo aver cucito più segmenti diversi!).
+   - La slide Outro CTA compare solo negli ultimi `3.0s` usando dinamicamente la CTA e la menzione `@` della campagna attiva.
 
----
+### 3.4 Modulo 4: Blocco Anti-Taglio Cieco (`core/clipping_pipeline.py`)
+- Rimosso completamente il fallback cieco (`00:10-00:45`, `01:00-01:35`, `02:00-02:35`) e rimosso `gemini_analysis_bot.py` basato su Playwright.
+- Quando viene chiamato `run_clipping_workflow(campaign_id, video_source_path, cuts_file=None)`:
+  - Se esiste il piano di taglio dell'AI (`cuts_file` o `data/ai_director_cuts.json` corrispondente al video), esegue immediatamente il montaggio multi-segmento FFmpeg delle clip decise dall'AI.
+  - Se il video **non** è ancora stato analizzato dall'AI di Antigravity, esegue automaticamente `video_inspector.inspect_video(source_file)` per preparare trascrizione e Storyboard JPG e restituisce `"status": "awaiting_ai_director"` (senza mai tagliare a caso!).
+- Include inoltre `purge_legacy_blind_clips()` per ripulire da `data/clip_metadata.json` e `data/campaign_schedules.json` le 68 vecchie clip tagliate a `00:10-00:45`.
 
-## 5. Architettura Dettagliata della Soluzione
-
-### 5.1 Modulo 1: Download Sottotitoli Nativi & Pre-Filtro Audio (`core/source_downloader.py` + `core/local_viral_analyzer.py`)
-Per evitare di trascrivere su CPU video lunghi 20–45 minuti:
-1. **Estrazione Sottotitoli Nativi (`yt-dlp`):**
-   - Durante `download_source_video()`, `yt-dlp` viene configurato con `writesubtitles=True`, `writeautomaticsub=True`, `subtitleslangs=['it', 'en']`, `subtitlesformat='json3/vtt'`.
-   - Se il file `.json3` o `.vtt` viene scaricato insieme al `.mp4`, il parser locale estrae istantaneamente (in `< 0.2s`) la lista completa delle parole con i timestamp `start` ed `end` sull'intero video.
-2. **Fallback Locale "Audio Energy Hotspots" (se il video non ha sottotitoli, es. Google Drive):**
-   - Esegue un'analisi ultraleggera della traccia audio con FFmpeg (`ffmpeg -i input.mp4 -af astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level -f null -`), che legge 30 minuti di audio in ~2 secondi sulla CPU.
-   - Individua le 4–6 finestre da 75 secondi con la maggiore energia vocale e densità di parlato (escludendo i primi 15 secondi di sigle/saluti e la coda finale) e trascrive **solo quelle finestre** con `Faster-Whisper` (`model_size="base"`, `compute_type="int8"`, `vad_filter=True`).
-
-### 5.2 Modulo 2: Selezione Virale, Confini di Frase, Teaser e Hook (`core/local_viral_analyzer.py`)
-Sostituisce `core/gemini_analysis_bot.py` come motore primario nella pipeline:
-1. **Segmentazione in Frasi Compiute:**
-   - Raggruppa le parole trascritte in frasi basandosi su punteggiatura (`.`, `?`, `!`) e pause vocali (`gap >= 0.35s`).
-   - Scarta automaticamente qualsiasi frase iniziale contenente pattern di saluto/preambolo (`"ciao a tutti"`, `"bentornati"`, `"in questo video"`, `"mi chiamo"`, `"oggi parliamo"`, `"prima di iniziare"`).
-2. **Algoritmo di Viral Scoring (0–100 punti per finestra di 28–50 secondi):**
-   - **Numeri, Cifre e Valori (`+25 pt`):** presenza di importi (`€`, `euro`, `mila`, `%`, cifre numeriche), tempi rapidi (`giorni`, `settimane`, `mesi`, `da zero`, `primo mese`).
-   - **Trigger Emotivi / Curiosità / Conflitto (`+25 pt`):** parole chiave ad alta ritenzione (`errore`, `segreto`, `nessuno`, `verità`, `problema`, `sbagliato`, `incredibile`, `paura`, `rischio`, `libertà`, `cambiato`, `stipendio`, `fatturato`, `clienti`, domande dirette con `?`).
-   - **Ritmo del Parlato — Words Per Second (`+25 pt`):** premia i passaggi con ritmo incalzante (`2.4 – 3.8 parole/secondo`) e penalizza i passaggi lenti o esitanti.
-   - **Energia Vocale / Enfasi (`+25 pt`):** calcolata dal volume RMS medio e dai picchi d'enfasi della voce nel segmento.
-3. **Selezione Top Clip Distinte (3–5 clip per video):**
-   - Seleziona le migliori finestre non sovrapposte (distanza minima 20s tra una clip e l'altra), garantendo che `start_time` coincida con la prima parola di una frase forte e `end_time` coincida con l'ultima parola di una frase conclusa (con `0.25s` di margine audio per non troncare la consonante finale).
-4. **Estrazione del Cold-Open Teaser (2.0s – 3.5s):**
-   - All'interno di ciascuna clip selezionata (escludendo i primi 4 secondi), individua la singola micro-frase (2.0s – 3.5s) con il punteggio d'impatto più alto (`teaser_start`, `teaser_end`).
-   - Questa micro-frase verrà montata a `00:00` (prima dell'inizio della clip) per catturare l'attenzione nei primi 2 secondi.
-5. **Generatore Locale di Hook e Caption Contestuali (Zero frasi fisse):**
-   - Costruisce l'`hook_text` (max 7–9 parole, tutto maiuscolo) direttamente dalla frase più forte/teaser della clip stessa (es. se la frase dice *"in due mesi sono arrivata a 12.400 euro partendo da zero"*, l'hook estratto diventa `"DA ZERO A 12.400€ IN 2 MESI"` oppure la frase punchline pulita dai riempitivi).
-   - Costruisce una `tiktok_caption` unica combinando la frase chiave della clip, una domanda di engagement coerente col tema, la CTA della campagna e gli hashtag/menzioni obbligatorie.
-
-### 5.3 Modulo 3: Smart Crop 9:16 "Lightweight", Jump-Cut e Rendering (`core/clip_processor.py`)
-1. **Rilevamento Volto Ultra-Leggero (`detect_smart_crop_coordinates`):**
-   - Estrae tramite FFmpeg solo **10 frame** distribuiti nel segmento della clip (`-vf fps=1/3`, risoluzione ridotta `480p`, in memoria/temp, tempo `< 0.2s`).
-   - Usa `cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')` di OpenCV per rilevare i volti in ciascun frame:
-     - **Caso 1 — Singolo parlante predominante (o inquadratura fissa/podcast 1 persona):** calcola la mediana della coordinata orizzontale `center_x` del volto e applica un **Crop 9:16 a tutto schermo** centrato sul parlante (`crop=ih*9/16:ih:x_offset:0,scale=1080:1920`).
-     - **Caso 2 — Due volti distanti contemporaneamente (es. intervista doppia in 16:9):** applica un layout **Split-Screen 9:16** (volto sinistro nella metà superiore `1080x960`, volto destro nella metà inferiore `1080x960`) oppure, se i volti si muovono troppo o c'è condivisione schermo (0 volti), usa un **Zoomed Blur 9:16** dove il video centrale è ingrandito al **135% della larghezza** (tagliando i bordi laterali inutili) così il soggetto è grande e leggibile, non un francobollo.
-2. **Jump-Cut dei Silenzi + Montaggio Teaser:**
-   - Usando i timestamp delle parole (o `silencedetect`), individua i vuoti interni `> 0.45s` e costruisce la lista di sotto-segmenti attivi:
-     - `[Teaser (2.5s)]` + (breve effetto flash/stacco di `0.1s`) + `[Segmento 1 parlato]` + `[Segmento 2 parlato]` ...
-   - Concatena i segmenti e applica il filtro di crop 9:16 in un singolo comando FFmpeg con `-preset veryfast -crf 20`.
-
-### 5.4 Modulo 4: Sottotitoli Dinamici Puliti e CTA Dinamica (`core/video_captioner.py`)
-1. **Eliminazione del Banner Promozionale Permanente:**
-   - `format_hook_card()` viene modificato con `persistent=False` di default: il badge + titolo Hook appare a `0:00:00.00` e scompare con fade-out a `0:00:03.20` (esattamente alla fine del Cold-Open Teaser).
-2. **Rimozione Hardcoding "Sara Dizdari":**
-   - `clip_processor.process_clip_ffmpeg()` passa esplicitamente `brand_cta=cta_text` e `brand_mention=mention_text` a `video_captioner.burn_captions_to_video()`.
-   - La slide Outro finale (ultimi `3.0s`) mostra la CTA specifica della campagna attiva e il relativo `@mention` (non più `@saradizdari_ecom` fisso).
-3. **Sottotitoli Stile Hormozi Ottimizzati:**
-   - Posizionati nella *safe zone* di TikTok (`pos_y = 1320`, sopra la descrizione TikTok e sotto il volto del parlante), 2–3 parole per schermata con evidenziazione della parola attiva e iniezione emoji contestuale allargata a tutte le nicchie (business, intrattenimento, podcast, lifestyle, DIY).
-
-### 5.5 Modulo 5: Auto-Riconoscimento Multi-PC su Antigravity (`GEMINI.md` + `.agents/skills/`) & Cronjob "AI Director"
-Per garantire che **qualsiasi istanza di Antigravity su qualsiasi computer** (es. il portatile vecchio) capisca in automatico cosa fare appena scarica la repository da GitHub senza doverle spiegare nulla:
-1. **Regola Always-On di Progetto (`GEMINI.md` e `AGENTS.md` nella root del repo Git):**
-   - Antigravity carica automaticamente `GEMINI.md` nel system prompt dell'agente appena apre il workspace.
-   - `GEMINI.md` istruisce immediatamente l'agente su:
-     - architettura del progetto e divieto assoluto di tagli ciechi;
-     - verifica automatica al primo avvio: se sul PC corrente non esiste ancora il cronjob `~/.gemini/config/sidecars/klippify-ai-director/sidecar.json` (o punta a un percorso diverso), l'agente esegue `python core/setup_antigravity_cron.py` per registrarlo con i percorsi esatti di quel PC;
-     - come eseguire un ciclo di regia AI su richiesta o via cronjob.
-2. **Skill di Progetto Versionata su GitHub (`.agents/skills/klippify-ai-director/SKILL.md`):**
-   - Scoperta automaticamente da Antigravity dentro `.agents/skills/`.
-   - Contiene la procedura passo-passo del **"Regista AI" (AI Director)** ad ogni ciclo:
-     - **Passo 1 — Audit Rifiuti & Analisi Views:** esegue `rejection_auditor.py` e legge `data/klippify_submissions.json` per imparare quali clip hanno fatto più visualizzazioni (es. 720 views) e quali sono state rifiutate.
-     - **Passo 2 — Scelta Video & Estrazione Copione + Frame:** esegue `python core/source_downloader.py --prepare-for-ai <campaign_id>` che scarica il nuovo video, salva la trascrizione timestampata (`<video_stem>_transcript.json`) ed estrae 6 frame JPG campione.
-     - **Passo 3 — Regia AI Multimodale (Lettura Copione + Visione Frame):** l'agente legge `<video_stem>_transcript.json`, ispeziona i frame JPG con `read_file` per individuare la posizione del volto e scrive `data/ai_director_cuts.json` con:
-       - `teaser_start` / `teaser_end` (Cold-Open Teaser di 2.5s da anticipare a `00:00`),
-       - `start_time` / `end_time` su frasi compiute (25–55s),
-       - `crop_mode` e coordinate X del parlante,
-       - `hook_text` (solo primi 3s) e `tiktok_caption` persuasiva.
-     - **Passo 4 — Rendering FFmpeg & Accodamento Autopilota:** l'agente lancia `python core/clipping_pipeline.py <campaign_id> --video <file> --cuts data/ai_director_cuts.json`, che esegue il taglio FFmpeg 9:16 con Teaser, Jump-Cut e sottotitoli puliti e mette le clip pronte nella coda di `autopilot_engine.py`.
-3. **Installer Automatico del Cronjob (`core/setup_antigravity_cron.py`):**
-   - Script Python multipiattaforma che rileva automaticamente `Path.home() / ".gemini" / "config" / "sidecars" / "klippify-ai-director" / "sidecar.json"` e il percorso assoluto corrente della repository sul PC in uso, creando il cronjob pianificato con i permessi corretti (`workspace_uris`, `access_grants`).
-
----
-
-## 6. Scelte Tecniche delegate al Builder ("My Calls")
-
-- **Dipendenze Python (`requirements.txt` + `Installa_Dipendenze.bat`):** usare `opencv-python-headless` (più leggero di `opencv-python` completo e senza conflitti GUI su Windows), `faster-whisper`, `yt-dlp`, `numpy`, `flask`, `playwright`.
-- **Caching delle Trascrizioni:** salvare la trascrizione completa di ogni video sorgente in `clipping_sources/<campaign_id>/<video_stem>_transcript.json` così se si vogliono rigenerare clip dallo stesso video non serve mai ritrascriverlo.
-- **Pulizia Automatica Clip Vecchie "Cieche":** fornire uno script/opzione per archiviare o rigenerare le vecchie clip nel magazzino che avevano `"transcript": "Estratto dal video originale"`, evitando che l'autopilota continui a pubblicare vecchie clip tagliate a `00:10-00:45`.
+### 3.5 Modulo 5: Portabilità Automatica Multi-PC (`GEMINI.md`, `AGENTS.md`, `.agents/skills/klippify-ai-director/SKILL.md`, `core/setup_antigravity_cron.py`)
+- **`GEMINI.md` e `AGENTS.md` (nella radice Git):** caricati automaticamente da qualsiasi Antigravity appena clona la repository. Istruiscono l'agente a verificare/installare il cronjob locale (`python core/setup_antigravity_cron.py`) e a usare la skill `.agents/skills/klippify-ai-director/SKILL.md`.
+- **`.agents/skills/klippify-ai-director/SKILL.md`:** istruisce l'Agente AI passo-passo su come:
+  1. Controllare rifiuti e views in `data/klippify_submissions.json`;
+  2. Scaricare nuovi video e lanciare `python core/video_inspector.py <video_path>`;
+  3. Leggere `<video_stem>_inspection.json` e guardare con `read_file` le `<video_stem>_storyboard_*.jpg`;
+  4. Decidere cosa tenere e cosa buttare scrivendo `data/ai_director_cuts.json` (con `segments` multipli, `crop_mode`, `center_x_ratio`, `hook_text`, `tiktok_caption`);
+  5. Lanciare `python core/clipping_pipeline.py <campaign_id> --video <video_path> --cuts data/ai_director_cuts.json` per produrre i `.mp4` finiti e metterli in coda all'autopilota.
