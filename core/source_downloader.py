@@ -90,7 +90,6 @@ def inspect_source(url, limit=10):
     url = url.strip()
     platform = detect_platform(url)
     
-    # Normalizza URL canale YouTube se non ha /videos
     if platform == "youtube":
         if "@" in url and not url.endswith(("/videos", "/shorts", "/streams", "/playlists")):
             url = url.rstrip("/") + "/videos"
@@ -130,7 +129,6 @@ def inspect_source(url, limit=10):
                 vid_id = entry.get("id") or str(uuid.uuid4().hex[:8])
                 vid_url = entry.get("url") or entry.get("webpage_url") or (f"https://www.youtube.com/watch?v={vid_id}" if platform == "youtube" else url)
                 
-                # Se è un video YouTube:
                 if platform == "youtube" and not str(vid_url).startswith("http"):
                     vid_url = f"https://www.youtube.com/watch?v={vid_id}"
 
@@ -169,7 +167,8 @@ def inspect_source(url, limit=10):
 
 def download_source_video(url, campaign_id="general", custom_title=None, progress_logger=None):
     """
-    Scarica il video specificato e lo salva in clipping_sources/<campaign_id>/
+    Scarica il video specificato insieme ai sottotitoli nativi (.json3/.vtt)
+    e prepara subito il pacchetto di ispezione per l'Agente AI di Antigravity.
     """
     import yt_dlp
 
@@ -195,6 +194,10 @@ def download_source_video(url, campaign_id="general", custom_title=None, progres
         'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
         'outtmpl': out_template,
         'merge_output_format': 'mp4',
+        'writesubtitles': True,
+        'writeautomaticsub': True,
+        'subtitleslangs': ['it', 'en'],
+        'subtitlesformat': 'json3/vtt',
         'windowsfilenames': True,
         'restrictfilenames': True,
         'quiet': False,
@@ -248,6 +251,14 @@ def download_source_video(url, campaign_id="general", custom_title=None, progres
 
             log(f"Download completato con successo: '{fname}' ({file_size_mb} MB) salvato in {sanitized_camp}!")
 
+            inspection_file = None
+            try:
+                import video_inspector
+                insp = video_inspector.inspect_video(downloaded_file, campaign_id=campaign_id)
+                inspection_file = insp.get("inspection_file")
+            except Exception as ie:
+                print(f"[SOURCE-DOWNLOADER] Avviso ispezione video per AI: {ie}")
+
             try:
                 import clipping_queue_manager
                 clipping_queue_manager.add_video_to_queue(campaign_id, fname, file_size_mb=file_size_mb)
@@ -260,6 +271,7 @@ def download_source_video(url, campaign_id="general", custom_title=None, progres
                 "video_id": vid_id,
                 "filename": fname,
                 "file_path": str(downloaded_file),
+                "inspection_file": inspection_file,
                 "file_size_mb": file_size_mb,
                 "title": title,
                 "duration": info.get("duration", 0)

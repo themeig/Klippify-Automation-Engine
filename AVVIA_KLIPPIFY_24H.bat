@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-cd /d "c:\Users\HP\Desktop\contenuti klippify"
+cd /d "%~dp0"
 title KLIPPIFY BOT 24/7 - SERVER & AUTOPILOT
 
 echo ============================================================
