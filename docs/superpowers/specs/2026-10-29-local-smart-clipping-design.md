@@ -113,15 +113,27 @@ Sostituisce `core/gemini_analysis_bot.py` come motore primario nella pipeline:
 3. **Sottotitoli Stile Hormozi Ottimizzati:**
    - Posizionati nella *safe zone* di TikTok (`pos_y = 1320`, sopra la descrizione TikTok e sotto il volto del parlante), 2–3 parole per schermata con evidenziazione della parola attiva e iniezione emoji contestuale allargata a tutte le nicchie (business, intrattenimento, podcast, lifestyle, DIY).
 
-### 5.5 Modulo 5: Cronjob Nativo Antigravity ("AI Director") + Aggiornamento `watcher_instructions.md`
-1. **Come funziona il Cronjob su Antigravity:**
-   - Antigravity supporta nativamente le **Scheduled Automations** (`~/.gemini/config/sidecars/klippify-ai-director/sidecar.json` con `"builtin": "schedule"`).
-   - A intervalli regolari (es. ogni 4 ore), Antigravity avvia in background una sessione dell'agente AI nella cartella `C:\Users\Leo\Desktop\automazione-klippify`.
-2. **Compiti del "Regista AI" (Agente Antigravity) ad ogni esecuzione del Cronjob:**
-   - **Passo 1 — Audit Rifiuti & Analisi Views:** esegue `rejection_auditor.py` e legge `data/klippify_submissions.json` per verificare sia eventuali rifiuti sia quali clip hanno generato più visualizzazioni (es. 720 views vs 0-2 views), adattando lo stile degli hook ai pattern più performanti.
-   - **Passo 2 — Scelta Campagna & Download Video + Trascrizione:** ispeziona i canali in `data/campaign_sources.json`, sceglie il video migliore non ancora scaricato e lancia `source_downloader.py` che scarica il `.mp4` e genera subito il file di trascrizione timestampata (`<video_stem>_transcript.json`) + 6 frame JPG campione del video.
-   - **Passo 3 — Regia AI Multimodale (Lettura Copione + Visione Frame):** l'agente Antigravity legge il file `<video_stem>_transcript.json` e **guarda i frame JPG** tramite `read_file`. Sceglie da 3 a 5 clip virali reali e scrive direttamente il piano di taglio in `data/ai_director_cuts.json` (con `teaser_start`, `teaser_end`, `start_time`, `end_time`, `crop_mode` / coordinate volto, `hook_text` persuasivo e `tiktok_caption` completa).
-   - **Passo 4 — Rendering FFmpeg & Accodamento Autopilota:** l'agente lancia `python core/clipping_pipeline.py <campaign_id> --video <file> --cuts data/ai_director_cuts.json`, che esegue il taglio FFmpeg 9:16 con Teaser, Jump-Cut e sottotitoli puliti e mette le clip pronte nella coda di `autopilot_engine.py`.
+### 5.5 Modulo 5: Auto-Riconoscimento Multi-PC su Antigravity (`GEMINI.md` + `.agents/skills/`) & Cronjob "AI Director"
+Per garantire che **qualsiasi istanza di Antigravity su qualsiasi computer** (es. il portatile vecchio) capisca in automatico cosa fare appena scarica la repository da GitHub senza doverle spiegare nulla:
+1. **Regola Always-On di Progetto (`GEMINI.md` e `AGENTS.md` nella root del repo Git):**
+   - Antigravity carica automaticamente `GEMINI.md` nel system prompt dell'agente appena apre il workspace.
+   - `GEMINI.md` istruisce immediatamente l'agente su:
+     - architettura del progetto e divieto assoluto di tagli ciechi;
+     - verifica automatica al primo avvio: se sul PC corrente non esiste ancora il cronjob `~/.gemini/config/sidecars/klippify-ai-director/sidecar.json` (o punta a un percorso diverso), l'agente esegue `python core/setup_antigravity_cron.py` per registrarlo con i percorsi esatti di quel PC;
+     - come eseguire un ciclo di regia AI su richiesta o via cronjob.
+2. **Skill di Progetto Versionata su GitHub (`.agents/skills/klippify-ai-director/SKILL.md`):**
+   - Scoperta automaticamente da Antigravity dentro `.agents/skills/`.
+   - Contiene la procedura passo-passo del **"Regista AI" (AI Director)** ad ogni ciclo:
+     - **Passo 1 — Audit Rifiuti & Analisi Views:** esegue `rejection_auditor.py` e legge `data/klippify_submissions.json` per imparare quali clip hanno fatto più visualizzazioni (es. 720 views) e quali sono state rifiutate.
+     - **Passo 2 — Scelta Video & Estrazione Copione + Frame:** esegue `python core/source_downloader.py --prepare-for-ai <campaign_id>` che scarica il nuovo video, salva la trascrizione timestampata (`<video_stem>_transcript.json`) ed estrae 6 frame JPG campione.
+     - **Passo 3 — Regia AI Multimodale (Lettura Copione + Visione Frame):** l'agente legge `<video_stem>_transcript.json`, ispeziona i frame JPG con `read_file` per individuare la posizione del volto e scrive `data/ai_director_cuts.json` con:
+       - `teaser_start` / `teaser_end` (Cold-Open Teaser di 2.5s da anticipare a `00:00`),
+       - `start_time` / `end_time` su frasi compiute (25–55s),
+       - `crop_mode` e coordinate X del parlante,
+       - `hook_text` (solo primi 3s) e `tiktok_caption` persuasiva.
+     - **Passo 4 — Rendering FFmpeg & Accodamento Autopilota:** l'agente lancia `python core/clipping_pipeline.py <campaign_id> --video <file> --cuts data/ai_director_cuts.json`, che esegue il taglio FFmpeg 9:16 con Teaser, Jump-Cut e sottotitoli puliti e mette le clip pronte nella coda di `autopilot_engine.py`.
+3. **Installer Automatico del Cronjob (`core/setup_antigravity_cron.py`):**
+   - Script Python multipiattaforma che rileva automaticamente `Path.home() / ".gemini" / "config" / "sidecars" / "klippify-ai-director" / "sidecar.json"` e il percorso assoluto corrente della repository sul PC in uso, creando il cronjob pianificato con i permessi corretti (`workspace_uris`, `access_grants`).
 
 ---
 
