@@ -290,21 +290,58 @@ def generate_storyboards(video_path: Path, output_dir: Path, interval_sec: int =
     return storyboards, sample_frames
 
 
+def load_campaign_brief(campaign_id: str) -> dict:
+    """
+    Carica tutte le specifiche, la descrizione, il video_prompt, le regole, le menzioni
+    e la CTA della campagna Klippify affinché l'Agente AI possa allineare ogni taglio al brief.
+    """
+    root = paths.PROJECT_ROOT
+    for cand in [root / "active_campaigns_classified.json", root / "campaigns_ranked.json", root / "active_campaigns_detailed.json"]:
+        if cand.exists():
+            try:
+                data = json.loads(cand.read_text(encoding="utf-8"))
+                items = data.get("campaigns", data) if isinstance(data, dict) else data
+                for c in items:
+                    cid = c.get("id") or c.get("campaign_token") or c.get("campaign_id")
+                    cname = c.get("name") or c.get("campaign_name") or ""
+                    if str(cid) == str(campaign_id) or cname.lower() == str(campaign_id).lower():
+                        return {
+                            "campaign_id": str(cid),
+                            "name": cname,
+                            "brand": c.get("brand") or "",
+                            "description": c.get("description") or "",
+                            "video_prompt": c.get("video_prompt") or c.get("videoPrompt") or "",
+                            "rules": c.get("rules") or [],
+                            "mandatory_mentions": c.get("mandatory_mentions") or [],
+                            "mandatory_hashtags": c.get("mandatory_hashtags") or [],
+                            "call_to_action": c.get("call_to_action") or "",
+                            "logo": c.get("logo") or c.get("logo_url") or "",
+                            "uploaded_asset_requirements": c.get("uploaded_asset_requirements") or {}
+                        }
+            except Exception:
+                pass
+    return {"campaign_id": str(campaign_id)}
+
+
 def inspect_video(video_path: Path, campaign_id: str = "general") -> dict:
     """
     Prepara il pacchetto completo di ispezione (<video_stem>_inspection.json + Storyboard JPG)
-    affinché l'Agente AI di Antigravity possa leggere ogni frase coi timestamp, guardare i frame
-    e decidere esattamente quali segmenti tenere e quali scartare.
+    includendo il `campaign_brief` ufficiale Klippify affinché l'Agente AI di Antigravity possa
+    allineare i segmenti scelti, l'hook e la CTA alle richieste specifiche della campagna.
     """
     video_p = Path(video_path).resolve()
     if not video_p.exists():
         return {"status": "error", "message": f"Video non trovato: {video_p}"}
 
+    campaign_brief = load_campaign_brief(campaign_id)
     inspection_file = video_p.parent / f"{video_p.stem}_inspection.json"
     if inspection_file.exists():
         try:
             cached = json.loads(inspection_file.read_text(encoding="utf-8"))
             if cached.get("timed_lines"):
+                if "campaign_brief" not in cached or not cached["campaign_brief"].get("description"):
+                    cached["campaign_brief"] = campaign_brief
+                    inspection_file.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
                 return cached
         except Exception:
             pass
@@ -337,6 +374,7 @@ def inspect_video(video_path: Path, campaign_id: str = "general") -> dict:
     inspection_data = {
         "status": "ready_for_ai_director",
         "campaign_id": str(campaign_id),
+        "campaign_brief": campaign_brief,
         "video_file": str(video_p),
         "video_name": video_p.name,
         "duration_sec": round(duration_sec, 2),

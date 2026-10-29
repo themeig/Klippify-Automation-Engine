@@ -220,12 +220,15 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
     timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
     sanitized_short_name = re.sub(r'[^a-zA-Z0-9]', '', camp_name)[:12]
 
-    camp_cta = camp_data.get("call_to_action") or "Guarda il video completo sul profilo!"
+    raw_camp_cta = camp_data.get("call_to_action") or ""
+    if "su klippify" in raw_camp_cta.lower():
+        raw_camp_cta = ""
     hashtags_list = camp_data.get("mandatory_hashtags") or ["#klippify"]
     mentions_list = camp_data.get("mandatory_mentions") or []
     hashtags_str = " ".join([h if h.startswith('#') else f"#{h}" for h in hashtags_list])
     mentions_str = " ".join([m if m.startswith('@') else f"@{m}" for m in mentions_list])
     primary_mention = mentions_list[0] if mentions_list else None
+    default_camp_cta = raw_camp_cta or (f"Guarda il video completo sul profilo {primary_mention}!" if primary_mention else "Guarda il video completo sul profilo ufficiale!")
 
     import clipping_queue_manager
 
@@ -242,11 +245,13 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
         center_x = float(clip.get("center_x_ratio", 0.5))
         y_start_r = float(clip.get("y_start_ratio", 0.0))
         height_r = float(clip.get("height_ratio", 1.0))
+        clip_cta = clip.get("cta_text") or default_camp_cta
+        clip_mention = clip.get("brand_mention") or primary_mention
 
         raw_caption = clip.get("tiktok_caption") or hook_t or concept_t
         final_caption_parts = [raw_caption]
-        if camp_cta and camp_cta.lower() not in raw_caption.lower():
-            final_caption_parts.append(camp_cta)
+        if clip_cta and clip_cta.lower() not in raw_caption.lower():
+            final_caption_parts.append(clip_cta)
         if mentions_str and mentions_str not in raw_caption:
             final_caption_parts.append(mentions_str)
         if hashtags_str and hashtags_str not in raw_caption:
@@ -256,7 +261,7 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
 
         print(f"\n[+] Montaggio AI clip {idx+1}/{len(analysis_results)} ({crop_mode}, X={center_x}, Y={y_start_r}, H={height_r})...")
         print(f"    🎣 Hook (3.2s): {hook_t}")
-        print(f"    📢 CTA finale: {camp_cta}")
+        print(f"    📢 CTA finale: {clip_cta}")
         print(f"    📝 Caption: {full_clip_caption}")
 
         if task_logger:
@@ -273,8 +278,8 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
             height_ratio=height_r,
             segments=segments,
             hook_text=hook_t,
-            cta_text=camp_cta,
-            brand_mention=primary_mention,
+            cta_text=clip_cta,
+            brand_mention=clip_mention,
             logger=task_logger
         )
 

@@ -40,9 +40,10 @@ Tu sei il **Video Editor e Regista AI** di Klippify Automation Engine. Nessuno s
 
 ---
 
-### Passo 3: Regia AI — Leggi il Copione, Guarda i Frame e Decidi Cosa Tenere e Cosa Buttare
+### Passo 3: Regia AI — Allinea al Brief Klippify, Leggi il Copione, Guarda i Frame e Decidi i Tagli
 1. **Leggi `<video_stem>_inspection.json`** con `read_file`:
-   - Esamina `timed_lines` (`[{"start_str": "00:12.40", "end_str": "00:18.90", "text": "..."}]`).
+   - **PRIMA DI TUTTO esamina `campaign_brief`** (`name`, `brand`, `description`, `video_prompt`, `rules`, `mandatory_mentions`, `mandatory_hashtags`, `call_to_action`): ogni clip DEVE rispettare alla lettera il brief specifico della campagna (argomenti chiave richiesti dal brand, eventuali divieti, durata minima/massima, menzioni obbligatorie e CTA specifica del brand, evitando qualsiasi CTA generica come "su Klippify").
+   - Esamina `timed_lines` (`[{"start_str": "00:12.40", "end_str": "00:18.90", "text": "..."}]`) cercando i passaggi esatti citati nel `campaign_brief`.
    - Esamina `crop_suggestion` (`suggested_mode` e `center_x_ratio`).
 2. **Guarda con i tuoi occhi le immagini in `storyboards` e `sample_frames`** usando `read_file` sui file `.jpg`:
    - Verifica dove si trova la faccia di chi parla nello schermo (`center_x_ratio` da `0.0` sinistra a `1.0` destra, `0.5` centro);
