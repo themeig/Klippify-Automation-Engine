@@ -239,11 +239,11 @@ def process_clip_ffmpeg(
     try:
         res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding="utf-8", errors="ignore")
         if res.returncode == 0 and output_p.exists():
+            temp_raw = output_p.parent / f"raw_cut_{output_p.name}"
             try:
                 import video_captioner
                 if logger:
                     logger("💬 [CAPTIONER] Applicazione sottotitoli animati, Hook (3.2s) e CTA dinamica...")
-                temp_raw = output_p.parent / f"raw_cut_{output_p.name}"
                 if output_p.exists():
                     shutil.move(str(output_p), str(temp_raw))
                     video_captioner.burn_captions_to_video(
@@ -254,10 +254,13 @@ def process_clip_ffmpeg(
                         brand_cta=cta_text,
                         brand_mention=brand_mention
                     )
-                    if temp_raw.exists():
-                        temp_raw.unlink()
             except Exception as cap_err:
                 print(f"[CAPTIONER WARNING] Impossibile applicare sottotitoli: {cap_err}")
+            finally:
+                if not output_p.exists() and temp_raw.exists():
+                    shutil.move(str(temp_raw), str(output_p))
+                elif temp_raw.exists():
+                    temp_raw.unlink()
 
             fsize_mb = output_p.stat().st_size / (1024 * 1024)
             msg_ok = f"✅ [FFMPEG] Clip esportata: {output_p.name} ({fsize_mb:.2f} MB)"

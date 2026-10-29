@@ -44,7 +44,7 @@ def load_ai_director_cuts(cuts_file: Path, video_name: str = None, campaign_id: 
         file_vid = Path(str(data.get("video_file", ""))).name
         if campaign_id and file_camp and file_camp != str(campaign_id):
             return []
-        if video_name and file_vid and file_vid != Path(video_name).name:
+        if video_name and file_vid and file_vid.lower() != Path(video_name).name.lower():
             return []
         clips = data.get("clips", [])
         if isinstance(clips, list):
@@ -172,9 +172,11 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
     # 3. Cerca il piano di montaggio deciso dall'Agente AI di Antigravity (ai_director_cuts.json)
     candidate_cuts_files = []
     if cuts_file:
-        candidate_cuts_files.append(Path(cuts_file))
+        cf_path = Path(cuts_file)
+        candidate_cuts_files.append(cf_path if cf_path.is_absolute() else root / cf_path)
     candidate_cuts_files.extend([
         source_file.parent / f"{source_file.stem}_ai_cuts.json",
+        root / "data" / "ai_director_cuts.json",
         root / "ai_director_cuts.json"
     ])
 

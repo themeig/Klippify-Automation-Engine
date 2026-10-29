@@ -73,6 +73,45 @@ def test_load_ai_director_cuts_reads_matching_cuts(tmp_path):
     assert loaded[0]["hook_text"] == "12.400€ IN 60 GIORNI DA ZERO"
     assert len(loaded[0]["segments"]) == 2
 
+
+def test_workflow_finds_cuts_in_data_subdir_with_case_insensitive_video_name(tmp_path, monkeypatch):
+    monkeypatch.setattr(clipping_pipeline.paths, "PROJECT_ROOT", tmp_path)
+    raw_dir = tmp_path / "clipping_sources" / "camp1"
+    raw_dir.mkdir(parents=True)
+    dummy_vid = raw_dir / "Source_Video.MP4"
+    dummy_vid.write_bytes(b"00" * 1024)
+
+    data_dir = tmp_path / "data"
+    data_dir.mkdir(parents=True)
+    cuts_file = data_dir / "ai_director_cuts.json"
+    cuts_file.write_text(json.dumps({
+        "campaign_id": "camp1",
+        "video_file": "source_video.mp4",
+        "clips": [
+            {
+                "clip_number": 1,
+                "concept": "Clip trovata in data/",
+                "hook_text": "HOOK DA DATA DIR",
+                "crop_mode": "face_crop",
+                "center_x_ratio": 0.5,
+                "segments": [{"start": "00:05", "end": "00:30"}],
+                "transcript": "Testo reale",
+                "tiktok_caption": "Caption reale"
+            }
+        ]
+    }), encoding="utf-8")
+
+    monkeypatch.setattr(
+        clipping_pipeline.clip_processor,
+        "process_clip_ffmpeg",
+        lambda **kwargs: True
+    )
+
+    res = clipping_pipeline.run_clipping_workflow("camp1", video_source_path=str(dummy_vid))
+    assert res["status"] == "success"
+    assert len(res["clips"]) == 1
+    assert res["clips"][0]["hook_text"] == "HOOK DA DATA DIR"
+
 def test_workflow_without_ai_cuts_does_not_cut_blindly_and_prepares_inspection(tmp_path, monkeypatch):
     monkeypatch.setattr(clipping_pipeline.paths, "PROJECT_ROOT", tmp_path)
     raw_dir = tmp_path / "clipping_sources" / "camp_test"

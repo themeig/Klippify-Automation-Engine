@@ -76,3 +76,34 @@ def test_build_crop_filter_supports_face_crop_split_screen_and_zoomed_blur():
 
     f_zoom, _ = clip_processor.build_crop_filter(mode="zoomed_blur")
     assert "boxblur" in f_zoom and "1458" in f_zoom
+
+
+def test_process_clip_ffmpeg_restores_video_if_captioner_fails(tmp_path, monkeypatch):
+    in_vid = tmp_path / "in.mp4"
+    in_vid.write_bytes(b"fake_input" * 100)
+    out_vid = tmp_path / "out.mp4"
+
+    class DummyCompleted:
+        returncode = 0
+        stderr = ""
+
+    def fake_run(cmd, **kwargs):
+        out_vid.write_bytes(b"rendered_9_16_video" * 1000)
+        return DummyCompleted()
+
+    monkeypatch.setattr(clip_processor.subprocess, "run", fake_run)
+    monkeypatch.setattr(
+        video_captioner,
+        "burn_captions_to_video",
+        lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError("Simulated Whisper failure"))
+    )
+
+    ok = clip_processor.process_clip_ffmpeg(
+        input_video_path=in_vid,
+        start_time="00:05",
+        end_time="00:25",
+        output_video_path=out_vid
+    )
+    assert ok is True
+    assert out_vid.exists()
+    assert out_vid.stat().st_size > 1000
