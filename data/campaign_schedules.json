@@ -4,30 +4,30 @@
     "slots": [
       {
         "time": "12:00",
-        "video": "clip_SaraDizdariA_slot2_20260829_040557.mp4"
+        "video": ""
       },
       {
         "time": "13:15",
-        "video": "clip_SaraDizdariA_slot1_20260829_080544.mp4"
+        "video": ""
       },
       {
         "time": "15:00",
-        "video": "clip_SaraDizdariA_slot2_20260829_080544.mp4"
+        "video": ""
       },
       {
         "time": "18:00",
-        "video": "clip_SaraDizdariA_slot3_20260829_080544.mp4"
+        "video": ""
       },
       {
         "time": "21:00",
-        "video": "clip_SaraDizdariA_slot1_20260829_120500.mp4"
+        "video": ""
       },
       {
         "time": "23:00",
-        "video": "clip_SaraDizdariA_slot2_20260829_120500.mp4"
+        "video": ""
       }
     ],
-    "updated_at": "2026-08-31 00:00:11",
+    "updated_at": "2026-10-29 22:58:44",
     "autopilot_enabled": true,
     "published_clips": [
       "clip_SaraDizdariA_slot3_20260819_162539.mp4",
@@ -80,7 +80,7 @@
       "clip_SaraDizdariA_slot2_20260829_041424.mp4",
       "clip_SaraDizdariA_slot3_20260829_041424.mp4"
     ],
-    "schedule_date": "2026-08-31",
+    "schedule_date": "2026-10-29",
     "pause_until": null,
     "is_paused": false,
     "is_ended": false
