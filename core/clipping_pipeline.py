@@ -297,6 +297,8 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
                 "raw_source_video": source_file.name,
                 "concept": concept_t,
                 "hook_text": hook_t,
+                "cta_text": clip_cta,
+                "brand_mention": clip_mention,
                 "crop_mode": crop_mode,
                 "center_x_ratio": center_x,
                 "segments": segments,

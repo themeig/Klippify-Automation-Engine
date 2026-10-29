@@ -1062,6 +1062,56 @@ def execute_publish_step(item):
 
     return True
 
+
+_last_approval_audit_ts = 0.0
+
+def sync_klippify_approvals(force=False):
+    """
+    Controlla periodicamente su Klippify se i video inviati sono stati approvati (accepted),
+    sono in revisione (pending) o sono stati rifiutati (rejected), aggiornando lo storico
+    dell'autopilota e il report data/approval_audit_report.json.
+    """
+    global _last_approval_audit_ts
+    now_ts = time.time()
+    if not force and (now_ts - _last_approval_audit_ts) < 1800:  # ogni 30 minuti
+        return None
+    _last_approval_audit_ts = now_ts
+    try:
+        import rejection_auditor
+        report = rejection_auditor.audit_recent_submissions(hours_window=4, use_cache=not force)
+        state = load_state()
+        history = state.get("history", [])
+        changed = False
+        by_camp = report.get("by_campaign", {}) if isinstance(report, dict) else {}
+        # Costruisci mappa per filename -> (status, ai_reasoning, post_url)
+        clip_status_map = {}
+        for cid, cdata in by_camp.items():
+            for wp in cdata.get("winning_patterns", []):
+                if wp.get("clip_filename"):
+                    clip_status_map[wp["clip_filename"]] = ("accepted", wp.get("ai_reasoning", ""), wp.get("post_url", ""))
+            for rj in cdata.get("rejection_diagnostics", []):
+                if rj.get("clip_filename"):
+                    clip_status_map[rj["clip_filename"]] = ("rejected", rj.get("ai_reasoning", ""), rj.get("post_url", ""))
+            for pd in cdata.get("pending_submissions", []):
+                if pd.get("clip_filename"):
+                    clip_status_map[pd["clip_filename"]] = ("pending", "", pd.get("post_url", ""))
+        for h_item in history:
+            fname = h_item.get("generated_clip") or h_item.get("source_video")
+            if fname and fname in clip_status_map:
+                st, rsn, purl = clip_status_map[fname]
+                if h_item.get("klippify_status") != st or h_item.get("ai_reasoning") != rsn:
+                    h_item["klippify_status"] = st
+                    h_item["ai_reasoning"] = rsn
+                    if purl:
+                        h_item["post_url"] = purl
+                    changed = True
+        if changed:
+            save_state(state)
+        return report
+    except Exception as e:
+        print(f"[AUTOPILOT APPROVAL AUDIT ERROR] {e}")
+        return None
+
 def autopilot_worker_loop():
     """Ciclo principale del motore di autopilota."""
     global _engine_running
@@ -1088,6 +1138,12 @@ def autopilot_worker_loop():
                 except Exception as r_ex:
                     print(f"[AUTOPILOT MIDNIGHT RESET ERROR] {r_ex}")
                 save_state(state)
+
+            # Controllo automatico approvazione/rifiuto dei video inviati su Klippify
+            try:
+                sync_klippify_approvals(force=False)
+            except Exception as ap_err:
+                print(f"[AUTOPILOT APPROVAL CHECK ERROR] {ap_err}")
 
             # Controllo automatico continuo della Coda Video Grezzi (Materia Prima & Taglio)
             try:

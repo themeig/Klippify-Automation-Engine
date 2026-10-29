@@ -1,6 +1,24 @@
 {
-  "last_audit_time": "2026-08-31 07:36:31",
-  "resolved_rejections": [],
+  "last_audit_time": "2026-10-30 00:55:42",
+  "resolved_rejections": [
+    "6a91868a84a29ab01b757e5f"
+  ],
   "active_experiment": null,
-  "propagation_history": []
+  "propagation_history": [],
+  "campaigns_needing_attention": {
+    "6a71c6f7245627c68999eae2": {
+      "campaign_id": "6a71c6f7245627c68999eae2",
+      "campaign_name": "Sara Dizdari Academy – Scopri i negozi digitali",
+      "last_rejected_submission_id": "6a91868a84a29ab01b757e5f",
+      "last_rejected_url": "https://www.tiktok.com/@jiemli/video/7679066649600855318",
+      "ai_reasoning": "The video fails to follow the hook guidelines, which require starting immediately with the strongest or most engaging moment without any introductory chitchat; instead, it starts with conversational introductory questions ('adesso lascio parlare a te quindi dimmi chi sei...').",
+      "categories": [
+        "weak_hook",
+        "guideline_mismatch"
+      ],
+      "ai_director_instruction": "Scegli un primo segmento (teaser_hook) con impatto immediato nei primi 3 secondi e imposta un hook_text forte nel banner superiore. Allinea rigorosamente i segmenti scelti al brief di 'Sara Dizdari Academy – Scopri i negozi digitali' (vedi regole campagna).",
+      "expected_cta": "La lezione gratuita sul profilo di Sara",
+      "flagged_at": "2026-10-30 00:51:15"
+    }
+  }
 }

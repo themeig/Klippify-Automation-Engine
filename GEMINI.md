@@ -18,11 +18,16 @@ Quando apri questa repository su un nuovo computer (es. il portatile dedicato):
   👉 [`.agents/skills/klippify-ai-director/SKILL.md`](.agents/skills/klippify-ai-director/SKILL.md)
 
 ## 🛠️ 3. Architettura Rapida del Motore AI-Piloted
+0. **Controllo Approvazioni e Rifiuti Klippify (`core/rejection_auditor.py`):**
+   ```bash
+   python core/rejection_auditor.py
+   ```
+   Genera `data/approval_audit_report.json` verificando per ogni campagna quali video inviati sono stati **approvati (`accepted`)**, sono **in revisione (`pending`)** o sono stati **rifiutati (`rejected`)**, collegandoli al file MP4 locale (`clip_metadata.json` / `published_content.json`) ed estraendo `winning_patterns`, `ai_reasoning` e `ai_director_instruction`.
 1. **Ispezione Video (`core/video_inspector.py`):**
    ```bash
    python core/video_inspector.py "<percorso_video.mp4>" "<campaign_id>"
    ```
-   Genera `<video_stem>_inspection.json` (con tutte le frasi timestampate `[MM:SS.cc -> MM:SS.cc]`) e le griglie visive `<video_stem>_storyboard.jpg` + 6 frame JPG campione.
+   Genera `<video_stem>_inspection.json` (con `campaign_brief` e tutte le frasi timestampate `[MM:SS.cc -> MM:SS.cc]`) e le griglie visive `<video_stem>_storyboard.jpg` + 6 frame JPG campione.
 2. **Decisione Regia AI (`data/ai_director_cuts.json`):**
    Tu leggi `<video_stem>_inspection.json` (iniziando sempre da `campaign_brief` per rispettare gli argomenti richiesti dal brand, i divieti, le menzioni e la CTA specifica), guardi i frame JPG con `read_file` e scrivi `data/ai_director_cuts.json` specificando per ciascuna clip:
    - `segments`: lista di segmenti da **tenere e cucire insieme** (`[{"start": "...", "end": "...", "role": "teaser", "crop_mode": "face_crop", "center_x_ratio": 0.50}, ...]`), saltando saluti, parti noiose, pause o digressioni anche a metà discorso;

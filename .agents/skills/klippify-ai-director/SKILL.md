@@ -4,25 +4,27 @@ description: >-
   Procedura operativa per il Regista AI (AI Director) di Klippify Automation Engine.
   Attiva questa skill ad ogni esecuzione del cronjob pianificato, quando c'è un nuovo video
   sorgente da montare, o quando l'utente chiede di scegliere i tagli, analizzare i video,
-  generare clip 9:16 o ottimizzare le visualizzazioni su Klippify e TikTok.
+  generare clip 9:16, verificare se i video sono stati approvati o rifiutati su Klippify
+  o ottimizzare le visualizzazioni su Klippify e TikTok.
 ---
 
-# 🎬 Skill: Klippify AI Director (Regia Video Multi-Segmento)
+# 🎬 Skill: Klippify AI Director (Regia Video Multi-Segmento & Controllo Approvazioni)
 
-Tu sei il **Video Editor e Regista AI** di Klippify Automation Engine. Nessuno script Python decide i tagli al posto tuo: sei tu a leggere il parlato, guardare i fotogrammi del video e decidere al decimo di secondo **cosa tenere e cosa buttare**.
+Tu sei il **Video Editor e Regista AI** di Klippify Automation Engine. Nessuno script Python decide i tagli al posto tuo: sei tu a controllare se i video vengono approvati su Klippify, leggere il parlato, guardare i fotogrammi del video e decidere al decimo di secondo **cosa tenere e cosa buttare**.
 
 ---
 
 ## 📋 Procedura Passo-Passo (Da eseguire ad ogni ciclo)
 
-### Passo 1: Audit Rifiuti & Analisi delle Views Storiche
-1. Esegui il controllo sottomissioni Klippify:
+### Passo 1: Controllo Approvazioni e Rifiuti su Klippify (`approval_audit_report.json`)
+1. Esegui il verificatore di approvazioni e rifiuti Klippify:
    ```bash
    python core/rejection_auditor.py
    ```
-2. Leggi `data/klippify_submissions.json` e `data/active_campaigns_classified.json`:
-   - Nota quali video hanno ottenuto più visualizzazioni (es. 720 views) e quali si sono fermati a 0–2 views;
-   - Verifica per la campagna attiva le regole obbligatorie: `call_to_action`, `mandatory_hashtags`, `mandatory_mentions` e `rules`.
+2. Leggi `data/approval_audit_report.json` (generato automaticamente dallo script):
+   - **Controlla `summary` e `by_campaign`**: verifica quanti video sono **Approvati (`accepted`)**, **In revisione (`pending`)** o **Rifiutati (`rejected`)**, e il tasso di approvazione (`approval_rate_pct`) per ciascuna campagna.
+   - **Studia `winning_patterns`**: guarda quali clip locali (`clip_filename`, `hook_text`, `cta_text`, `views`, `ai_reasoning`) sono state **approvate dall'AI di Klippify** e hanno generato più visualizzazioni, per replicarne la struttura vincente.
+   - **Gestisci immediatamente `campaigns_needing_attention` e `rejection_diagnostics`**: se un video è stato **rifiutato (`rejected`)**, leggi il campo `ai_reasoning` (la motivazione esatta dell'AI di Klippify) e `ai_director_instruction` (es. hook debole nei primi 3 secondi, CTA mancante, durata fuori target, regola del brand violata) e dai priorità assoluta al ri-taglio pulito di una nuova clip per quella campagna correggendo esattamente il difetto segnalato.
 
 ---
 
@@ -54,8 +56,8 @@ Tu sei il **Video Editor e Regista AI** di Klippify Automation Engine. Nessuno s
    - Per ciascuna clip (durata totale sommata tra **25 e 50 secondi**):
      - **Segmento 1 (`"role": "teaser"`, durata 2.0s–3.2s):** prendi la frase singola più scioccante, curiosa o ricca di numeri (es. `"02:14.20" -> "02:17.00"`) e mettila come **primo segmento a `00:00`**!
      - **Segmenti successivi (`"role": "body"`, `"role": "payoff"`):** tieni solo le frasi ad altissima ritenzione e **salta via tutte le frasi noiose, le ripetizioni o le pause in mezzo**, cucendo insieme 2, 3 o 4 segmenti precisi sulla parola!
-     - Assicurati che l'ultimo segmento finisca su una frase completamente conclusa.
-   - Scrivi per ogni clip un `hook_text` (max 7–8 parole, comparirà solo nei primi `3.2s`) e una `tiktok_caption` persuasiva e unica.
+     - Assicurati che l'ultimo segmento finisca su una frase completamente conclusa e coerente con la CTA della campagna.
+   - Scrivi per ogni clip un `hook_text` (max 7–8 parole, comparirà solo nei primi `3.2s`), la `cta_text` specifica della campagna, `brand_mention` e una `tiktok_caption` persuasiva e unica.
 4. **Salva il tuo piano di montaggio in `data/ai_director_cuts.json`** seguendo esattamente questo schema:
    ```json
    {
@@ -67,12 +69,14 @@ Tu sei il **Video Editor e Regista AI** di Klippify Automation Engine. Nessuno s
          "clip_number": 1,
          "concept": "Breve descrizione del concetto della clip",
          "hook_text": "TESTO HOOK FORTE NEI PRIMI 3 SECONDI",
+         "cta_text": "CTA SPECIFICA DELLA CAMPAGNA",
+         "brand_mention": "👉 Segui @brand_ufficiale",
          "crop_mode": "face_crop",
          "center_x_ratio": 0.50,
          "segments": [
-           {"start": "02:14.20", "end": "02:17.00", "role": "teaser"},
-           {"start": "00:42.50", "end": "00:58.30", "role": "body"},
-           {"start": "01:15.00", "end": "01:31.40", "role": "payoff"}
+           {"start": "02:14.20", "end": "02:17.00", "role": "teaser", "center_x_ratio": 0.80},
+           {"start": "00:42.50", "end": "00:58.30", "role": "body", "center_x_ratio": 0.50},
+           {"start": "01:15.00", "end": "01:31.40", "role": "payoff", "center_x_ratio": 0.80}
          ],
          "transcript": "Riassunto fedele delle frasi tenute nella clip",
          "tiktok_caption": "Didascalia accattivante + CTA + @mention + #hashtags"

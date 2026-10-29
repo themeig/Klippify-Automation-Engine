@@ -361,6 +361,20 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
             except Exception as e:
                 self.wfile.write(json.dumps({"error": str(e), "videos": []}, ensure_ascii=False).encode("utf-8"))
 
+        elif path == "/api/klippify/approval-audit":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            try:
+                import rejection_auditor
+                parsed = urllib.parse.parse_qs(parsed_path.query)
+                live = parsed.get("live", ["false"])[0].lower() in ["1", "true", "yes"]
+                hours = int(parsed.get("hours", ["24"])[0])
+                report = rejection_auditor.audit_recent_submissions(hours_window=hours, use_cache=not live)
+                self.wfile.write(json.dumps(report, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"status": "error", "message": str(e)}, ensure_ascii=False).encode("utf-8"))
         elif path == "/api/klippify/submissions":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -388,6 +402,11 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
                 subs_data = fetch_klippify_submissions(use_cache_if_available=False)
                 ranked = analyze_and_rank_campaigns(raw_camps)
                 generate_html_report(ranked, dash_data, subs_data)
+                try:
+                    import rejection_auditor
+                    rejection_auditor.audit_recent_submissions(hours_window=24, use_cache=True)
+                except Exception as aud_err:
+                    print(f"[SYNC AUDIT WARNING] {aud_err}")
                 process_manager.log(task_id, f"Sincronizzate con successo {len(raw_camps)} campagne LIVE e rigenerato il report.")
                 process_manager.finish_task(task_id, status="completed")
                 self.wfile.write(json.dumps({"status": "ok", "message": f"Sincronizzazione completata: {len(raw_camps)} campagne aggiornate.", "count": len(raw_camps)}, ensure_ascii=False).encode("utf-8"))
@@ -901,6 +920,11 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
                 subs_data = fetch_klippify_submissions(use_cache_if_available=False)
                 ranked = analyze_and_rank_campaigns(raw_camps)
                 generate_html_report(ranked, dash_data, subs_data)
+                try:
+                    import rejection_auditor
+                    rejection_auditor.audit_recent_submissions(hours_window=24, use_cache=True)
+                except Exception as aud_err:
+                    print(f"[SYNC AUDIT WARNING] {aud_err}")
                 process_manager.log(task_id, f"Sincronizzate con successo {len(raw_camps)} campagne LIVE e rigenerato il report.")
                 process_manager.finish_task(task_id, status="completed")
                 self.send_response(200)
