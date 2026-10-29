@@ -4,7 +4,7 @@
     "slots": [
       {
         "time": "12:00",
-        "video": ""
+        "video": "clip_SaraDizdariA_slot1_20261029_234707.mp4"
       },
       {
         "time": "13:15",
@@ -27,7 +27,7 @@
         "video": ""
       }
     ],
-    "updated_at": "2026-10-29 22:58:44",
+    "updated_at": "2026-10-30 00:00:00",
     "autopilot_enabled": true,
     "published_clips": [
       "clip_SaraDizdariA_slot3_20260819_162539.mp4",
@@ -78,9 +78,10 @@
       "clip_SaraDizdariA_slot3_20260829_040557.mp4",
       "clip_SaraDizdariA_slot1_20260829_041424.mp4",
       "clip_SaraDizdariA_slot2_20260829_041424.mp4",
-      "clip_SaraDizdariA_slot3_20260829_041424.mp4"
+      "clip_SaraDizdariA_slot3_20260829_041424.mp4",
+      "clip_SaraDizdariA_slot1_20261029_234506.mp4"
     ],
-    "schedule_date": "2026-10-29",
+    "schedule_date": "2026-10-30",
     "pause_until": null,
     "is_paused": false,
     "is_ended": false
@@ -106,5 +107,28 @@
       "clip_SaraDizdariA_slot1_20260820_150450.mp4",
       "clip_SaraDizdariA_slot1_20260819_182658.mp4"
     ]
+  },
+  "6a91676284a29ab01b754c33": {
+    "target_count": 3,
+    "slots": [
+      {
+        "time": "15:00",
+        "video": "clip_6a91676284a2_slot1_20261030_000001.mp4"
+      },
+      {
+        "time": "15:00",
+        "video": ""
+      },
+      {
+        "time": "18:00",
+        "video": ""
+      }
+    ],
+    "autopilot_enabled": true,
+    "updated_at": "2026-10-30 00:28:01",
+    "published_clips": [
+      "clip_SaikooTheory_slot1_20261029_235707.mp4"
+    ],
+    "schedule_date": "2026-10-30"
   }
 }

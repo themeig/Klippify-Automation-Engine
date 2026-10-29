@@ -45,7 +45,7 @@ def install_or_update_sidecar(
         f"Leggi e segui passo-passo la skill '{skill_posix}': "
         f"1) Esegui l'audit dei rifiuti e analizza le views in data/klippify_submissions.json; "
         f"2) Controlla se ci sono video sorgente da montare (o scaricane uno nuovo da data/campaign_sources.json con core/source_downloader.py) ed esegui core/video_inspector.py sul video; "
-        f"3) Leggi il file <video_stem>_inspection.json e guarda le Storyboard JPG con read_file per decidere esattamente quali segmenti tenere e quali scartare (Teaser + Corpo + Payoff), la posizione del volto per il crop 9:16, l'hook (3.2s) e la caption, salvandoli in data/ai_director_cuts.json; "
+        f"3) Leggi il file <video_stem>_inspection.json (controllando prima di tutto campaign_brief per allineare il contenuto e la CTA alle richieste specifiche della campagna Klippify) e guarda le Storyboard JPG con read_file per decidere esattamente quali segmenti tenere e quali scartare (Teaser + Corpo + Payoff), il center_x_ratio a schermo intero (face_crop) per ogni segmento, l'hook (3.2s), la cta_text e la caption, salvandoli in data/ai_director_cuts.json; "
         f"4) Lancia 'python core/clipping_pipeline.py <campaign_id> --video <video_path> --cuts data/ai_director_cuts.json' per generare le clip 9:16 e accodarle all'autopilota."
     )
 

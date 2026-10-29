@@ -14,11 +14,14 @@ echo  Per terminare premi CTRL + C oppure chiudi questa finestra.
 echo ============================================================
 echo.
 
+echo [%date% %time%] Configurazione automatica Cronjob Antigravity per questo PC...
+python core/setup_antigravity_cron.py
+
 start "" "http://localhost:5000"
 
 :loop
 echo [%date% %time%] Avvio server in corso...
-python -u server.py
+python -u core/server.py
 echo.
 echo [ATTENZIONE] Il server si e' interrotto. Riavvio automatico tra 5 secondi...
 timeout /t 5 >nul

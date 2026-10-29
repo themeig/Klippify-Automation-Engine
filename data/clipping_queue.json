@@ -335,7 +335,29 @@
         "clip_SaraDizdariA_slot3_20260830_160458.mp4"
       ],
       "processed_at": "2026-08-30 16:09:34"
+    },
+    {
+      "id": "cq_93a9d580",
+      "filename": "FEDERICA_CIAFFARDINI_OLTRE_10.000_EURO_IN_SOLI_4_MESI_CON_IL_guV1PHu6dEQ_20261029_234108.mp4",
+      "file_size_mb": 63.27,
+      "uploaded_at": "2026-10-29 23:41:23",
+      "status": "error",
+      "error_message": "Ispezione completata. In attesa che l'Agente AI di Antigravity decida i segmenti in ai_director_cuts.json.",
+      "generated_clips": [],
+      "processed_at": null
     }
   ],
-  "6a426231e6a21896f769dc80": []
+  "6a426231e6a21896f769dc80": [],
+  "6a91676284a29ab01b754c33": [
+    {
+      "id": "cq_7795dc71",
+      "filename": "Quanto_fattura_davvero_Theory_Spa_Il_bilancio_2025_in_antepr_gvrlHcgmz4w_20261029_235432.mp4",
+      "file_size_mb": 218.9,
+      "uploaded_at": "2026-10-29 23:55:20",
+      "status": "error",
+      "error_message": "Ispezione completata. In attesa che l'Agente AI di Antigravity decida i segmenti in ai_director_cuts.json.",
+      "generated_clips": [],
+      "processed_at": null
+    }
+  ]
 }

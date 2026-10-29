@@ -1,0 +1,48 @@
+{
+  "campaign_id": "6a91676284a29ab01b754c33",
+  "video_file": "Quanto_fattura_davvero_Theory_Spa_Il_bilancio_2025_in_antepr_gvrlHcgmz4w_20261029_235432.mp4",
+  "directed_by": "antigravity_ai_director",
+  "clips": [
+    {
+      "hook_text": "IL BILANCIO 2025 DI THEORY SPA IN ANTEPRIMA",
+      "cta_text": "Analizza i bilanci di 6M+ aziende su Saikoo.ai!",
+      "brand_mention": "@saikooai",
+      "concept": "Saikoo legge in anteprima il bilancio 2025 di Theory SPA: 18M€ di fatturato e 4,5M€ al mese",
+      "crop_mode": "face_crop",
+      "center_x_ratio": 0.5,
+      "y_start_ratio": 0.0,
+      "height_ratio": 1.0,
+      "segments": [
+        {
+          "start": 884.24,
+          "end": 890.24,
+          "role": "teaser_4_5m_month",
+          "crop_mode": "face_crop",
+          "center_x_ratio": 0.82
+        },
+        {
+          "start": 1226.00,
+          "end": 1234.80,
+          "role": "saikoo_6m_companies",
+          "crop_mode": "face_crop",
+          "center_x_ratio": 0.50
+        },
+        {
+          "start": 1358.20,
+          "end": 1364.50,
+          "role": "bilancio_2025_18m_reveal",
+          "crop_mode": "face_crop",
+          "center_x_ratio": 0.50
+        },
+        {
+          "start": 4475.16,
+          "end": 4487.84,
+          "role": "saikoo_competitor_balance_payoff",
+          "crop_mode": "face_crop",
+          "center_x_ratio": 0.50
+        }
+      ],
+      "tiktok_caption": "Abbiamo letto in anteprima con @saikooai il bilancio 2025 di Theory SPA: 18M€ di fatturato e 4,5M€ al mese! 📊🔥 Analizza i bilanci di oltre 6 milioni di aziende italiane su Saikoo.ai! #saikootheoryspailbilancio2025inanteprima #klippify"
+    }
+  ]
+}

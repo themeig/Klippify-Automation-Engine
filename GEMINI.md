@@ -24,10 +24,11 @@ Quando apri questa repository su un nuovo computer (es. il portatile dedicato):
    ```
    Genera `<video_stem>_inspection.json` (con tutte le frasi timestampate `[MM:SS.cc -> MM:SS.cc]`) e le griglie visive `<video_stem>_storyboard.jpg` + 6 frame JPG campione.
 2. **Decisione Regia AI (`data/ai_director_cuts.json`):**
-   Tu leggi `<video_stem>_inspection.json`, guardi i frame JPG con `read_file` e scrivi `data/ai_director_cuts.json` specificando per ciascuna clip:
-   - `segments`: lista di segmenti da **tenere e cucire insieme** (`[{"start": "...", "end": "...", "role": "teaser"}, {"start": "...", "end": "...", "role": "body"}, ...]`), saltando saluti, parti noiose, pause o digressioni anche a metà discorso;
-   - `crop_mode`: `"face_crop"` (con `center_x_ratio` tra `0.0` e `1.0` centrato sul volto visto nei frame), `"split_screen"` (per 2 persone), oppure `"zoomed_blur"` (zoom 135%);
+   Tu leggi `<video_stem>_inspection.json` (iniziando sempre da `campaign_brief` per rispettare gli argomenti richiesti dal brand, i divieti, le menzioni e la CTA specifica), guardi i frame JPG con `read_file` e scrivi `data/ai_director_cuts.json` specificando per ciascuna clip:
+   - `segments`: lista di segmenti da **tenere e cucire insieme** (`[{"start": "...", "end": "...", "role": "teaser", "crop_mode": "face_crop", "center_x_ratio": 0.50}, ...]`), saltando saluti, parti noiose, pause o digressioni anche a metà discorso;
+   - `crop_mode`: usa sempre `"face_crop"` a schermo intero (spostando `center_x_ratio` per singolo segmento tra `0.0` e `1.0` sul parlante inquadrato, senza sdoppiare il video con `split_screen`), oppure `"zoomed_blur"` (zoom 135%) per schermate/slide;
    - `hook_text`: titolo punchline (visibile **solo nei primi 3.2 secondi**, mai fisso per tutto il video);
+   - `cta_text` e `brand_mention`: CTA finale e menzione specifiche della campagna (mai generiche);
    - `tiktok_caption`: didascalia completa con CTA, `@mention` e `#hashtag` della campagna.
 3. **Esecuzione Taglia & Cuci FFmpeg (`core/clipping_pipeline.py`):**
    ```bash
