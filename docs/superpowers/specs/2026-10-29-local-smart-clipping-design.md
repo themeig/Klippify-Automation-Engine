@@ -56,10 +56,10 @@ L'obiettivo di questa riprogettazione è sostituire il fragile upload browser di
 
 1. **Approccio 1 — Trascrizione GPU + API Cloud/Web:** scartato perché la macchina di produzione finale è un portatile vecchio senza GPU RTX e l'utente richiede funzionamento interamente locale.
 2. **Approccio 2 — Cloud-Light tramite API Gratuita (Groq/Gemini API):** scartato perché l'utente vuole un sistema **100% locale** senza dipendere da chiavi API esterne.
-3. **Approccio 3 (SCELTO) — Motore 100% Locale "CPU-Smart" (Sottotitoli Nativi / Audio-Peak Pre-Filtering + Whisper Locale + Scoring Euristico NLP Locale + Lightweight Face-Crop 9:16):**
-   - Sfrutta i sottotitoli timestampati nativi di YouTube quando disponibili (0s di CPU) o pre-filtra i picchi vocali con FFmpeg in 2 secondi per trascrivere con `Faster-Whisper (int8)` solo i segmenti ad alta energia.
-   - Seleziona le clip, il *Cold-Open Teaser*, gli Hook e le Caption tramite un analizzatore semantico/acustico locale deterministico in Python (`core/local_viral_analyzer.py`), senza browser e senza LLM pesanti.
-   - Esegue il Face Detection campionando solo ~10 frame per clip con OpenCV (`haarcascade` incluso nativamente in OpenCV, zero modelli pesanti) e renderizza in FFmpeg con `-preset veryfast`.
+3. **Approccio 3 (SCELTO) — "AI Director Cronjob su Antigravity" + Motore FFmpeg Locale "CPU-Smart":**
+   - **Cervello Primario (Cronjob Antigravity):** un'automazione pianificata nativa di Antigravity (`sidecar.json` con `"builtin": "schedule"`) sveglia periodicamente l'agente AI di Antigravity. L'agente legge la trascrizione coi timestamp del video sorgente, ispeziona i frame estratti dal video tramite il suo strumento multimodale `read_file`, analizza le performance storiche (`views` in `klippify_submissions.json`), sceglie i tagli migliori, il *Cold-Open Teaser*, gli Hook e le Caption TikTok e li salva in `data/ai_director_cuts.json` avviano il rendering FFmpeg. Zero carico AI sulla CPU del portatile vecchio e zero browser Chrome per Gemini Web!
+   - **Motore Locale & Salvagente Offline (`core/local_viral_analyzer.py`):** se `clipping_pipeline.py` viene lanciato manualmente dalla dashboard quando il cronjob non ha ancora pre-analizzato il video, usa l'analizzatore locale deterministico sui sottotitoli/audio (mai più tagli ciechi a `00:10-00:45`).
+   - **Smart Crop 9:16 + Teaser + Jump-Cut:** ritaglio verticale centrato sul volto del parlante, rimozione silenzi `> 0.45s` e sottotitoli puliti senza banner fisso.
 
 ---
 
@@ -112,6 +112,16 @@ Sostituisce `core/gemini_analysis_bot.py` come motore primario nella pipeline:
    - La slide Outro finale (ultimi `3.0s`) mostra la CTA specifica della campagna attiva e il relativo `@mention` (non più `@saradizdari_ecom` fisso).
 3. **Sottotitoli Stile Hormozi Ottimizzati:**
    - Posizionati nella *safe zone* di TikTok (`pos_y = 1320`, sopra la descrizione TikTok e sotto il volto del parlante), 2–3 parole per schermata con evidenziazione della parola attiva e iniezione emoji contestuale allargata a tutte le nicchie (business, intrattenimento, podcast, lifestyle, DIY).
+
+### 5.5 Modulo 5: Cronjob Nativo Antigravity ("AI Director") + Aggiornamento `watcher_instructions.md`
+1. **Come funziona il Cronjob su Antigravity:**
+   - Antigravity supporta nativamente le **Scheduled Automations** (`~/.gemini/config/sidecars/klippify-ai-director/sidecar.json` con `"builtin": "schedule"`).
+   - A intervalli regolari (es. ogni 4 ore), Antigravity avvia in background una sessione dell'agente AI nella cartella `C:\Users\Leo\Desktop\automazione-klippify`.
+2. **Compiti del "Regista AI" (Agente Antigravity) ad ogni esecuzione del Cronjob:**
+   - **Passo 1 — Audit Rifiuti & Analisi Views:** esegue `rejection_auditor.py` e legge `data/klippify_submissions.json` per verificare sia eventuali rifiuti sia quali clip hanno generato più visualizzazioni (es. 720 views vs 0-2 views), adattando lo stile degli hook ai pattern più performanti.
+   - **Passo 2 — Scelta Campagna & Download Video + Trascrizione:** ispeziona i canali in `data/campaign_sources.json`, sceglie il video migliore non ancora scaricato e lancia `source_downloader.py` che scarica il `.mp4` e genera subito il file di trascrizione timestampata (`<video_stem>_transcript.json`) + 6 frame JPG campione del video.
+   - **Passo 3 — Regia AI Multimodale (Lettura Copione + Visione Frame):** l'agente Antigravity legge il file `<video_stem>_transcript.json` e **guarda i frame JPG** tramite `read_file`. Sceglie da 3 a 5 clip virali reali e scrive direttamente il piano di taglio in `data/ai_director_cuts.json` (con `teaser_start`, `teaser_end`, `start_time`, `end_time`, `crop_mode` / coordinate volto, `hook_text` persuasivo e `tiktok_caption` completa).
+   - **Passo 4 — Rendering FFmpeg & Accodamento Autopilota:** l'agente lancia `python core/clipping_pipeline.py <campaign_id> --video <file> --cuts data/ai_director_cuts.json`, che esegue il taglio FFmpeg 9:16 con Teaser, Jump-Cut e sottotitoli puliti e mette le clip pronte nella coda di `autopilot_engine.py`.
 
 ---
 
