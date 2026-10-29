@@ -63,7 +63,7 @@ def parse_subtitle_file(sub_path: Path) -> list[dict]:
             parsed_segs = []
             for seg in segs:
                 txt = seg.get("utf8", "")
-                txt_clean = re.sub(r"\s+", " ", txt).strip()
+                txt_clean = re.sub(r">>+|\s+", " ", txt).strip()
                 if not txt_clean or txt_clean in ("[Musica]", "[Music]", "[Applausi]"):
                     continue
                 offset_ms = float(seg.get("tOffsetMs", 0))

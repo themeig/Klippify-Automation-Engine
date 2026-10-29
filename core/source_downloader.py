@@ -214,9 +214,9 @@ def download_source_video(url, campaign_id="general", custom_title=None, progres
         except Exception:
             pass
 
-    # Fase 2: Scarica il flusso video .mp4
+    # Fase 2: Scarica il flusso video .mp4 (max 720p per velocizzare download e decodifica CPU su portatili leggeri)
     ydl_opts = {
-        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
+        'format': 'bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=720][ext=mp4]/best[ext=mp4]/best',
         'outtmpl': out_template,
         'merge_output_format': 'mp4',
         'windowsfilenames': True,

@@ -88,13 +88,14 @@ def load_source_words_for_video(input_video_path: Path) -> list[dict]:
 def build_crop_filter(
     mode: str = "face_crop",
     center_x_ratio: float = 0.5,
-    left_x: float = 0.28,
-    right_x: float = 0.72,
+    left_x: float = 0.25,
+    right_x: float = 0.74,
     y_start_ratio: float = 0.0,
     height_ratio: float = 1.0,
     target_width: int = 1080,
     target_height: int = 1920,
-    input_tag: str = "[0:v]"
+    input_tag: str = "[0:v]",
+    tag_suffix: str = ""
 ) -> tuple[str, str]:
     """
     Costruisce il filtro FFmpeg 9:16 (1080x1920) pilotato dall'Agente AI:
@@ -106,7 +107,8 @@ def build_crop_filter(
     cx = max(0.0, min(1.0, float(center_x_ratio)))
     ys = max(0.0, min(0.8, float(y_start_ratio)))
     hr = max(0.2, min(1.0 - ys, float(height_ratio)))
-    out_tag = "[v_out]"
+    sfx = str(tag_suffix or "")
+    out_tag = f"[v_out{sfx}]"
 
     if mode in ("face_crop", "center_crop"):
         pre_crop = ""
@@ -114,7 +116,7 @@ def build_crop_filter(
             pre_crop = f"crop=iw:ih*{hr:.3f}:0:ih*{ys:.3f},"
         filter_str = (
             f"{input_tag}{pre_crop}scale=-2:{target_height}:force_original_aspect_ratio=increase,"
-            f"crop={target_width}:{target_height}:(iw-{target_width})*{cx:.3f}:(ih-{target_height})/2{out_tag}"
+            f"crop={target_width}:{target_height}:(iw-{target_width})*{cx:.3f}:(ih-{target_height})/2,setsar=1{out_tag}"
         )
         return filter_str, out_tag
 
@@ -123,23 +125,23 @@ def build_crop_filter(
         lx = max(0.0, min(1.0, float(left_x)))
         rx = max(0.0, min(1.0, float(right_x)))
         filter_str = (
-            f"{input_tag}split=2[v_top_in][v_bot_in];"
-            f"[v_top_in]scale=-2:{half_h}:force_original_aspect_ratio=increase,"
-            f"crop={target_width}:{half_h}:(iw-{target_width})*{lx:.3f}:(ih-{half_h})/2[v_top];"
-            f"[v_bot_in]scale=-2:{half_h}:force_original_aspect_ratio=increase,"
-            f"crop={target_width}:{half_h}:(iw-{target_width})*{rx:.3f}:(ih-{half_h})/2[v_bot];"
-            f"[v_top][v_bot]vstack=inputs=2{out_tag}"
+            f"{input_tag}split=2[v_top_in{sfx}][v_bot_in{sfx}];"
+            f"[v_top_in{sfx}]scale=-2:{half_h}:force_original_aspect_ratio=increase,"
+            f"crop={target_width}:{half_h}:(iw-{target_width})*{lx:.3f}:(ih-{half_h})/2[v_top{sfx}];"
+            f"[v_bot_in{sfx}]scale=-2:{half_h}:force_original_aspect_ratio=increase,"
+            f"crop={target_width}:{half_h}:(iw-{target_width})*{rx:.3f}:(ih-{half_h})/2[v_bot{sfx}];"
+            f"[v_top{sfx}][v_bot{sfx}]vstack=inputs=2,setsar=1{out_tag}"
         )
         return filter_str, out_tag
 
     # Default: zoomed_blur (135% zoom on foreground = 1458px scaled width cropped to 1080px)
     zoom_w = int(round(target_width * 1.35))  # 1458 for 1080
     filter_str = (
-        f"{input_tag}split=2[v_bg_in][v_fg_in];"
-        f"[v_bg_in]scale={target_width}:{target_height}:force_original_aspect_ratio=increase,"
-        f"crop={target_width}:{target_height},boxblur=24:6[bg];"
-        f"[v_fg_in]scale={zoom_w}:-2,crop={target_width}:ih:(iw-{target_width})*{cx:.3f}:0[fg];"
-        f"[bg][fg]overlay=(W-w)/2:(H-h)/2{out_tag}"
+        f"{input_tag}split=2[v_bg_in{sfx}][v_fg_in{sfx}];"
+        f"[v_bg_in{sfx}]scale={target_width}:{target_height}:force_original_aspect_ratio=increase,"
+        f"crop={target_width}:{target_height},boxblur=24:6[bg{sfx}];"
+        f"[v_fg_in{sfx}]scale={zoom_w}:-2,crop={target_width}:ih:(iw-{target_width})*{cx:.3f}:0[fg{sfx}];"
+        f"[bg{sfx}][fg{sfx}]overlay=(W-w)/2:(H-h)/2,setsar=1{out_tag}"
     )
     return filter_str, out_tag
 
@@ -158,7 +160,8 @@ def build_multisegment_ffmpeg_cmd(
 ) -> list[str]:
     """
     Costruisce il comando FFmpeg che taglia e cuce (concat) i segmenti scelti dall'Agente AI
-    (es. Teaser + Corpo 1 + Corpo 2 saltando le parti noiose) e li formatta in 9:16.
+    (es. Teaser + Corpo 1 + Corpo 2 saltando le parti noiose) usando fast-input-seeking (-ss prima di -i)
+    e supportando anche crop_mode / center_x_ratio personalizzati per singolo segmento (es. podcast multicamera).
     """
     input_p = Path(input_video_path)
     output_p = Path(output_video_path)
@@ -168,45 +171,50 @@ def build_multisegment_ffmpeg_cmd(
         s_sec = parse_time_to_seconds(seg.get("start", 0))
         e_sec = parse_time_to_seconds(seg.get("end", 0))
         if e_sec > s_sec + 0.2:
-            valid_segments.append((s_sec, e_sec))
+            valid_segments.append((s_sec, e_sec, seg))
 
     if not valid_segments:
-        valid_segments = [(0.0, 30.0)]
+        valid_segments = [(0.0, 30.0, {})]
 
     n_segs = len(valid_segments)
-    trim_parts = []
+    input_args = []
+    seg_filters = []
     concat_inputs = []
 
-    for idx, (s_sec, e_sec) in enumerate(valid_segments):
-        trim_parts.append(
-            f"[0:v]trim=start={s_sec:.2f}:end={e_sec:.2f},setpts=PTS-STARTPTS[v{idx}];"
-            f"[0:a]atrim=start={s_sec:.2f}:end={e_sec:.2f},asetpts=PTS-STARTPTS[a{idx}]"
+    for idx, (s_sec, e_sec, seg_dict) in enumerate(valid_segments):
+        dur = max(0.2, e_sec - s_sec)
+        input_args.extend(["-ss", f"{s_sec:.2f}", "-t", f"{dur:.2f}", "-i", str(input_p)])
+        seg_mode = seg_dict.get("crop_mode", mode)
+        seg_cx = float(seg_dict.get("center_x_ratio", center_x_ratio))
+        seg_ys = float(seg_dict.get("y_start_ratio", y_start_ratio))
+        seg_hr = float(seg_dict.get("height_ratio", height_ratio))
+
+        v_crop, v_tag = build_crop_filter(
+            mode=seg_mode,
+            center_x_ratio=seg_cx,
+            y_start_ratio=seg_ys,
+            height_ratio=seg_hr,
+            target_width=target_width,
+            target_height=target_height,
+            input_tag=f"[{idx}:v]",
+            tag_suffix=f"_{idx}"
         )
-        concat_inputs.append(f"[v{idx}][a{idx}]")
+        seg_filters.append(f"{v_crop};[{idx}:a]asetpts=PTS-STARTPTS[a_{idx}]")
+        concat_inputs.append(f"{v_tag}[a_{idx}]")
 
-    concat_filter = ";".join(trim_parts) + f";{''.join(concat_inputs)}concat=n={n_segs}:v=1:a=1[v_cat][a_cat]"
-    crop_filter, last_v_tag = build_crop_filter(
-        mode=mode,
-        center_x_ratio=center_x_ratio,
-        y_start_ratio=y_start_ratio,
-        height_ratio=height_ratio,
-        target_width=target_width,
-        target_height=target_height,
-        input_tag="[v_cat]"
-    )
-
-    filter_complex = f"{concat_filter};{crop_filter}"
+    filter_complex = ";".join(seg_filters) + f";{''.join(concat_inputs)}concat=n={n_segs}:v=1:a=1[v_cat][a_cat]"
+    last_v_tag = "[v_cat]"
 
     extra_inputs = []
     if logo_path and Path(logo_path).exists():
+        logo_idx = n_segs
         extra_inputs = ["-i", str(logo_path)]
-        filter_complex += f";[1:v]scale=180:-1[logo];{last_v_tag}[logo]overlay=W-w-40:60[final_v]"
+        filter_complex += f";[{logo_idx}:v]scale=180:-1[logo];{last_v_tag}[logo]overlay=W-w-40:60[final_v]"
         last_v_tag = "[final_v]"
 
     cmd = [
         "ffmpeg", "-y",
-        "-i", str(input_p),
-    ] + extra_inputs + [
+    ] + input_args + extra_inputs + [
         "-filter_complex", filter_complex,
         "-map", last_v_tag,
         "-map", "[a_cat]",

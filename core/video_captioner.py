@@ -186,11 +186,14 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     if words:
         clean_words = []
         for w in words:
+            w_txt = re.sub(r">>+", "", str(w.get("word", ""))).strip()
+            if not w_txt:
+                continue
             ws = float(w.get("start", 0.0))
             we = float(w.get("end", ws + 0.18))
             if we <= ws:
                 we = ws + 0.18
-            clean_words.append({"word": str(w.get("word", "")), "start": ws, "end": we})
+            clean_words.append({"word": w_txt, "start": ws, "end": we})
 
         for i in range(len(clean_words) - 1):
             next_s = clean_words[i + 1]["start"]

@@ -94,21 +94,23 @@ def purge_legacy_blind_clips(root_dir: Path = None) -> dict:
 def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, task_logger=None, cuts_file=None):
     root = paths.PROJECT_ROOT
 
-    # 1. Carica i dati della campagna attiva
-    classified_file = root / "active_campaigns_classified.json"
+    # 1. Carica i dati della campagna attiva (da active_campaigns_classified.json o campaigns_ranked.json)
     camp_data = {}
-    if classified_file.exists():
-        try:
-            with open(classified_file, "r", encoding="utf-8") as f:
-                all_class = json.load(f)
-                for c in all_class:
-                    cid = c.get("id") or c.get("campaign_token") or c.get("campaign_id")
-                    cname = c.get("name") or c.get("campaign_name") or ""
-                    if str(cid) == str(campaign_id) or cname.lower() == str(campaign_id).lower():
-                        camp_data = c
-                        break
-        except Exception:
-            pass
+    for cand_json in [root / "active_campaigns_classified.json", root / "campaigns_ranked.json"]:
+        if cand_json.exists() and not camp_data:
+            try:
+                with open(cand_json, "r", encoding="utf-8") as f:
+                    all_class = json.load(f)
+                    if isinstance(all_class, dict):
+                        all_class = all_class.get("campaigns", [])
+                    for c in all_class:
+                        cid = c.get("id") or c.get("campaign_token") or c.get("campaign_id")
+                        cname = c.get("name") or c.get("campaign_name") or ""
+                        if str(cid) == str(campaign_id) or cname.lower() == str(campaign_id).lower():
+                            camp_data = c
+                            break
+            except Exception:
+                pass
 
     camp_name = camp_data.get("name") or camp_data.get("campaign_name") or str(campaign_id)
     print("\n=======================================================", flush=True)
