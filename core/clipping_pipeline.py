@@ -280,6 +280,8 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
             hook_text=hook_t,
             cta_text=clip_cta,
             brand_mention=clip_mention,
+            campaign_id=str(campaign_id),
+            campaign_name=camp_name,
             logger=task_logger
         )
 

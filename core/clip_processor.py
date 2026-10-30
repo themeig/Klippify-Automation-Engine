@@ -2,6 +2,7 @@ import paths
 import subprocess
 import os
 import re
+import json
 import shutil
 from pathlib import Path
 
@@ -243,6 +244,8 @@ def process_clip_ffmpeg(
     hook_text=None,
     cta_text=None,
     brand_mention=None,
+    campaign_id=None,
+    campaign_name=None,
     target_width=1080,
     target_height=1920,
     logger=None
@@ -345,7 +348,9 @@ def process_clip_ffmpeg(
                         custom_hook=hook_text,
                         brand_cta=cta_text,
                         brand_mention=brand_mention,
-                        precomputed_words=shifted_words
+                        precomputed_words=shifted_words,
+                        campaign_id=campaign_id,
+                        campaign_name=campaign_name
                     )
             except Exception as cap_err:
                 print(f"[CAPTIONER WARNING] Impossibile applicare sottotitoli: {cap_err}")
