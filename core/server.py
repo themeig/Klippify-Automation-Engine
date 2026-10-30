@@ -521,7 +521,8 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
                     "pending_count": pending,
                     "avg_views_per_video": avg_views,
                     "approval_rate": approval_rate,
-                    "submissions": camp_subs
+                    "submissions": camp_subs,
+                    "approval_audit": __import__("rejection_auditor").audit_recent_submissions(hours_window=24, use_cache=not sync_live)
                 }
                 self.wfile.write(json.dumps(resp_data, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
@@ -1318,6 +1319,12 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
                             clip_names = [c.get("video_filename") for c in res.get("clips") if c.get("video_filename")]
                             if video_name:
                                 clipping_queue_manager.update_video_status(camp_id, video_name, status="completed", generated_clips=clip_names)
+                            process_manager.finish_task(task_id, status="completed")
+                        elif res.get("status") == "awaiting_ai_director":
+                            msg = res.get("message", "Ispezione completata. In attesa della Regia AI di Antigravity.")
+                            if video_name:
+                                clipping_queue_manager.update_video_status(camp_id, video_name, status="awaiting_ai_director", error_message=msg)
+                            process_manager.log(task_id, f"🧠 {msg}")
                             process_manager.finish_task(task_id, status="completed")
                         else:
                             err = res.get("message", "Nessuna clip generata")

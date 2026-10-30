@@ -68,6 +68,23 @@ def _save_all_queues(data):
         except Exception as e:
             print(f"[CLIPPING_QUEUE] Errore salvataggio {QUEUE_FILE}: {e}")
 
+def _has_ai_cuts_for_video(campaign_id, filename) -> bool:
+    try:
+        import clipping_pipeline
+        stem = Path(filename).stem
+        candidates = [
+            BASE_DIR / "clipping_sources" / str(campaign_id) / f"{stem}_ai_cuts.json",
+            BASE_DIR / "generated_videos" / str(campaign_id) / "raw" / f"{stem}_ai_cuts.json",
+            BASE_DIR / "data" / "ai_director_cuts.json",
+            BASE_DIR / "ai_director_cuts.json",
+        ]
+        for cf in candidates:
+            if clipping_pipeline.load_ai_director_cuts(cf, video_name=filename, campaign_id=str(campaign_id)):
+                return True
+    except Exception:
+        pass
+    return False
+
 def get_campaign_queue(campaign_id):
     """
     Restituisce la coda video per la campagna specificata,
@@ -77,7 +94,6 @@ def get_campaign_queue(campaign_id):
     cid = str(campaign_id)
     queue = all_q.get(cid, [])
 
-    # Sincronizza con la cartella fisica clipping_sources/<campaign_id>
     sanitized_camp = re.sub(r'[^a-zA-Z0-9_]', '_', cid)
     sources_dir = BASE_DIR / "clipping_sources" / sanitized_camp
     if not sources_dir.exists():
@@ -103,6 +119,12 @@ def get_campaign_queue(campaign_id):
                     })
                     existing_filenames.add(fname)
 
+    # Se un video era in 'awaiting_ai_director' ma ora esistono i tagli AI, promuovilo a 'queued'
+    for item in queue:
+        if item.get("status") == "awaiting_ai_director" and _has_ai_cuts_for_video(cid, item.get("filename", "")):
+            item["status"] = "queued"
+            item["error_message"] = None
+
     all_q[cid] = queue
     _save_all_queues(all_q)
     return queue
@@ -113,7 +135,6 @@ def add_video_to_queue(campaign_id, filename, file_size_mb=0):
     cid = str(campaign_id)
     queue = all_q.get(cid, [])
 
-    # Controlla se esiste già
     found = False
     for item in queue:
         if item.get("filename") == filename:
@@ -172,14 +193,18 @@ def update_video_status(campaign_id, filename, status, generated_clips=None, err
 
 def process_campaign_queue_sequential(campaign_id, task_id=None):
     """
-    Esegue in sequenza tutti i video con status 'queued' nella coda della campagna.
+    Esegue in sequenza i video con status 'queued' (o 'awaiting_ai_director' con tagli pronti) nella coda della campagna.
     Per ciascun video invoca clipping_pipeline e aggiorna lo stato.
     """
     from process_manager import process_manager
     import clipping_pipeline
 
     queue = get_campaign_queue(campaign_id)
-    queued_items = [it for it in queue if it.get("status") in ["queued", "error", "processing"]]
+    queued_items = [
+        it for it in queue
+        if it.get("status") in ["queued", "processing"]
+        or (it.get("status") == "awaiting_ai_director" and _has_ai_cuts_for_video(campaign_id, it.get("filename", "")))
+    ]
 
     if not queued_items:
         if task_id:
@@ -200,7 +225,7 @@ def process_campaign_queue_sequential(campaign_id, task_id=None):
 
     for idx, item in enumerate(queued_items):
         fname = item.get("filename")
-        task_log(f"[{idx+1}/{total}] ⏳ Inizio analisi Gemini & ritaglio per '{fname}'...")
+        task_log(f"[{idx+1}/{total}] ⏳ Inizio ispezione & ritaglio AI Director per '{fname}'...")
 
         update_video_status(campaign_id, fname, status="processing")
 
@@ -216,10 +241,15 @@ def process_campaign_queue_sequential(campaign_id, task_id=None):
                 clips = res.get("clips")
                 clip_names = [c.get("video_filename") for c in clips if c.get("video_filename")]
                 all_generated_clips.extend(clip_names)
-                update_video_status(campaign_id, fname, status="completed", generated_clips=clip_names)
+                update_video_status(campaign_id, fname, status="completed", generated_clips=clip_names, error_message=None)
                 processed_count += 1
                 if task_id:
                     process_manager.log(task_id, f"[{idx+1}/{total}] ✅ Video '{fname}' completato! Generate {len(clip_names)} clip 9:16.")
+            elif res.get("status") == "awaiting_ai_director":
+                msg = res.get("message", "Ispezione e Storyboard JPG pronte per la Regia AI di Antigravity.")
+                update_video_status(campaign_id, fname, status="awaiting_ai_director", error_message=msg)
+                if task_id:
+                    process_manager.log(task_id, f"[{idx+1}/{total}] 🧠 '{fname}': {msg}")
             else:
                 err = res.get("message", "Nessuna clip generata")
                 update_video_status(campaign_id, fname, status="error", error_message=err)
@@ -232,8 +262,8 @@ def process_campaign_queue_sequential(campaign_id, task_id=None):
                 process_manager.log(task_id, f"[{idx+1}/{total}] ❌ Eccezione durante il clipping di '{fname}': {e}")
 
     if task_id:
-        process_manager.log(task_id, f"🎉 Sequenza di clipping completata: {processed_count}/{total} video elaborati.")
-        process_manager.finish_task(task_id, status="completed" if processed_count > 0 else "completed")
+        process_manager.log(task_id, f"🎉 Sequenza di clipping completata: {processed_count}/{total} video renderizzati.")
+        process_manager.finish_task(task_id, status="completed")
 
     return {"status": "ok", "processed_count": processed_count, "clips": all_generated_clips}
 
@@ -271,7 +301,6 @@ def start_auto_clipping_for_campaign(campaign_id):
         finally:
             if task_id:
                 try:
-                    # Se il task è ancora in stato 'running', chiudilo come completato
                     if task_id in process_manager.tasks and process_manager.tasks[task_id].get("status") == "running":
                         process_manager.finish_task(task_id, status="completed")
                 except Exception:

@@ -58,6 +58,17 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
             pass
     schedules_json = json.dumps(campaign_schedules, ensure_ascii=False)
 
+    # Load approval audit report
+    audit_rep_path = BASE_DIR / "approval_audit_report.json"
+    approval_audit_report = {}
+    if audit_rep_path.exists():
+        try:
+            with open(audit_rep_path, "r", encoding="utf-8") as arf:
+                approval_audit_report = json.load(arf)
+        except Exception:
+            pass
+    approval_audit_json = json.dumps(approval_audit_report, ensure_ascii=False)
+
     # Count campaigns by section
     counts = {
         "all": len(campaigns),
@@ -1915,6 +1926,7 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
         let selectedCampaigns = {selected_json};
         const publishedContent = {published_json};
         let campaignSchedules = {schedules_json};
+        let approvalAuditReport = {approval_audit_json};
         let cachedTikTokVideos = [];
         let currentDetailCampToken = null;
 
@@ -3331,10 +3343,12 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
 
                 if (statusSummary || assemblyStatusSummary) {{
                     const queuedCount = queue.filter(q => q.status === 'queued').length;
+                    const awaitingAiCount = queue.filter(q => q.status === 'awaiting_ai_director').length;
                     const processingCount = queue.filter(q => q.status === 'processing').length;
                     const completedCount = queue.filter(q => q.status === 'completed').length;
                     const summaryHtml = `
                         <span style="color:#fbbf24; font-weight:700;">⏳ ${{queuedCount}} in attesa</span> &bull; 
+                        ${{awaitingAiCount > 0 ? `<span style="color:#c084fc; font-weight:700;">🧠 ${{awaitingAiCount}} pronti per Regia AI</span> &bull; ` : ''}}
                         <span style="color:#38bdf8; font-weight:700;">⚙️ ${{processingCount}} in elaborazione</span> &bull; 
                         <span style="color:#34d399; font-weight:700;">✅ ${{completedCount}} completati</span>
                     `;
@@ -3407,6 +3421,7 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                 if (pendingItems.length > 0) {{
                     const heroItem = pendingItems[0];
                     const isErr = heroItem.status === 'error';
+                    const isAwaitingAi = heroItem.status === 'awaiting_ai_director';
                     htmlOutput += `
                         <div style="background: linear-gradient(135deg, rgba(245,158,11,0.14), rgba(15,23,42,0.92)); border:2px solid rgba(245,158,11,0.6); border-radius:1.1rem; padding:1.2rem 1.4rem; margin-bottom:1rem; box-shadow:0 4px 20px rgba(245,158,11,0.15);">
                             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
@@ -3426,7 +3441,7 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                                         </div>
                                         <div style="font-size:0.78rem; color:#94a3b8; margin-top:0.2rem;">
                                             Dimensione: <strong style="color:#fbbf24;">${{(heroItem.file_size_mb || 0).toFixed(1)}} MB</strong>
-                                            ${{isErr ? `<span style="color:#ef4444; margin-left:0.5rem; font-weight:700;">⚠️ ${{heroItem.error_message || 'Errore precedente'}}</span>` : ''}}
+                                            ${{isAwaitingAi ? `<span style="color:#c084fc; margin-left:0.5rem; font-weight:700;">🧠 Ispezione &amp; Storyboard Pronte (In attesa Regia AI Antigravity)</span>` : isErr ? `<span style="color:#ef4444; margin-left:0.5rem; font-weight:700;">⚠️ ${{heroItem.error_message || 'Errore precedente'}}</span>` : ''}}
                                         </div>
                                     </div>
                                 </div>
@@ -3548,8 +3563,8 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                     if (liveBanner) liveBanner.style.display = 'none';
                     if (tabRawBtn) tabRawBtn.innerHTML = '<span>📁</span> <span>Materia Prima &amp; Taglio</span>';
 
-                    // Se ci sono video in attesa e nessuno in elaborazione, avvia subito il clipping automatico
-                    if (pendingItems.length > 0) {{
+                    // Se ci sono video in stato 'queued' e nessuno in elaborazione, avvia subito il clipping automatico
+                    if (queue.some(q => q.status === 'queued')) {{
                         fetch('/api/clipping/queue/process-all', {{
                             method: 'POST',
                             headers: {{ 'Content-Type': 'application/json' }},
@@ -4366,6 +4381,9 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                     if (typeof klippifySubmissions !== 'undefined' && data.submissions) {{
                         klippifySubmissions = data.submissions;
                     }}
+                    if (data.approval_audit) {{
+                        approvalAuditReport = data.approval_audit;
+                    }}
                     renderCampaignDetailContent(campToken);
                 }} else {{
                     alert("Errore sincronizzazione: " + (data.message || "Errore sconosciuto"));
@@ -4549,6 +4567,18 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                                                 <div style="font-size:1.2rem; font-weight:900; color:#34d399;">$${{vEarnings.toFixed(2)}}</div>
                                             </div>
                                         </div>
+
+                                        <!-- VERDETTO AI KLIPPIFY (APPROVAZIONE / RIFIUTO) -->
+                                        ${{isRej ? `
+                                            <div style="margin-top:0.75rem; background:rgba(239,68,68,0.14); border:1px solid rgba(239,68,68,0.4); border-left:4px solid #ef4444; border-radius:0.6rem; padding:0.65rem 0.85rem; font-size:0.76rem; color:#fecaca; line-height:1.4;">
+                                                <div style="font-weight:900; color:#f87171; margin-bottom:0.2rem;">⚠️ Motivo Rifiuto AI Klippify:</div>
+                                                <div>${{s.ai_reasoning || 'Linea guida della campagna non rispettata.'}}</div>
+                                            </div>
+                                        ` : s.ai_reasoning ? `
+                                            <div style="margin-top:0.75rem; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-left:4px solid #10b981; border-radius:0.6rem; padding:0.6rem 0.8rem; font-size:0.75rem; color:#cbd5e1; line-height:1.35;">
+                                                <strong style="color:#34d399;">🤖 Verifica AI Klippify (In Tempo Reale):</strong> ${{s.ai_reasoning}}
+                                            </div>
+                                        ` : ''}}
                                     </div>
 
                                     <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.05); padding-top:0.6rem; font-size:0.72rem; color:#64748b;">
@@ -4718,7 +4748,7 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
             const originalBrief = originalCamp.description || 'Nessun brief fornito.';
             const originalHashtags = (originalCamp.mandatory_hashtags || []).join(', ') || '#klippify';
             const originalMentions = (originalCamp.mandatory_mentions || []).join(', ') || 'Nessuna';
-            const originalCTA = originalCamp.call_to_action || 'Guarda il video completo su Klippify!';
+            const originalCTA = (originalCamp.call_to_action && !originalCamp.call_to_action.toLowerCase().includes('su klippify')) ? originalCamp.call_to_action : `Visita il profilo ufficiale ${{((originalCamp.mandatory_mentions || [])[0] || '')}}`.trim();
 
             // ⚡ SLIDING SLOTS LOGIC: separa gli slot già pubblicati oggi da quelli ancora pendenti
             const pendingSlots = [];

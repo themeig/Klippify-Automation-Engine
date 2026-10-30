@@ -895,6 +895,17 @@ def execute_clipping_step(item):
             process_manager.log(task_id, f"✅ Clipping completato: generate {len(clips)} clip 9:16 pronte!")
             process_manager.finish_task(task_id, status="completed")
             return True
+        elif res.get("status") == "awaiting_ai_director":
+            msg = res.get("message", "Ispezione completata. In attesa della Regia AI di Antigravity.")
+            process_manager.log(task_id, f"🧠 {msg}")
+            process_manager.finish_task(task_id, status="completed")
+            state = load_state()
+            for it in state.get("queue", []):
+                if it.get("id") == item.get("id"):
+                    it["status"] = "awaiting_ai_director"
+                    it["error_message"] = msg
+            save_state(state)
+            return True
         else:
             err_msg = res.get("message", "Nessuna clip generata")
             process_manager.finish_task(task_id, status="error", error=err_msg)
