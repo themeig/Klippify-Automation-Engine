@@ -3017,6 +3017,40 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
             const scalingList = (typeof campaignPortfolioPlan !== 'undefined' && campaignPortfolioPlan && Array.isArray(campaignPortfolioPlan.scaling_campaigns)) ? campaignPortfolioPlan.scaling_campaigns : [];
             const testingList = (typeof campaignPortfolioPlan !== 'undefined' && campaignPortfolioPlan && Array.isArray(campaignPortfolioPlan.testing_campaigns)) ? campaignPortfolioPlan.testing_campaigns : [];
             const droppedList = (typeof campaignPortfolioPlan !== 'undefined' && campaignPortfolioPlan && Array.isArray(campaignPortfolioPlan.dropped_campaigns)) ? campaignPortfolioPlan.dropped_campaigns : [];
+            const requiresActList = (typeof campaignPortfolioPlan !== 'undefined' && campaignPortfolioPlan && Array.isArray(campaignPortfolioPlan.campaigns_requiring_user_activation)) ? campaignPortfolioPlan.campaigns_requiring_user_activation : [];
+            let activationAlertsHtml = '';
+            if (requiresActList.length > 0) {{
+                const rowsHtml = requiresActList.map(act => `
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; background:rgba(15,23,42,0.75); border:1px solid rgba(245,158,11,0.45); border-radius:0.65rem; padding:0.65rem 0.95rem;">
+                        <div>
+                            <div style="font-size:0.86rem; font-weight:900; color:#fef08a;">
+                                ⚠️ ${{act.campaign_name}} <span style="font-size:0.74rem; color:#fde047; font-weight:700;">(Non ancora attivata sul tuo account Klippify • Clip pronte: ${{act.virgin_clips_ready || 0}})</span>
+                            </div>
+                            <div style="font-size:0.75rem; color:#cbd5e1; margin-top:0.15rem;">
+                                L'upload automatico per questa campagna in TEST è messo in sicurezza finché non clicchi <strong>Partecipa / Attiva</strong> su Klippify.
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+                            <a href="${{act.klippify_url}}" target="_blank" onclick="event.stopPropagation()" style="background:rgba(245,158,11,0.22); color:#fbbf24; border:1px solid rgba(245,158,11,0.55); padding:0.38rem 0.75rem; border-radius:0.5rem; font-size:0.75rem; font-weight:900; text-decoration:none;">
+                                🔗 1. Apri e Attiva su Klippify
+                            </a>
+                            <button onclick="confirmKlippifyActivation('${{act.campaign_id}}', this, event)" style="background:rgba(16,185,129,0.22); color:#34d399; border:1px solid rgba(16,185,129,0.55); padding:0.38rem 0.75rem; border-radius:0.5rem; font-size:0.75rem; font-weight:900; cursor:pointer;">
+                                ✅ 2. Già Attivata (Sblocca Upload)
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+                activationAlertsHtml = `
+                    <div style="margin-top:0.95rem; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.5); border-radius:0.8rem; padding:0.9rem 1.1rem;">
+                        <div style="font-size:0.82rem; font-weight:900; color:#fbbf24; text-transform:uppercase; margin-bottom:0.55rem;">
+                            🚨 AZIONE RICHIESTA SU KLIPPIFY (${{requiresActList.length}} campagn${{requiresActList.length === 1 ? 'a' : 'e'}} selezionat${{requiresActList.length === 1 ? 'a' : 'e'}} per il TEST da attivare prima dell'upload):
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                            ${{rowsHtml}}
+                        </div>
+                    </div>
+                `;
+            }}
 
             const portfolioBanner = document.createElement('div');
             portfolioBanner.style.cssText = 'grid-column: 1 / -1; background:linear-gradient(135deg, rgba(15,23,42,0.95), rgba(30,41,59,0.92)); border:1px solid rgba(56,189,248,0.35); border-radius:1rem; padding:1.25rem 1.5rem; margin-bottom:0.5rem; box-shadow:0 8px 25px rgba(0,0,0,0.35);';
@@ -3059,6 +3093,7 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                         <div style="font-size:0.73rem; color:#e9d5ff;">Massimo 3 video/giorno totali per account</div>
                     </div>
                 </div>
+                ${{activationAlertsHtml}}
             `;
             grid.appendChild(portfolioBanner);
 
@@ -3123,10 +3158,16 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                     lifecycleBadgeHtml = '<span style="background:rgba(16,185,129,0.22); color:#34d399; border:1px solid rgba(16,185,129,0.5); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">🚀 SCALING • VINCENTE</span>';
                     stageBorderColor = 'rgba(16,185,129,0.4)';
                 }} else if (stageKey === 'testing') {{
-                    lifecycleBadgeHtml = assignedSlotsArr.length > 0
-                        ? '<span style="background:rgba(56,189,248,0.22); color:#38bdf8; border:1px solid rgba(56,189,248,0.5); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">🧪 TESTING AI ATTIVO</span>'
-                        : '<span style="background:rgba(245,158,11,0.2); color:#fbbf24; border:1px solid rgba(245,158,11,0.45); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">⏳ TESTING IN CODA</span>';
-                    stageBorderColor = 'rgba(56,189,248,0.35)';
+                    const needsKlipAct = !!(campSchedObj.waiting_klippify_activation || pfMatch.requires_user_activation);
+                    if (needsKlipAct) {{
+                        lifecycleBadgeHtml = '<span style="background:rgba(245,158,11,0.28); color:#fde047; border:1px solid rgba(245,158,11,0.65); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">⚠️ DA ATTIVARE SU KLIPPIFY</span>';
+                        stageBorderColor = 'rgba(245,158,11,0.55)';
+                    }} else {{
+                        lifecycleBadgeHtml = assignedSlotsArr.length > 0
+                            ? '<span style="background:rgba(56,189,248,0.22); color:#38bdf8; border:1px solid rgba(56,189,248,0.5); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">🧪 TESTING AI ATTIVO</span>'
+                            : '<span style="background:rgba(245,158,11,0.2); color:#fbbf24; border:1px solid rgba(245,158,11,0.45); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">⏳ TESTING IN CODA</span>';
+                        stageBorderColor = 'rgba(56,189,248,0.35)';
+                    }}
                 }} else if (stageKey === 'dropped_underperforming') {{
                     lifecycleBadgeHtml = '<span style="background:rgba(239,68,68,0.22); color:#f87171; border:1px solid rgba(239,68,68,0.5); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">⏸️ DROPPED • FERMATA</span>';
                     stageBorderColor = 'rgba(239,68,68,0.35)';
@@ -3175,6 +3216,75 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
         // campaignSchedules is declared globally at top
         let localAvailableVideos = [];
 
+        async function confirmKlippifyActivation(campToken, btnEl, ev) {{
+            if (ev) ev.stopPropagation();
+            if (btnEl) {{ btnEl.disabled = true; btnEl.innerHTML = '⏳ Sblocco in corso...'; }}
+            try {{
+                const res = await fetch('/api/campaign/confirm-klippify-activation', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ campaign_id: campToken }})
+                }});
+                const data = await res.json();
+                if (data && data.status === 'ok') {{
+                    if (data.portfolio_plan) campaignPortfolioPlan = data.portfolio_plan;
+                    await renderMyCampaigns();
+                }} else {{
+                    alert('Errore: ' + (data.message || data.error || 'Impossibile confermare attivazione'));
+                }}
+            }} catch(e) {{
+                alert('Errore di connessione: ' + e.message);
+            }} finally {{
+                if (btnEl) {{ btnEl.disabled = false; btnEl.innerHTML = '✅ 2. Già Attivata (Sblocca Upload)'; }}
+            }}
+        }}
+
+        async function confirmKlippifyActivation(campToken, btnEl, ev) {{
+
+            if (ev) ev.stopPropagation();
+
+            if (btnEl) {{ btnEl.disabled = true; btnEl.innerHTML = '⏳ Sblocco in corso...'; }}
+
+            try {{
+
+                const res = await fetch('/api/campaign/confirm-klippify-activation', {{
+
+                    method: 'POST',
+
+                    headers: {{ 'Content-Type': 'application/json' }},
+
+                    body: JSON.stringify({{ campaign_id: campToken }})
+
+                }});
+
+                const data = await res.json();
+
+                if (data && data.status === 'ok') {{
+
+                    if (data.portfolio_plan) campaignPortfolioPlan = data.portfolio_plan;
+
+                    await renderMyCampaigns();
+
+                }} else {{
+
+                    alert('Errore: ' + (data.message || data.error || 'Impossibile confermare attivazione'));
+
+                }}
+
+            }} catch(e) {{
+
+                alert('Errore di connessione: ' + e.message);
+
+            }} finally {{
+
+                if (btnEl) {{ btnEl.disabled = false; btnEl.innerHTML = '✅ 2. Già Attivata (Sblocca Upload)'; }}
+
+            }}
+
+        }}
+
+
+
         async function recalcAiPortfolioNow(btnEl) {{
             if (btnEl) {{ btnEl.disabled = true; btnEl.innerHTML = '⏳ Analisi AI in corso...'; }}
             try {{
@@ -3194,6 +3304,75 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                 if (btnEl) {{ btnEl.disabled = false; btnEl.innerHTML = '🔄 Rivaluta Portfolio AI'; }}
             }}
         }}
+
+        async function confirmKlippifyActivation(campToken, btnEl, ev) {{
+            if (ev) ev.stopPropagation();
+            if (btnEl) {{ btnEl.disabled = true; btnEl.innerHTML = '⏳ Sblocco in corso...'; }}
+            try {{
+                const res = await fetch('/api/campaign/confirm-klippify-activation', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ campaign_id: campToken }})
+                }});
+                const data = await res.json();
+                if (data && data.status === 'ok') {{
+                    if (data.portfolio_plan) campaignPortfolioPlan = data.portfolio_plan;
+                    await renderMyCampaigns();
+                }} else {{
+                    alert('Errore: ' + (data.message || data.error || 'Impossibile confermare attivazione'));
+                }}
+            }} catch(e) {{
+                alert('Errore di connessione: ' + e.message);
+            }} finally {{
+                if (btnEl) {{ btnEl.disabled = false; btnEl.innerHTML = '✅ 2. Già Attivata (Sblocca Upload)'; }}
+            }}
+        }}
+
+        async function confirmKlippifyActivation(campToken, btnEl, ev) {{
+
+            if (ev) ev.stopPropagation();
+
+            if (btnEl) {{ btnEl.disabled = true; btnEl.innerHTML = '⏳ Sblocco in corso...'; }}
+
+            try {{
+
+                const res = await fetch('/api/campaign/confirm-klippify-activation', {{
+
+                    method: 'POST',
+
+                    headers: {{ 'Content-Type': 'application/json' }},
+
+                    body: JSON.stringify({{ campaign_id: campToken }})
+
+                }});
+
+                const data = await res.json();
+
+                if (data && data.status === 'ok') {{
+
+                    if (data.portfolio_plan) campaignPortfolioPlan = data.portfolio_plan;
+
+                    await renderMyCampaigns();
+
+                }} else {{
+
+                    alert('Errore: ' + (data.message || data.error || 'Impossibile confermare attivazione'));
+
+                }}
+
+            }} catch(e) {{
+
+                alert('Errore di connessione: ' + e.message);
+
+            }} finally {{
+
+                if (btnEl) {{ btnEl.disabled = false; btnEl.innerHTML = '✅ 2. Già Attivata (Sblocca Upload)'; }}
+
+            }}
+
+        }}
+
+
 
         async function recalcAiPortfolioNow(btnEl) {{
 

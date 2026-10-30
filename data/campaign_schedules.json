@@ -11,7 +11,7 @@
         "video": ""
       }
     ],
-    "updated_at": "2026-10-30 09:43:14",
+    "updated_at": "2026-10-30 09:55:17",
     "autopilot_enabled": true,
     "published_clips": [
       "clip_SaraDizdariA_slot3_20260819_162539.mp4",
@@ -102,8 +102,8 @@
         "video": "clip_SaikooTheory_slot1_20261030_002748.mp4"
       }
     ],
-    "autopilot_enabled": true,
-    "updated_at": "2026-10-30 09:51:25",
+    "autopilot_enabled": false,
+    "updated_at": "2026-10-30 09:55:17",
     "published_clips": [
       "clip_SaikooTheory_slot1_20261029_235707.mp4"
     ],
@@ -111,7 +111,9 @@
     "is_paused": false,
     "is_ended": false,
     "lifecycle_stage": "testing",
-    "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 1 clip 9:16 pronte in magazzino (Promising Score: 1739.1)."
+    "decision_reason": "[DA ATTIVARE SU KLIPPIFY] IN TEST ATTIVO: 0/3 clip inviate finora, 2 clip 9:16 pronte in magazzino (Promising Score: 1739.1). -> Attivala su Klippify per sbloccare l'upload automatico.",
+    "waiting_klippify_activation": true,
+    "klippify_url": "https://app.klippify.com/campaigns/6a91676284a29ab01b754c33"
   },
   "699ededd3f5febcf2f3acae9": {
     "published_clips": [],
@@ -161,8 +163,10 @@
     "is_paused": false,
     "is_ended": false,
     "lifecycle_stage": "testing",
-    "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1600.9). [In coda di rotazione: attende il completamento dello slot di test giornaliero per rispettare il limite di max 3 video/giorno su TikTok].",
-    "updated_at": "2026-10-30 09:43:14"
+    "decision_reason": "[DA ATTIVARE SU KLIPPIFY] IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1600.9). -> Attivala su Klippify per sbloccare l'upload automatico.",
+    "updated_at": "2026-10-30 09:55:17",
+    "waiting_klippify_activation": true,
+    "klippify_url": "https://app.klippify.com/campaigns/6a719c80a2d57190f5d7a38b"
   },
   "6a7628ca922613d297f2e2c5": {
     "published_clips": [],
@@ -172,7 +176,9 @@
     "is_paused": false,
     "is_ended": false,
     "lifecycle_stage": "testing",
-    "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1593.0). [In coda di rotazione: attende il completamento dello slot di test giornaliero per rispettare il limite di max 3 video/giorno su TikTok].",
-    "updated_at": "2026-10-30 09:43:14"
+    "decision_reason": "[DA ATTIVARE SU KLIPPIFY] IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1593.0). -> Attivala su Klippify per sbloccare l'upload automatico.",
+    "updated_at": "2026-10-30 09:55:17",
+    "waiting_klippify_activation": true,
+    "klippify_url": "https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5"
   }
 }

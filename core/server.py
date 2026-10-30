@@ -1733,7 +1733,12 @@ def background_klippify_monitor():
             # Fetch without cache to update campaigns_data.json
             fetch_klippify_campaigns(use_cache_if_available=False)
             fetch_klippify_dashboard_data(use_cache_if_available=False)
-            print('[Monitor] Dati Klippify aggiornati con successo.')
+            try:
+                import campaign_selector
+                campaign_selector.evaluate_and_select_campaigns(apply_changes=True)
+            except Exception as cs_err:
+                print(f'[Monitor] Warning ricalcolo portfolio AI: {cs_err}')
+            print('[Monitor] Dati Klippify e Portfolio AI aggiornati con successo.')
         except Exception as e:
             print(f'[Monitor] Errore durante aggiornamento: {e}')
         # Dorme 30 minuti (1800 secondi)

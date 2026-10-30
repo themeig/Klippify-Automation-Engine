@@ -928,12 +928,179 @@ def execute_clipping_step(item):
         save_state(state)
         return False
 
+
+def verify_campaign_klippify_ready(campaign_id):
+    """
+    Controlla prima di qualsiasi upload che:
+    1) La campagna sia ancora ATTIVA e con budget residuo su Klippify (campaigns_ranked.json).
+    2) L'utente abbia EFFETTIVAMENTE ATTIVATO / ISCRITTO la campagna su Klippify (section == 'Iscritte'
+       o presente in active_campaigns_classified.json / klippify_submissions.json o confermata dall'utente).
+    Restituisce (is_ready: bool, reason_code: str, message: str).
+    """
+    cid = str(campaign_id or "").strip()
+    if not cid or cid == "unknown":
+        return True, "ok", "OK"
+
+    sched_file = BASE_DIR / "campaign_schedules.json"
+    schedules = {}
+    if sched_file.exists():
+        try:
+            schedules = json.loads(sched_file.read_text(encoding="utf-8"))
+        except Exception:
+            schedules = {}
+    camp_sched = schedules.get(cid, {})
+
+    ranked_list = []
+    if CAMPAIGNS_RANKED_FILE.exists():
+        try:
+            ranked_list = json.loads(CAMPAIGNS_RANKED_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            ranked_list = []
+
+    classified_ids = set()
+    if CAMPAIGNS_CLASSIFIED_FILE.exists():
+        try:
+            cl_data = json.loads(CAMPAIGNS_CLASSIFIED_FILE.read_text(encoding="utf-8"))
+            for c in cl_data:
+                tok = str(c.get("id") or c.get("campaign_token") or c.get("campaign_id") or "")
+                if tok:
+                    classified_ids.add(tok)
+        except Exception:
+            pass
+
+    submitted_ids = set()
+    sub_file = BASE_DIR / "klippify_submissions.json"
+    if sub_file.exists():
+        try:
+            sub_data = json.loads(sub_file.read_text(encoding="utf-8"))
+            for s in sub_data:
+                tok = str(s.get("campaign_id") or s.get("campaign_token") or "")
+                if tok:
+                    submitted_ids.add(tok)
+        except Exception:
+            pass
+
+    if ranked_list:
+        matched = next((c for c in ranked_list if str(c.get("id") or c.get("campaign_token") or "") == cid), None)
+        if not matched:
+            return (
+                False,
+                "inactive_on_klippify",
+                f"La campagna {cid} non è più presente nel catalogo attivo di Klippify."
+            )
+        status_str = str(matched.get("status") or "Active").strip().lower()
+        section_str = str(matched.get("section") or "").strip().lower()
+        budget_rem = float(matched.get("budget_remaining") or 0.0)
+        prog_str = str(matched.get("budget_progress_percent") or "").strip()
+        cname = matched.get("name") or cid
+
+        if (
+            status_str != "active"
+            or section_str in ["passate", "in pausa", "rifiutate", "concluse", "scadute", "ended"]
+            or budget_rem < 10.0
+            or prog_str in ["100%", "100.0%"]
+        ):
+            return (
+                False,
+                "inactive_on_klippify",
+                f"La campagna '{cname}' non è più attiva su Klippify (status={matched.get('status')}, budget=${budget_rem})."
+            )
+
+        is_enrolled = (
+            section_str == "iscritte"
+            or cid in classified_ids
+            or cid in submitted_ids
+            or camp_sched.get("user_confirmed_enrolled") is True
+        )
+        if not is_enrolled:
+            k_url = matched.get("campaign_url") or f"https://app.klippify.com/campaigns/{cid}"
+            return (
+                False,
+                "requires_user_activation",
+                f"⚠️ AZIONE RICHIESTA: Devi prima attivare la campagna '{cname}' su Klippify ({k_url}) prima di poter caricare i suoi video!"
+            )
+
+    return True, "ok", "Campagna attiva e iscritta su Klippify."
+
+
+def confirm_campaign_klippify_activation(campaign_id):
+    """
+    Segna una campagna come attivata/iscritta dall'utente su Klippify, aggiornando
+    campaigns_ranked.json e campaign_schedules.json e ricalcolando gli slot del portfolio AI.
+    """
+    cid = str(campaign_id or "").strip()
+    if not cid:
+        return {"status": "error", "message": "campaign_id mancante"}
+
+    if CAMPAIGNS_RANKED_FILE.exists():
+        try:
+            ranked = json.loads(CAMPAIGNS_RANKED_FILE.read_text(encoding="utf-8"))
+            changed_r = False
+            for c in ranked:
+                if str(c.get("id") or c.get("campaign_token") or "") == cid:
+                    c["section"] = "Iscritte"
+                    changed_r = True
+            if changed_r:
+                CAMPAIGNS_RANKED_FILE.write_text(json.dumps(ranked, indent=2, ensure_ascii=False), encoding="utf-8")
+        except Exception as e:
+            print(f"[AUTOPILOT] Warning aggiornamento ranked: {e}")
+
+    sched_file = BASE_DIR / "campaign_schedules.json"
+    schedules = {}
+    if sched_file.exists():
+        try:
+            schedules = json.loads(sched_file.read_text(encoding="utf-8"))
+        except Exception:
+            schedules = {}
+
+    if cid not in schedules:
+        schedules[cid] = {"target_count": 1, "slots": [], "published_clips": []}
+    schedules[cid]["user_confirmed_enrolled"] = True
+    schedules[cid]["waiting_klippify_activation"] = False
+    schedules[cid]["autopilot_enabled"] = True
+    schedules[cid]["is_paused"] = False
+    schedules[cid]["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    sched_file.write_text(json.dumps(schedules, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    plan = None
+    try:
+        import campaign_selector
+        plan = campaign_selector.evaluate_and_select_campaigns(apply_changes=True)
+    except Exception as cs_e:
+        print(f"[AUTOPILOT] Warning ricalcolo portfolio dopo conferma attivazione: {cs_e}")
+
+    return {
+        "status": "ok",
+        "campaign_id": cid,
+        "user_confirmed_enrolled": True,
+        "portfolio_plan": plan
+    }
+
 def execute_publish_step(item):
     import process_manager
     import clipping_queue_manager
     clip_filename = item.get("generated_clip") or item.get("source_video")
     camp_id = item.get("campaign_id", "unknown")
     caption = item.get("caption", "Video automatico da Klippify")
+
+    # Controllo ferreo pre-upload: la campagna deve essere attiva su Klippify E già attivata dall'utente!
+    is_klip_ok, reason_code, reason_msg = verify_campaign_klippify_ready(camp_id)
+    if not is_klip_ok:
+        print(f"[AUTOPILOT KLIPPIFY GUARD] 🛑 Upload bloccato per {camp_id}: {reason_msg}")
+        if reason_code == "inactive_on_klippify":
+            end_campaign(camp_id)
+        else:
+            sched_file = BASE_DIR / "campaign_schedules.json"
+            if sched_file.exists():
+                try:
+                    sch = json.loads(sched_file.read_text(encoding="utf-8"))
+                    if camp_id in sch:
+                        sch[camp_id]["waiting_klippify_activation"] = True
+                        sch[camp_id]["autopilot_enabled"] = False
+                        sched_file.write_text(json.dumps(sch, indent=2, ensure_ascii=False), encoding="utf-8")
+                except Exception:
+                    pass
+        return False
 
     # Verifica se esiste la didascalia specifica salvata nei metadati
     clip_meta = clipping_queue_manager.get_clip_metadata(clip_filename)

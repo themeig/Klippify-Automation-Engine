@@ -258,16 +258,26 @@ def evaluate_and_select_campaigns(
         if cid:
             all_camps_map[cid] = dict(c)
 
+    has_live_ranked_catalog = len(ranked_camps) > 0
+    enrolled_classified_ids = set(classified_map.keys())
+    submitted_camp_ids = {
+        str(s.get("campaign_id") or s.get("campaign_token") or "")
+        for s in submissions_list
+        if s.get("campaign_id") or s.get("campaign_token")
+    }
+
     for cid, cl in classified_map.items():
         if cid not in all_camps_map:
+            # Se abbiamo il catalogo live di Klippify (ranked_camps) e questa campagna non è più presente,
+            # significa che è terminata/scaduta su Klippify!
             all_camps_map[cid] = {
                 "id": cid,
                 "campaign_token": cid,
                 "name": cl.get("name") or cl.get("campaign_name") or cid,
                 "brand": cl.get("brand") or "",
-                "section": "Iscritte",
-                "status": "Active",
-                "budget_remaining": cl.get("budget_remaining") or 100.0,
+                "section": "Passate" if has_live_ranked_catalog else "Iscritte",
+                "status": "Ended" if has_live_ranked_catalog else "Active",
+                "budget_remaining": 0.0 if has_live_ranked_catalog else (cl.get("budget_remaining") or 100.0),
                 "payout_per_1k_views": cl.get("payout_per_1k_views") or cl.get("payout_per_1k") or 0.5,
                 "total_views": 50000,
                 "creators_count": 50,
@@ -322,10 +332,33 @@ def evaluate_and_select_campaigns(
             "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json."
         )
 
+        section_raw = (camp.get("section") or "").strip()
+        status_raw = (camp.get("status") or "Active").strip()
+        is_klippify_active = (
+            status_raw.lower() == "active"
+            and section_raw.lower() not in ["passate", "in pausa", "rifiutate", "concluse", "scadute", "ended"]
+            and budget_rem >= 35.0
+            and str(camp.get("budget_progress_percent") or "").strip() not in ["100%", "100.0%"]
+        )
+        is_user_enrolled = bool(
+            section_raw.lower() == "iscritte"
+            or cid in enrolled_classified_ids
+            or cid in submitted_camp_ids
+            or schedules.get(cid, {}).get("user_confirmed_enrolled") is True
+        )
+        requires_user_activation = bool(is_klippify_active and not is_user_enrolled)
+        klippify_url = camp.get("campaign_url") or f"https://app.klippify.com/campaigns/{cid}"
+
         entry = {
             "campaign_id": cid,
             "campaign_name": cname,
             "brand": camp.get("brand") or "",
+            "klippify_url": klippify_url,
+            "klippify_section": section_raw or "Nuove",
+            "klippify_status": status_raw,
+            "is_klippify_active": is_klippify_active,
+            "is_user_enrolled": is_user_enrolled,
+            "requires_user_activation": requires_user_activation,
             "budget_remaining": budget_rem,
             "payout_per_1k_views": payout,
             "views_per_creator_klippify": prom_eval["views_per_creator"],
@@ -430,6 +463,28 @@ def evaluate_and_select_campaigns(
 
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+        # Identifica le campagne selezionate per il TEST che richiedono prima l'attivazione manuale dell'utente su Klippify
+    campaigns_requiring_activation = []
+    for c_item in scaling_campaigns + testing_campaigns:
+        if c_item.get("requires_user_activation"):
+            warn_msg = (
+                f"⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna "
+                f"'{c_item['campaign_name']}' su {c_item['klippify_url']} altrimenti Klippify non permette di caricare i suoi video!"
+            )
+            c_item["activation_warning"] = warn_msg
+            c_item["decision_reason"] = f"[DA ATTIVARE SU KLIPPIFY] {c_item['decision_reason']} -> Attivala su Klippify per sbloccare l'upload automatico."
+            campaigns_requiring_activation.append({
+                "campaign_id": c_item["campaign_id"],
+                "campaign_name": c_item["campaign_name"],
+                "brand": c_item["brand"],
+                "lifecycle_stage": c_item["lifecycle_stage"],
+                "klippify_url": c_item["klippify_url"],
+                "virgin_clips_ready": c_item["virgin_clips_ready"],
+                "message": warn_msg
+            })
+        else:
+            c_item["activation_warning"] = None
+
     # Allocazione rigorosa degli slot giornalieri: MAX 3 VIDEO/GIORNO IN TOTALE PER ACCOUNT TIKTOK
     slot_allocations = {}
     if scaling_campaigns and testing_campaigns:
@@ -438,9 +493,13 @@ def evaluate_and_select_campaigns(
         else:
             slot_allocations[scaling_campaigns[0]["campaign_id"]] = ["13:00"]
             slot_allocations[scaling_campaigns[1]["campaign_id"]] = ["21:00"]
-        slot_allocations[testing_campaigns[0]["campaign_id"]] = ["17:30"]
-        for extra_t in testing_campaigns[1:]:
-            slot_allocations[extra_t["campaign_id"]] = []
+        # Assegna lo slot di test 17:30 prioritariamente a una campagna già iscritta, o prenota 17:30 in attesa di attivazione
+        enrolled_testing = [t for t in testing_campaigns if t.get("is_user_enrolled")]
+        chosen_test = enrolled_testing[0] if enrolled_testing else testing_campaigns[0]
+        slot_allocations[chosen_test["campaign_id"]] = ["17:30"]
+        for extra_t in testing_campaigns:
+            if extra_t["campaign_id"] != chosen_test["campaign_id"]:
+                slot_allocations[extra_t["campaign_id"]] = []
     elif scaling_campaigns and not testing_campaigns:
         if len(scaling_campaigns) == 1:
             slot_allocations[scaling_campaigns[0]["campaign_id"]] = list(GLOBAL_DAILY_SLOTS)
@@ -465,8 +524,8 @@ def evaluate_and_select_campaigns(
         c_item["daily_slots"] = c_slots
         c_item["daily_target_count"] = len(c_slots)
         total_allocated_slots += len(c_slots)
-        if c_item["lifecycle_stage"] == "testing" and not c_slots:
-            c_item["decision_reason"] += " [In coda di rotazione: attende il completamento dello slot di test giornaliero per rispettare il limite di max 3 video/giorno su TikTok]."
+        if c_item["lifecycle_stage"] == "testing" and not c_slots and not c_item.get("requires_user_activation"):
+            c_item["decision_reason"] += " [In coda di rotazione: attende il completamento dello slot di test giornaliero per rispettare il limite di max 3 video/giorno su TikTok]." 
 
     if apply_changes:
         active_portfolio_ids = [c["campaign_id"] for c in (scaling_campaigns + testing_campaigns)]
@@ -524,10 +583,13 @@ def evaluate_and_select_campaigns(
             for idx, t_str in enumerate(assigned_times):
                 vid_name = v_clips[idx] if idx < len(v_clips) else ""
                 slots.append({"time": t_str, "video": vid_name})
+            needs_act = bool(t_camp.get("requires_user_activation"))
             sched.update({
                 "target_count": max(1, len(assigned_times)),
                 "slots": slots,
-                "autopilot_enabled": len(assigned_times) > 0,
+                "autopilot_enabled": (len(assigned_times) > 0) and (not needs_act),
+                "waiting_klippify_activation": needs_act,
+                "klippify_url": t_camp.get("klippify_url"),
                 "is_paused": False,
                 "is_ended": False,
                 "lifecycle_stage": "testing",
@@ -566,10 +628,12 @@ def evaluate_and_select_campaigns(
             "total_daily_slots_allocated": total_allocated_slots,
             "scaling_count": len(scaling_campaigns),
             "testing_count": len(testing_campaigns),
+            "requires_user_activation_count": len(campaigns_requiring_activation),
             "dropped_underperforming_count": len(dropped_campaigns),
             "candidate_pool_count": len(candidate_pool),
             "needs_clipping_count": len(next_clipping_priorities)
         },
+        "campaigns_requiring_user_activation": campaigns_requiring_activation,
         "scaling_campaigns": scaling_campaigns,
         "testing_campaigns": testing_campaigns,
         "dropped_campaigns": dropped_campaigns,
@@ -591,6 +655,12 @@ def evaluate_and_select_campaigns(
         print(f"⏸️ Campagne FERMATE (Sotto-performanti): {len(dropped_campaigns)}")
         for c in dropped_campaigns:
             print(f"   - [{c['campaign_id']}] {c['campaign_name']} -> {c['decision_reason']}")
+
+    if campaigns_requiring_activation:
+        print(f"\n⚠️ [AZIONE RICHIESTA ALL'UTENTE SU KLIPPIFY] ({len(campaigns_requiring_activation)} campagne in TEST da attivare):")
+        for act in campaigns_requiring_activation:
+            print(f"   👉 DEVI ATTIVARE SU KLIPPIFY: {act['campaign_name']} ({act['campaign_id']}) -> {act['klippify_url']}")
+            print(f"      (Upload bloccato finché non clicchi 'Partecipa' su Klippify; clip già pronte in magazzino: {act['virgin_clips_ready']})")
 
     if next_clipping_priorities:
         print(f"🎬 Priorità di Taglio per l'AI Director ({len(next_clipping_priorities)} campagne da rifornire):")

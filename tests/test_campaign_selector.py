@@ -118,6 +118,10 @@ def test_campaign_selector_promotes_winners_drops_losers_and_tests_promising(tmp
     assert sched["camp_winner"]["lifecycle_stage"] == "scaling"
     assert len(sched["camp_promising"]["slots"]) == 1
     assert sched["camp_promising"]["lifecycle_stage"] == "testing"
+    assert sched["camp_promising"]["waiting_klippify_activation"] is True
+    assert sched["camp_promising"]["autopilot_enabled"] is False
+    assert len(plan["campaigns_requiring_user_activation"]) == 1
+    assert plan["campaigns_requiring_user_activation"][0]["campaign_id"] == "camp_promising"
     assert plan["summary"]["max_daily_uploads_per_account"] == 3
     assert plan["summary"]["total_daily_slots_allocated"] == 3
     assert len(sched["camp_winner"]["slots"]) + len(sched["camp_promising"]["slots"]) <= 3
