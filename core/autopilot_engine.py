@@ -31,8 +31,8 @@ DEFAULT_STATE = {
     "is_enabled": False,
     "mode": "interval",               # "interval" oppure "fixed_times"
     "interval_minutes": 180,           # default: pubblica ogni 3 ore (180 minuti)
-    "fixed_times": ["12:00", "15:30", "19:00", "22:00"],
-    "max_daily_uploads": 5,
+    "fixed_times": ["13:00", "17:30", "21:00"],
+    "max_daily_uploads": 3,
     "today_uploads_count": 0,
     "last_upload_date": "",
     "last_upload_timestamp": None,
@@ -131,7 +131,7 @@ def compute_next_run(state):
         state["today_uploads_count"] = 0
         state["last_upload_date"] = today_str
 
-    if state.get("today_uploads_count", 0) >= state.get("max_daily_uploads", 5):
+    if state.get("today_uploads_count", 0) >= min(3, int(state.get("max_daily_uploads", 3) or 3)):
         # Limite giornaliero raggiunto, programma per domani alle prima fascia oraria
         tomorrow = datetime.now() + timedelta(days=1)
         first_time = state.get("fixed_times", ["12:00"])[0] if state.get("mode") == "fixed_times" else "12:00"
@@ -281,7 +281,7 @@ def update_settings(settings_dict):
     if "fixed_times" in settings_dict and isinstance(settings_dict["fixed_times"], list):
         state["fixed_times"] = settings_dict["fixed_times"]
     if "max_daily_uploads" in settings_dict:
-        state["max_daily_uploads"] = max(1, int(settings_dict["max_daily_uploads"]))
+        state["max_daily_uploads"] = min(3, max(1, int(settings_dict["max_daily_uploads"])))
     state["next_scheduled_run"] = compute_next_run(state)
     save_state(state)
     return state
@@ -647,11 +647,11 @@ def advance_campaign_slots(campaign_id, force_new_day=False):
         except Exception:
             schedules = {}
 
-    camp_sched = schedules.get(campaign_id, {"target_count": 4, "slots": [], "autopilot_enabled": True})
+    camp_sched = schedules.get(campaign_id, {"target_count": 2, "slots": [], "autopilot_enabled": True})
     current_slots = camp_sched.get("slots", [])
     sorted_slots = sorted(current_slots, key=lambda s: s.get("time", "99:99"))
-    target_count = max(camp_sched.get("target_count", 4), len(sorted_slots))
-    default_times = ["12:00", "15:00", "18:00", "20:00", "21:30"]
+    target_count = min(3, max(camp_sched.get("target_count", 2), len(sorted_slots)))
+    default_times = ["13:00", "17:30", "21:00"]
 
     today_str = datetime.now().strftime("%Y-%m-%d")
     last_sched_date = camp_sched.get("schedule_date", "")
@@ -1176,6 +1176,12 @@ def autopilot_worker_loop():
                 time.sleep(5)
                 continue
 
+            # Limite ferreo globale: massimo 3 video pubblicati al giorno per account TikTok
+            max_daily = min(3, int(state.get("max_daily_uploads") or 3))
+            if state.get("today_uploads_count", 0) >= max_daily:
+                time.sleep(15)
+                continue
+
             # 1. FASE PUBBLICAZIONE AUTOMATICA DA SCHEDULAZIONE SLOTS (campaign_schedules.json)
             # Controlla sempre ogni 15s gli orari impostati dall'utente per tutte le campagne attive
             import process_manager
@@ -1194,6 +1200,10 @@ def autopilot_worker_loop():
                     
                     now = datetime.now()
                     for cid, c_data in all_schedules.items():
+                        state = load_state()
+                        if state.get("today_uploads_count", 0) >= max_daily:
+                            print(f"[AUTOPILOT LIMIT] Raggiunto il limite massimo giornaliero di {max_daily} video/giorno per l'account TikTok.")
+                            break
                         if c_data.get("is_ended", False):
                             continue
 

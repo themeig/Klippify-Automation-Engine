@@ -1,7 +1,14 @@
 {
   "status": "success",
-  "evaluated_at": "2026-10-30 01:12:30",
+  "evaluated_at": "2026-10-30 09:43:14",
   "summary": {
+    "max_daily_uploads_per_account": 3,
+    "global_daily_slots": [
+      "13:00",
+      "17:30",
+      "21:00"
+    ],
+    "total_daily_slots_allocated": 3,
     "scaling_count": 1,
     "testing_count": 3,
     "dropped_underperforming_count": 0,
@@ -42,7 +49,12 @@
         "clip_SaraDizdariA_slot1_20261029_234707.mp4"
       ],
       "lifecycle_stage": "scaling",
-      "decision_reason": "VINCENTE: Tasso approvazione 90.0% (9/10) e picco di 720 views (media 91.3 views/video). Spinta al massimo (6 slot/giorno)."
+      "decision_reason": "VINCENTE: Tasso approvazione 90.0% (9/10) e picco di 720 views (media 91.3 views/video). Spinta in SCALING prioritario (fino a 2 slot/giorno su 3 max account TikTok).",
+      "daily_slots": [
+        "13:00",
+        "21:00"
+      ],
+      "daily_target_count": 2
     }
   ],
   "testing_campaigns": [
@@ -79,7 +91,11 @@
         "clip_SaikooTheory_slot1_20261030_002748.mp4"
       ],
       "lifecycle_stage": "testing",
-      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 1 clip 9:16 pronte in magazzino (Promising Score: 1739.1)."
+      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 1 clip 9:16 pronte in magazzino (Promising Score: 1739.1).",
+      "daily_slots": [
+        "17:30"
+      ],
+      "daily_target_count": 1
     },
     {
       "campaign_id": "6a719c80a2d57190f5d7a38b",
@@ -112,7 +128,9 @@
       "virgin_clips_ready": 0,
       "virgin_clip_Showcases": [],
       "lifecycle_stage": "testing",
-      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1600.9)."
+      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1600.9). [In coda di rotazione: attende il completamento dello slot di test giornaliero per rispettare il limite di max 3 video/giorno su TikTok].",
+      "daily_slots": [],
+      "daily_target_count": 0
     },
     {
       "campaign_id": "6a7628ca922613d297f2e2c5",
@@ -145,7 +163,9 @@
       "virgin_clips_ready": 0,
       "virgin_clip_Showcases": [],
       "lifecycle_stage": "testing",
-      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1593.0)."
+      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1593.0). [In coda di rotazione: attende il completamento dello slot di test giornaliero per rispettare il limite di max 3 video/giorno su TikTok].",
+      "daily_slots": [],
+      "daily_target_count": 0
     }
   ],
   "dropped_campaigns": [],

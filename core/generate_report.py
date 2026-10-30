@@ -2999,6 +2999,69 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
 
             grid.innerHTML = '';
 
+            // Ricarica anche il piano Portfolio AI e le schedulazioni aggiornate dal server se disponibili
+            try {{
+                const pfRes = await fetch('/api/campaigns/portfolio-plan');
+                if (pfRes.ok) {{
+                    const pfJson = await pfRes.json();
+                    if (pfJson && pfJson.status === 'success') campaignPortfolioPlan = pfJson;
+                }}
+                const schRes = await fetch('/api/campaign/schedule/all');
+                if (schRes.ok) {{
+                    const schJson = await schRes.json();
+                    if (schJson && typeof schJson === 'object') campaignSchedules = schJson;
+                }}
+            }} catch(e) {{}}
+
+            const pfSummary = (typeof campaignPortfolioPlan !== 'undefined' && campaignPortfolioPlan && campaignPortfolioPlan.summary) ? campaignPortfolioPlan.summary : {{}};
+            const scalingList = (typeof campaignPortfolioPlan !== 'undefined' && campaignPortfolioPlan && Array.isArray(campaignPortfolioPlan.scaling_campaigns)) ? campaignPortfolioPlan.scaling_campaigns : [];
+            const testingList = (typeof campaignPortfolioPlan !== 'undefined' && campaignPortfolioPlan && Array.isArray(campaignPortfolioPlan.testing_campaigns)) ? campaignPortfolioPlan.testing_campaigns : [];
+            const droppedList = (typeof campaignPortfolioPlan !== 'undefined' && campaignPortfolioPlan && Array.isArray(campaignPortfolioPlan.dropped_campaigns)) ? campaignPortfolioPlan.dropped_campaigns : [];
+
+            const portfolioBanner = document.createElement('div');
+            portfolioBanner.style.cssText = 'grid-column: 1 / -1; background:linear-gradient(135deg, rgba(15,23,42,0.95), rgba(30,41,59,0.92)); border:1px solid rgba(56,189,248,0.35); border-radius:1rem; padding:1.25rem 1.5rem; margin-bottom:0.5rem; box-shadow:0 8px 25px rgba(0,0,0,0.35);';
+            portfolioBanner.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:0.9rem;">
+                    <div>
+                        <div style="font-size:1.05rem; font-weight:900; color:#fff; display:flex; align-items:center; gap:0.5rem;">
+                            <span>🧠 AI Portfolio Manager (Seleziona • Testa • Scala • Ferma)</span>
+                            <span style="background:rgba(16,185,129,0.2); color:#34d399; border:1px solid rgba(16,185,129,0.45); padding:0.2rem 0.65rem; border-radius:999px; font-size:0.75rem; font-weight:900;">
+                                🛡️ Max 3 Video / Giorno per Account TikTok
+                            </span>
+                        </div>
+                        <div style="font-size:0.8rem; color:#94a3b8; margin-top:0.25rem;">
+                            L'AI distribuisce fino a un massimo ferreo di <strong style="color:#e2e8f0;">3 pubblicazioni totali al giorno</strong> sull'account TikTok (<code style="color:#38bdf8;">13:00 • 17:30 • 21:00</code>) tra le campagne in <strong>SCALING</strong> e quelle in <strong>TESTING</strong>.
+                        </div>
+                    </div>
+                    <button onclick="recalcAiPortfolioNow(this)" style="background:rgba(56,189,248,0.18); color:#38bdf8; border:1px solid rgba(56,189,248,0.45); padding:0.45rem 0.9rem; border-radius:0.6rem; font-size:0.78rem; font-weight:800; cursor:pointer;">
+                        🔄 Rivaluta Portfolio AI
+                    </button>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:0.8rem;">
+                    <div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.35); border-radius:0.75rem; padding:0.75rem 1rem;">
+                        <div style="font-size:0.72rem; font-weight:800; color:#34d399; text-transform:uppercase;">🚀 In Scaling (Vincenti)</div>
+                        <div style="font-size:1.35rem; font-weight:900; color:#fff; margin-top:0.15rem;">${{scalingList.length}} Campagn${{scalingList.length === 1 ? 'a' : 'e'}}</div>
+                        <div style="font-size:0.73rem; color:#a7f3d0;">Approvazione ≥60% e alte views • Priorità slot (13:00, 21:00)</div>
+                    </div>
+                    <div style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.35); border-radius:0.75rem; padding:0.75rem 1rem;">
+                        <div style="font-size:0.72rem; font-weight:800; color:#38bdf8; text-transform:uppercase;">🧪 In Testing (Esplorazione AI)</div>
+                        <div style="font-size:1.35rem; font-weight:900; color:#fff; margin-top:0.15rem;">${{testingList.length}} Campagn${{testingList.length === 1 ? 'a' : 'e'}}</div>
+                        <div style="font-size:0.73rem; color:#bae6fd;">Test su 3 clip iniziali • Slot dedicato (17:30)</div>
+                    </div>
+                    <div style="background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.35); border-radius:0.75rem; padding:0.75rem 1rem;">
+                        <div style="font-size:0.72rem; font-weight:800; color:#f87171; text-transform:uppercase;">⏸️ Dropped (Sotto-performanti)</div>
+                        <div style="font-size:1.35rem; font-weight:900; color:#fff; margin-top:0.15rem;">${{droppedList.length}} Campagn${{droppedList.length === 1 ? 'a' : 'e'}}</div>
+                        <div style="font-size:0.73rem; color:#fecaca;">Fermate dopo ≥3 clip con basse views o rifiuti</div>
+                    </div>
+                    <div style="background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.35); border-radius:0.75rem; padding:0.75rem 1rem;">
+                        <div style="font-size:0.72rem; font-weight:800; color:#c084fc; text-transform:uppercase;">🛡️ Cap Giornaliero TikTok</div>
+                        <div style="font-size:1.35rem; font-weight:900; color:#fff; margin-top:0.15rem;">${{pfSummary.total_daily_slots_allocated || 3}} / 3 Slot</div>
+                        <div style="font-size:0.73rem; color:#e9d5ff;">Massimo 3 video/giorno totali per account</div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(portfolioBanner);
+
             // Iterate over active campaigns to build WIDGETS
             activeTokensList.forEach((campToken) => {{
                 const originalCamp = allCampaignsData.find(c => c.campaign_token === campToken || c.id === campToken) || {{}};
@@ -3049,11 +3112,36 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                     ? '<span style="background:rgba(245,158,11,0.2); color:#fbbf24; border:1px solid rgba(245,158,11,0.4); padding:0.2rem 0.5rem; border-radius:0.4rem; font-size:0.72rem; font-weight:800;">✂️ CLIPPING</span>'
                     : '<span style="background:rgba(139,92,246,0.2); color:#c084fc; border:1px solid rgba(139,92,246,0.4); padding:0.2rem 0.5rem; border-radius:0.4rem; font-size:0.72rem; font-weight:800;">🤖 AI VEO</span>';
 
+                const campSchedObj = (typeof campaignSchedules !== 'undefined' && campaignSchedules[campToken]) ? campaignSchedules[campToken] : {{}};
+                const pfMatch = [...scalingList, ...testingList, ...droppedList].find(x => x.campaign_id === campToken || x.campaign_id === originalCamp.id) || {{}};
+                const stageKey = campSchedObj.lifecycle_stage || pfMatch.lifecycle_stage || 'candidate';
+                const stageReason = campSchedObj.decision_reason || pfMatch.decision_reason || 'In attesa di valutazione AI Portfolio.';
+                const assignedSlotsArr = Array.isArray(campSchedObj.slots) ? campSchedObj.slots.map(s => s.time).filter(Boolean) : (pfMatch.daily_slots || []);
+                let lifecycleBadgeHtml = '';
+                let stageBorderColor = 'rgba(148,163,184,0.25)';
+                if (stageKey === 'scaling') {{
+                    lifecycleBadgeHtml = '<span style="background:rgba(16,185,129,0.22); color:#34d399; border:1px solid rgba(16,185,129,0.5); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">🚀 SCALING • VINCENTE</span>';
+                    stageBorderColor = 'rgba(16,185,129,0.4)';
+                }} else if (stageKey === 'testing') {{
+                    lifecycleBadgeHtml = assignedSlotsArr.length > 0
+                        ? '<span style="background:rgba(56,189,248,0.22); color:#38bdf8; border:1px solid rgba(56,189,248,0.5); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">🧪 TESTING AI ATTIVO</span>'
+                        : '<span style="background:rgba(245,158,11,0.2); color:#fbbf24; border:1px solid rgba(245,158,11,0.45); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">⏳ TESTING IN CODA</span>';
+                    stageBorderColor = 'rgba(56,189,248,0.35)';
+                }} else if (stageKey === 'dropped_underperforming') {{
+                    lifecycleBadgeHtml = '<span style="background:rgba(239,68,68,0.22); color:#f87171; border:1px solid rgba(239,68,68,0.5); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:900;">⏸️ DROPPED • FERMATA</span>';
+                    stageBorderColor = 'rgba(239,68,68,0.35)';
+                }} else if (stageKey === 'depleted') {{
+                    lifecycleBadgeHtml = '<span style="background:rgba(100,116,139,0.25); color:#94a3b8; border:1px solid rgba(100,116,139,0.45); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:800;">🛑 BUDGET ESAURITO</span>';
+                }} else {{
+                    lifecycleBadgeHtml = '<span style="background:rgba(148,163,184,0.15); color:#cbd5e1; border:1px solid rgba(148,163,184,0.3); padding:0.2rem 0.55rem; border-radius:0.4rem; font-size:0.72rem; font-weight:800;">📋 CANDIDATA</span>';
+                }}
+
                 widget.innerHTML = `
                     <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.8rem; gap:0.5rem;">
                         <div style="flex:1;">
                             <div style="font-size:1.15rem; font-weight:800; color:#fff; line-height:1.3; margin-bottom:0.4rem;">${{originalCamp.name}}</div>
                             <div style="display:flex; gap:0.4rem; align-items:center; flex-wrap:wrap;">
+                                ${{lifecycleBadgeHtml}}
                                 ${{typeBadge}}
                                 <span style="background:rgba(16,185,129,0.15); color:#34d399; padding:0.2rem 0.5rem; border-radius:0.4rem; font-size:0.72rem; font-weight:bold;">$${{originalCamp.payout_per_1k_views || '?'}}/1k</span>
                             </div>
@@ -3062,8 +3150,14 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                             🗑️
                         </button>
                     </div>
-                    <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">
+                    <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">
                         ${{originalCamp.description || 'Nessun brief fornito'}}
+                    </div>
+                    <div style="background:rgba(15,23,42,0.65); border:1px solid ${{stageBorderColor}}; border-radius:0.6rem; padding:0.55rem 0.75rem; margin-bottom:0.85rem; font-size:0.75rem; color:#cbd5e1; line-height:1.35;">
+                        <div style="font-weight:800; color:#f8fafc; margin-bottom:0.2rem;">
+                            🎯 Slot TikTok Oggi: ${{assignedSlotsArr.length > 0 ? assignedSlotsArr.join(' • ') + ` (${{assignedSlotsArr.length}}/3 max giornalieri)` : 'In coda di rotazione (0/3 oggi)'}}
+                        </div>
+                        <div style="color:#94a3b8;">${{stageReason}}</div>
                     </div>
                     <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.8rem;">
                         <span style="font-size:0.78rem; color:#a78bfa;">⏳ ${{item.scripts ? item.scripts.length : (item.video_prompt_gemini ? 1 : 0)}} Slot/Clip</span>
@@ -3080,6 +3174,66 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
 
         // campaignSchedules is declared globally at top
         let localAvailableVideos = [];
+
+        async function recalcAiPortfolioNow(btnEl) {{
+            if (btnEl) {{ btnEl.disabled = true; btnEl.innerHTML = '⏳ Analisi AI in corso...'; }}
+            try {{
+                const res = await fetch('/api/campaigns/auto-select', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ apply_changes: true }})
+                }});
+                const data = await res.json();
+                if (data && data.status === 'success') {{
+                    campaignPortfolioPlan = data;
+                    await renderMyCampaigns();
+                }}
+            }} catch(e) {{
+                alert('Errore ricalcolo Portfolio AI: ' + e.message);
+            }} finally {{
+                if (btnEl) {{ btnEl.disabled = false; btnEl.innerHTML = '🔄 Rivaluta Portfolio AI'; }}
+            }}
+        }}
+
+        async function recalcAiPortfolioNow(btnEl) {{
+
+            if (btnEl) {{ btnEl.disabled = true; btnEl.innerHTML = '⏳ Analisi AI in corso...'; }}
+
+            try {{
+
+                const res = await fetch('/api/campaigns/auto-select', {{
+
+                    method: 'POST',
+
+                    headers: {{ 'Content-Type': 'application/json' }},
+
+                    body: JSON.stringify({{ apply_changes: true }})
+
+                }});
+
+                const data = await res.json();
+
+                if (data && data.status === 'success') {{
+
+                    campaignPortfolioPlan = data;
+
+                    await renderMyCampaigns();
+
+                }}
+
+            }} catch(e) {{
+
+                alert('Errore ricalcolo Portfolio AI: ' + e.message);
+
+            }} finally {{
+
+                if (btnEl) {{ btnEl.disabled = false; btnEl.innerHTML = '🔄 Rivaluta Portfolio AI'; }}
+
+            }}
+
+        }}
+
+
 
         async function openLocalFolder(campToken) {{
             try {{
@@ -5115,6 +5269,23 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
 
                     <!-- AREA CONTENUTO CENTRALE -->
                     <div>
+                        <!-- BANNER STRATEGIA AI PORTFOLIO (SCALING / TESTING / DROPPED) & MAX 3 VIDEO/GIORNO TIKTOK -->
+                        <div style="background:${{lifecycleStage === 'scaling' ? 'rgba(16,185,129,0.12)' : lifecycleStage === 'dropped_underperforming' ? 'rgba(239,68,68,0.12)' : 'rgba(56,189,248,0.12)'}}; border:1px solid ${{lifecycleStage === 'scaling' ? 'rgba(16,185,129,0.4)' : lifecycleStage === 'dropped_underperforming' ? 'rgba(239,68,68,0.4)' : 'rgba(56,189,248,0.4)'}}; border-radius:0.85rem; padding:0.9rem 1.2rem; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.8rem;">
+                            <div style="flex:1; min-width:260px;">
+                                <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.25rem;">
+                                    <span style="font-size:0.78rem; font-weight:900; padding:0.2rem 0.65rem; border-radius:0.4rem; background:${{lifecycleStage === 'scaling' ? 'rgba(16,185,129,0.25)' : lifecycleStage === 'dropped_underperforming' ? 'rgba(239,68,68,0.25)' : 'rgba(56,189,248,0.25)'}}; color:${{lifecycleStage === 'scaling' ? '#34d399' : lifecycleStage === 'dropped_underperforming' ? '#f87171' : '#38bdf8'}};">
+                                        ${{lifecycleStage === 'scaling' ? '🚀 FASE AI: SCALING (VINCENTE)' : lifecycleStage === 'dropped_underperforming' ? '⏸️ FASE AI: DROPPED (SOTTO-PERFORMANTE)' : '🧪 FASE AI: TESTING (ESPLORAZIONE)'}}
+                                    </span>
+                                    <span style="font-size:0.75rem; font-weight:800; color:#e2e8f0; background:rgba(15,23,42,0.7); border:1px solid rgba(255,255,255,0.15); padding:0.18rem 0.6rem; border-radius:0.4rem;">
+                                        🛡️ Limite Globale Account TikTok: Max 3 Video / Giorno
+                                    </span>
+                                </div>
+                                <div style="font-size:0.8rem; color:#cbd5e1;">
+                                    ${{decisionReason || 'Valutazione automatica AI basata su tasso di approvazione Klippify, views TikTok e fattibilità sorgenti video.'}}
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- TOP 2 WIDGETS A RILIEVO -->
                         <div class="camp-top-widgets-grid">
                             <!-- WIDGET 1: STATO PILOTA AUTOMATICO -->
@@ -5144,11 +5315,9 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
                                 <div style="display:flex; align-items:center; gap:0.6rem;">
                                     <span style="font-size:0.82rem; color:#cbd5e1;">Target Slot:</span>
                                     <select onchange="updateCampaignTargetCount('${{campToken}}', this.value)" style="background:rgba(0,0,0,0.5); border:1px solid rgba(56,189,248,0.4); color:#38bdf8; font-weight:900; font-size:0.88rem; padding:0.2rem 0.5rem; border-radius:0.4rem; outline:none; cursor:pointer;">
-                                        <option value="1" ${{targetCount === 1 ? 'selected' : ''}}>1 video/giorno</option>
-                                        <option value="2" ${{targetCount === 2 ? 'selected' : ''}}>2 video/giorno</option>
-                                        <option value="3" ${{targetCount === 3 ? 'selected' : ''}}>3 video/giorno</option>
-                                        <option value="4" ${{targetCount === 4 ? 'selected' : ''}}>4 video/giorno</option>
-                                        <option value="5" ${{targetCount === 5 ? 'selected' : ''}}>5 video/giorno</option>
+                                        <option value="1" ${{targetCount === 1 ? 'selected' : ''}}>1 video/giorno (Test)</option>
+                                        <option value="2" ${{targetCount === 2 ? 'selected' : ''}}>2 video/giorno (Scaling)</option>
+                                        <option value="3" ${{targetCount >= 3 ? 'selected' : ''}}>3 video/giorno (Max Account TikTok)</option>
                                     </select>
                                 </div>
                             </div>

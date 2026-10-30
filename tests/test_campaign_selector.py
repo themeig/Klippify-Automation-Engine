@@ -114,7 +114,10 @@ def test_campaign_selector_promotes_winners_drops_losers_and_tests_promising(tmp
     assert plan["testing_campaigns"][0]["campaign_id"] == "camp_promising"
 
     sched = saved_files["campaign_schedules.json"]
-    assert len(sched["camp_winner"]["slots"]) == 6
+    assert len(sched["camp_winner"]["slots"]) == 2
     assert sched["camp_winner"]["lifecycle_stage"] == "scaling"
-    assert len(sched["camp_promising"]["slots"]) == 2
+    assert len(sched["camp_promising"]["slots"]) == 1
     assert sched["camp_promising"]["lifecycle_stage"] == "testing"
+    assert plan["summary"]["max_daily_uploads_per_account"] == 3
+    assert plan["summary"]["total_daily_slots_allocated"] == 3
+    assert len(sched["camp_winner"]["slots"]) + len(sched["camp_promising"]["slots"]) <= 3

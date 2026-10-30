@@ -23,8 +23,10 @@ SOURCES_FILE = BASE_DIR / "campaign_sources.json"
 AI_DECISIONS_FILE = BASE_DIR / "ai_campaign_decisions.json"
 PORTFOLIO_REPORT_FILE = BASE_DIR / "campaign_portfolio_plan.json"
 
-SCALING_SLOTS = ["12:00", "13:30", "15:30", "18:00", "20:30", "22:30"]
-TESTING_SLOTS = ["15:00", "20:00"]
+MAX_DAILY_UPLOADS_PER_ACCOUNT = 3
+GLOBAL_DAILY_SLOTS = ["13:00", "17:30", "21:00"]
+SCALING_SLOTS = ["13:00", "21:00"]
+TESTING_SLOTS = ["17:30"]
 
 KNOWN_YOUTUBE_SOURCES = {
     "6a71c6f7245627c68999eae2": ["https://www.youtube.com/@SaraDizdariEcommerce"],
@@ -361,7 +363,7 @@ def evaluate_and_select_campaigns(
                 entry["lifecycle_stage"] = "scaling"
                 entry["decision_reason"] = (
                     f"VINCENTE: Tasso approvazione {app_rate}% ({acc_cnt}/{decided_cnt}) e picco di {my_max_views} views "
-                    f"(media {my_avg_views} views/video). Spinta al massimo (6 slot/giorno)."
+                    f"(media {my_avg_views} views/video). Spinta in SCALING prioritario (fino a 2 slot/giorno su 3 max account TikTok)."
                 )
                 scaling_campaigns.append(entry)
             else:
@@ -405,7 +407,7 @@ def evaluate_and_select_campaigns(
         best_cand["decision_reason"] = (
             f"SELEZIONATA PER TEST: Promising Score {best_cand['promising_score']} "
             f"({best_cand['views_per_creator_klippify']} views/creator, ${best_cand['payout_per_1k_views']}/1k, "
-            f"budget ${best_cand['budget_remaining']}). Assegnati 2 slot/giorno di test."
+            f"budget ${best_cand['budget_remaining']}). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok)."
         )
         testing_campaigns.append(best_cand)
 
@@ -427,6 +429,44 @@ def evaluate_and_select_campaigns(
             })
 
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Allocazione rigorosa degli slot giornalieri: MAX 3 VIDEO/GIORNO IN TOTALE PER ACCOUNT TIKTOK
+    slot_allocations = {}
+    if scaling_campaigns and testing_campaigns:
+        if len(scaling_campaigns) == 1:
+            slot_allocations[scaling_campaigns[0]["campaign_id"]] = ["13:00", "21:00"]
+        else:
+            slot_allocations[scaling_campaigns[0]["campaign_id"]] = ["13:00"]
+            slot_allocations[scaling_campaigns[1]["campaign_id"]] = ["21:00"]
+        slot_allocations[testing_campaigns[0]["campaign_id"]] = ["17:30"]
+        for extra_t in testing_campaigns[1:]:
+            slot_allocations[extra_t["campaign_id"]] = []
+    elif scaling_campaigns and not testing_campaigns:
+        if len(scaling_campaigns) == 1:
+            slot_allocations[scaling_campaigns[0]["campaign_id"]] = list(GLOBAL_DAILY_SLOTS)
+        else:
+            slot_allocations[scaling_campaigns[0]["campaign_id"]] = ["13:00", "21:00"]
+            slot_allocations[scaling_campaigns[1]["campaign_id"]] = ["17:30"]
+    elif testing_campaigns and not scaling_campaigns:
+        if len(testing_campaigns) == 1:
+            slot_allocations[testing_campaigns[0]["campaign_id"]] = list(GLOBAL_DAILY_SLOTS)
+        elif len(testing_campaigns) == 2:
+            slot_allocations[testing_campaigns[0]["campaign_id"]] = ["13:00", "21:00"]
+            slot_allocations[testing_campaigns[1]["campaign_id"]] = ["17:30"]
+        else:
+            for idx, t_c in enumerate(testing_campaigns[:3]):
+                slot_allocations[t_c["campaign_id"]] = [GLOBAL_DAILY_SLOTS[idx]]
+            for extra_t in testing_campaigns[3:]:
+                slot_allocations[extra_t["campaign_id"]] = []
+
+    total_allocated_slots = 0
+    for c_item in scaling_campaigns + testing_campaigns:
+        c_slots = slot_allocations.get(c_item["campaign_id"], [])
+        c_item["daily_slots"] = c_slots
+        c_item["daily_target_count"] = len(c_slots)
+        total_allocated_slots += len(c_slots)
+        if c_item["lifecycle_stage"] == "testing" and not c_slots:
+            c_item["decision_reason"] += " [In coda di rotazione: attende il completamento dello slot di test giornaliero per rispettare il limite di max 3 video/giorno su TikTok]."
 
     if apply_changes:
         active_portfolio_ids = [c["campaign_id"] for c in (scaling_campaigns + testing_campaigns)]
@@ -453,17 +493,18 @@ def evaluate_and_select_campaigns(
 
         for s_camp in scaling_campaigns:
             cid = s_camp["campaign_id"]
+            assigned_times = s_camp.get("daily_slots", SCALING_SLOTS)
             sched = schedules.get(cid, {"published_clips": []})
             pub_list = sched.get("published_clips", [])
             v_clips = s_camp.get("virgin_clip_Showcases", [])
             slots = []
-            for idx, t_str in enumerate(SCALING_SLOTS):
+            for idx, t_str in enumerate(assigned_times):
                 vid_name = v_clips[idx] if idx < len(v_clips) else ""
                 slots.append({"time": t_str, "video": vid_name})
             sched.update({
-                "target_count": len(SCALING_SLOTS),
+                "target_count": len(assigned_times),
                 "slots": slots,
-                "autopilot_enabled": True,
+                "autopilot_enabled": len(assigned_times) > 0,
                 "is_paused": False,
                 "is_ended": False,
                 "lifecycle_stage": "scaling",
@@ -475,17 +516,18 @@ def evaluate_and_select_campaigns(
 
         for t_camp in testing_campaigns:
             cid = t_camp["campaign_id"]
+            assigned_times = t_camp.get("daily_slots", [])
             sched = schedules.get(cid, {"published_clips": []})
             pub_list = sched.get("published_clips", [])
             v_clips = t_camp.get("virgin_clip_Showcases", [])
             slots = []
-            for idx, t_str in enumerate(TESTING_SLOTS):
+            for idx, t_str in enumerate(assigned_times):
                 vid_name = v_clips[idx] if idx < len(v_clips) else ""
                 slots.append({"time": t_str, "video": vid_name})
             sched.update({
-                "target_count": len(TESTING_SLOTS),
+                "target_count": max(1, len(assigned_times)),
                 "slots": slots,
-                "autopilot_enabled": True,
+                "autopilot_enabled": len(assigned_times) > 0,
                 "is_paused": False,
                 "is_ended": False,
                 "lifecycle_stage": "testing",
@@ -519,6 +561,9 @@ def evaluate_and_select_campaigns(
         "status": "success",
         "evaluated_at": now_str,
         "summary": {
+            "max_daily_uploads_per_account": MAX_DAILY_UPLOADS_PER_ACCOUNT,
+            "global_daily_slots": GLOBAL_DAILY_SLOTS,
+            "total_daily_slots_allocated": total_allocated_slots,
             "scaling_count": len(scaling_campaigns),
             "testing_count": len(testing_campaigns),
             "dropped_underperforming_count": len(dropped_campaigns),
@@ -534,11 +579,11 @@ def evaluate_and_select_campaigns(
 
     _save_json_safe(PORTFOLIO_REPORT_FILE, plan)
 
-    print(f"🚀 Campagne VINCENTI in SCALING (6 slot/giorno): {len(scaling_campaigns)}")
+    print(f"🚀 Campagne VINCENTI in SCALING (Max {MAX_DAILY_UPLOADS_PER_ACCOUNT} video/giorno totali per account TikTok): {len(scaling_campaigns)}")
     for c in scaling_campaigns:
         print(f"   - [{c['campaign_id']}] {c['campaign_name']} -> {c['decision_reason']}")
 
-    print(f"🧪 Campagne PROMETTENTI in TESTING (2 slot/giorno): {len(testing_campaigns)}")
+    print(f"🧪 Campagne PROMETTENTI in TESTING (Rotazione slot di test): {len(testing_campaigns)}")
     for c in testing_campaigns:
         print(f"   - [{c['campaign_id']}] {c['campaign_name']} -> {c['decision_reason']}")
 
