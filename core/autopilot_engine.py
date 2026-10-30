@@ -994,10 +994,16 @@ def verify_campaign_klippify_ready(campaign_id):
         prog_str = str(matched.get("budget_progress_percent") or "").strip()
         cname = matched.get("name") or cid
 
+        try:
+            import campaign_selector
+            budget_ok, budget_msg = campaign_selector.has_sufficient_budget(matched)
+        except Exception:
+            budget_ok, budget_msg = budget_rem >= 35.0, f"budget ${budget_rem}"
+        if not budget_ok:
+            return (False, "inactive_on_klippify", f"La campagna '{cname}' non ha più budget: {budget_msg}. Nessun video verrà caricato.")
         if (
             status_str != "active"
             or section_str in ["passate", "in pausa", "rifiutate", "concluse", "scadute", "ended"]
-            or budget_rem < 10.0
             or prog_str in ["100%", "100.0%"]
         ):
             return (

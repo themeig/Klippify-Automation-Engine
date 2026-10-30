@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "evaluated_at": "2026-10-30 09:55:17",
+  "evaluated_at": "2026-10-30 10:06:06",
   "summary": {
     "max_daily_uploads_per_account": 3,
     "global_daily_slots": [
@@ -13,7 +13,7 @@
     "testing_count": 3,
     "requires_user_activation_count": 3,
     "dropped_underperforming_count": 0,
-    "candidate_pool_count": 20,
+    "candidate_pool_count": 19,
     "needs_clipping_count": 3
   },
   "campaigns_requiring_user_activation": [
@@ -27,15 +27,6 @@
       "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Saikoo × Theory SPA — Il bilancio 2025 in anteprima' su https://app.klippify.com/campaigns/6a91676284a29ab01b754c33 altrimenti Klippify non permette di caricare i suoi video!"
     },
     {
-      "campaign_id": "6a719c80a2d57190f5d7a38b",
-      "campaign_name": "Le 9 Bugie di FitActive",
-      "brand": "Theory Spa",
-      "lifecycle_stage": "testing",
-      "klippify_url": "https://app.klippify.com/campaigns/6a719c80a2d57190f5d7a38b",
-      "virgin_clips_ready": 0,
-      "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Le 9 Bugie di FitActive' su https://app.klippify.com/campaigns/6a719c80a2d57190f5d7a38b altrimenti Klippify non permette di caricare i suoi video!"
-    },
-    {
       "campaign_id": "6a7628ca922613d297f2e2c5",
       "campaign_name": "Aldo Masolo viral contest test",
       "brand": "Aldo Masolo",
@@ -43,6 +34,15 @@
       "klippify_url": "https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5",
       "virgin_clips_ready": 0,
       "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Aldo Masolo viral contest test' su https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5 altrimenti Klippify non permette di caricare i suoi video!"
+    },
+    {
+      "campaign_id": "6a64cf756cdfd98478f11f28",
+      "campaign_name": "Million Hospitality",
+      "brand": "Million Hospitality",
+      "lifecycle_stage": "testing",
+      "klippify_url": "https://app.klippify.com/campaigns/6a64cf756cdfd98478f11f28",
+      "virgin_clips_ready": 0,
+      "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Million Hospitality' su https://app.klippify.com/campaigns/6a64cf756cdfd98478f11f28 altrimenti Klippify non permette di caricare i suoi video!"
     }
   ],
   "scaling_campaigns": [
@@ -143,48 +143,6 @@
       "daily_target_count": 1
     },
     {
-      "campaign_id": "6a719c80a2d57190f5d7a38b",
-      "campaign_name": "Le 9 Bugie di FitActive",
-      "brand": "Theory Spa",
-      "klippify_url": "https://app.klippify.com/campaigns/6a719c80a2d57190f5d7a38b",
-      "klippify_section": "Nuove",
-      "klippify_status": "Active",
-      "is_klippify_active": true,
-      "is_user_enrolled": false,
-      "requires_user_activation": true,
-      "budget_remaining": 177.75,
-      "payout_per_1k_views": 0.75,
-      "views_per_creator_klippify": 4448.3,
-      "expected_rev_per_creator": 3.34,
-      "promising_score": 1600.9,
-      "reasons": [
-        "Altissima trazione su Klippify (4.448 views/creator, 1,2M views totali) e alto interesse su TikTok Italia."
-      ],
-      "recommended_sources": [
-        "https://www.youtube.com/@AlexTheory"
-      ],
-      "search_queries": [
-        "Le 9 Bugie di FitActive Alex Theory",
-        "Theory Spa FitActive Gurulandia"
-      ],
-      "video_selection_criteria": "Cerca i video lunghi di Alex Theory / Theory Spa sul caso FitActive e ritaglia i momenti di dibattito più accesi con numeri e smentite dirette.",
-      "my_submitted_count": 0,
-      "my_accepted_count": 0,
-      "my_rejected_count": 0,
-      "my_pending_count": 0,
-      "my_approval_rate_pct": 0.0,
-      "my_total_views": 0,
-      "my_avg_views": 0.0,
-      "my_max_views": 0,
-      "virgin_clips_ready": 0,
-      "virgin_clip_Showcases": [],
-      "lifecycle_stage": "testing",
-      "decision_reason": "[DA ATTIVARE SU KLIPPIFY] IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1600.9). -> Attivala su Klippify per sbloccare l'upload automatico.",
-      "activation_warning": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Le 9 Bugie di FitActive' su https://app.klippify.com/campaigns/6a719c80a2d57190f5d7a38b altrimenti Klippify non permette di caricare i suoi video!",
-      "daily_slots": [],
-      "daily_target_count": 0
-    },
-    {
       "campaign_id": "6a7628ca922613d297f2e2c5",
       "campaign_name": "Aldo Masolo viral contest test",
       "brand": "Aldo Masolo",
@@ -225,10 +183,7 @@
       "activation_warning": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Aldo Masolo viral contest test' su https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5 altrimenti Klippify non permette di caricare i suoi video!",
       "daily_slots": [],
       "daily_target_count": 0
-    }
-  ],
-  "dropped_campaigns": [],
-  "top_candidates_reserve": [
+    },
     {
       "campaign_id": "6a64cf756cdfd98478f11f28",
       "campaign_name": "Million Hospitality",
@@ -265,9 +220,15 @@
       "my_max_views": 0,
       "virgin_clips_ready": 0,
       "virgin_clip_Showcases": [],
-      "lifecycle_stage": "candidate",
-      "decision_reason": ""
-    },
+      "lifecycle_stage": "testing",
+      "decision_reason": "[DA ATTIVARE SU KLIPPIFY] SELEZIONATA PER TEST: Promising Score 1279.4 (2649.1 views/creator, $1.0/1k, budget $916.0). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok). -> Attivala su Klippify per sbloccare l'upload automatico.",
+      "activation_warning": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Million Hospitality' su https://app.klippify.com/campaigns/6a64cf756cdfd98478f11f28 altrimenti Klippify non permette di caricare i suoi video!",
+      "daily_slots": [],
+      "daily_target_count": 0
+    }
+  ],
+  "dropped_campaigns": [],
+  "top_candidates_reserve": [
     {
       "campaign_id": "6a426231e6a21896f769dc80",
       "campaign_name": "Riccardo Dose - YouTube Clipping",
@@ -523,6 +484,42 @@
       "virgin_clip_Showcases": [],
       "lifecycle_stage": "candidate",
       "decision_reason": ""
+    },
+    {
+      "campaign_id": "69d9fd5061ce1b8904c42316",
+      "campaign_name": "Boardingame #1",
+      "brand": "aledellagiusta",
+      "klippify_url": "https://app.klippify.com/campaigns/69d9fd5061ce1b8904c42316",
+      "klippify_section": "Nuove",
+      "klippify_status": "Active",
+      "is_klippify_active": true,
+      "is_user_enrolled": false,
+      "requires_user_activation": true,
+      "budget_remaining": 541.5,
+      "payout_per_1k_views": 0.5,
+      "views_per_creator_klippify": 660.3,
+      "expected_rev_per_creator": 0.33,
+      "promising_score": 367.9,
+      "reasons": [
+        "Format adatto a clipping (clip, youtube, episod)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "Boardingame #1 aledellagiusta podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
     }
   ],
   "next_clipping_priorities": [
@@ -542,21 +539,6 @@
       "reason": "Campagna in SCALING con sole 1 clip pronte in magazzino."
     },
     {
-      "campaign_id": "6a719c80a2d57190f5d7a38b",
-      "campaign_name": "Le 9 Bugie di FitActive",
-      "lifecycle_stage": "testing",
-      "virgin_clips_ready": 0,
-      "recommended_sources": [
-        "https://www.youtube.com/@AlexTheory"
-      ],
-      "search_queries": [
-        "Le 9 Bugie di FitActive Alex Theory",
-        "Theory Spa FitActive Gurulandia"
-      ],
-      "video_selection_criteria": "Cerca i video lunghi di Alex Theory / Theory Spa sul caso FitActive e ritaglia i momenti di dibattito più accesi con numeri e smentite dirette.",
-      "reason": "Campagna in TESTING con sole 0 clip pronte in magazzino."
-    },
-    {
       "campaign_id": "6a7628ca922613d297f2e2c5",
       "campaign_name": "Aldo Masolo viral contest test",
       "lifecycle_stage": "testing",
@@ -569,6 +551,21 @@
         "Aldo Masolo viral"
       ],
       "video_selection_criteria": "Seleziona interviste e podcast lunghi con Aldo Masolo con dichiarazioni forti su business, mindset e finanza.",
+      "reason": "Campagna in TESTING con sole 0 clip pronte in magazzino."
+    },
+    {
+      "campaign_id": "6a64cf756cdfd98478f11f28",
+      "campaign_name": "Million Hospitality",
+      "lifecycle_stage": "testing",
+      "virgin_clips_ready": 0,
+      "recommended_sources": [
+        "https://www.youtube.com/@MarcoCappelli"
+      ],
+      "search_queries": [
+        "Million Hospitality podcast immobiliare ospitalita",
+        "Million Hospitality Marco Cappelli"
+      ],
+      "video_selection_criteria": "Privilegia episodi podcast 16:9 con numeri su rendite immobiliari, hotel e hospitality in Italia.",
       "reason": "Campagna in TESTING con sole 0 clip pronte in magazzino."
     }
   ]

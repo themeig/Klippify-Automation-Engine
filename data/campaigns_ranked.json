@@ -79,10 +79,10 @@
     "payout_per_1k_views": 0.75,
     "total_views": 1201046,
     "creators_count": 270,
-    "budget_remaining": 177.75,
-    "budget_spent": 272.0,
+    "budget_remaining": 0.0,
+    "budget_spent": 450.0,
     "budget_total": 450.0,
-    "budget_progress_percent": "60.4%",
+    "budget_progress_percent": "100%",
     "banner": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/40f05066-1e80-4fe3-be26-9afde93ea5eb-Il-Mondo-delle-Bugie.jpg",
     "logo": "https://klippify-prod.s3.us-east-1.amazonaws.com/uploads/3aefd338-2e3b-4d4b-baae-6d4070f65a38-theory-holding-logo-real.png",
     "description": "Theory Holding è una azienda made in Italy dove i talenti rendono le visioni, rivoluzioni di interi mercati",
@@ -102,7 +102,8 @@
     "local_folder_match": "",
     "has_local_media": false,
     "convenience_score": 35732.0,
-    "feasibility_score": 35732.0
+    "feasibility_score": 35732.0,
+    "budget_exhausted": true
   },
   {
     "id": "6a7628ca922613d297f2e2c5",

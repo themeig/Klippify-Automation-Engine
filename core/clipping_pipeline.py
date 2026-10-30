@@ -119,6 +119,21 @@ def run_clipping_workflow(campaign_id, video_source_path=None, is_auto=True, tas
     if task_logger:
         task_logger(f"🎬 Avvio clipping per la campagna: {camp_name}")
 
+    # 1b. Controllo budget: non si lavora MAI su campagne senza soldi
+    try:
+        import campaign_selector
+        ranked_all = json.loads((root / "campaigns_ranked.json").read_text(encoding="utf-8")) if (root / "campaigns_ranked.json").exists() else []
+        live = next((c for c in ranked_all if str(c.get("id") or c.get("campaign_token")) == str(campaign_id)), None)
+        if live:
+            b_ok, b_msg = campaign_selector.has_sufficient_budget(live)
+            if not b_ok:
+                print(f"[BUDGET GUARD] 🛑 Clipping annullato per {camp_name}: {b_msg}", flush=True)
+                if task_logger:
+                    task_logger(f"🛑 Clipping annullato: {b_msg}")
+                return {"status": "error", "message": f"Campagna senza budget: {b_msg}"}
+    except Exception as bg_err:
+        print(f"[BUDGET GUARD WARNING] {bg_err}", flush=True)
+
     # 2. Localizza il video sorgente
     source_file = None
     if video_source_path:

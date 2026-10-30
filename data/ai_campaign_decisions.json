@@ -32,8 +32,8 @@
     },
     "6a719c80a2d57190f5d7a38b": {
       "campaign_name": "Le 9 Bugie di FitActive",
-      "feasible": true,
-      "recommended_stage": "testing",
+      "feasible": false,
+      "recommended_stage": "depleted",
       "source_urls": [
         "https://www.youtube.com/@AlexTheory"
       ],
@@ -42,7 +42,7 @@
         "Theory Spa FitActive Gurulandia"
       ],
       "video_selection_criteria": "Cerca i video lunghi di Alex Theory / Theory Spa sul caso FitActive e ritaglia i momenti di dibattito più accesi con numeri e smentite dirette.",
-      "ai_feasibility_notes": "Altissima trazione su Klippify (4.448 views/creator, 1,2M views totali) e alto interesse su TikTok Italia."
+      "ai_feasibility_notes": "Budget Klippify esaurito (confermato dall'utente il 2026-10-30). Non lavorare su questa campagna."
     },
     "6a7628ca922613d297f2e2c5": {
       "campaign_name": "Aldo Masolo viral contest test",

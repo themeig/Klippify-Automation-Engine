@@ -91,7 +91,47 @@ POWER_KEYWORDS = (
     "UTILE", "UTILI", "6M+", "SAIKOO", "SHOPIFY", "ECOMMERCE", "GRATIS", "GRATUITA"
 )
 
+VISUAL_STYLES_FILE = BASE_DIR / "campaign_visual_styles.json"
+
+
+def _load_visual_styles():
+    try:
+        if VISUAL_STYLES_FILE.exists():
+            return json.loads(VISUAL_STYLES_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        pass
+    return {"campaigns": {}}
+
+
 def resolve_campaign_visual_profile(campaign_id=None, campaign_name=None, brand_cta=None, brand_mention=None, hook_title=None, default_style="hormozi_gold"):
+    """
+    1) Se la campagna ha già uno stile BLOCCATO in data/campaign_visual_styles.json (locked=true), lo usa sempre.
+    2) Altrimenti lo sceglie (euristica/AI) e lo salva bloccato: da quel momento non cambia più.
+    """
+    cid = str(campaign_id or "").strip()
+    store = _load_visual_styles()
+    locked = store.get("campaigns", {}).get(cid) if cid else None
+    if locked and locked.get("locked") and locked.get("style_key") in STYLES:
+        prof = dict(locked)
+        if brand_cta and str(brand_cta).strip() and not locked.get("outro_headline"):
+            prof["outro_headline"] = brand_cta.strip()
+        return prof
+    prof = _choose_campaign_visual_profile(campaign_id, campaign_name, brand_cta, brand_mention, hook_title, default_style)
+    if cid:
+        try:
+            store.setdefault("campaigns", {})[cid] = {
+                "campaign_name": campaign_name or cid,
+                "locked": True,
+                **prof,
+                "selected_reason": "Scelto automaticamente al primo rendering e bloccato."
+            }
+            VISUAL_STYLES_FILE.write_text(json.dumps(store, indent=2, ensure_ascii=False), encoding="utf-8")
+        except Exception as e:
+            print(f"[CAPTIONER] Warning salvataggio stile bloccato: {e}")
+    return prof
+
+
+def _choose_campaign_visual_profile(campaign_id=None, campaign_name=None, brand_cta=None, brand_mention=None, hook_title=None, default_style="hormozi_gold"):
     """
     Seleziona automaticamente il profilo estetico, i colori delle parole-chiave e i testi
     di cornice (Kicker / Callout finale) adattandoli alla campagna specifica.

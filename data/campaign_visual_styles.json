@@ -1,0 +1,55 @@
+{
+  "description": "Profili grafici (Sottotitoli, Hook 3.2s e Callout CTA finale) bloccati per singola campagna. Una volta scelto lo stile per una campagna (locked=true), rimane invariato per tutti i video futuri di quella campagna.",
+  "campaigns": {
+    "6a71c6f7245627c68999eae2": {
+      "campaign_name": "Sara Dizdari Academy – Scopri i negozi digitali",
+      "locked": true,
+      "style_key": "hormozi_gold",
+      "hook_kicker": "CASO STUDIO  •  E-COMMERCE ITALIA",
+      "outro_kicker": "VUOI AVVIARE IL TUO NEGOZIO DIGITALE?",
+      "outro_headline": "Guarda la lezione gratuita sul profilo di Sara",
+      "outro_action_prefix": "VAI SUL PROFILO  ▸ ",
+      "selected_reason": "Campagna E-Commerce / Creator femminile: oro caldo (#FFD400) + verde smeraldo (#33FF66) sui risultati economici (€/mesi)."
+    },
+    "6a91676284a29ab01b754c33": {
+      "campaign_name": "Saikoo × Theory SPA — Il bilancio 2025 in anteprima",
+      "locked": true,
+      "style_key": "executive_fin",
+      "hook_kicker": "DATI UFFICIALI  •  ANALISI AZIENDALE",
+      "outro_kicker": "VUOI VEDERE I NUMERI REALI DI OGNI AZIENDA?",
+      "outro_headline": "Analizza i bilanci di 6M+ aziende su Saikoo.ai!",
+      "outro_action_prefix": "PROVALO ORA  ▸ ",
+      "selected_reason": "Campagna B2B Finanza & Bilanci Aziendali: oro finanziario (#FFD60A) + cyber mint (#10FFB9) per metriche di fatturato e utili."
+    },
+    "6a7628ca922613d297f2e2c5": {
+      "campaign_name": "Aldo Masolo viral contest test",
+      "locked": true,
+      "style_key": "viral_emerald",
+      "hook_kicker": "MINDSET  •  STRATEGIA OPERATIVA",
+      "outro_kicker": "VUOI APPROFONDIRE IL METODO COMPLETO?",
+      "outro_headline": "Scopri la strategia completa sul profilo di Aldo Masolo",
+      "outro_action_prefix": "PROFILO UFFICIALE  ▸ ",
+      "selected_reason": "Campagna Trading & Mindset: verde neon (#00FF55) + oro (#FFE600) ad alto contrasto."
+    },
+    "6a426231e6a21896f769dc80": {
+      "campaign_name": "Riccardo Dose - YouTube Clipping",
+      "locked": true,
+      "style_key": "cyber_cyan",
+      "hook_kicker": "MOMENTO EPICO  •  YOUTUBE ITALIA",
+      "outro_kicker": "VUOI VEDERE IL VIDEO INTEGRALE?",
+      "outro_headline": "Guarda l'episodio completo sul canale di Riccardo Dose!",
+      "outro_action_prefix": "SEGUI ORA  ▸ ",
+      "selected_reason": "Campagna Entertainment / YouTube Creator: ciano elettrico (#00FFFF) + oro (#FFD400) dinamico e giovanile."
+    },
+    "6a759fd05ade3cb2f771b439": {
+      "campaign_name": "Mondocash Podcast",
+      "locked": true,
+      "style_key": "executive_fin",
+      "hook_kicker": "MONDOCASH PODCAST  •  DIETRO LE QUINTE",
+      "outro_kicker": "VUOI ASCOLTARE LA PUNTATA COMPLETA?",
+      "outro_headline": "Ascolta la puntata integrale di Mondocash Podcast!",
+      "outro_action_prefix": "SEGUI IL PODCAST  ▸ ",
+      "selected_reason": "Podcast Business & Finanza: stile executive con accenti oro e ciano."
+    }
+  }
+}

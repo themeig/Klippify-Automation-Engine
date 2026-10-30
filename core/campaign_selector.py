@@ -26,6 +26,29 @@ PORTFOLIO_REPORT_FILE = BASE_DIR / "campaign_portfolio_plan.json"
 MAX_DAILY_UPLOADS_PER_ACCOUNT = 3
 GLOBAL_DAILY_SLOTS = ["13:00", "17:30", "21:00"]
 SCALING_SLOTS = ["13:00", "21:00"]
+MIN_BUDGET_REMAINING_USD = 35.0       # sotto questa soglia la campagna è considerata SENZA SOLDI
+MAX_BUDGET_PROGRESS_PCT = 95.0        # oltre il 95% di budget speso non si lavora più sulla campagna
+
+
+def has_sufficient_budget(camp: dict) -> tuple[bool, str]:
+    """Controllo budget: True solo se la campagna ha ancora soldi reali da pagare."""
+    try:
+        rem = float(camp.get("budget_remaining") or 0.0)
+    except Exception:
+        rem = 0.0
+    try:
+        tot = float(camp.get("budget_total") or 0.0)
+        spent = float(camp.get("budget_spent") or 0.0)
+    except Exception:
+        tot, spent = 0.0, 0.0
+    pct = (spent / tot * 100.0) if tot > 0 else 0.0
+    if camp.get("budget_exhausted") is True:
+        return False, "Budget segnalato come esaurito"
+    if rem < MIN_BUDGET_REMAINING_USD:
+        return False, f"Budget residuo insufficiente (${rem:.2f} < ${MIN_BUDGET_REMAINING_USD:.0f})"
+    if pct >= MAX_BUDGET_PROGRESS_PCT:
+        return False, f"Budget quasi esaurito ({pct:.1f}% speso)"
+    return True, f"Budget OK (${rem:.2f} residui)"
 TESTING_SLOTS = ["17:30"]
 
 KNOWN_YOUTUBE_SOURCES = {
@@ -140,13 +163,14 @@ def compute_promising_score(camp: dict, classified_map: dict, sources_map: dict,
     status = (camp.get("status") or "Active").strip().lower()
     desc_lower = f"{camp.get('name', '')} {camp.get('description', '')}".lower()
 
-    if budget_rem < 35.0 or section in ["passate", "in pausa", "rifiutate"] or status != "active":
+    budget_ok, _budget_msg = has_sufficient_budget(camp)
+    if not budget_ok or section in ["passate", "in pausa", "rifiutate"] or status != "active":
         return {
             "promising_score": -1000.0,
             "is_eligible": False,
             "views_per_creator": 0.0,
             "expected_rev_per_creator": 0.0,
-            "reasons": ["Budget esaurito (< $35) o campagna non attiva"]
+            "reasons": [_budget_msg if not budget_ok else "Campagna non attiva su Klippify"]
         }
 
     is_clip_ok, clip_reasons = _is_clipping_compatible(camp, classified_map, sources_map, ai_decisions=ai_decisions)
