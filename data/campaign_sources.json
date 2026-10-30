@@ -27,5 +27,20 @@
     ],
     "auto_download": true,
     "updated_at": "2026-10-30 01:07:34"
+  },
+  "6a64cf756cdfd98478f11f28": {
+    "sources": [
+      "https://www.youtube.com/@MarcoCappelli"
+    ],
+    "auto_download": true,
+    "updated_at": "2026-10-30 10:06:06"
+  },
+  "6a0dd557394d916370d7fb3d": {
+    "sources": [
+      "https://www.youtube.com/@MarcoBilliani",
+      "https://www.youtube.com/@MarcoBillianibusiness"
+    ],
+    "auto_download": true,
+    "updated_at": "2026-10-30 10:14:26"
   }
 }

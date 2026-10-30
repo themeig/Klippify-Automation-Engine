@@ -1,17 +1,13 @@
 {
   "6a71c6f7245627c68999eae2": {
-    "target_count": 2,
+    "target_count": 1,
     "slots": [
       {
-        "time": "13:00",
+        "time": "17:30",
         "video": "clip_SaraDizdariA_slot1_20261029_234707.mp4"
-      },
-      {
-        "time": "21:00",
-        "video": ""
       }
     ],
-    "updated_at": "2026-10-30 10:06:06",
+    "updated_at": "2026-10-30 10:14:26",
     "autopilot_enabled": true,
     "published_clips": [
       "clip_SaraDizdariA_slot3_20260819_162539.mp4",
@@ -69,8 +65,10 @@
     "pause_until": null,
     "is_paused": false,
     "is_ended": false,
-    "lifecycle_stage": "scaling",
-    "decision_reason": "VINCENTE: Tasso approvazione 90.0% (9/10) e picco di 720 views (media 91.3 views/video). Spinta in SCALING prioritario (fino a 2 slot/giorno su 3 max account TikTok)."
+    "lifecycle_stage": "testing",
+    "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 1 clip 9:16 pronte in magazzino (Promising Score: 3318.0).",
+    "waiting_klippify_activation": false,
+    "klippify_url": "https://app.klippify.com/campaigns/6a71c6f7245627c68999eae2"
   },
   "6a426231e6a21896f769dc80": {
     "target_count": 3,
@@ -88,11 +86,15 @@
         "video": ""
       }
     ],
-    "updated_at": "2026-08-21 18:30:14",
+    "updated_at": "2026-10-30 10:14:26",
     "published_clips": [
       "clip_SaraDizdariA_slot1_20260820_150450.mp4",
       "clip_SaraDizdariA_slot1_20260819_182658.mp4"
-    ]
+    ],
+    "autopilot_enabled": false,
+    "is_ended": true,
+    "lifecycle_stage": "depleted",
+    "decision_reason": "Campagna non attiva su Klippify"
   },
   "6a91676284a29ab01b754c33": {
     "target_count": 1,
@@ -148,12 +150,12 @@
         "video": ""
       }
     ],
-    "autopilot_enabled": true,
+    "autopilot_enabled": false,
     "is_paused": false,
-    "is_ended": false,
-    "lifecycle_stage": "testing",
-    "decision_reason": "SELEZIONATA PER TEST: Promising Score 925.5 (12.5 views/creator, $5.0/1k, budget $1800.0). Assegnati 2 slot/giorno di test.",
-    "updated_at": "2026-10-30 01:06:09"
+    "is_ended": true,
+    "lifecycle_stage": "depleted",
+    "decision_reason": "Budget residuo insufficiente ($0.00 < $35)",
+    "updated_at": "2026-10-30 10:14:26"
   },
   "6a719c80a2d57190f5d7a38b": {
     "published_clips": [],
@@ -163,8 +165,8 @@
     "is_paused": false,
     "is_ended": true,
     "lifecycle_stage": "depleted",
-    "decision_reason": "Budget segnalato come esaurito",
-    "updated_at": "2026-10-30 10:06:06",
+    "decision_reason": "Budget residuo insufficiente ($0.00 < $35)",
+    "updated_at": "2026-10-30 10:14:26",
     "waiting_klippify_activation": true,
     "klippify_url": "https://app.klippify.com/campaigns/6a719c80a2d57190f5d7a38b"
   },
@@ -174,10 +176,10 @@
     "slots": [],
     "autopilot_enabled": false,
     "is_paused": false,
-    "is_ended": false,
-    "lifecycle_stage": "testing",
-    "decision_reason": "[DA ATTIVARE SU KLIPPIFY] IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1593.0). -> Attivala su Klippify per sbloccare l'upload automatico.",
-    "updated_at": "2026-10-30 10:06:06",
+    "is_ended": true,
+    "lifecycle_stage": "depleted",
+    "decision_reason": "Budget residuo insufficiente ($0.00 < $35)",
+    "updated_at": "2026-10-30 10:14:26",
     "waiting_klippify_activation": true,
     "klippify_url": "https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5"
   },
@@ -193,5 +195,69 @@
     "lifecycle_stage": "testing",
     "decision_reason": "[DA ATTIVARE SU KLIPPIFY] SELEZIONATA PER TEST: Promising Score 1279.4 (2649.1 views/creator, $1.0/1k, budget $916.0). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok). -> Attivala su Klippify per sbloccare l'upload automatico.",
     "updated_at": "2026-10-30 10:06:06"
+  },
+  "6aa7a9eb52f4ebbf21792e63": {
+    "published_clips": [],
+    "target_count": 1,
+    "slots": [],
+    "autopilot_enabled": false,
+    "waiting_klippify_activation": true,
+    "klippify_url": "https://app.klippify.com/campaigns/6aa7a9eb52f4ebbf21792e63",
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "testing",
+    "decision_reason": "[DA ATTIVARE SU KLIPPIFY] SELEZIONATA PER TEST: Promising Score 949.8 (4922.5 views/creator, $0.75/1k, budget $295.5). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok). -> Attivala su Klippify per sbloccare l'upload automatico.",
+    "updated_at": "2026-10-30 10:14:26"
+  },
+  "6a7a13715ade3cb2f77b30df": {
+    "published_clips": [],
+    "target_count": 1,
+    "slots": [],
+    "autopilot_enabled": false,
+    "waiting_klippify_activation": true,
+    "klippify_url": "https://app.klippify.com/campaigns/6a7a13715ade3cb2f77b30df",
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "testing",
+    "decision_reason": "[DA ATTIVARE SU KLIPPIFY] SELEZIONATA PER TEST: Promising Score 618.8 (2219.9 views/creator, $1.25/1k, budget $167.5). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok). -> Attivala su Klippify per sbloccare l'upload automatico.",
+    "updated_at": "2026-10-30 10:14:26"
+  },
+  "6abe4dced43bd814476cb520": {
+    "published_clips": [],
+    "target_count": 1,
+    "slots": [
+      {
+        "time": "21:00",
+        "video": ""
+      }
+    ],
+    "autopilot_enabled": false,
+    "waiting_klippify_activation": true,
+    "klippify_url": "https://app.klippify.com/campaigns/6abe4dced43bd814476cb520",
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "testing",
+    "decision_reason": "[DA ATTIVARE SU KLIPPIFY] SELEZIONATA PER TEST: Promising Score 618.5 (1868.5 views/creator, $1.0/1k, budget $603.0). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok). -> Attivala su Klippify per sbloccare l'upload automatico.",
+    "updated_at": "2026-10-30 10:11:46"
+  },
+  "6a0dd557394d916370d7fb3d": {
+    "published_clips": [],
+    "target_count": 2,
+    "slots": [
+      {
+        "time": "13:00",
+        "video": ""
+      },
+      {
+        "time": "21:00",
+        "video": ""
+      }
+    ],
+    "autopilot_enabled": true,
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "scaling",
+    "decision_reason": "VINCENTE: Tasso approvazione 90.0% (9/10) e picco di 240 views (media 208.7 views/video). Spinta in SCALING prioritario (fino a 2 slot/giorno su 3 max account TikTok).",
+    "updated_at": "2026-10-30 10:14:26"
   }
 }

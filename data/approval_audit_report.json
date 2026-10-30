@@ -1,7 +1,7 @@
 {
   "status": "success",
-  "audit_timestamp": "2026-10-30 00:55:42",
-  "hours_window": 24,
+  "audit_timestamp": "2026-10-30 10:12:26",
+  "hours_window": 4,
   "summary": {
     "total_submissions": 10,
     "total_accepted": 9,
@@ -10,21 +10,18 @@
     "overall_approval_rate_pct": 90.0,
     "recent_accepted_count": 0,
     "recent_pending_count": 0,
-    "recent_rejections_count": 0
+    "recent_rejections_count": 1
   },
   "by_campaign": {
-    "6a71c6f7245627c68999eae2": {
-      "campaign_id": "6a71c6f7245627c68999eae2",
-      "campaign_name": "Sara Dizdari Academy – Scopri i negozi digitali",
-      "expected_cta": "La lezione gratuita sul profilo di Sara",
+    "6a0dd557394d916370d7fb3d": {
+      "campaign_id": "6a0dd557394d916370d7fb3d",
+      "campaign_name": "Marco Billiani | Chiave immobiliare",
+      "expected_cta": "Visita il profilo ufficiale @chiaveimmobiliare",
       "mandatory_mentions": [
-        "@saradizdari_ecom"
+        "@chiaveimmobiliare"
       ],
       "mandatory_hashtags": [
-        "#saradizdari",
-        "#negozidigitali",
-        "#ecommerce",
-        "#shopify",
+        "#marcobillianichiaveimmobiliare",
         "#klippify"
       ],
       "total_submitted": 10,
@@ -32,70 +29,69 @@
       "pending_count": 0,
       "rejected_count": 1,
       "approval_rate_pct": 90.0,
-      "total_views": 913,
+      "total_views": 2087,
       "total_earnings": 0.0,
       "winning_patterns": [
         {
-          "submission_id": "6a949a03ad71315a4eca6455",
-          "post_url": "https://www.tiktok.com/@jiemli/video/7679932502928149782",
-          "clip_filename": "clip_SaraDizdariA_slot3_20260829_041424.mp4",
+          "submission_id": "6ac3759ed43bd814476fe70f",
+          "post_url": "https://www.tiktok.com/@jiemli/video/7693121651642371330",
+          "clip_filename": null,
           "hook_text": null,
           "cta_text": null,
-          "views": 0,
-          "ai_reasoning": "The post complies with all the guidelines: it features a strong initial hook within the first 3 seconds, dynamic Italian subtitles throughout, and finishes with the required call to action ('La lezione gratuita sul profilo di Sara'). The video length is approximately 35 seconds (within the 20-60 second limit), presents earnings as a real student testimonial ('Valentina genera 10000€ in 1 mese') without unrealistic promises to the viewer, uses authentic brand content without third-party watermarks, and does not reveal operational details about dropshipping."
+          "views": 227,
+          "ai_reasoning": "The video duration is 37 seconds, exceeding the 35-second minimum. The speaker's face appears immediately during the first 7 seconds, subtitles are included, and the account @marcobilliani is mentioned in both the video overlay and caption alongside the required #marcobilliani hashtag."
         },
         {
-          "submission_id": "6a947deaad71315a4eca424e",
-          "post_url": "https://www.tiktok.com/@jiemli/video/7679901607999458582",
-          "clip_filename": "clip_SaraDizdariA_slot2_20260829_041424.mp4",
+          "submission_id": "6ac29499d43bd814476f7cba",
+          "post_url": "https://www.tiktok.com/@jiemli/video/7692874268983577878",
+          "clip_filename": null,
           "hook_text": null,
           "cta_text": null,
-          "views": 0,
-          "ai_reasoning": "The video satisfies all brand guidelines: it features a strong hook in the first 3 seconds, displays dynamic Italian subtitles throughout, and maintains a duration between 20 and 60 seconds (approx. 35 seconds). The earnings claim is presented as a student testimonial ('Valentina genera 10000€ in 1 mese'), which is explicitly permitted, without making direct income promises to the viewer or revealing operational dropshipping methods. The video also concludes with the required call-to-action banner and text directed to Sara's profile."
+          "views": 228,
+          "ai_reasoning": "The video duration exceeds the 35-second minimum. The creator's face appears immediately and remains for the initial segment. Subtitles are present, and @marcobilliani is properly mentioned in both the caption and on-screen overlays, alongside the required hashtag."
         },
         {
-          "submission_id": "6a9453b4ad71315a4eca0430",
-          "post_url": "https://www.tiktok.com/@jiemli/video/7679855201746029846",
-          "clip_filename": "clip_SaraDizdariA_slot1_20260829_041424.mp4",
+          "submission_id": "6ac25c63d43bd814476f4a12",
+          "post_url": "https://www.tiktok.com/@jiemli/video/7692812462126533910",
+          "clip_filename": null,
           "hook_text": null,
           "cta_text": null,
-          "views": 0,
-          "ai_reasoning": "The video satisfies all specified guidelines. It has dynamic Italian subtitles throughout, falls within the 20-60 second duration range (35 seconds), and ends with the required CTA ('La lezione gratuita sul profilo di Sara'). Earnings claims are framed as a genuine testimonial ('Valentina genera 10000€ in 1 mese') without unrealistic promises to the viewer or revealing detailed operational secrets. The content maintains an authentic tone and uses official assets without third-party watermarks."
+          "views": 231,
+          "ai_reasoning": "The video exceeds the 35-second minimum duration, features Marco Billiani's face from the very start and across the initial 5-7 seconds, and includes the required subtitles. The handle @marcobilliani is appropriately tagged both on the video overlay and in the caption, alongside the required hashtag."
         },
         {
-          "submission_id": "6a942990ad71315a4ec9bcde",
-          "post_url": "https://www.tiktok.com/@jiemli/video/7679808866225278230",
-          "clip_filename": "clip_SaraDizdariA_slot3_20260829_040557.mp4",
+          "submission_id": "6ac22420d43bd814476f193d",
+          "post_url": "https://www.tiktok.com/@jiemli/video/7692750607807024407",
+          "clip_filename": null,
           "hook_text": null,
           "cta_text": null,
-          "views": 0,
-          "ai_reasoning": "The post complies with all provided guidelines: it starts immediately with an engaging hook without fluff, includes dynamic Italian subtitles throughout, lasts 35 seconds (within the 20-60 second requirement), presents a real student earnings testimonial without making direct promises to the viewer, avoids revealing operational dropshipping details, maintains an authentic tone, and concludes with the specified call-to-action."
+          "views": 239,
+          "ai_reasoning": "The video exceeds the 35-second minimum duration and features Marco Billiani's face right from the start. The account @marcobilliani is mentioned in both the video overlays and the post description, and the required hashtag #marcobilliani is included with appropriate subtitling."
         },
         {
-          "submission_id": "6a9410e8ad71315a4ec9a65e",
-          "post_url": "https://www.tiktok.com/@jiemli/video/7679781756337261846",
-          "clip_filename": "clip_SaraDizdariA_slot1_20260829_040557.mp4",
+          "submission_id": "6ac1431bd43bd814476ebd83",
+          "post_url": "https://www.tiktok.com/@jiemli/video/7692503198875110678",
+          "clip_filename": null,
           "hook_text": null,
           "cta_text": null,
-          "views": 720,
-          "ai_reasoning": "The video satisfies all brand requirements: it features an authentic student testimonial claim (\"Valentina genera 10000€ in 1 mese\"), includes visible dynamic Italian subtitles throughout, stays within the 20–60 second duration requirement, does not reveal operational dropshipping details, and properly ends with the required call-to-action overlay directing viewers to the free lesson on Sara's profile."
+          "views": 227,
+          "ai_reasoning": "The video exceeds the 35-second minimum duration, features Marco Billiani throughout, includes the required tag @marcobilliani on screen and in the caption, and contains the required hashtag #marcobilliani."
         }
       ],
       "rejection_diagnostics": [
         {
-          "submission_id": "6a91868a84a29ab01b757e5f",
-          "post_url": "https://www.tiktok.com/@jiemli/video/7679066649600855318",
-          "created_at": "2026-08-28T13:01:10.879Z",
-          "clip_filename": "clip_SaraDizdariA_slot1_20260826_120503.mp4",
+          "submission_id": "6ac3ae0fd43bd81447702466",
+          "post_url": "https://www.tiktok.com/@jiemli/video/7693183664972123414",
+          "created_at": "2026-10-05T14:02:58.964Z",
+          "clip_filename": null,
           "hook_text": null,
           "cta_text": null,
-          "superseded_by_newer_approval": true,
+          "superseded_by_newer_approval": false,
           "categories": [
-            "weak_hook",
-            "guideline_mismatch"
+            "duration_out_of_bounds"
           ],
-          "ai_reasoning": "The video fails to follow the hook guidelines, which require starting immediately with the strongest or most engaging moment without any introductory chitchat; instead, it starts with conversational introductory questions ('adesso lascio parlare a te quindi dimmi chi sei...').",
-          "ai_director_instruction": "Scegli un primo segmento (teaser_hook) con impatto immediato nei primi 3 secondi e imposta un hook_text forte nel banner superiore. Allinea rigorosamente i segmenti scelti al brief di 'Sara Dizdari Academy – Scopri i negozi digitali' (vedi regole campagna)."
+          "ai_reasoning": "The video fails the requirement that Marco Billiani's face must appear from the start for at least the first 5 to 7 seconds, as he only appears for roughly one second before cutting away.",
+          "ai_director_instruction": "Mantieni la durata complessiva della clip rigorosamente tra 28 e 50 secondi."
         }
       ],
       "pending_submissions": []
@@ -115,10 +111,35 @@
       "ai_director_instruction": "Scegli un primo segmento (teaser_hook) con impatto immediato nei primi 3 secondi e imposta un hook_text forte nel banner superiore. Allinea rigorosamente i segmenti scelti al brief di 'Sara Dizdari Academy – Scopri i negozi digitali' (vedi regole campagna).",
       "expected_cta": "La lezione gratuita sul profilo di Sara",
       "flagged_at": "2026-10-30 00:51:15"
+    },
+    "6a0dd557394d916370d7fb3d": {
+      "campaign_id": "6a0dd557394d916370d7fb3d",
+      "campaign_name": "Marco Billiani | Chiave immobiliare",
+      "last_rejected_submission_id": "6ac3ae0fd43bd81447702466",
+      "last_rejected_url": "https://www.tiktok.com/@jiemli/video/7693183664972123414",
+      "ai_reasoning": "The video fails the requirement that Marco Billiani's face must appear from the start for at least the first 5 to 7 seconds, as he only appears for roughly one second before cutting away.",
+      "categories": [
+        "duration_out_of_bounds"
+      ],
+      "ai_director_instruction": "Mantieni la durata complessiva della clip rigorosamente tra 28 e 50 secondi.",
+      "expected_cta": "Visita il profilo ufficiale @chiaveimmobiliare",
+      "flagged_at": "2026-10-30 10:12:26"
     }
   },
-  "corrective_actions": [],
+  "corrective_actions": [
+    {
+      "submission_id": "6ac3ae0fd43bd81447702466",
+      "campaign_id": "6a0dd557394d916370d7fb3d",
+      "campaign_name": "Marco Billiani | Chiave immobiliare",
+      "reason": "The video fails the requirement that Marco Billiani's face must appear from the start for at least the first 5 to 7 seconds, as he only appears for roughly one second before cutting away.",
+      "categories": [
+        "duration_out_of_bounds"
+      ],
+      "ai_director_instruction": "Mantieni la durata complessiva della clip rigorosamente tra 28 e 50 secondi.",
+      "action": "Nessuna clip in coda per 'Marco Billiani | Chiave immobiliare'. L'AI Director applicherà la correzione al prossimo taglio: Mantieni la durata complessiva della clip rigorosamente tra 28 e 50 secondi."
+    }
+  ],
   "recent_accepted_count": 0,
   "recent_pending_count": 0,
-  "recent_rejections_count": 0
+  "recent_rejections_count": 1
 }

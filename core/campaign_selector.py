@@ -52,6 +52,7 @@ def has_sufficient_budget(camp: dict) -> tuple[bool, str]:
 TESTING_SLOTS = ["17:30"]
 
 KNOWN_YOUTUBE_SOURCES = {
+    "6a0dd557394d916370d7fb3d": ["https://www.youtube.com/@MarcoBilliani", "https://www.youtube.com/@MarcoBillianibusiness"],
     "6a71c6f7245627c68999eae2": ["https://www.youtube.com/@SaraDizdariEcommerce"],
     "6a91676284a29ab01b754c33": ["https://www.youtube.com/@MarcoCappelli", "https://www.youtube.com/@AlexTheory"],
     "6a719c80a2d57190f5d7a38b": ["https://www.youtube.com/@AlexTheory"],
@@ -131,7 +132,7 @@ def _is_clipping_compatible(camp: dict, classified_map: dict, sources_map: dict,
     clipping_kws = [
         "clip", "podcast", "intervist", "spezzon", "youtube", "episod",
         "bilancio", "academy", "talk", "theory", "gurulandia",
-        "what's next", "hospitality", "masolo", "dizdari", "dose", "collecto"
+        "what's next", "hospitality", "masolo", "dizdari", "dose", "collecto", "billiani", "immobiliare", "airbnb"
     ]
     matched_kws = [k for k in clipping_kws if k in full_text]
     if matched_kws:

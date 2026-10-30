@@ -50,6 +50,16 @@
       "outro_headline": "Ascolta la puntata integrale di Mondocash Podcast!",
       "outro_action_prefix": "SEGUI IL PODCAST  ▸ ",
       "selected_reason": "Podcast Business & Finanza: stile executive con accenti oro e ciano."
+    },
+    "6a0dd557394d916370d7fb3d": {
+      "campaign_name": "Marco Billiani | Chiave immobiliare",
+      "locked": true,
+      "style_key": "executive_fin",
+      "hook_kicker": "AFFITTI BREVI  •  AIRBNB ITALIA",
+      "outro_kicker": "VUOI METTERE A REDDITO GLI IMMOBILI?",
+      "outro_headline": "Guarda la lezione completa sul profilo di Marco Billiani",
+      "outro_action_prefix": "VAI SUL PROFILO  ▸ ",
+      "selected_reason": "Campagna Immobiliare & Business: palette executive finanza (oro e cyan) con enfasi sui numeri di rendita."
     }
   }
 }

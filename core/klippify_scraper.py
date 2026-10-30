@@ -95,7 +95,8 @@ def scrape_live_klippify_with_playwright(email, password, login_url, headless=Fa
                 ("https://app.klippify.com/api/creator/campaign/list?filter=new&limit=100", "Nuove"),
                 ("https://app.klippify.com/api/creator/campaign/list?filter=active&limit=100", "Iscritte"),
                 ("https://app.klippify.com/api/creator/campaign/list?filter=paused&limit=100", "In pausa"),
-                ("https://app.klippify.com/api/creator/campaign/list?filter=ended&limit=100", "Passate"),
+                ("https://app.klippify.com/api/creator/campaign/list?filter=past&limit=100", "Passate"),
+                ("https://app.klippify.com/api/creator/campaign/list?filter=rejected&limit=100", "Rifiutate"),
                 ("https://app.klippify.com/api/creator/campaign/featured?limit=100", "Nuove")
             ]
 

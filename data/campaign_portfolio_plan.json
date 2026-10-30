@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "evaluated_at": "2026-10-30 10:06:06",
+  "evaluated_at": "2026-10-30 10:14:26",
   "summary": {
     "max_daily_uploads_per_account": 3,
     "global_daily_slots": [
@@ -11,41 +11,80 @@
     "total_daily_slots_allocated": 3,
     "scaling_count": 1,
     "testing_count": 3,
-    "requires_user_activation_count": 3,
+    "requires_user_activation_count": 2,
     "dropped_underperforming_count": 0,
-    "candidate_pool_count": 19,
-    "needs_clipping_count": 3
+    "candidate_pool_count": 17,
+    "needs_clipping_count": 4
   },
   "campaigns_requiring_user_activation": [
     {
-      "campaign_id": "6a91676284a29ab01b754c33",
-      "campaign_name": "Saikoo × Theory SPA — Il bilancio 2025 in anteprima",
-      "brand": "Saikoo.ai",
+      "campaign_id": "6aa7a9eb52f4ebbf21792e63",
+      "campaign_name": "Aranciata TV",
+      "brand": "Dietro Ogni Comunicazione",
       "lifecycle_stage": "testing",
-      "klippify_url": "https://app.klippify.com/campaigns/6a91676284a29ab01b754c33",
-      "virgin_clips_ready": 2,
-      "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Saikoo × Theory SPA — Il bilancio 2025 in anteprima' su https://app.klippify.com/campaigns/6a91676284a29ab01b754c33 altrimenti Klippify non permette di caricare i suoi video!"
+      "klippify_url": "https://app.klippify.com/campaigns/6aa7a9eb52f4ebbf21792e63",
+      "virgin_clips_ready": 0,
+      "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Aranciata TV' su https://app.klippify.com/campaigns/6aa7a9eb52f4ebbf21792e63 altrimenti Klippify non permette di caricare i suoi video!"
     },
     {
-      "campaign_id": "6a7628ca922613d297f2e2c5",
-      "campaign_name": "Aldo Masolo viral contest test",
-      "brand": "Aldo Masolo",
+      "campaign_id": "6a7a13715ade3cb2f77b30df",
+      "campaign_name": "What's Next - Nello Cristianini",
+      "brand": "Raffaele Gaito",
       "lifecycle_stage": "testing",
-      "klippify_url": "https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5",
+      "klippify_url": "https://app.klippify.com/campaigns/6a7a13715ade3cb2f77b30df",
       "virgin_clips_ready": 0,
-      "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Aldo Masolo viral contest test' su https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5 altrimenti Klippify non permette di caricare i suoi video!"
-    },
-    {
-      "campaign_id": "6a64cf756cdfd98478f11f28",
-      "campaign_name": "Million Hospitality",
-      "brand": "Million Hospitality",
-      "lifecycle_stage": "testing",
-      "klippify_url": "https://app.klippify.com/campaigns/6a64cf756cdfd98478f11f28",
-      "virgin_clips_ready": 0,
-      "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Million Hospitality' su https://app.klippify.com/campaigns/6a64cf756cdfd98478f11f28 altrimenti Klippify non permette di caricare i suoi video!"
+      "message": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'What's Next - Nello Cristianini' su https://app.klippify.com/campaigns/6a7a13715ade3cb2f77b30df altrimenti Klippify non permette di caricare i suoi video!"
     }
   ],
   "scaling_campaigns": [
+    {
+      "campaign_id": "6a0dd557394d916370d7fb3d",
+      "campaign_name": "Marco Billiani | Chiave immobiliare",
+      "brand": "Chiave Immobiliare",
+      "klippify_url": "https://app.klippify.com/campaigns/6a0dd557394d916370d7fb3d",
+      "klippify_section": "Iscritte",
+      "klippify_status": "Active",
+      "is_klippify_active": true,
+      "is_user_enrolled": true,
+      "requires_user_activation": false,
+      "budget_remaining": 404.5,
+      "payout_per_1k_views": 0.5,
+      "views_per_creator_klippify": 1248.9,
+      "expected_rev_per_creator": 0.62,
+      "promising_score": 1156.8,
+      "reasons": [
+        "Campagna vincente conclamata su Klippify: 9 video su 10 approvati (90% approvazione, media 230 views/video), budget $404.5 residuo, creator già iscritto."
+      ],
+      "recommended_sources": [
+        "https://www.youtube.com/@MarcoBilliani",
+        "https://www.youtube.com/@MarcoBillianibusiness"
+      ],
+      "search_queries": [
+        "Marco Billiani Chiave Immobiliare affitti brevi",
+        "Marco Billiani Airbnb guadagnare con gli immobili"
+      ],
+      "video_selection_criteria": "Seleziona video orizzontali lunghi (5-20 min) su Airbnb e sublocazioni immobiliari. IMPORTANTE: assicurati che il volto di Marco Billiani sia chiaramente visibile all'inizio della clip per almeno 5-7 secondi (come richiesto espressamente dall'AI di Klippify).",
+      "my_submitted_count": 10,
+      "my_accepted_count": 9,
+      "my_rejected_count": 1,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 90.0,
+      "my_total_views": 2087,
+      "my_avg_views": 208.7,
+      "my_max_views": 240,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "scaling",
+      "decision_reason": "VINCENTE: Tasso approvazione 90.0% (9/10) e picco di 240 views (media 208.7 views/video). Spinta in SCALING prioritario (fino a 2 slot/giorno su 3 max account TikTok).",
+      "activation_warning": null,
+      "daily_slots": [
+        "13:00",
+        "21:00"
+      ],
+      "daily_target_count": 2
+    }
+  ],
+  "testing_campaigns": [
     {
       "campaign_id": "6a71c6f7245627c68999eae2",
       "campaign_name": "Sara Dizdari Academy – Scopri i negozi digitali",
@@ -56,11 +95,11 @@
       "is_klippify_active": true,
       "is_user_enrolled": true,
       "requires_user_activation": false,
-      "budget_remaining": 273.5,
+      "budget_remaining": 264.0,
       "payout_per_1k_views": 0.5,
-      "views_per_creator_klippify": 19921.9,
-      "expected_rev_per_creator": 9.96,
-      "promising_score": 3514.8,
+      "views_per_creator_klippify": 15605.0,
+      "expected_rev_per_creator": 7.8,
+      "promising_score": 3318.0,
       "reasons": [
         "Campagna #1 validata (90% approvazione AI Klippify, picco 720 views). Canale YouTube ufficiale ricco di interviste 16:9 non ancora scaricate."
       ],
@@ -72,55 +111,6 @@
         "Sara Dizdari Academy caso studio"
       ],
       "video_selection_criteria": "Scegli video lunghi (3-25 min) con casi studio e testimonianze reali di studenti (es. Federica, Valentina) che raccontano da che lavoro partivano e i risultati ottenuti, evitando video puramente tecnici.",
-      "my_submitted_count": 10,
-      "my_accepted_count": 9,
-      "my_rejected_count": 1,
-      "my_pending_count": 0,
-      "my_approval_rate_pct": 90.0,
-      "my_total_views": 913,
-      "my_avg_views": 91.3,
-      "my_max_views": 720,
-      "virgin_clips_ready": 1,
-      "virgin_clip_Showcases": [
-        "clip_SaraDizdariA_slot1_20261029_234707.mp4"
-      ],
-      "lifecycle_stage": "scaling",
-      "decision_reason": "VINCENTE: Tasso approvazione 90.0% (9/10) e picco di 720 views (media 91.3 views/video). Spinta in SCALING prioritario (fino a 2 slot/giorno su 3 max account TikTok).",
-      "activation_warning": null,
-      "daily_slots": [
-        "13:00",
-        "21:00"
-      ],
-      "daily_target_count": 2
-    }
-  ],
-  "testing_campaigns": [
-    {
-      "campaign_id": "6a91676284a29ab01b754c33",
-      "campaign_name": "Saikoo × Theory SPA — Il bilancio 2025 in anteprima",
-      "brand": "Saikoo.ai",
-      "klippify_url": "https://app.klippify.com/campaigns/6a91676284a29ab01b754c33",
-      "klippify_section": "Nuove",
-      "klippify_status": "Active",
-      "is_klippify_active": true,
-      "is_user_enrolled": false,
-      "requires_user_activation": true,
-      "budget_remaining": 318.0,
-      "payout_per_1k_views": 0.5,
-      "views_per_creator_klippify": 2474.7,
-      "expected_rev_per_creator": 1.24,
-      "promising_score": 1739.1,
-      "reasons": [
-        "Altissima fattibilità: podcast 16:9 già scaricato e ispezionato, temi ad alto impatto virale (numeri reali e bilanci aziendali)."
-      ],
-      "recommended_sources": [
-        "https://www.youtube.com/watch?v=gvrlHcgmz4w"
-      ],
-      "search_queries": [
-        "Quanto fattura davvero Theory Spa Il bilancio 2025 in anteprima Saikoo",
-        "Gurulandia Alex Theory bilancio Saikoo"
-      ],
-      "video_selection_criteria": "Usa il podcast ufficiale da 1h21m con Alex Theory e Marco Cappelli in cui analizzano il bilancio 2025 da 18M€ con Saikoo, estraendo segmenti diversi (fatturato 4,5M/mese, 6M aziende in Italia, margini e crescita verso 75M).",
       "my_submitted_count": 0,
       "my_accepted_count": 0,
       "my_rejected_count": 0,
@@ -129,130 +119,39 @@
       "my_total_views": 0,
       "my_avg_views": 0.0,
       "my_max_views": 0,
-      "virgin_clips_ready": 2,
+      "virgin_clips_ready": 1,
       "virgin_clip_Showcases": [
-        "clip_SaikooTheory_slot1_20261030_002748.mp4",
-        "clip_SaikooTheory_slot1_20261030_095111.mp4"
+        "clip_SaraDizdariA_slot1_20261029_234707.mp4"
       ],
       "lifecycle_stage": "testing",
-      "decision_reason": "[DA ATTIVARE SU KLIPPIFY] IN TEST ATTIVO: 0/3 clip inviate finora, 2 clip 9:16 pronte in magazzino (Promising Score: 1739.1). -> Attivala su Klippify per sbloccare l'upload automatico.",
-      "activation_warning": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Saikoo × Theory SPA — Il bilancio 2025 in anteprima' su https://app.klippify.com/campaigns/6a91676284a29ab01b754c33 altrimenti Klippify non permette di caricare i suoi video!",
+      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 1 clip 9:16 pronte in magazzino (Promising Score: 3318.0).",
+      "activation_warning": null,
       "daily_slots": [
         "17:30"
       ],
       "daily_target_count": 1
     },
     {
-      "campaign_id": "6a7628ca922613d297f2e2c5",
-      "campaign_name": "Aldo Masolo viral contest test",
-      "brand": "Aldo Masolo",
-      "klippify_url": "https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5",
+      "campaign_id": "6aa7a9eb52f4ebbf21792e63",
+      "campaign_name": "Aranciata TV",
+      "brand": "Dietro Ogni Comunicazione",
+      "klippify_url": "https://app.klippify.com/campaigns/6aa7a9eb52f4ebbf21792e63",
       "klippify_section": "Nuove",
       "klippify_status": "Active",
       "is_klippify_active": true,
       "is_user_enrolled": false,
       "requires_user_activation": true,
-      "budget_remaining": 340.25,
+      "budget_remaining": 295.5,
       "payout_per_1k_views": 0.75,
-      "views_per_creator_klippify": 4122.7,
-      "expected_rev_per_creator": 3.09,
-      "promising_score": 1593.0,
+      "views_per_creator_klippify": 4922.5,
+      "expected_rev_per_creator": 3.69,
+      "promising_score": 949.8,
       "reasons": [
-        "Ottima trazione per creator (4.122 views/creator) e budget capiente ($340 residui, $0.75/1k)."
+        "Format adatto a clipping (youtube)"
       ],
-      "recommended_sources": [
-        "https://www.youtube.com/@AldoMasolo"
-      ],
+      "recommended_sources": [],
       "search_queries": [
-        "Aldo Masolo podcast intervista trading business",
-        "Aldo Masolo viral"
-      ],
-      "video_selection_criteria": "Seleziona interviste e podcast lunghi con Aldo Masolo con dichiarazioni forti su business, mindset e finanza.",
-      "my_submitted_count": 0,
-      "my_accepted_count": 0,
-      "my_rejected_count": 0,
-      "my_pending_count": 0,
-      "my_approval_rate_pct": 0.0,
-      "my_total_views": 0,
-      "my_avg_views": 0.0,
-      "my_max_views": 0,
-      "virgin_clips_ready": 0,
-      "virgin_clip_Showcases": [],
-      "lifecycle_stage": "testing",
-      "decision_reason": "[DA ATTIVARE SU KLIPPIFY] IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1593.0). -> Attivala su Klippify per sbloccare l'upload automatico.",
-      "activation_warning": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Aldo Masolo viral contest test' su https://app.klippify.com/campaigns/6a7628ca922613d297f2e2c5 altrimenti Klippify non permette di caricare i suoi video!",
-      "daily_slots": [],
-      "daily_target_count": 0
-    },
-    {
-      "campaign_id": "6a64cf756cdfd98478f11f28",
-      "campaign_name": "Million Hospitality",
-      "brand": "Million Hospitality",
-      "klippify_url": "https://app.klippify.com/campaigns/6a64cf756cdfd98478f11f28",
-      "klippify_section": "Nuove",
-      "klippify_status": "Active",
-      "is_klippify_active": true,
-      "is_user_enrolled": false,
-      "requires_user_activation": true,
-      "budget_remaining": 916.0,
-      "payout_per_1k_views": 1.0,
-      "views_per_creator_klippify": 2649.1,
-      "expected_rev_per_creator": 2.65,
-      "promising_score": 1279.4,
-      "reasons": [
-        "Prima riserva pronta per il test ($916 di budget residuo, $1.00/1k views, oltre 1M di views sulla campagna)."
-      ],
-      "recommended_sources": [
-        "https://www.youtube.com/@MarcoCappelli"
-      ],
-      "search_queries": [
-        "Million Hospitality podcast immobiliare ospitalita",
-        "Million Hospitality Marco Cappelli"
-      ],
-      "video_selection_criteria": "Privilegia episodi podcast 16:9 con numeri su rendite immobiliari, hotel e hospitality in Italia.",
-      "my_submitted_count": 0,
-      "my_accepted_count": 0,
-      "my_rejected_count": 0,
-      "my_pending_count": 0,
-      "my_approval_rate_pct": 0.0,
-      "my_total_views": 0,
-      "my_avg_views": 0.0,
-      "my_max_views": 0,
-      "virgin_clips_ready": 0,
-      "virgin_clip_Showcases": [],
-      "lifecycle_stage": "testing",
-      "decision_reason": "[DA ATTIVARE SU KLIPPIFY] SELEZIONATA PER TEST: Promising Score 1279.4 (2649.1 views/creator, $1.0/1k, budget $916.0). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok). -> Attivala su Klippify per sbloccare l'upload automatico.",
-      "activation_warning": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Million Hospitality' su https://app.klippify.com/campaigns/6a64cf756cdfd98478f11f28 altrimenti Klippify non permette di caricare i suoi video!",
-      "daily_slots": [],
-      "daily_target_count": 0
-    }
-  ],
-  "dropped_campaigns": [],
-  "top_candidates_reserve": [
-    {
-      "campaign_id": "6a426231e6a21896f769dc80",
-      "campaign_name": "Riccardo Dose - YouTube Clipping",
-      "brand": "Marco Cappelli Agency",
-      "klippify_url": "https://app.klippify.com/campaigns/6a426231e6a21896f769dc80",
-      "klippify_section": "Iscritte",
-      "klippify_status": "Active",
-      "is_klippify_active": true,
-      "is_user_enrolled": true,
-      "requires_user_activation": false,
-      "budget_remaining": 1459.0,
-      "payout_per_1k_views": 0.5,
-      "views_per_creator_klippify": 339.2,
-      "expected_rev_per_creator": 0.17,
-      "promising_score": 942.4,
-      "reasons": [
-        "Canale YouTube ufficiale collegato per download automatico",
-        "Format adatto a clipping (clip, youtube, dose)"
-      ],
-      "recommended_sources": [
-        "https://www.youtube.com/@RiccardoDose"
-      ],
-      "search_queries": [
-        "Riccardo Dose - YouTube Clipping Marco Cappelli Agency podcast intervista"
+        "Aranciata TV Dietro Ogni Comunicazione podcast intervista"
       ],
       "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
       "my_submitted_count": 0,
@@ -265,8 +164,11 @@
       "my_max_views": 0,
       "virgin_clips_ready": 0,
       "virgin_clip_Showcases": [],
-      "lifecycle_stage": "candidate",
-      "decision_reason": ""
+      "lifecycle_stage": "testing",
+      "decision_reason": "[DA ATTIVARE SU KLIPPIFY] SELEZIONATA PER TEST: Promising Score 949.8 (4922.5 views/creator, $0.75/1k, budget $295.5). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok). -> Attivala su Klippify per sbloccare l'upload automatico.",
+      "activation_warning": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'Aranciata TV' su https://app.klippify.com/campaigns/6aa7a9eb52f4ebbf21792e63 altrimenti Klippify non permette di caricare i suoi video!",
+      "daily_slots": [],
+      "daily_target_count": 0
     },
     {
       "campaign_id": "6a7a13715ade3cb2f77b30df",
@@ -278,11 +180,11 @@
       "is_klippify_active": true,
       "is_user_enrolled": false,
       "requires_user_activation": true,
-      "budget_remaining": 55.0,
+      "budget_remaining": 167.5,
       "payout_per_1k_views": 1.25,
-      "views_per_creator_klippify": 3862.2,
-      "expected_rev_per_creator": 4.83,
-      "promising_score": 907.4,
+      "views_per_creator_klippify": 2219.9,
+      "expected_rev_per_creator": 2.77,
+      "promising_score": 618.8,
       "reasons": [
         "Format adatto a clipping (podcast, what's next)"
       ],
@@ -301,30 +203,72 @@
       "my_max_views": 0,
       "virgin_clips_ready": 0,
       "virgin_clip_Showcases": [],
-      "lifecycle_stage": "candidate",
-      "decision_reason": ""
-    },
+      "lifecycle_stage": "testing",
+      "decision_reason": "[DA ATTIVARE SU KLIPPIFY] SELEZIONATA PER TEST: Promising Score 618.8 (2219.9 views/creator, $1.25/1k, budget $167.5). Inserita nel pool di TEST AI (max 3 video/giorno globali per account TikTok). -> Attivala su Klippify per sbloccare l'upload automatico.",
+      "activation_warning": "⚠️ AZIONE RICHIESTA SU KLIPPIFY: Devi prima attivare/iscriverti alla campagna 'What's Next - Nello Cristianini' su https://app.klippify.com/campaigns/6a7a13715ade3cb2f77b30df altrimenti Klippify non permette di caricare i suoi video!",
+      "daily_slots": [],
+      "daily_target_count": 0
+    }
+  ],
+  "dropped_campaigns": [],
+  "top_candidates_reserve": [
     {
-      "campaign_id": "6a7a14bf5ade3cb2f77b3539",
-      "campaign_name": "What's Next - Marco Cappato",
-      "brand": "Raffaele Gaito",
-      "klippify_url": "https://app.klippify.com/campaigns/6a7a14bf5ade3cb2f77b3539",
+      "campaign_id": "6abe4dced43bd814476cb520",
+      "campaign_name": "Il salotto Bioceutica | podcast MENOPAUSA",
+      "brand": "Bioceutica Milano",
+      "klippify_url": "https://app.klippify.com/campaigns/6abe4dced43bd814476cb520",
       "klippify_section": "Nuove",
       "klippify_status": "Active",
       "is_klippify_active": true,
       "is_user_enrolled": false,
       "requires_user_activation": true,
-      "budget_remaining": 132.5,
-      "payout_per_1k_views": 1.25,
-      "views_per_creator_klippify": 2472.9,
-      "expected_rev_per_creator": 3.09,
-      "promising_score": 659.1,
+      "budget_remaining": 603.0,
+      "payout_per_1k_views": 1.0,
+      "views_per_creator_klippify": 1868.5,
+      "expected_rev_per_creator": 1.87,
+      "promising_score": 618.5,
       "reasons": [
-        "Format adatto a clipping (podcast, what's next)"
+        "Format adatto a clipping (podcast)"
       ],
       "recommended_sources": [],
       "search_queries": [
-        "What's Next - Marco Cappato Raffaele Gaito podcast intervista"
+        "Il salotto Bioceutica | podcast MENOPAUSA Bioceutica Milano podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "6ad09ea1d43bd8144778631f",
+      "campaign_name": "Podcast Il Salotto Bioceutica | Alimentazione e Pelle",
+      "brand": "Bioceutica Milano",
+      "klippify_url": "https://app.klippify.com/campaigns/6ad09ea1d43bd8144778631f",
+      "klippify_section": "Nuove",
+      "klippify_status": "Active",
+      "is_klippify_active": true,
+      "is_user_enrolled": false,
+      "requires_user_activation": true,
+      "budget_remaining": 751.0,
+      "payout_per_1k_views": 1.0,
+      "views_per_creator_klippify": 1643.4,
+      "expected_rev_per_creator": 1.64,
+      "promising_score": 616.8,
+      "reasons": [
+        "Format adatto a clipping (podcast)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "Podcast Il Salotto Bioceutica | Alimentazione e Pelle Bioceutica Milano podcast intervista"
       ],
       "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
       "my_submitted_count": 0,
@@ -350,11 +294,11 @@
       "is_klippify_active": true,
       "is_user_enrolled": true,
       "requires_user_activation": false,
-      "budget_remaining": 785.0,
+      "budget_remaining": 750.0,
       "payout_per_1k_views": 1.0,
-      "views_per_creator_klippify": 338.9,
-      "expected_rev_per_creator": 0.34,
-      "promising_score": 504.0,
+      "views_per_creator_klippify": 364.1,
+      "expected_rev_per_creator": 0.36,
+      "promising_score": 499.0,
       "reasons": [
         "Cartella Drive/Asset collegata",
         "Format adatto a clipping (collecto)"
@@ -378,62 +322,26 @@
       "decision_reason": ""
     },
     {
-      "campaign_id": "6a8e82f8275caea5661ab1f3",
-      "campaign_name": "Arbicsx — Financial Engineering SaaS",
-      "brand": "Arbicsx LTD",
-      "klippify_url": "https://app.klippify.com/campaigns/6a8e82f8275caea5661ab1f3",
+      "campaign_id": "6a7a14bf5ade3cb2f77b3539",
+      "campaign_name": "What's Next - Marco Cappato",
+      "brand": "Raffaele Gaito",
+      "klippify_url": "https://app.klippify.com/campaigns/6a7a14bf5ade3cb2f77b3539",
       "klippify_section": "Nuove",
       "klippify_status": "Active",
       "is_klippify_active": true,
       "is_user_enrolled": false,
       "requires_user_activation": true,
-      "budget_remaining": 1800.0,
-      "payout_per_1k_views": 5.0,
-      "views_per_creator_klippify": 12.5,
-      "expected_rev_per_creator": 0.06,
-      "promising_score": 456.4,
+      "budget_remaining": 176.25,
+      "payout_per_1k_views": 1.25,
+      "views_per_creator_klippify": 1340.8,
+      "expected_rev_per_creator": 1.68,
+      "promising_score": 452.5,
       "reasons": [
-        "Format adatto a clipping (intervist)"
+        "Format adatto a clipping (podcast, what's next)"
       ],
       "recommended_sources": [],
       "search_queries": [
-        "Arbicsx — Financial Engineering SaaS Arbicsx LTD podcast intervista"
-      ],
-      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
-      "my_submitted_count": 0,
-      "my_accepted_count": 0,
-      "my_rejected_count": 0,
-      "my_pending_count": 0,
-      "my_approval_rate_pct": 0.0,
-      "my_total_views": 0,
-      "my_avg_views": 0.0,
-      "my_max_views": 0,
-      "virgin_clips_ready": 0,
-      "virgin_clip_Showcases": [],
-      "lifecycle_stage": "candidate",
-      "decision_reason": ""
-    },
-    {
-      "campaign_id": "69e21a5ef7e6b4d2d58002b9",
-      "campaign_name": "Ascensore - EP.2",
-      "brand": "Ascensore_media",
-      "klippify_url": "https://app.klippify.com/campaigns/69e21a5ef7e6b4d2d58002b9",
-      "klippify_section": "Nuove",
-      "klippify_status": "Active",
-      "is_klippify_active": true,
-      "is_user_enrolled": false,
-      "requires_user_activation": true,
-      "budget_remaining": 80.59999999999997,
-      "payout_per_1k_views": 1.0,
-      "views_per_creator_klippify": 1331.0,
-      "expected_rev_per_creator": 1.33,
-      "promising_score": 396.3,
-      "reasons": [
-        "Format adatto a clipping (clip, episod)"
-      ],
-      "recommended_sources": [],
-      "search_queries": [
-        "Ascensore - EP.2 Ascensore_media podcast intervista"
+        "What's Next - Marco Cappato Raffaele Gaito podcast intervista"
       ],
       "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
       "my_submitted_count": 0,
@@ -459,17 +367,53 @@
       "is_klippify_active": true,
       "is_user_enrolled": false,
       "requires_user_activation": true,
-      "budget_remaining": 468.29999999999995,
+      "budget_remaining": 454.79999999999995,
       "payout_per_1k_views": 0.5,
-      "views_per_creator_klippify": 924.1,
-      "expected_rev_per_creator": 0.46,
-      "promising_score": 382.4,
+      "views_per_creator_klippify": 1111.6,
+      "expected_rev_per_creator": 0.56,
+      "promising_score": 403.0,
       "reasons": [
         "Format adatto a clipping (podcast, intervist)"
       ],
       "recommended_sources": [],
       "search_queries": [
         "Why podcast Why podcast podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "6ae2279da1d30c3388d6aa39",
+      "campaign_name": "Podcast Il Salotto Bioceutica | Stress - rughe - acne con la dermatologa",
+      "brand": "Bioceutica Milano",
+      "klippify_url": "https://app.klippify.com/campaigns/6ae2279da1d30c3388d6aa39",
+      "klippify_section": "Nuove",
+      "klippify_status": "Active",
+      "is_klippify_active": true,
+      "is_user_enrolled": false,
+      "requires_user_activation": true,
+      "budget_remaining": 988.0,
+      "payout_per_1k_views": 2.0,
+      "views_per_creator_klippify": 20.8,
+      "expected_rev_per_creator": 0.04,
+      "promising_score": 402.3,
+      "reasons": [
+        "Format adatto a clipping (podcast)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "Podcast Il Salotto Bioceutica | Stress - rughe - acne con la dermatologa Bioceutica Milano podcast intervista"
       ],
       "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
       "my_submitted_count": 0,
@@ -495,11 +439,11 @@
       "is_klippify_active": true,
       "is_user_enrolled": false,
       "requires_user_activation": true,
-      "budget_remaining": 541.5,
+      "budget_remaining": 223.0,
       "payout_per_1k_views": 0.5,
-      "views_per_creator_klippify": 660.3,
-      "expected_rev_per_creator": 0.33,
-      "promising_score": 367.9,
+      "views_per_creator_klippify": 1200.8,
+      "expected_rev_per_creator": 0.6,
+      "promising_score": 355.8,
       "reasons": [
         "Format adatto a clipping (clip, youtube, episod)"
       ],
@@ -520,13 +464,65 @@
       "virgin_clip_Showcases": [],
       "lifecycle_stage": "candidate",
       "decision_reason": ""
+    },
+    {
+      "campaign_id": "6acfb484d43bd8144777e351",
+      "campaign_name": "Ale Stark vlog",
+      "brand": "Ale Stark",
+      "klippify_url": "https://app.klippify.com/campaigns/6acfb484d43bd8144777e351",
+      "klippify_section": "Nuove",
+      "klippify_status": "Active",
+      "is_klippify_active": true,
+      "is_user_enrolled": false,
+      "requires_user_activation": true,
+      "budget_remaining": 428.5,
+      "payout_per_1k_views": 0.5,
+      "views_per_creator_klippify": 714.7,
+      "expected_rev_per_creator": 0.36,
+      "promising_score": 346.7,
+      "reasons": [
+        "Format adatto a clipping (clip, youtube)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "Ale Stark vlog Ale Stark podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
     }
   ],
   "next_clipping_priorities": [
     {
+      "campaign_id": "6a0dd557394d916370d7fb3d",
+      "campaign_name": "Marco Billiani | Chiave immobiliare",
+      "lifecycle_stage": "scaling",
+      "virgin_clips_ready": 0,
+      "recommended_sources": [
+        "https://www.youtube.com/@MarcoBilliani",
+        "https://www.youtube.com/@MarcoBillianibusiness"
+      ],
+      "search_queries": [
+        "Marco Billiani Chiave Immobiliare affitti brevi",
+        "Marco Billiani Airbnb guadagnare con gli immobili"
+      ],
+      "video_selection_criteria": "Seleziona video orizzontali lunghi (5-20 min) su Airbnb e sublocazioni immobiliari. IMPORTANTE: assicurati che il volto di Marco Billiani sia chiaramente visibile all'inizio della clip per almeno 5-7 secondi (come richiesto espressamente dall'AI di Klippify).",
+      "reason": "Campagna in SCALING con sole 0 clip pronte in magazzino."
+    },
+    {
       "campaign_id": "6a71c6f7245627c68999eae2",
       "campaign_name": "Sara Dizdari Academy – Scopri i negozi digitali",
-      "lifecycle_stage": "scaling",
+      "lifecycle_stage": "testing",
       "virgin_clips_ready": 1,
       "recommended_sources": [
         "https://www.youtube.com/@SaraDizdariEcommerce"
@@ -536,36 +532,30 @@
         "Sara Dizdari Academy caso studio"
       ],
       "video_selection_criteria": "Scegli video lunghi (3-25 min) con casi studio e testimonianze reali di studenti (es. Federica, Valentina) che raccontano da che lavoro partivano e i risultati ottenuti, evitando video puramente tecnici.",
-      "reason": "Campagna in SCALING con sole 1 clip pronte in magazzino."
+      "reason": "Campagna in TESTING con sole 1 clip pronte in magazzino."
     },
     {
-      "campaign_id": "6a7628ca922613d297f2e2c5",
-      "campaign_name": "Aldo Masolo viral contest test",
+      "campaign_id": "6aa7a9eb52f4ebbf21792e63",
+      "campaign_name": "Aranciata TV",
       "lifecycle_stage": "testing",
       "virgin_clips_ready": 0,
-      "recommended_sources": [
-        "https://www.youtube.com/@AldoMasolo"
-      ],
+      "recommended_sources": [],
       "search_queries": [
-        "Aldo Masolo podcast intervista trading business",
-        "Aldo Masolo viral"
+        "Aranciata TV Dietro Ogni Comunicazione podcast intervista"
       ],
-      "video_selection_criteria": "Seleziona interviste e podcast lunghi con Aldo Masolo con dichiarazioni forti su business, mindset e finanza.",
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
       "reason": "Campagna in TESTING con sole 0 clip pronte in magazzino."
     },
     {
-      "campaign_id": "6a64cf756cdfd98478f11f28",
-      "campaign_name": "Million Hospitality",
+      "campaign_id": "6a7a13715ade3cb2f77b30df",
+      "campaign_name": "What's Next - Nello Cristianini",
       "lifecycle_stage": "testing",
       "virgin_clips_ready": 0,
-      "recommended_sources": [
-        "https://www.youtube.com/@MarcoCappelli"
-      ],
+      "recommended_sources": [],
       "search_queries": [
-        "Million Hospitality podcast immobiliare ospitalita",
-        "Million Hospitality Marco Cappelli"
+        "What's Next - Nello Cristianini Raffaele Gaito podcast intervista"
       ],
-      "video_selection_criteria": "Privilegia episodi podcast 16:9 con numeri su rendite immobiliari, hotel e hospitality in Italia.",
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
       "reason": "Campagna in TESTING con sole 0 clip pronte in magazzino."
     }
   ]

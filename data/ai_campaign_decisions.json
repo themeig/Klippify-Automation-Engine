@@ -71,6 +71,21 @@
       ],
       "video_selection_criteria": "Privilegia episodi podcast 16:9 con numeri su rendite immobiliari, hotel e hospitality in Italia.",
       "ai_feasibility_notes": "Prima riserva pronta per il test ($916 di budget residuo, $1.00/1k views, oltre 1M di views sulla campagna)."
+    },
+    "6a0dd557394d916370d7fb3d": {
+      "campaign_name": "Marco Billiani | Chiave immobiliare",
+      "feasible": true,
+      "recommended_stage": "scaling",
+      "source_urls": [
+        "https://www.youtube.com/@MarcoBilliani",
+        "https://www.youtube.com/@MarcoBillianibusiness"
+      ],
+      "search_queries": [
+        "Marco Billiani Chiave Immobiliare affitti brevi",
+        "Marco Billiani Airbnb guadagnare con gli immobili"
+      ],
+      "video_selection_criteria": "Seleziona video orizzontali lunghi (5-20 min) su Airbnb e sublocazioni immobiliari. IMPORTANTE: assicurati che il volto di Marco Billiani sia chiaramente visibile all'inizio della clip per almeno 5-7 secondi (come richiesto espressamente dall'AI di Klippify).",
+      "ai_feasibility_notes": "Campagna vincente conclamata su Klippify: 9 video su 10 approvati (90% approvazione, media 230 views/video), budget $404.5 residuo, creator già iscritto."
     }
   }
 }
