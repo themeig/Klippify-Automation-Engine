@@ -69,6 +69,17 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
             pass
     approval_audit_json = json.dumps(approval_audit_report, ensure_ascii=False)
 
+    # Load campaign portfolio plan (SCALING / TESTING / DROPPED)
+    portfolio_path = BASE_DIR / "campaign_portfolio_plan.json"
+    portfolio_plan = {}
+    if portfolio_path.exists():
+        try:
+            with open(portfolio_path, "r", encoding="utf-8") as ppf:
+                portfolio_plan = json.load(ppf)
+        except Exception:
+            pass
+    portfolio_plan_json = json.dumps(portfolio_plan, ensure_ascii=False)
+
     # Count campaigns by section
     counts = {
         "all": len(campaigns),
@@ -1927,6 +1938,7 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
         const publishedContent = {published_json};
         let campaignSchedules = {schedules_json};
         let approvalAuditReport = {approval_audit_json};
+        let campaignPortfolioPlan = {portfolio_plan_json};
         let cachedTikTokVideos = [];
         let currentDetailCampToken = null;
 
@@ -4711,6 +4723,8 @@ def generate_html_report(campaigns, dashboard_data=None, submissions_data=None):
         function buildCampaignAssemblyPipelineHtml(campToken, originalCamp, item, isClipping, localAvailableVideos, savedSlots, targetCount, campSubmissions, scripts, defaultTimes, budgetRemaining, isDepleted, validLinks, allLinksHtml, dailyStatsHtml) {{
             const schedInfo = campaignSchedules[campToken] || {{}};
             const isAutopilotOn = schedInfo.autopilot_enabled !== undefined ? !!schedInfo.autopilot_enabled : true;
+            const lifecycleStage = schedInfo.lifecycle_stage || 'testing';
+            const decisionReason = schedInfo.decision_reason || '';
             const pauseUntilStr = schedInfo.pause_until || null;
             let isPaused = false;
             let pauseUntilFormatted = '';

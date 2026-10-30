@@ -41,12 +41,12 @@ def install_or_update_sidecar(
     skill_posix = str(skill_path).replace("\\", "/")
 
     prompt = (
-        f"Sei il Regista AI di Klippify Automation Engine nella cartella '{root_posix}'. "
+        f"Sei il Portfolio Manager e Regista AI di Klippify Automation Engine nella cartella '{root_posix}'. "
         f"Leggi e segui passo-passo la skill '{skill_posix}': "
-        f"1) Esegui 'python core/rejection_auditor.py' e leggi data/approval_audit_report.json per controllare se i video inviati su Klippify sono stati approvati (accepted), sono in revisione (pending) o sono stati rifiutati (rejected), replicando i winning_patterns dei video approvati e applicando le direttive correttive (ai_director_instruction / ai_reasoning) per eventuali campagne in campaigns_needing_attention; "
-        f"2) Controlla se ci sono video sorgente da montare (o scaricane uno nuovo da data/campaign_sources.json con core/source_downloader.py) ed esegui core/video_inspector.py sul video; "
-        f"3) Leggi il file <video_stem>_inspection.json (controllando prima di tutto campaign_brief per allineare il contenuto e la CTA alle richieste specifiche della campagna Klippify) e guarda le Storyboard JPG con read_file per decidere esattamente quali segmenti tenere e quali scartare (Teaser + Corpo + Payoff), il center_x_ratio a schermo intero (face_crop) per ogni segmento, l'hook (3.2s), la cta_text e la caption, salvandoli in data/ai_director_cuts.json; "
-        f"4) Lancia 'python core/clipping_pipeline.py <campaign_id> --video <video_path> --cuts data/ai_director_cuts.json' per generare le clip 9:16 e accodarle all'autopilota."
+        f"1) Esegui 'python core/rejection_auditor.py' (leggi data/approval_audit_report.json) e 'python core/campaign_selector.py' (aggiornando se necessario data/ai_campaign_decisions.json e leggendo data/campaign_portfolio_plan.json) per verificare approvazioni/rifiuti, spingere a 6 slot/giorno le campagne vincenti (SCALING), testare a 2 slot/giorno le 3 campagne più promettenti (TESTING) e fermare quelle sotto-performanti; "
+        f"2) Per le campagne prioritarie in next_clipping_priorities, individua o cerca un nuovo video lungo non ancora scaricato con 'python core/source_downloader.py --inspect <url>' o '--search <query>', scaricalo con '--download <video_url> <campaign_id>' ed esegui 'python core/video_inspector.py'; "
+        f"3) Leggi <video_stem>_inspection.json (controllando prima di tutto campaign_brief) e guarda le Storyboard JPG con read_file per decidere i segmenti da tenere (Teaser + Corpo + Payoff), il center_x_ratio a schermo intero (face_crop) per segmento, hook_text, cta_text e caption in data/ai_director_cuts.json; "
+        f"4) Lancia 'python core/clipping_pipeline.py <campaign_id> --video <video_path> --cuts data/ai_director_cuts.json' e 'python core/campaign_selector.py' per accodare le clip negli slot dell'autopilota."
     )
 
     sidecar_payload = {
@@ -60,7 +60,7 @@ def install_or_update_sidecar(
         ],
         "restart_policy": "always",
         "display_name": "Klippify AI Director (4h)",
-        "description": "Ogni 4 ore (Europe/Rome), l'Agente AI di Antigravity controlla le approvazioni/rifiuti su Klippify (approval_audit_report.json), ispeziona i video sorgente, decide cosa tenere e cosa scartare in data/ai_director_cuts.json e avvia il montaggio FFmpeg 9:16.",
+        "description": "Ogni 4 ore (Europe/Rome), l'Agente AI di Antigravity verifica approvazioni/rifiuti su Klippify, seleziona e scala le campagne migliori, cerca nuovi video sorgente, decide i tagli in data/ai_director_cuts.json e avvia il montaggio FFmpeg 9:16.",
         "agent_permissions": {
             "workspace_uris": [
                 _path_to_file_uri(root_p)

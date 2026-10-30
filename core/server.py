@@ -361,6 +361,17 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
             except Exception as e:
                 self.wfile.write(json.dumps({"error": str(e), "videos": []}, ensure_ascii=False).encode("utf-8"))
 
+        elif path in ["/api/campaigns/portfolio-plan", "/api/campaigns/auto-select"]:
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            try:
+                import campaign_selector
+                plan = campaign_selector.evaluate_and_select_campaigns(apply_changes=True)
+                self.wfile.write(json.dumps(plan, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"status": "error", "message": str(e)}, ensure_ascii=False).encode("utf-8"))
         elif path == "/api/klippify/approval-audit":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -405,6 +416,8 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
                 try:
                     import rejection_auditor
                     rejection_auditor.audit_recent_submissions(hours_window=24, use_cache=True)
+                    import campaign_selector
+                    campaign_selector.evaluate_and_select_campaigns(apply_changes=True)
                 except Exception as aud_err:
                     print(f"[SYNC AUDIT WARNING] {aud_err}")
                 process_manager.log(task_id, f"Sincronizzate con successo {len(raw_camps)} campagne LIVE e rigenerato il report.")
@@ -924,6 +937,8 @@ class KlippifyServerHandler(BaseHTTPRequestHandler):
                 try:
                     import rejection_auditor
                     rejection_auditor.audit_recent_submissions(hours_window=24, use_cache=True)
+                    import campaign_selector
+                    campaign_selector.evaluate_and_select_campaigns(apply_changes=True)
                 except Exception as aud_err:
                     print(f"[SYNC AUDIT WARNING] {aud_err}")
                 process_manager.log(task_id, f"Sincronizzate con successo {len(raw_camps)} campagne LIVE e rigenerato il report.")

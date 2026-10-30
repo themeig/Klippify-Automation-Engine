@@ -347,10 +347,71 @@ def remove_campaign_source(campaign_id, source_url):
                 json.dump(sources, f, indent=2, ensure_ascii=False)
     return {"status": "ok", "sources": sources.get(cid, {})}
 
+
+def search_youtube_videos(query: str, limit: int = 8) -> dict:
+    """
+    Cerca su YouTube i video lunghi (podcast, interviste, casi studio) pertinenti
+    alla query della campagna e indica quali sono già stati scaricati in passato.
+    Permette all'Agente AI di trovare sempre nuovi video sorgente per qualsiasi campagna.
+    """
+    import yt_dlp
+
+    q = (query or "").strip()
+    if not q:
+        return {"error": "Query vuota", "entries": []}
+
+    ydl_opts = {
+        "extract_flat": "in_playlist",
+        "quiet": True,
+        "no_warnings": True,
+        "ignoreerrors": True,
+        "skip_download": True,
+    }
+
+    history = get_history()
+    entries = []
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(f"ytsearch{limit}:{q}", download=False)
+            raw_entries = (info or {}).get("entries") or []
+            for e in raw_entries:
+                if not e:
+                    continue
+                vid_id = str(e.get("id") or "")
+                vid_url = e.get("url") or e.get("webpage_url") or f"https://www.youtube.com/watch?v={vid_id}"
+                if not str(vid_url).startswith("http"):
+                    vid_url = f"https://www.youtube.com/watch?v={vid_id}"
+                dur = int(e.get("duration") or 0)
+                views = int(e.get("view_count") or 0)
+                already = vid_id in history or any(h.get("url") == vid_url for h in history.values())
+                entries.append({
+                    "id": vid_id,
+                    "title": (e.get("title") or "")[:120],
+                    "channel": e.get("uploader") or e.get("channel") or "",
+                    "url": vid_url,
+                    "duration_sec": dur,
+                    "duration_str": format_duration(dur),
+                    "view_count": views,
+                    "already_downloaded": already,
+                    "is_long_form_suitable": dur >= 120
+                })
+        return {
+            "query": q,
+            "total_found": len(entries),
+            "entries": entries
+        }
+    except Exception as ex:
+        return {"error": str(ex), "query": q, "entries": []}
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 2 and sys.argv[1] == "--inspect":
         test_url = sys.argv[2]
-        res = inspect_source(test_url, limit=5)
+        res = inspect_source(test_url, limit=8)
+        print(json.dumps(res, indent=2, ensure_ascii=False))
+    elif len(sys.argv) > 2 and sys.argv[1] == "--search":
+        search_q = sys.argv[2]
+        res = search_youtube_videos(search_q, limit=8)
         print(json.dumps(res, indent=2, ensure_ascii=False))
     elif len(sys.argv) > 3 and sys.argv[1] == "--download":
         test_url = sys.argv[2]
@@ -360,4 +421,5 @@ if __name__ == "__main__":
     else:
         print("Usage:")
         print("  python source_downloader.py --inspect <URL>")
+        print("  python source_downloader.py --search \"<QUERY>\"")
         print("  python source_downloader.py --download <URL> <CAMPAIGN_ID>")

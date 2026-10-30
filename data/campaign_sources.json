@@ -5,5 +5,27 @@
     ],
     "auto_download": true,
     "updated_at": "2026-08-25 12:03:05"
+  },
+  "6a91676284a29ab01b754c33": {
+    "sources": [
+      "https://www.youtube.com/@MarcoCappelli",
+      "https://www.youtube.com/@AlexTheory"
+    ],
+    "auto_download": true,
+    "updated_at": "2026-10-30 01:06:09"
+  },
+  "6a719c80a2d57190f5d7a38b": {
+    "sources": [
+      "https://www.youtube.com/@AlexTheory"
+    ],
+    "auto_download": true,
+    "updated_at": "2026-10-30 01:07:34"
+  },
+  "6a7628ca922613d297f2e2c5": {
+    "sources": [
+      "https://www.youtube.com/@AldoMasolo"
+    ],
+    "auto_download": true,
+    "updated_at": "2026-10-30 01:07:34"
   }
 }

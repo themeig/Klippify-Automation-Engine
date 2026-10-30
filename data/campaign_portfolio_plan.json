@@ -1,0 +1,463 @@
+{
+  "status": "success",
+  "evaluated_at": "2026-10-30 01:12:30",
+  "summary": {
+    "scaling_count": 1,
+    "testing_count": 3,
+    "dropped_underperforming_count": 0,
+    "candidate_pool_count": 20,
+    "needs_clipping_count": 4
+  },
+  "scaling_campaigns": [
+    {
+      "campaign_id": "6a71c6f7245627c68999eae2",
+      "campaign_name": "Sara Dizdari Academy – Scopri i negozi digitali",
+      "brand": "Sara Dizdari Academy",
+      "budget_remaining": 273.5,
+      "payout_per_1k_views": 0.5,
+      "views_per_creator_klippify": 19921.9,
+      "expected_rev_per_creator": 9.96,
+      "promising_score": 3514.8,
+      "reasons": [
+        "Campagna #1 validata (90% approvazione AI Klippify, picco 720 views). Canale YouTube ufficiale ricco di interviste 16:9 non ancora scaricate."
+      ],
+      "recommended_sources": [
+        "https://www.youtube.com/@SaraDizdariEcommerce"
+      ],
+      "search_queries": [
+        "Sara Dizdari intervista testimonianza studenti negozi digitali",
+        "Sara Dizdari Academy caso studio"
+      ],
+      "video_selection_criteria": "Scegli video lunghi (3-25 min) con casi studio e testimonianze reali di studenti (es. Federica, Valentina) che raccontano da che lavoro partivano e i risultati ottenuti, evitando video puramente tecnici.",
+      "my_submitted_count": 10,
+      "my_accepted_count": 9,
+      "my_rejected_count": 1,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 90.0,
+      "my_total_views": 913,
+      "my_avg_views": 91.3,
+      "my_max_views": 720,
+      "virgin_clips_ready": 1,
+      "virgin_clip_Showcases": [
+        "clip_SaraDizdariA_slot1_20261029_234707.mp4"
+      ],
+      "lifecycle_stage": "scaling",
+      "decision_reason": "VINCENTE: Tasso approvazione 90.0% (9/10) e picco di 720 views (media 91.3 views/video). Spinta al massimo (6 slot/giorno)."
+    }
+  ],
+  "testing_campaigns": [
+    {
+      "campaign_id": "6a91676284a29ab01b754c33",
+      "campaign_name": "Saikoo × Theory SPA — Il bilancio 2025 in anteprima",
+      "brand": "Saikoo.ai",
+      "budget_remaining": 318.0,
+      "payout_per_1k_views": 0.5,
+      "views_per_creator_klippify": 2474.7,
+      "expected_rev_per_creator": 1.24,
+      "promising_score": 1739.1,
+      "reasons": [
+        "Altissima fattibilità: podcast 16:9 già scaricato e ispezionato, temi ad alto impatto virale (numeri reali e bilanci aziendali)."
+      ],
+      "recommended_sources": [
+        "https://www.youtube.com/watch?v=gvrlHcgmz4w"
+      ],
+      "search_queries": [
+        "Quanto fattura davvero Theory Spa Il bilancio 2025 in anteprima Saikoo",
+        "Gurulandia Alex Theory bilancio Saikoo"
+      ],
+      "video_selection_criteria": "Usa il podcast ufficiale da 1h21m con Alex Theory e Marco Cappelli in cui analizzano il bilancio 2025 da 18M€ con Saikoo, estraendo segmenti diversi (fatturato 4,5M/mese, 6M aziende in Italia, margini e crescita verso 75M).",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 1,
+      "virgin_clip_Showcases": [
+        "clip_SaikooTheory_slot1_20261030_002748.mp4"
+      ],
+      "lifecycle_stage": "testing",
+      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 1 clip 9:16 pronte in magazzino (Promising Score: 1739.1)."
+    },
+    {
+      "campaign_id": "6a719c80a2d57190f5d7a38b",
+      "campaign_name": "Le 9 Bugie di FitActive",
+      "brand": "Theory Spa",
+      "budget_remaining": 177.75,
+      "payout_per_1k_views": 0.75,
+      "views_per_creator_klippify": 4448.3,
+      "expected_rev_per_creator": 3.34,
+      "promising_score": 1600.9,
+      "reasons": [
+        "Altissima trazione su Klippify (4.448 views/creator, 1,2M views totali) e alto interesse su TikTok Italia."
+      ],
+      "recommended_sources": [
+        "https://www.youtube.com/@AlexTheory"
+      ],
+      "search_queries": [
+        "Le 9 Bugie di FitActive Alex Theory",
+        "Theory Spa FitActive Gurulandia"
+      ],
+      "video_selection_criteria": "Cerca i video lunghi di Alex Theory / Theory Spa sul caso FitActive e ritaglia i momenti di dibattito più accesi con numeri e smentite dirette.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "testing",
+      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1600.9)."
+    },
+    {
+      "campaign_id": "6a7628ca922613d297f2e2c5",
+      "campaign_name": "Aldo Masolo viral contest test",
+      "brand": "Aldo Masolo",
+      "budget_remaining": 340.25,
+      "payout_per_1k_views": 0.75,
+      "views_per_creator_klippify": 4122.7,
+      "expected_rev_per_creator": 3.09,
+      "promising_score": 1593.0,
+      "reasons": [
+        "Ottima trazione per creator (4.122 views/creator) e budget capiente ($340 residui, $0.75/1k)."
+      ],
+      "recommended_sources": [
+        "https://www.youtube.com/@AldoMasolo"
+      ],
+      "search_queries": [
+        "Aldo Masolo podcast intervista trading business",
+        "Aldo Masolo viral"
+      ],
+      "video_selection_criteria": "Seleziona interviste e podcast lunghi con Aldo Masolo con dichiarazioni forti su business, mindset e finanza.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "testing",
+      "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1593.0)."
+    }
+  ],
+  "dropped_campaigns": [],
+  "top_candidates_reserve": [
+    {
+      "campaign_id": "6a64cf756cdfd98478f11f28",
+      "campaign_name": "Million Hospitality",
+      "brand": "Million Hospitality",
+      "budget_remaining": 916.0,
+      "payout_per_1k_views": 1.0,
+      "views_per_creator_klippify": 2649.1,
+      "expected_rev_per_creator": 2.65,
+      "promising_score": 1279.4,
+      "reasons": [
+        "Prima riserva pronta per il test ($916 di budget residuo, $1.00/1k views, oltre 1M di views sulla campagna)."
+      ],
+      "recommended_sources": [
+        "https://www.youtube.com/@MarcoCappelli"
+      ],
+      "search_queries": [
+        "Million Hospitality podcast immobiliare ospitalita",
+        "Million Hospitality Marco Cappelli"
+      ],
+      "video_selection_criteria": "Privilegia episodi podcast 16:9 con numeri su rendite immobiliari, hotel e hospitality in Italia.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "6a426231e6a21896f769dc80",
+      "campaign_name": "Riccardo Dose - YouTube Clipping",
+      "brand": "Marco Cappelli Agency",
+      "budget_remaining": 1459.0,
+      "payout_per_1k_views": 0.5,
+      "views_per_creator_klippify": 339.2,
+      "expected_rev_per_creator": 0.17,
+      "promising_score": 942.4,
+      "reasons": [
+        "Canale YouTube ufficiale collegato per download automatico",
+        "Format adatto a clipping (clip, youtube, dose)"
+      ],
+      "recommended_sources": [
+        "https://www.youtube.com/@RiccardoDose"
+      ],
+      "search_queries": [
+        "Riccardo Dose - YouTube Clipping Marco Cappelli Agency podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "6a7a13715ade3cb2f77b30df",
+      "campaign_name": "What's Next - Nello Cristianini",
+      "brand": "Raffaele Gaito",
+      "budget_remaining": 55.0,
+      "payout_per_1k_views": 1.25,
+      "views_per_creator_klippify": 3862.2,
+      "expected_rev_per_creator": 4.83,
+      "promising_score": 907.4,
+      "reasons": [
+        "Format adatto a clipping (podcast, what's next)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "What's Next - Nello Cristianini Raffaele Gaito podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "6a7a14bf5ade3cb2f77b3539",
+      "campaign_name": "What's Next - Marco Cappato",
+      "brand": "Raffaele Gaito",
+      "budget_remaining": 132.5,
+      "payout_per_1k_views": 1.25,
+      "views_per_creator_klippify": 2472.9,
+      "expected_rev_per_creator": 3.09,
+      "promising_score": 659.1,
+      "reasons": [
+        "Format adatto a clipping (podcast, what's next)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "What's Next - Marco Cappato Raffaele Gaito podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "69db9e0c61ce1b8904c4c3b7",
+      "campaign_name": "Collecto",
+      "brand": "Salvatore Zola",
+      "budget_remaining": 785.0,
+      "payout_per_1k_views": 1.0,
+      "views_per_creator_klippify": 338.9,
+      "expected_rev_per_creator": 0.34,
+      "promising_score": 504.0,
+      "reasons": [
+        "Cartella Drive/Asset collegata",
+        "Format adatto a clipping (collecto)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "Collecto Salvatore Zola podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "6a8e82f8275caea5661ab1f3",
+      "campaign_name": "Arbicsx — Financial Engineering SaaS",
+      "brand": "Arbicsx LTD",
+      "budget_remaining": 1800.0,
+      "payout_per_1k_views": 5.0,
+      "views_per_creator_klippify": 12.5,
+      "expected_rev_per_creator": 0.06,
+      "promising_score": 456.4,
+      "reasons": [
+        "Format adatto a clipping (intervist)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "Arbicsx — Financial Engineering SaaS Arbicsx LTD podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "69e21a5ef7e6b4d2d58002b9",
+      "campaign_name": "Ascensore - EP.2",
+      "brand": "Ascensore_media",
+      "budget_remaining": 80.59999999999997,
+      "payout_per_1k_views": 1.0,
+      "views_per_creator_klippify": 1331.0,
+      "expected_rev_per_creator": 1.33,
+      "promising_score": 396.3,
+      "reasons": [
+        "Format adatto a clipping (clip, episod)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "Ascensore - EP.2 Ascensore_media podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    },
+    {
+      "campaign_id": "6a79f2c55ade3cb2f77ad749",
+      "campaign_name": "Why podcast",
+      "brand": "Why podcast",
+      "budget_remaining": 468.29999999999995,
+      "payout_per_1k_views": 0.5,
+      "views_per_creator_klippify": 924.1,
+      "expected_rev_per_creator": 0.46,
+      "promising_score": 382.4,
+      "reasons": [
+        "Format adatto a clipping (podcast, intervist)"
+      ],
+      "recommended_sources": [],
+      "search_queries": [
+        "Why podcast Why podcast podcast intervista"
+      ],
+      "video_selection_criteria": "Scegli video lunghi 16:9 (3-60 min) pertinenti al brief della campagna, non ancora presenti in downloaded_sources_history.json.",
+      "my_submitted_count": 0,
+      "my_accepted_count": 0,
+      "my_rejected_count": 0,
+      "my_pending_count": 0,
+      "my_approval_rate_pct": 0.0,
+      "my_total_views": 0,
+      "my_avg_views": 0.0,
+      "my_max_views": 0,
+      "virgin_clips_ready": 0,
+      "virgin_clip_Showcases": [],
+      "lifecycle_stage": "candidate",
+      "decision_reason": ""
+    }
+  ],
+  "next_clipping_priorities": [
+    {
+      "campaign_id": "6a71c6f7245627c68999eae2",
+      "campaign_name": "Sara Dizdari Academy – Scopri i negozi digitali",
+      "lifecycle_stage": "scaling",
+      "virgin_clips_ready": 1,
+      "recommended_sources": [
+        "https://www.youtube.com/@SaraDizdariEcommerce"
+      ],
+      "search_queries": [
+        "Sara Dizdari intervista testimonianza studenti negozi digitali",
+        "Sara Dizdari Academy caso studio"
+      ],
+      "video_selection_criteria": "Scegli video lunghi (3-25 min) con casi studio e testimonianze reali di studenti (es. Federica, Valentina) che raccontano da che lavoro partivano e i risultati ottenuti, evitando video puramente tecnici.",
+      "reason": "Campagna in SCALING con sole 1 clip pronte in magazzino."
+    },
+    {
+      "campaign_id": "6a91676284a29ab01b754c33",
+      "campaign_name": "Saikoo × Theory SPA — Il bilancio 2025 in anteprima",
+      "lifecycle_stage": "testing",
+      "virgin_clips_ready": 1,
+      "recommended_sources": [
+        "https://www.youtube.com/watch?v=gvrlHcgmz4w"
+      ],
+      "search_queries": [
+        "Quanto fattura davvero Theory Spa Il bilancio 2025 in anteprima Saikoo",
+        "Gurulandia Alex Theory bilancio Saikoo"
+      ],
+      "video_selection_criteria": "Usa il podcast ufficiale da 1h21m con Alex Theory e Marco Cappelli in cui analizzano il bilancio 2025 da 18M€ con Saikoo, estraendo segmenti diversi (fatturato 4,5M/mese, 6M aziende in Italia, margini e crescita verso 75M).",
+      "reason": "Campagna in TESTING con sole 1 clip pronte in magazzino."
+    },
+    {
+      "campaign_id": "6a719c80a2d57190f5d7a38b",
+      "campaign_name": "Le 9 Bugie di FitActive",
+      "lifecycle_stage": "testing",
+      "virgin_clips_ready": 0,
+      "recommended_sources": [
+        "https://www.youtube.com/@AlexTheory"
+      ],
+      "search_queries": [
+        "Le 9 Bugie di FitActive Alex Theory",
+        "Theory Spa FitActive Gurulandia"
+      ],
+      "video_selection_criteria": "Cerca i video lunghi di Alex Theory / Theory Spa sul caso FitActive e ritaglia i momenti di dibattito più accesi con numeri e smentite dirette.",
+      "reason": "Campagna in TESTING con sole 0 clip pronte in magazzino."
+    },
+    {
+      "campaign_id": "6a7628ca922613d297f2e2c5",
+      "campaign_name": "Aldo Masolo viral contest test",
+      "lifecycle_stage": "testing",
+      "virgin_clips_ready": 0,
+      "recommended_sources": [
+        "https://www.youtube.com/@AldoMasolo"
+      ],
+      "search_queries": [
+        "Aldo Masolo podcast intervista trading business",
+        "Aldo Masolo viral"
+      ],
+      "video_selection_criteria": "Seleziona interviste e podcast lunghi con Aldo Masolo con dichiarazioni forti su business, mindset e finanza.",
+      "reason": "Campagna in TESTING con sole 0 clip pronte in magazzino."
+    }
+  ]
+}

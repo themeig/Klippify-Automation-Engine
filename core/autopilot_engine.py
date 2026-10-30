@@ -1090,6 +1090,11 @@ def sync_klippify_approvals(force=False):
     try:
         import rejection_auditor
         report = rejection_auditor.audit_recent_submissions(hours_window=4, use_cache=not force)
+        try:
+            import campaign_selector
+            campaign_selector.evaluate_and_select_campaigns(apply_changes=True)
+        except Exception as cs_err:
+            print(f"[AUTOPILOT CAMPAIGN SELECTOR WARNING] {cs_err}")
         state = load_state()
         history = state.get("history", [])
         changed = False

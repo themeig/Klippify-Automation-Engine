@@ -4,14 +4,14 @@
     "slots": [
       {
         "time": "12:00",
+        "video": "clip_SaraDizdariA_slot1_20261029_234707.mp4"
+      },
+      {
+        "time": "13:30",
         "video": ""
       },
       {
-        "time": "13:15",
-        "video": ""
-      },
-      {
-        "time": "15:00",
+        "time": "15:30",
         "video": ""
       },
       {
@@ -19,15 +19,15 @@
         "video": ""
       },
       {
-        "time": "21:00",
+        "time": "20:30",
         "video": ""
       },
       {
-        "time": "23:00",
+        "time": "22:30",
         "video": ""
       }
     ],
-    "updated_at": "2026-10-30 00:48:40",
+    "updated_at": "2026-10-30 01:12:30",
     "autopilot_enabled": true,
     "published_clips": [
       "clip_SaraDizdariA_slot3_20260819_162539.mp4",
@@ -84,7 +84,9 @@
     "schedule_date": "2026-10-30",
     "pause_until": null,
     "is_paused": false,
-    "is_ended": false
+    "is_ended": false,
+    "lifecycle_stage": "scaling",
+    "decision_reason": "VINCENTE: Tasso approvazione 90.0% (9/10) e picco di 720 views (media 91.3 views/video). Spinta al massimo (6 slot/giorno)."
   },
   "6a426231e6a21896f769dc80": {
     "target_count": 3,
@@ -109,26 +111,106 @@
     ]
   },
   "6a91676284a29ab01b754c33": {
-    "target_count": 3,
+    "target_count": 2,
+    "slots": [
+      {
+        "time": "15:00",
+        "video": "clip_SaikooTheory_slot1_20261030_002748.mp4"
+      },
+      {
+        "time": "20:00",
+        "video": ""
+      }
+    ],
+    "autopilot_enabled": true,
+    "updated_at": "2026-10-30 01:12:30",
+    "published_clips": [
+      "clip_SaikooTheory_slot1_20261029_235707.mp4"
+    ],
+    "schedule_date": "2026-10-30",
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "testing",
+    "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 1 clip 9:16 pronte in magazzino (Promising Score: 1739.1)."
+  },
+  "699ededd3f5febcf2f3acae9": {
+    "published_clips": [],
+    "target_count": 2,
     "slots": [
       {
         "time": "15:00",
         "video": ""
       },
       {
-        "time": "15:00",
-        "video": ""
-      },
-      {
-        "time": "18:00",
+        "time": "20:00",
         "video": ""
       }
     ],
     "autopilot_enabled": true,
-    "updated_at": "2026-10-30 00:48:40",
-    "published_clips": [
-      "clip_SaikooTheory_slot1_20261029_235707.mp4"
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "testing",
+    "decision_reason": "SELEZIONATA PER TEST: Promising Score 1079.9 (9.2 views/creator, $6.0/1k, budget $278.0). Assegnati 2 slot/giorno di test.",
+    "updated_at": "2026-10-30 01:06:09"
+  },
+  "6a8e82f8275caea5661ab1f3": {
+    "published_clips": [],
+    "target_count": 2,
+    "slots": [
+      {
+        "time": "15:00",
+        "video": ""
+      },
+      {
+        "time": "20:00",
+        "video": ""
+      }
     ],
-    "schedule_date": "2026-10-30"
+    "autopilot_enabled": true,
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "testing",
+    "decision_reason": "SELEZIONATA PER TEST: Promising Score 925.5 (12.5 views/creator, $5.0/1k, budget $1800.0). Assegnati 2 slot/giorno di test.",
+    "updated_at": "2026-10-30 01:06:09"
+  },
+  "6a719c80a2d57190f5d7a38b": {
+    "published_clips": [],
+    "target_count": 2,
+    "slots": [
+      {
+        "time": "15:00",
+        "video": ""
+      },
+      {
+        "time": "20:00",
+        "video": ""
+      }
+    ],
+    "autopilot_enabled": true,
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "testing",
+    "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1600.9).",
+    "updated_at": "2026-10-30 01:12:30"
+  },
+  "6a7628ca922613d297f2e2c5": {
+    "published_clips": [],
+    "target_count": 2,
+    "slots": [
+      {
+        "time": "15:00",
+        "video": ""
+      },
+      {
+        "time": "20:00",
+        "video": ""
+      }
+    ],
+    "autopilot_enabled": true,
+    "is_paused": false,
+    "is_ended": false,
+    "lifecycle_stage": "testing",
+    "decision_reason": "IN TEST ATTIVO: 0/3 clip inviate finora, 0 clip 9:16 pronte in magazzino (Promising Score: 1593.0).",
+    "updated_at": "2026-10-30 01:12:30"
   }
 }

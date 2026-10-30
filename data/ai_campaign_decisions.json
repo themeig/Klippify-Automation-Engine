@@ -1,0 +1,76 @@
+{
+  "evaluated_by": "antigravity_ai_director",
+  "updated_at": "2026-10-30 01:09:00",
+  "campaigns": {
+    "6a71c6f7245627c68999eae2": {
+      "campaign_name": "Sara Dizdari Academy – Scopri i negozi digitali",
+      "feasible": true,
+      "recommended_stage": "scaling",
+      "source_urls": [
+        "https://www.youtube.com/@SaraDizdariEcommerce"
+      ],
+      "search_queries": [
+        "Sara Dizdari intervista testimonianza studenti negozi digitali",
+        "Sara Dizdari Academy caso studio"
+      ],
+      "video_selection_criteria": "Scegli video lunghi (3-25 min) con casi studio e testimonianze reali di studenti (es. Federica, Valentina) che raccontano da che lavoro partivano e i risultati ottenuti, evitando video puramente tecnici.",
+      "ai_feasibility_notes": "Campagna #1 validata (90% approvazione AI Klippify, picco 720 views). Canale YouTube ufficiale ricco di interviste 16:9 non ancora scaricate."
+    },
+    "6a91676284a29ab01b754c33": {
+      "campaign_name": "Saikoo × Theory SPA — Il bilancio 2025 in anteprima",
+      "feasible": true,
+      "recommended_stage": "testing",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=gvrlHcgmz4w"
+      ],
+      "search_queries": [
+        "Quanto fattura davvero Theory Spa Il bilancio 2025 in anteprima Saikoo",
+        "Gurulandia Alex Theory bilancio Saikoo"
+      ],
+      "video_selection_criteria": "Usa il podcast ufficiale da 1h21m con Alex Theory e Marco Cappelli in cui analizzano il bilancio 2025 da 18M€ con Saikoo, estraendo segmenti diversi (fatturato 4,5M/mese, 6M aziende in Italia, margini e crescita verso 75M).",
+      "ai_feasibility_notes": "Altissima fattibilità: podcast 16:9 già scaricato e ispezionato, temi ad alto impatto virale (numeri reali e bilanci aziendali)."
+    },
+    "6a719c80a2d57190f5d7a38b": {
+      "campaign_name": "Le 9 Bugie di FitActive",
+      "feasible": true,
+      "recommended_stage": "testing",
+      "source_urls": [
+        "https://www.youtube.com/@AlexTheory"
+      ],
+      "search_queries": [
+        "Le 9 Bugie di FitActive Alex Theory",
+        "Theory Spa FitActive Gurulandia"
+      ],
+      "video_selection_criteria": "Cerca i video lunghi di Alex Theory / Theory Spa sul caso FitActive e ritaglia i momenti di dibattito più accesi con numeri e smentite dirette.",
+      "ai_feasibility_notes": "Altissima trazione su Klippify (4.448 views/creator, 1,2M views totali) e alto interesse su TikTok Italia."
+    },
+    "6a7628ca922613d297f2e2c5": {
+      "campaign_name": "Aldo Masolo viral contest test",
+      "feasible": true,
+      "recommended_stage": "testing",
+      "source_urls": [
+        "https://www.youtube.com/@AldoMasolo"
+      ],
+      "search_queries": [
+        "Aldo Masolo podcast intervista trading business",
+        "Aldo Masolo viral"
+      ],
+      "video_selection_criteria": "Seleziona interviste e podcast lunghi con Aldo Masolo con dichiarazioni forti su business, mindset e finanza.",
+      "ai_feasibility_notes": "Ottima trazione per creator (4.122 views/creator) e budget capiente ($340 residui, $0.75/1k)."
+    },
+    "6a64cf756cdfd98478f11f28": {
+      "campaign_name": "Million Hospitality",
+      "feasible": true,
+      "recommended_stage": "candidate",
+      "source_urls": [
+        "https://www.youtube.com/@MarcoCappelli"
+      ],
+      "search_queries": [
+        "Million Hospitality podcast immobiliare ospitalita",
+        "Million Hospitality Marco Cappelli"
+      ],
+      "video_selection_criteria": "Privilegia episodi podcast 16:9 con numeri su rendite immobiliari, hotel e hospitality in Italia.",
+      "ai_feasibility_notes": "Prima riserva pronta per il test ($916 di budget residuo, $1.00/1k views, oltre 1M di views sulla campagna)."
+    }
+  }
+}
