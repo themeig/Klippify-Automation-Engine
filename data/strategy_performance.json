@@ -1,0 +1,62 @@
+{
+  "last_updated": null,
+  "active_combinations": [
+    "combo_1_shock_loop",
+    "combo_2_controversy_comment_bait",
+    "combo_3_breaking_news_loop",
+    "combo_4_loss_aversion_story"
+  ],
+  "winning_combination": null,
+  "highest_views_recorded": 268,
+  "milestone_1000_achieved": false,
+  "switch_campaign_recommended": true,
+  "stats_by_strategy": {
+    "combo_1_shock_loop": {
+      "views": [
+        249
+      ],
+      "avg_views": 249.0,
+      "likes": [
+        8
+      ],
+      "avg_likes": 8.0,
+      "virality_score": 140.5
+    },
+    "combo_2_controversy_comment_bait": {
+      "views": [
+        255
+      ],
+      "avg_views": 255.0,
+      "likes": [
+        1
+      ],
+      "avg_likes": 1.0,
+      "virality_score": 129.5
+    },
+    "combo_3_breaking_news_loop": {
+      "views": [
+        243
+      ],
+      "avg_views": 243.0,
+      "likes": [
+        4
+      ],
+      "avg_likes": 4.0,
+      "virality_score": 129.5
+    },
+    "baseline_standard": {
+      "views": [
+        144,
+        145
+      ],
+      "avg_views": 144.5,
+      "likes": [
+        1,
+        1
+      ],
+      "avg_likes": 1.0,
+      "virality_score": 74.2
+    }
+  },
+  "video_logs": []
+}

@@ -43,3 +43,5 @@ klippify_config.json
 data/klippify_config.json
 *tokens*.json
 data/*tokens*.json
+
+scratch/
